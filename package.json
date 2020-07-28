@@ -1,0 +1,72 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "@appnest/readme": "~1.2.7",
+    "@rollup/plugin-commonjs": "~14.0.0",
+    "@rollup/plugin-node-resolve": "~8.4.0",
+    "@rollup/plugin-replace": "~2.3.3",
+    "@rollup/plugin-typescript": "~5.0.2",
+    "@types/chai": "~4.2.12",
+    "@types/mocha": "~8.0.0",
+    "@types/node": "~14.0.26",
+    "@types/sinon": "~9.0.4",
+    "chai": "~4.2.0",
+    "commitizen": "~4.1.2",
+    "conventional-changelog-angular": "~5.0.10",
+    "coveralls": "~3.1.0",
+    "cz-conventional-changelog": "~3.2.0",
+    "fs-extra": "~9.0.1",
+    "lerna": "~3.22.1",
+    "mocha": "~8.0.1",
+    "nyc": "~15.1.0",
+    "rollup": "~2.23.0",
+    "sinon": "~9.0.2",
+    "ts-node": "~8.10.2",
+    "tslint": "~6.1.2",
+    "typedoc": "~0.17.8",
+    "typescript": "~3.9.7"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "build:readme": "npx @appnest/readme generate --input readme_blueprint.md --config readme_config.json --silent true && lerna run build:readme",
+    "test": "lerna run test",
+    "test:coverage": "lerna run test:coverage",
+    "coverage:merge": "node ./scripts/merge_coverage.js",
+    "lint": "lerna run lint",
+    "docs": "lerna run docs",
+    "lint:fix": "lerna run lint:fix",
+    "version": "npm run build:readme"
+  },
+  "nyc": {
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "typings",
+      "src/**/*.spec.ts",
+      "**/*.d.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html",
+      "text-summary",
+      "lcov"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
