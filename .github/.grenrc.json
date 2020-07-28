@@ -1,0 +1,26 @@
+{
+    "dataSource": "commits",
+    "groupBy": {
+        "Enhancements:": [
+            "enhancement",
+            "internal"
+        ],
+        "Bug Fixes:": [
+            "bug"
+        ],
+        "Dependency Updates": [
+            "dependency",
+            "dependencies"
+        ],
+        "Feature": [
+            "feature"
+        ],
+        "Security": [
+            "security"
+        ],
+        "Others": [
+            "release",
+            "buildtools"
+        ]
+    }
+}
