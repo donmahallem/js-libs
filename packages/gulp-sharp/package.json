@@ -50,5 +50,8 @@
   },
   "devDependencies": {
     "tslint": "~6.1.2"
+  },
+  "dependencies": {
+    "gulp": "~4.0.2"
   }
 }
