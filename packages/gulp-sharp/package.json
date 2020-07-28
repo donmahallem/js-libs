@@ -1,0 +1,54 @@
+{
+  "name": "@donmahallem/gulp-sharp",
+  "version": "0.1.0",
+  "description": "Sharp Plugin for Gulp",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "private": false,
+  "keywords": [
+    "api",
+    "types"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc --project ./tsconfig.json --module es2015 --outDir dist/esm",
+    "build:cjs": "tsc --project ./tsconfig.json --module commonjs --outDir dist/cjs",
+    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json --silent true",
+    "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+    "test": "mocha --config ../../.mocharc.yml",
+    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+    "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
+    "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+    "docs": "typedoc --options ../../typedoc.json",
+    "prepublishOnly": "npm run test && npm run docs && npm run build"
+  },
+  "homepage": "https://donmahallem.github.io/js-libs/",
+  "author": {
+    "name": "donmahallem",
+    "email": "donmahallem@users.noreply.github.com",
+    "url": "https://github.com/donmahallem"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/donmahallem/js-libs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donmahallem/js-libs.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "!src/**/*.spec.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "tslint": "~6.1.2"
+  }
+}
