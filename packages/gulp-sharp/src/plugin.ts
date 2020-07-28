@@ -28,8 +28,10 @@ export const gulpSharp = (cfg: IConfig): Transform => {
             return callback(undefined, file);
         }
 
-        if (file.isStream()) {
-            return callback(new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+        if (file.isDirectory()) {
+            return callback(new PluginError(PLUGIN_NAME, 'Directories are not supported'));
+        } else if (file.isStream()) {
+            return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer()) {
             if (typeof (cfg.transform) === 'function') {
                 return handleTransformPromise(handleMethod(file, cfg.transform), callback);
