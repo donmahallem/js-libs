@@ -1,0 +1,22 @@
+name: Workspace Package Labeler
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+    branches-ignore:
+      - master
+
+jobs:
+  label:
+    name: Label Package PRs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label the PR
+        uses: csi-lk/package-labeler@v1.0.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          workspace: "packages" # (default)
+          prefix: "pkg:"
+      - name: Label PRs
+        uses: actions/labeler@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
