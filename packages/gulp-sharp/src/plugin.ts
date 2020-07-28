@@ -23,7 +23,7 @@ const handleTransformPromise = (prom: Promise<VinylFile.BufferFile>, callback: t
     });
 };
 export const gulpSharp = (cfg: IConfig): Transform => {
-    return through.obj(function (file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void {
+    return through.obj((file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void => {
         if (file.isNull()) {
             return callback(undefined, file);
         }
