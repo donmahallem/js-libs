@@ -50,14 +50,15 @@
   },
   "devDependencies": {
     "@types/gulp": "~4.0.6",
-    "@types/sharp": "~0.25.1",
     "@types/through2": "~2.0.36",
     "tslint": "~6.1.2"
   },
   "dependencies": {
     "gulp": "~4.0.2",
+    "istanbul-lib-coverage": "~3.0.0",
+    "istanbul-lib-report": "~3.0.0",
+    "istanbul-reports": "~3.0.2",
     "plugin-error": "~1.0.1",
-    "sharp": "~0.25.4",
     "through2": "~4.0.2",
     "vinyl": "~2.2.0"
   }
