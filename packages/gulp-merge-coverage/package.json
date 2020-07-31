@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@types/gulp": "~4.0.6",
+    "@types/istanbul": "~0.4.30",
     "@types/istanbul-reports": "~3.0.0",
     "@types/through2": "~2.0.36",
     "tslint": "~6.1.2"
