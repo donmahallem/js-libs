@@ -12,6 +12,6 @@ export interface IConfig {
      * Specify if you want the file basename to be modified or speficy a pattern
      * Defaults to '{filename}_{width}w_{height}h.{ext}'
      */
-    modifyFilename: false | string;
+    modifyFilename?: false | string;
     transform: ISharpConfig | SharpHandler;
 }
