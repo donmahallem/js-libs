@@ -24,7 +24,7 @@ export const gulpSharp = (cfg: IConfig): Transform => {
         if (file.isNull()) {
             return callback(undefined, file);
         }
-        const mergedConfig: IConfig = deepmerge(cfg, file.sharp_config as IConfig);
+        const mergedConfig: IConfig = (cfg && file.sharp_config) ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
         if (file.isDirectory()) {
             return callback(new PluginError(PLUGIN_NAME, 'Directories are not supported'));
         } else if (file.isStream()) {
