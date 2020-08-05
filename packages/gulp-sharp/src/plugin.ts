@@ -2,6 +2,7 @@
  * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
  */
 
+import * as deepmerge from 'deepmerge';
 import * as PluginError from 'plugin-error';
 import { Transform } from 'stream';
 import * as through from 'through2';
@@ -23,16 +24,16 @@ export const gulpSharp = (cfg: IConfig): Transform => {
         if (file.isNull()) {
             return callback(undefined, file);
         }
-
+        const mergedConfig: IConfig = deepmerge(cfg, file.sharp_config as IConfig);
         if (file.isDirectory()) {
             return callback(new PluginError(PLUGIN_NAME, 'Directories are not supported'));
         } else if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer()) {
-            if (typeof (cfg.transform) === 'function') {
-                return handleTransformPromise(handleMethod(file, cfg.transform), callback);
+            if (typeof (mergedConfig.transform) === 'function') {
+                return handleTransformPromise(handleMethod(file, mergedConfig.transform), callback);
             }
-            return handleTransformPromise(handleConfig(file, cfg.transform), callback);
+            return handleTransformPromise(handleConfig(file, mergedConfig.transform), callback);
         }
     });
 };
