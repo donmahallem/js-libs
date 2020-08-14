@@ -4,21 +4,16 @@
 
 import * as deepmerge from 'deepmerge';
 import * as PluginError from 'plugin-error';
+import { Sharp } from 'sharp';
 import { Transform } from 'stream';
 import * as through from 'through2';
 import * as VinylFile from 'vinyl';
 import { IConfig } from './config';
 import { handleConfig } from './handle-config';
 import { handleMethod } from './handle-method';
+import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer';
 
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
-const handleTransformPromise = (prom: Promise<VinylFile.BufferFile>, callback: through.TransformCallback): void => {
-    prom.then((convertedFile: VinylFile.BufferFile): void => {
-        callback(undefined, convertedFile);
-    }).catch((err: any): void => {
-        callback(new PluginError(PLUGIN_NAME, err, { message: 'Error while transforming file' }));
-    });
-};
 export const gulpSharp = (cfg: IConfig): Transform => {
     return through.obj((file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void => {
         if (file.isNull()) {
@@ -30,10 +25,18 @@ export const gulpSharp = (cfg: IConfig): Transform => {
         } else if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer()) {
+            let sharpInstance: Sharp;
             if (typeof (mergedConfig.transform) === 'function') {
-                return handleTransformPromise(handleMethod(file, mergedConfig.transform), callback);
+                sharpInstance = handleMethod(file, mergedConfig.transform);
+            } else {
+                sharpInstance = handleConfig(file, mergedConfig.transform);
             }
-            return handleTransformPromise(handleConfig(file, mergedConfig.transform), callback);
+            sharpToVinylBuffer(sharpInstance, file, mergedConfig)
+                .then((convertedFile: VinylFile.BufferFile): void => {
+                    callback(undefined, convertedFile);
+                }, (err: any): void => {
+                    callback(new PluginError(PLUGIN_NAME, err, { message: 'Error while transforming file' }));
+                });
         }
     });
 };
