@@ -13,8 +13,8 @@
         },
         {
             "alt": "npm version",
-            "url": "https://badge.fury.io/js/%40donmahallem%2Fjs-libs",
-            "img": "https://badge.fury.io/js/%40donmahallem%2Fjs-libs.svg"
+            "url": "https://badge.fury.io/js/%40donmahallem%2Fgulp-sharp",
+            "img": "https://badge.fury.io/js/%40donmahallem%2Fgulp-sharp.svg"
         },
         {
             "alt": "GitHub license",
@@ -23,13 +23,13 @@
         },
         {
             "alt": "dependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/js-libs",
-            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/js-libs"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/gulp-sharp",
+            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/gulp-sharp"
         },
         {
             "alt": "devDependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/js-libs&type=dev",
-            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/js-libs"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/gulp-sharp&type=dev",
+            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/gulp-sharp"
         },
         {
             "alt": "GitHub contributors",
