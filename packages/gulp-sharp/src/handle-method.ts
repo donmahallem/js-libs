@@ -4,12 +4,9 @@
 
 import * as sharp from 'sharp';
 import { BufferFile } from 'vinyl';
-import { sharpBufferToVinylBuffer } from './buffer-to-vinyl-buffer';
 
 export type SharpHandler = (sh: sharp.Sharp) => sharp.Sharp;
-export const handleMethod = (inputFile: BufferFile, handler: SharpHandler): Promise<BufferFile> => {
+export const handleMethod = (inputFile: BufferFile, handler: SharpHandler): sharp.Sharp => {
     const sharpInstance: sharp.Sharp = sharp(inputFile.contents);
-    return handler(sharpInstance)
-        .toBuffer({ resolveWithObject: true })
-        .then(sharpBufferToVinylBuffer(inputFile));
+    return handler(sharpInstance);
 };
