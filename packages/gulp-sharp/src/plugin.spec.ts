@@ -132,5 +132,18 @@ describe('plugin', (): void => {
                 testInstance.end(testFile);
             });
         });
+        it('should skip empty files', (done: Mocha.Done): void => {
+            const testFile: Vinyl.NullFile = new Vinyl({
+                // tslint:disable-next-line:no-null-keyword
+                contents: null,
+            });
+            const testInstance: Transform = gulpSharp({ transform: { resize: { width: 512, fit: 'cover' } } });
+            testInstance.once('data', (file: Vinyl): void => {
+                expect(file).to.deep.equal(testFile);
+                done();
+            });
+            // write the fake file to it
+            testInstance.end(testFile);
+        });
     });
 });
