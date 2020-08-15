@@ -18,8 +18,6 @@ export const gulpSharp = (cfg: IConfig): Transform => {
     return through.obj((file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void => {
         if (file.isNull()) {
             return callback(undefined, file);
-        } else if (file.isDirectory()) {
-            return callback(new PluginError(PLUGIN_NAME, 'Directories are not supported'));
         } else if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer()) {
