@@ -5,8 +5,9 @@
 import { expect } from 'chai';
 import { readFileSync } from 'fs';
 import 'mocha';
+import * as PluginError from 'plugin-error';
 import * as sharp from 'sharp';
-import { Transform } from 'stream';
+import { Readable, Transform } from 'stream';
 import * as Vinyl from 'vinyl';
 import { gulpSharp } from './plugin';
 
@@ -140,6 +141,24 @@ describe('plugin', (): void => {
             const testInstance: Transform = gulpSharp({ transform: { resize: { width: 512, fit: 'cover' } } });
             testInstance.once('data', (file: Vinyl): void => {
                 expect(file).to.deep.equal(testFile);
+                done();
+            });
+            // write the fake file to it
+            testInstance.end(testFile);
+        });
+        it('should throw if a stream is provided', (done: Mocha.Done): void => {
+            const testFile: Vinyl.StreamFile = new Vinyl({
+                base: '/test/',
+                contents: new Readable(),
+                cwd: '/',
+                path: '/test/anywhere.jpg',
+            });
+            const testInstance: Transform = gulpSharp({ transform: { resize: { width: 512, fit: 'cover' } } });
+            testInstance.once('data', (file: Vinyl): void => {
+                done(new Error('should not yield data'));
+            });
+            testInstance.once('error', (err: PluginError): void => {
+                expect(err.message).to.deep.equal('Streams are not supported!');
                 done();
             });
             // write the fake file to it
