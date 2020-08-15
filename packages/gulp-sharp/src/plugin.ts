@@ -18,13 +18,12 @@ export const gulpSharp = (cfg: IConfig): Transform => {
     return through.obj((file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void => {
         if (file.isNull()) {
             return callback(undefined, file);
-        }
-        const mergedConfig: IConfig = (cfg && file.sharp_config) ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
-        if (file.isDirectory()) {
+        } else if (file.isDirectory()) {
             return callback(new PluginError(PLUGIN_NAME, 'Directories are not supported'));
         } else if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer()) {
+            const mergedConfig: IConfig = (cfg && file.sharp_config) ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
             let sharpInstance: Sharp;
             if (typeof (mergedConfig.transform) === 'function') {
                 sharpInstance = handleMethod(file, mergedConfig.transform);
