@@ -1,14 +1,18 @@
 {
   "name": "@donmahallem/gulp-sharp",
   "version": "0.2.0",
-  "description": "Sharp Plugin for Gulp",
+  "description": "Sharp Plugin for Gulp. Modify images via sharp.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "private": false,
   "keywords": [
-    "api",
-    "types"
+    "gulp",
+    "sharp",
+    "gulp-plugin",
+    "convert",
+    "image",
+    "scale"
   ],
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs && npm run build:types",
