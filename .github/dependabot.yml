@@ -13,3 +13,14 @@ updates:
     prefix: fix
     prefix-development: chore
     include: scope
+
+# Maintain dependencies for GitHub Actions
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  target-branch: dev
+  commit-message:
+    prefix: ci
+    prefix-development: chore
+    include: scope
