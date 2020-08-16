@@ -7,8 +7,12 @@
   "types": "dist/types/index.d.ts",
   "private": false,
   "keywords": [
-    "api",
-    "types"
+    "gulp",
+    "sharp",
+    "gulp-plugin",
+    "convert",
+    "image",
+    "scale"
   ],
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs && npm run build:types",
