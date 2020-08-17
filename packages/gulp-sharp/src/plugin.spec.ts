@@ -200,5 +200,13 @@ describe('plugin', (): void => {
             // write the fake file to it
             testInstance.end(testFile);
         });
+        it('should throw if no Config is provided', (): void => {
+            expect((): void => {
+                gulpSharp(undefined as any);
+            }).to.throws(Error, 'transform must be provided via config');
+            expect((): void => {
+                gulpSharp({} as any);
+            }).to.throws(Error, 'transform must be provided via config');
+        });
     });
 });
