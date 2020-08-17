@@ -15,6 +15,10 @@ import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer';
 
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
 export const gulpSharp = (cfg: IConfig): Transform => {
+    // tslint:disable-next-line:triple-equals
+    if (cfg == undefined || cfg.transform == undefined) {
+        throw new Error('transform must be provided via config');
+    }
     return through.obj((file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void => {
         if (file.isNull()) {
             return callback(undefined, file);
