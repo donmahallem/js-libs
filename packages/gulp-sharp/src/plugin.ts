@@ -15,6 +15,10 @@ import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer';
 
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
 export const gulpSharp = (cfg: IConfig): Transform => {
+    // tslint:disable-next-line:triple-equals
+    if (cfg == undefined || cfg.transform == undefined) {
+        throw new Error('transform must be provided via config');
+    }
     return through.obj((file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void => {
         if (file.isNull()) {
             return callback(undefined, file);
@@ -24,9 +28,9 @@ export const gulpSharp = (cfg: IConfig): Transform => {
             const mergedConfig: IConfig = (cfg && file.sharp_config) ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
             let sharpInstance: Sharp;
             if (typeof (mergedConfig.transform) === 'function') {
-                sharpInstance = handleMethod(file, mergedConfig.transform);
+                sharpInstance = handleMethod(file, mergedConfig.transform, cfg.config);
             } else {
-                sharpInstance = handleConfig(file, mergedConfig.transform);
+                sharpInstance = handleConfig(file, mergedConfig.transform, cfg.config);
             }
             sharpToVinylBuffer(sharpInstance, file, mergedConfig)
                 .then((convertedFile: VinylFile.BufferFile): void => {

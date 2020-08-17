@@ -9,8 +9,8 @@ export interface ISharpConfig {
     format?: keyof sharp.FormatEnum;
     resize?: sharp.ResizeOptions;
 }
-export const handleConfig = (inputFile: BufferFile, config: ISharpConfig): sharp.Sharp => {
-    let sharpInstance: sharp.Sharp = sharp(inputFile.contents);
+export const handleConfig = (inputFile: BufferFile, config: ISharpConfig, sharpInit?: sharp.SharpOptions): sharp.Sharp => {
+    let sharpInstance: sharp.Sharp = sharp(inputFile.contents, sharpInit);
     if (config.resize) {
         sharpInstance = sharpInstance.resize(config.resize);
     }
