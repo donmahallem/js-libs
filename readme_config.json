@@ -31,5 +31,7 @@
             "url": "https://github.com/donmahallem/js-libs/graphs/contributors",
             "img": "https://img.shields.io/github/contributors-anon/donmahallem/js-libs"
         }
-    ]
+    ],
+    "lineBreak": "\r\n",
+    "silent": true
 }
