@@ -164,5 +164,41 @@ describe('plugin', (): void => {
             // write the fake file to it
             testInstance.end(testFile);
         });
+        it('should use sharp input config', (done: Mocha.Done): void => {
+            const expectedWidth: number = 139;
+            const testBuffer: Buffer = readFileSync('test/test.svg');
+            const testFile: Vinyl = new Vinyl({
+                base: '/test/',
+                contents: testBuffer,
+                cwd: '/',
+                path: '/test/anywhere.jpg',
+                sharp_config: {},
+            });
+            const testInstance: Transform = gulpSharp({
+                config: {
+                    density: 100,
+                },
+                transform: {},
+            });
+            const expectedHeight: number = 139;
+            testInstance.once('data', (file: Vinyl): void => {
+                sharp(file.contents as Buffer)
+                    .metadata()
+                    .then((meta: sharp.Metadata): void => {
+                        // tslint:disable-next-line:no-unused-expression
+                        expect(Vinyl.isVinyl(file)).to.be.true;
+                        // tslint:disable-next-line:no-unused-expression
+                        expect(file.isBuffer()).to.be.true;
+                        expect(file.basename).to.equal(`anywhere_${expectedWidth}w_${expectedHeight}h.png`);
+                        expect(meta.format).to.equal('png');
+                        expect(meta.width).to.equal(expectedWidth, `Image should be ${expectedWidth} pixel wide`);
+                        expect(meta.height).to.equal(expectedHeight, `Image should be ${expectedHeight} pixel high`);
+                        done();
+                    })
+                    .catch(done);
+            });
+            // write the fake file to it
+            testInstance.end(testFile);
+        });
     });
 });
