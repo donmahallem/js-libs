@@ -24,9 +24,9 @@ export const gulpSharp = (cfg: IConfig): Transform => {
             const mergedConfig: IConfig = (cfg && file.sharp_config) ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
             let sharpInstance: Sharp;
             if (typeof (mergedConfig.transform) === 'function') {
-                sharpInstance = handleMethod(file, mergedConfig.transform);
+                sharpInstance = handleMethod(file, mergedConfig.transform, cfg.config);
             } else {
-                sharpInstance = handleConfig(file, mergedConfig.transform);
+                sharpInstance = handleConfig(file, mergedConfig.transform, cfg.config);
             }
             sharpToVinylBuffer(sharpInstance, file, mergedConfig)
                 .then((convertedFile: VinylFile.BufferFile): void => {
