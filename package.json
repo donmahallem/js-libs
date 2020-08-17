@@ -36,7 +36,7 @@
     "lint": "lerna run lint",
     "docs": "lerna run docs",
     "lint:fix": "lerna run lint:fix",
-    "version": "npm run build:readme"
+    "version": "npm run build:readme && git add README.md"
   },
   "nyc": {
     "include": [
