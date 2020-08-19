@@ -9,12 +9,12 @@
         {
             "alt": "codecov",
             "url": "https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs",
-            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=ApiTypes"
+            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=Ico"
         },
         {
             "alt": "npm version",
-            "url": "https://badge.fury.io/js/%40donmahallem%2Fgulp-sharp",
-            "img": "https://badge.fury.io/js/%40donmahallem%2Fgulp-sharp.svg"
+            "url": "https://badge.fury.io/js/%40donmahallem%2Fico",
+            "img": "https://badge.fury.io/js/%40donmahallem%2Fico.svg"
         },
         {
             "alt": "GitHub license",
@@ -23,13 +23,13 @@
         },
         {
             "alt": "dependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/gulp-sharp",
-            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/gulp-sharp"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/ico",
+            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/ico"
         },
         {
             "alt": "devDependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/gulp-sharp&type=dev",
-            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/gulp-sharp"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/ico&type=dev",
+            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/ico"
         },
         {
             "alt": "GitHub contributors",
