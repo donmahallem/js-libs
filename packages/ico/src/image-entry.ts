@@ -1,3 +1,7 @@
+/*!
+ * Source https://github.com/donmahallem/js-libs Package: ico
+ */
+
 export enum ImageType {
     PNG = 'png',
     BMP = 'bmp',
