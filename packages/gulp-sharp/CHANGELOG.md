@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.5.0 (2020-08-29)
+
+
+### Bug Fixes
+
+* **deps:** bump sharp from 0.25.4 to 0.26.0 ([#52](https://github.com/donmahallem/js-libs/issues/52)) ([ce9931c](https://github.com/donmahallem/js-libs/commit/ce9931c932d55cac14a3857f49020029b7163f55))
+
+
+### Features
+
+* **gulp-sharp:** fix coverage img path ([#58](https://github.com/donmahallem/js-libs/issues/58)) ([f095f31](https://github.com/donmahallem/js-libs/commit/f095f31a47530945113f10260d1ad20fb381a98c))
+
+
+
+# 0.4.0 (2020-08-25)
+
+
+
+# 0.3.0 (2020-08-17)
+
+
+### Bug Fixes
+
+* **gulp-sharp:** use provided SharpOptions in handling ([#30](https://github.com/donmahallem/js-libs/issues/30)) ([698884f](https://github.com/donmahallem/js-libs/commit/698884f6a12948f230858b7a4080b6b247d198b3))
+
+
+### Features
+
+* **gulp-sharp:** throw more descriptive errors on wrong configuration ([#32](https://github.com/donmahallem/js-libs/issues/32)) ([f52b242](https://github.com/donmahallem/js-libs/commit/f52b2429b5a554536a07e36f2da430f3a9c23520))
+
+
+
+## 0.2.1 (2020-08-16)
+
+
+
+# 0.2.0 (2020-08-16)
+
+
+### Features
+
+* **gulp-sharp:** config can be provided via VinylFile ([#17](https://github.com/donmahallem/js-libs/issues/17)) ([df730e5](https://github.com/donmahallem/js-libs/commit/df730e59477af142c944d56c4ef6e910c016af62))
+
+
+
+## 0.1.1 (2020-07-28)
+
+
+
+
+
+
 # [0.4.0](https://github.com/donmahallem/js-libs/compare/v0.3.0...v0.4.0) (2020-08-25)
 
 **Note:** Version bump only for package @donmahallem/gulp-sharp
