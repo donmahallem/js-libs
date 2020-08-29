@@ -50,6 +50,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@types/sharp": "~0.25.1",
     "tslint": "~6.1.3"
   },
   "dependencies": {
