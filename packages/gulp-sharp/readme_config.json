@@ -9,7 +9,7 @@
         {
             "alt": "codecov",
             "url": "https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs",
-            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=ApiTypes"
+            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=GulpSharp"
         },
         {
             "alt": "npm version",
