@@ -16,6 +16,7 @@
   "ignoreChanges": [
     "ignored-file",
     "**/*.md",
+    "**/*.spec.ts",
     "**/tslint.json",
     "**/tsconfig.json",
     "*.md",
