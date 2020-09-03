@@ -4,9 +4,9 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import * as testObj from './write-dir-entry';
-import * as testObj2 from './read-dir-entry';
 import { Type } from '../type';
+import * as testObj2 from './read-dir-entry';
+import * as testObj from './write-dir-entry';
 
 const testSizes: number[] = [23, 64, 256];
 describe('./read-write', (): void => {

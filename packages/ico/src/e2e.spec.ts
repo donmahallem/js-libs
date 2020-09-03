@@ -2,14 +2,14 @@
  * Source https://github.com/donmahallem/js-libs Package: ico
  */
 
-import 'mocha';
-import { readFileSync } from 'fs';
-import { parseIco } from './parse-ico';
-import { join } from 'path';
-import { IIcoData, IIconDirEntry } from './dir-entry';
-import { Type } from './type';
-import { generateIco, IIcoDataInput, InputEntry } from './create-ico';
 import { expect } from 'chai';
+import { readFileSync } from 'fs';
+import 'mocha';
+import { join } from 'path';
+import { generateIco, InputEntry, IIcoDataInput } from './create-ico';
+import { IIconDirEntry, IIcoData } from './dir-entry';
+import { parseIco } from './parse-ico';
+import { Type } from './type';
 
 describe('./e2e', (): void => {
     describe('decode and reencode', (): void => {

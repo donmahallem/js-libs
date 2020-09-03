@@ -3,7 +3,7 @@
  */
 
 import { DIRECTORY_SIZE, FILE_HEADER_SIZE } from './constants';
-import { readDirEntry, EntryType, IIcoData, ImageFormat } from './dir-entry';
+import { readDirEntry, EntryType, ImageFormat, IIcoData } from './dir-entry';
 import { Type } from './type';
 
 /**
