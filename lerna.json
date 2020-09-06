@@ -10,12 +10,13 @@
     "version": {
       "conventionalCommits": true,
       "changelogPreset": "conventional-changelog-angular",
-      "message": "chore(release): publish %s"
+      "message": "chore(release): publish"
     }
   },
   "ignoreChanges": [
     "ignored-file",
     "**/*.md",
+    "**/*.spec.ts",
     "**/tslint.json",
     "**/tsconfig.json",
     "*.md",
