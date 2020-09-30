@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@0.5.0...@donmahallem/gulp-ncc@0.5.1) (2020-09-30)
+
+
+### Bug Fixes
+
+* **deps:** bump vinyl from 2.2.0 to 2.2.1 ([#91](https://github.com/donmahallem/js-libs/issues/91)) ([d0028bb](https://github.com/donmahallem/js-libs/commit/d0028bb23983b91d2d2b0910759c5cc43fc171b5))
+
+
+
+
+
+
 # 0.5.0 (2020-08-29)
 
 
