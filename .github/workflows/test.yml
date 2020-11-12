@@ -5,6 +5,7 @@ jobs:
   test_suite:
     runs-on: ${{ matrix.os }}
     name: Test - ${{ matrix.os }} - Node ${{ matrix.node }}
+    timeout-minutes: 30
     strategy:
       matrix:
         node: [10, 12]
@@ -13,11 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node }}
       - name: Setup Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2.1.3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
