@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@0.5.2...@donmahallem/gulp-sharp@0.5.3) (2020-11-12)
+
+
+### Bug Fixes
+
+* **deps:** bump sharp from 0.26.1 to 0.26.2 ([#110](https://github.com/donmahallem/js-libs/issues/110)) ([de416cc](https://github.com/donmahallem/js-libs/commit/de416cc9d8490e561716274cc68872e715679ae8))
+
+
+
+
+
+
 ## [0.5.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@0.5.1...@donmahallem/gulp-sharp@0.5.2) (2020-09-30)
 
 
