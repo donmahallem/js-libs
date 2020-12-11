@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup Node
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.3
         with:
           node-version: '12'
       - name: Install Packages
@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup Node
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.3
         with:
           node-version: '12'
       - name: Install Packages
