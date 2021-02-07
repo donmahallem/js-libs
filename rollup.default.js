@@ -35,6 +35,7 @@ export default (pkg) => {
             }),
             replace({
                 __BUILD_DATE__: () => new Date(),
+                __BUILD_PACKAGE_NAME__: pkg.name,
                 __BUILD_VERSION__: pkg.version,
             })
         ]
