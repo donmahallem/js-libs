@@ -3,7 +3,13 @@
  */
 
 export class RequestError extends Error {
-    constructor(message: string, public readonly code: number = 500) {
+    /**
+     *
+     * @param message error message
+     * @param status status code to be reported
+     */
+    constructor(message: string, public readonly status: number = 500) {
         super(message);
+        this.name = RequestError.name;
     }
 }
