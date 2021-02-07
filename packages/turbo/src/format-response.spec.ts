@@ -1,21 +1,21 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
+ * Source https://github.com/donmahallem/js-libs Package: turbo
  */
 
 import { expect } from 'chai';
-import 'mocha';
-import * as sinon from 'sinon';
-import * as protobuf from 'protobufjs';
 import * as express from 'express';
+import 'mocha';
+import * as protobuf from 'protobufjs';
+import * as sinon from 'sinon';
 import * as supertest from 'supertest';
 import { formatResponse } from './format-response';
-interface TestMessage {
+interface ITestMessage {
     message: string;
 }
 
 const protoRoot: protobuf.Root = protobuf.loadSync('./test/test.proto');
-const testMessage: protobuf.Type = protoRoot.lookupType("testpackage.TestMessage");
-const testObject: TestMessage = { message: 'test' };
+const testMessage: protobuf.Type = protoRoot.lookupType('testpackage.TestMessage');
+const testObject: ITestMessage = { message: 'test' };
 const encodedTestMessage: Buffer = Buffer.from(testMessage.encode(testObject).finish());
 describe('./format-response', (): void => {
     let sandbox: sinon.SinonSandbox;
@@ -43,7 +43,7 @@ describe('./format-response', (): void => {
     });
     afterEach((): void => {
         sandbox.reset();
-    })
+    });
     after((): void => {
         sandbox.restore();
     });
@@ -87,7 +87,7 @@ describe('./format-response', (): void => {
                     .set('Accept', 'application/pdf')
                     .expect(406)
                     .expect('Content-Type', /json/)
-                    .then((response): void => {
+                    .then((response: any): void => {
                         expect(errorSpy.callCount).to.equal(1, 'only one error should be emitted');
                         expect(response.body).to.deep.equal({
                             message: 'Not Acceptable',
