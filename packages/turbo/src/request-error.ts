@@ -4,7 +4,7 @@
 
 export class RequestError extends Error {
     /**
-     * 
+     *
      * @param message error message
      * @param status status code to be reported
      */
