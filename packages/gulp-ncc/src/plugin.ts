@@ -4,10 +4,10 @@
 
 import * as ncc from '@vercel/ncc';
 import { basename, dirname, extname, join, resolve } from 'path';
-import * as PluginError from 'plugin-error';
+import PluginError from 'plugin-error';
 import { Transform } from 'stream';
-import * as through from 'through2';
-import * as VinylFile from 'vinyl';
+import through from 'through2';
+import VinylFile from 'vinyl';
 import { IPluginConfig } from './config';
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
 export const gulpNcc = (cfg?: IPluginConfig): Transform => {
