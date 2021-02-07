@@ -3,7 +3,7 @@
  */
 
 export class RequestError extends Error {
-    constructor(message: string, public readonly code: number = 500) {
+    constructor(message: string, public readonly status: number = 500) {
         super(message);
     }
 }
