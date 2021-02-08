@@ -6,7 +6,7 @@ import { expect } from 'chai';
 import { RequestHandler } from 'express';
 import 'mocha';
 import { Done } from 'mocha';
-import { ServerError } from '../server-error';
+import { RequestError } from '../request-error';
 import { validateRequest, ValidationSchemas } from './validate-request';
 
 const checkKeys: string[] = ['query', 'params', 'body'];
@@ -74,7 +74,7 @@ describe('validate-request/validate-request.ts', (): void => {
                     [key]: { top: 'asdf', bottom: '-123' },
                 } as any, {} as any, (res?: any): void => {
                     expect(res).to.not.be.undefined;
-                    expect(res).to.be.instanceOf(ServerError);
+                    expect(res).to.be.instanceOf(RequestError);
                     done();
                 });
             });

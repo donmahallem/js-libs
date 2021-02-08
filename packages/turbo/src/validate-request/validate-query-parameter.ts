@@ -4,7 +4,7 @@
 
 import { NextFunction, Request, RequestHandler, Response } from 'express';
 import { validate, Schema, ValidationError, ValidatorResult } from 'jsonschema';
-import { ServerError } from '../server-error';
+import { RequestError } from '../request-error';
 
 export const validateQueryParameter: (schema: Schema) => RequestHandler =
     (schema: Schema): RequestHandler => {
@@ -15,9 +15,9 @@ export const validateQueryParameter: (schema: Schema) => RequestHandler =
             } else {
                 const error: ValidationError = result.errors[0];
                 if (typeof error.schema === 'string') {
-                    next(new ServerError(400, `Invalid query parameter '${error.schema}'`));
+                    next(new RequestError(`Invalid query parameter '${error.schema}'`, 400));
                 } else if (error.name === 'required') {
-                    next(new ServerError(400, `Invalid query parameter '${error.argument}'`));
+                    next(new RequestError(`Invalid query parameter '${error.argument}'`, 400));
                 }
             }
         };

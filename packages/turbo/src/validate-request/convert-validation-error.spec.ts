@@ -5,7 +5,7 @@
 import { expect } from 'chai';
 import { validate, ValidatorResult } from 'jsonschema';
 import 'mocha';
-import { ServerError } from '../server-error';
+import { RequestError } from '../request-error';
 import { convertValidationError } from './convert-validation-error';
 
 describe('validate-request/convert-validation-error.ts', (): void => {
@@ -18,8 +18,8 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     });
                     // tslint:disable-next-line:no-unused-expression
                     expect(validationResult.valid).to.be.false;
-                    const testError: ServerError = convertValidationError(validationResult.errors[0], param);
-                    expect(testError).to.be.instanceOf(ServerError, 'should be a server error');
+                    const testError: RequestError = convertValidationError(validationResult.errors[0], param);
+                    expect(testError).to.be.instanceOf(RequestError, 'should be a server error');
                     expect(testError.message).to.equal('Invalid ' + param + ' type');
                 });
                 it('should report missing top parameter', (): void => {
@@ -41,8 +41,8 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     });
                     // tslint:disable-next-line:no-unused-expression
                     expect(validationResult.valid).to.be.false;
-                    const testError: ServerError = convertValidationError(validationResult.errors[0], param);
-                    expect(testError).to.be.instanceOf(ServerError, 'should be a server error');
+                    const testError: RequestError = convertValidationError(validationResult.errors[0], param);
+                    expect(testError).to.be.instanceOf(RequestError, 'should be a server error');
                     expect(testError.message).to.equal('Requires ' + param + ' parameter \'top\'');
                 });
                 it('should report invalid param', (): void => {
@@ -60,8 +60,8 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     });
                     // tslint:disable-next-line:no-unused-expression
                     expect(validationResult.valid).to.be.false;
-                    const testError: ServerError = convertValidationError(validationResult.errors[0], param);
-                    expect(testError).to.be.instanceOf(ServerError, 'should be a server error');
+                    const testError: RequestError = convertValidationError(validationResult.errors[0], param);
+                    expect(testError).to.be.instanceOf(RequestError, 'should be a server error');
                     expect(testError.message).to.equal('Invalid ' + param + ' pattern');
                 });
                 it('should report invalid param', (): void => {
@@ -78,8 +78,8 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     });
                     // tslint:disable-next-line:no-unused-expression
                     expect(validationResult.valid).to.be.false;
-                    const testError: ServerError = convertValidationError(validationResult.errors[0], param);
-                    expect(testError).to.be.instanceOf(ServerError, 'should be a server error');
+                    const testError: RequestError = convertValidationError(validationResult.errors[0], param);
+                    expect(testError).to.be.instanceOf(RequestError, 'should be a server error');
                     expect(testError.message).to.equal('Invalid ' + param + ' type');
                 });
             });

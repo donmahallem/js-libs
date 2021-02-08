@@ -3,17 +3,17 @@
  */
 
 import { ValidationError } from 'jsonschema';
-import { ServerError } from '../server-error';
+import { RequestError } from '../request-error';
 
-export const convertValidationError: (error: ValidationError, type: string) => ServerError =
-    (error: ValidationError, type: string): ServerError => {
+export const convertValidationError: (error: ValidationError, type: string) => RequestError =
+    (error: ValidationError, type: string): RequestError => {
         switch (error.name) {
             case 'required':
-                return new ServerError(400, 'Requires ' + type + ' parameter \'' + error.argument + '\'');
+                return new RequestError(`Requires ${type} parameter '${error.argument}'`, 400);
             case 'pattern':
             case 'type':
-                return new ServerError(400, 'Invalid ' + type + ' ' + error.name);
+                return new RequestError(`Invalid ${type} ${error.name}`, 400);
             default:
-                return new ServerError(400, 'Invalid ' + type);
+                return new RequestError(`Invalid ${type}`, 400);
         }
     };
