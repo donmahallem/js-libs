@@ -26,8 +26,12 @@ export default (pkg) => {
         input: 'src/index.ts',
         output,
         external: [
-            ...Object.keys(pkg.dependencies || {})
+            ...Object.keys(pkg.dependencies || {}),
+            ...Object.keys(pkg.devDependencies || {}),
+            ...Object.keys(pkg.peerDependencies || {}),
+            ...Object.keys(pkg.optionalDependencies || {}),
         ],
+        preserveSymlinks: true,
         plugins: [
             nodeResolve(),
             typescript({

@@ -7,7 +7,7 @@ interface INccResult { code: string; map: string; assets: any; }
  * This is required because of ncc's weird export behavior and rollup doesn't recognize the default export
  */
 // tslint:disable-next-line:no-var-requires
-const ncc: (path: string, cfg: any) => Promise<INccResult> = require('@vercel/ncc');
+import ncc from '@vercel/ncc';
 import { basename, dirname, extname, join, resolve } from 'path';
 import PluginError from 'plugin-error';
 import { Transform } from 'stream';
