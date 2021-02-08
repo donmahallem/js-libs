@@ -5,10 +5,10 @@
 import { expect } from 'chai';
 import { readFileSync } from 'fs';
 import 'mocha';
-import * as PluginError from 'plugin-error';
-import * as sharp from 'sharp';
+import PluginError from 'plugin-error';
+import sharp from 'sharp';
 import { Readable, Transform } from 'stream';
-import * as Vinyl from 'vinyl';
+import Vinyl from 'vinyl';
 import { gulpSharp } from './plugin';
 
 const testFormats: (keyof sharp.FormatEnum)[] = ['jpeg', 'png', 'webp'];

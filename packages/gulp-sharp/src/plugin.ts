@@ -2,8 +2,8 @@
  * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
  */
 
-import * as deepmerge from 'deepmerge';
-import * as PluginError from 'plugin-error';
+import deepmerge from 'deepmerge';
+import PluginError from 'plugin-error';
 import { Sharp } from 'sharp';
 import { Transform } from 'stream';
 import * as through from 'through2';
