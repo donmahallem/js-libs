@@ -2,7 +2,7 @@
  * Source https://github.com/donmahallem/js-libs Package: turbo
  */
 
-import Ajv, { ErrorObject, ValidateFunction } from 'ajv';
+import Ajv, { DefinedError, ValidateFunction } from 'ajv';
 import { expect } from 'chai';
 import 'mocha';
 import { RequestError } from '../request-error';
@@ -10,7 +10,7 @@ import { convertValidationError } from './convert-validation-error';
 
 describe('validate-request/convert-validation-error.ts', (): void => {
     describe('convertValidationError', (): void => {
-        let ajv: Ajv.Ajv;
+        let ajv: Ajv;
         beforeEach((): void => {
             ajv = new Ajv();
         });
@@ -22,7 +22,7 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     });
                     // tslint:disable-next-line:no-unused-expression
                     expect(validate({})).to.be.false;
-                    const errors: ErrorObject[] = validate.errors as ErrorObject[];
+                    const errors: DefinedError[] = validate.errors as DefinedError[];
                     // tslint:disable-next-line:no-unused-expression
                     expect(errors).to.not.be.undefined;
                     const testError: RequestError = convertValidationError(errors[0]);
@@ -33,12 +33,12 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     const validate: ValidateFunction = ajv.compile({
                         properties: {
                             bottom: {
-                                id: 'bottom',
+                                $id: 'bottom',
                                 pattern: '^[\\+\\-]?\\d+$',
                                 type: 'string',
                             },
                             top: {
-                                id: 'top',
+                                $id: 'top',
                                 pattern: '^[\\+\\-]?\\d+$',
                                 type: 'string',
                             },
@@ -48,7 +48,7 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     });
                     // tslint:disable-next-line:no-unused-expression
                     expect(validate({})).to.be.false;
-                    const errors: ErrorObject[] = validate.errors as ErrorObject[];
+                    const errors: DefinedError[] = validate.errors as DefinedError[];
                     // tslint:disable-next-line:no-unused-expression
                     expect(errors).to.not.be.undefined;
                     const testError: RequestError = convertValidationError(errors[0]);
@@ -70,12 +70,12 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     expect(validate({
                         bottom: '-2992a',
                     })).to.be.false;
-                    const errors: ErrorObject[] = validate.errors as ErrorObject[];
+                    const errors: DefinedError[] = validate.errors as DefinedError[];
                     // tslint:disable-next-line:no-unused-expression
                     expect(errors).to.not.be.undefined;
                     const testError: RequestError = convertValidationError(errors[0]);
                     expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
-                    expect(testError.message).to.equal('Value doesn\'t match pattern at: \'.bottom\'');
+                    expect(testError.message).to.equal('Value doesn\'t match pattern at: \'/bottom\'');
                 });
                 it('should report invalid param', (): void => {
                     const validate: ValidateFunction = ajv.compile({
@@ -91,12 +91,12 @@ describe('validate-request/convert-validation-error.ts', (): void => {
                     expect(validate({
                         bottom: '-2992a',
                     })).to.be.false;
-                    const errors: ErrorObject[] = validate.errors as ErrorObject[];
+                    const errors: DefinedError[] = validate.errors as DefinedError[];
                     // tslint:disable-next-line:no-unused-expression
                     expect(errors).to.not.be.undefined;
                     const testError: RequestError = convertValidationError(errors[0]);
                     expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
-                    expect(testError.message).to.equal('Invalid type at \'.bottom\'. Expected array');
+                    expect(testError.message).to.equal('Invalid type at \'/bottom\'. Expected array');
                 });
             });
     });
