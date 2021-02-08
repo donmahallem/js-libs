@@ -2,7 +2,12 @@
  * Source https://github.com/donmahallem/js-libs Package: gulp-ncc
  */
 
-import ncc from '@vercel/ncc';
+interface INccResult { code: string; map: string; assets: any; }
+/**
+ * This is required because of ncc's weird export behavior and rollup doesn't recognize the default export
+ */
+// tslint:disable-next-line:no-var-requires
+const ncc: (path: string, cfg: any) => Promise<INccResult> = require('@vercel/ncc');
 import { basename, dirname, extname, join, resolve } from 'path';
 import PluginError from 'plugin-error';
 import { Transform } from 'stream';
@@ -17,9 +22,9 @@ export const gulpNcc = (cfg?: IPluginConfig): Transform => {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer() || file.isNull()) {
             console.log(resolve(process.cwd(), file.path));
-            const nccPromise: Promise<any> = ncc(file.path, cfg);
+            const nccPromise: Promise<INccResult> = ncc(file.path, cfg);
             nccPromise
-                .then((output: { code: string, map: string, assets: any }): void => {
+                .then((output: INccResult): void => {
                     const outputFile: VinylFile = file.clone({ contents: false });
                     outputFile.contents = Buffer.from(output.code, 'utf8');
                     this.push(outputFile, 'utf8');
