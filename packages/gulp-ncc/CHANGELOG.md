@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@0.5.9...@donmahallem/gulp-ncc@0.5.10) (2021-02-08)
+
+
+### Bug Fixes
+
+* **gulp-ncc:** remove require hack ([#259](https://github.com/donmahallem/js-libs/issues/259)) ([ec86006](https://github.com/donmahallem/js-libs/commit/ec86006b211d08bf1921c03d0b44e30779f39952))
+
+
+
+
+
+
 ## [0.5.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@0.5.8...@donmahallem/gulp-ncc@0.5.9) (2021-02-08)
 
 **Note:** Version bump only for package @donmahallem/gulp-ncc
