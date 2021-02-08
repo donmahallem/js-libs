@@ -3,11 +3,11 @@
  */
 
 import { expect } from 'chai';
-import * as express from 'express';
+import express from 'express';
 import 'mocha';
 import * as protobuf from 'protobufjs';
 import * as sinon from 'sinon';
-import * as supertest from 'supertest';
+import supertest from 'supertest';
 import { formatResponse } from './format-response';
 interface ITestMessage {
     message: string;

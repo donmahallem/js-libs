@@ -2,7 +2,7 @@
  * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
  */
 
-import * as sharp from 'sharp';
+import sharp from 'sharp';
 import { BufferFile } from 'vinyl';
 
 export interface ISharpConfig {

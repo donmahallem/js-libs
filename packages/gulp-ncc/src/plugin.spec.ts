@@ -7,7 +7,7 @@ import 'mocha';
 import { join, resolve } from 'path';
 import * as sinon from 'sinon';
 import { Transform } from 'stream';
-import * as Vinyl from 'vinyl';
+import Vinyl from 'vinyl';
 import { gulpNcc } from './plugin';
 
 describe('plugin', (): void => {
