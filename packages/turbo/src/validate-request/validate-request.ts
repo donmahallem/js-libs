@@ -2,26 +2,25 @@
  * Source https://github.com/donmahallem/js-libs Package: turbo
  */
 
+import Ajv, { ErrorObject, ValidateFunction } from 'ajv';
 import { NextFunction, Request, RequestHandler, Response } from 'express';
-import { validate, Schema, ValidatorResult } from 'jsonschema';
 import { convertValidationError } from './convert-validation-error';
 
-export type ValidationSchemas = Schema & {
+export type ValidationSchemas = object & {
     properties: {
-        body?: Schema;
-        params?: Schema;
-        query?: Schema;
+        body?: object;
+        params?: object;
+        query?: object;
     },
 };
 export const validateRequest: (schemas: ValidationSchemas) => RequestHandler =
     (schemas: ValidationSchemas): RequestHandler => {
+        const ajv: Ajv.Ajv = Ajv();
         return (req: Request, res: Response, next: NextFunction): void => {
-            const result: ValidatorResult = validate(req, schemas);
-            if (!result.valid) {
-                const namedProperty: string = (typeof (result.errors[0]?.path[0]) === 'string') ?
-                    result.errors[0]?.path[0] :
-                    'unknown';
-                next(convertValidationError(result.errors[0], namedProperty));
+            const validateFunction: ValidateFunction = ajv.compile(schemas);
+            if (!validateFunction(req)) {
+                const errors: ErrorObject[] = validateFunction.errors as ErrorObject[];
+                next(convertValidationError(errors[0] as ErrorObject));
                 return;
             }
             next();

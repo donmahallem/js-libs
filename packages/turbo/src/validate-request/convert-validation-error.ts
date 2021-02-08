@@ -2,18 +2,23 @@
  * Source https://github.com/donmahallem/js-libs Package: turbo
  */
 
-import { ValidationError } from 'jsonschema';
+import { ErrorObject, RequiredParams, TypeParams } from 'ajv';
 import { RequestError } from '../request-error';
 
-export const convertValidationError: (error: ValidationError, type: string) => RequestError =
-    (error: ValidationError, type: string): RequestError => {
-        switch (error.name) {
+export const convertValidationError: (error: ErrorObject) => RequestError =
+    (error: ErrorObject): RequestError => {
+        console.log(error);
+        const errorPath: string = error.dataPath === '' ? 'root' : error.dataPath;
+        switch (error.keyword) {
             case 'required':
-                return new RequestError(`Requires ${type} parameter '${error.argument}'`, 400);
+                const requiredParam: RequiredParams = error.params as RequiredParams;
+                return new RequestError(`Missing property ${requiredParam.missingProperty} at '${errorPath}'`, 400);
             case 'pattern':
+                return new RequestError(`Value doesn't match pattern at: '${errorPath}'`, 400);
             case 'type':
-                return new RequestError(`Invalid ${type} ${error.name}`, 400);
+                const typeParam: TypeParams = error.params as TypeParams;
+                return new RequestError(`Invalid type at '${errorPath}'. Expected ${typeParam.type}`, 400);
             default:
-                return new RequestError(`Invalid ${type}`, 400);
+                return new RequestError(`Invalid '${errorPath}'`, 400);
         }
     };
