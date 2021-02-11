@@ -11,7 +11,7 @@ export type RequestSchema = JSONSchemaType<RequestSignature, true> & { additiona
 
 type CheckKeys = 'query' | 'params' | 'body';
 /**
- * 
+ *
  */
 export type ValidationSchema<T extends CheckKeys, P extends boolean = false> = JSONSchemaType<Request[T], P>;
 export const validateRequest: <K extends CheckKeys>(key: K, schema: ValidationSchema<K>, ajvInstance?: Ajv) => RequestHandler =

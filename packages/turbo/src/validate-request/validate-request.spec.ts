@@ -17,8 +17,8 @@ describe('validate-request/validate-request.ts', (): void => {
         it('should pass if empty hash is provided', (done: Done): void => {
             const validationResult: RequestHandler = validateRequest('body', {
                 nullable: true,
-                type: 'object',
                 required: [],
+                type: 'object',
             });
             validationResult({ body: {} } as any, {} as any, (res?: any): void => {
                 expect(res).to.be.undefined;
@@ -31,15 +31,15 @@ describe('validate-request/validate-request.ts', (): void => {
                     properties: {
                         bottom: {
                             $id: 'bottom',
+                            nullable: true,
                             pattern: '^[\\+\\-]?\\d+$',
                             type: 'string',
-                            nullable: true,
                         },
                         top: {
                             $id: 'top',
+                            nullable: true,
                             pattern: '^[\\+\\-]?\\d+$',
                             type: 'string',
-                            nullable: true,
                         },
                     },
                     required: [],
@@ -58,15 +58,15 @@ describe('validate-request/validate-request.ts', (): void => {
                     properties: {
                         bottom: {
                             $id: 'bottom',
+                            nullable: true,
                             pattern: '^[\\+\\-]?\\d+$',
                             type: 'string',
-                            nullable: true,
                         },
                         top: {
                             $id: 'top',
+                            nullable: true,
                             pattern: '^[\\+\\-]?\\d+$',
                             type: 'string',
-                            nullable: true,
                         },
                     },
                     required: [],
