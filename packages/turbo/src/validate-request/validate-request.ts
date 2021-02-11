@@ -7,13 +7,18 @@ import { NextFunction, Request, RequestHandler, Response } from 'express';
 import { convertValidationError } from './convert-validation-error';
 
 type RequestSignature = Partial<Pick<Request, 'query' | 'params' | 'body'>>;
-export type RequestSchema = JSONSchemaType<RequestSignature, true>;
-export const validateRequest: (schemas: RequestSchema) => RequestHandler =
-    (schemas: RequestSchema): RequestHandler => {
-        const ajv: Ajv = new Ajv();
+export type RequestSchema = JSONSchemaType<RequestSignature, true> & { additionalProperties: true };
+
+type CheckKeys = 'query' | 'params' | 'body';
+/**
+ *
+ */
+export type ValidationSchema<T extends CheckKeys, P extends boolean = false> = JSONSchemaType<Request[T], P>;
+export const validateRequest: <K extends CheckKeys>(key: K, schema: ValidationSchema<K>, ajvInstance?: Ajv) => RequestHandler =
+    <K extends CheckKeys>(key: K, schema: ValidationSchema<K>, ajvInstance: Ajv = new Ajv()): RequestHandler => {
+        const validateFunction: ValidateFunction = ajvInstance.compile(schema);
         return (req: Request, res: Response, next: NextFunction): void => {
-            const validateFunction: ValidateFunction = ajv.compile(schemas);
-            if (!validateFunction(req)) {
+            if (!validateFunction(req[key])) {
                 const errors: DefinedError[] = validateFunction.errors as DefinedError[];
                 next(convertValidationError(errors[0] as DefinedError));
                 return;
