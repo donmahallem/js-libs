@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2021-02-12)
+
+
+### Bug Fixes
+
+* use template literals ([#275](https://github.com/donmahallem/js-libs/issues/275)) ([ac65563](https://github.com/donmahallem/js-libs/commit/ac65563ec4ffc52e839c58bf48a697fe140ccf3d))
+
+
+### Features
+
+* **turbo:** add formatResponse handler ([#246](https://github.com/donmahallem/js-libs/issues/246)) ([40600e3](https://github.com/donmahallem/js-libs/commit/40600e32edb7903b16c4c7644f8cd860913af566))
+* **turbo:** add promiseToResponse method ([#257](https://github.com/donmahallem/js-libs/issues/257)) ([1606822](https://github.com/donmahallem/js-libs/commit/1606822a0021ed9bd1f2e473a59a084c2525ae3e))
+* **turbo:** add turbo package ([#236](https://github.com/donmahallem/js-libs/issues/236)) ([5191020](https://github.com/donmahallem/js-libs/commit/5191020a331d3aadaa2d70ac1ef92388a77be794))
+* **turbo:** add validateRequest middleware ([#258](https://github.com/donmahallem/js-libs/issues/258)) ([b9d5ae4](https://github.com/donmahallem/js-libs/commit/b9d5ae4c5206b4fe64f9c460304e4b5e344bd093))
+* **turbo:** seperate validator by request part ([#266](https://github.com/donmahallem/js-libs/issues/266)) ([9646364](https://github.com/donmahallem/js-libs/commit/96463643b8e12fd2098b203dc3090a0ded397398))
+
+
+
+
+
 ## [0.3.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@0.3.0...@donmahallem/turbo@0.3.1) (2021-02-12)
 
 
