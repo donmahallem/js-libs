@@ -35,6 +35,6 @@ jobs:
           git config --global user.email "donmahallem@users.noreply.github.com"
           git config --global user.name "donmahallem-ci"
       - name: Update Version
-        run: npx lerna version prerelease -y
+        run: npx lerna version prerelease -y --sign-git-tag --sign-git-commit
       - name: Upload Package
         run: npx lerna publish --dist-tag next --canary -y
