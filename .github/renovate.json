@@ -7,6 +7,9 @@
         "config:base"
     ],
     "lockFileMaintenance": true,
+    "labels": [
+        "dependencies"
+    ],
     "packageRules": [
         {
             "depTypeList": [
