@@ -126,6 +126,12 @@
             }
         ],
         "prefer-const": true,
+        "prefer-template": {
+            "type": "string",
+            "enum": [
+                "allow-single-concat"
+            ]
+        },
         "quotemark": [
             true,
             "single"
