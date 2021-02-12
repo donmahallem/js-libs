@@ -8,6 +8,12 @@ import { BufferFile } from 'vinyl';
 import { IBufferResponse } from './buffer-response';
 import { IConfig } from './config';
 
+/**
+ * Converts a provided bufferfile with sharp
+ * @param input sharp instance
+ * @param sourceFile input file
+ * @param cfg sharp config
+ */
 export const sharpToVinylBuffer: (input: Sharp, sourceFile: BufferFile, cfg: IConfig) => Promise<BufferFile> =
     (input: Sharp, sourceFile: BufferFile, cfg: IConfig): Promise<BufferFile> => {
         return input
