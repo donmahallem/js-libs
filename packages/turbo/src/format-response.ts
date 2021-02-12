@@ -9,6 +9,13 @@ import { RequestError } from './request-error';
 type MessageKey<T extends object> = ({
     encode: (msg: T) => Writer;
 } & typeof Message) | Type;
+/**
+ * Formats response to either json or protobuf
+ * @param msg message to be formated
+ * @param message Message to convert
+ * @param res express Response object
+ * @param next express Next function
+ */
 export const formatResponse = <T extends object>(msg: T, message: MessageKey<T>, res: Response, next: NextFunction): void => {
     res.format({
         'application/json': (): void => {
