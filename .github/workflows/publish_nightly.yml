@@ -3,7 +3,7 @@
 name: Publish Nightly Packages
 on:
   schedule:
-    - cron: "0/5 * * * *"
+    - cron: "0/15 * * * *"
 
 jobs:
   release_npm:
@@ -30,5 +30,11 @@ jobs:
       - name: Prepare Package
         run: |
           npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      - name: Setup Git
+        run: |
+          git config --global user.email "donmahallem@users.noreply.github.com"
+          git config --global user.name "donmahallem-ci"
+      - name: Update Version
+        run: npx lerna version prerelease -y --sign-git-tag --sign-git-commit
       - name: Upload Package
         run: npx lerna publish from-package --dist-tag next --canary -y
