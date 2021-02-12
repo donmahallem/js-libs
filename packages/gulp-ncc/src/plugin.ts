@@ -17,7 +17,7 @@ import { IPluginConfig } from './config';
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
 
 /**
- * 
+ * gulp plugin to run ncc
  * @param cfg ncc config object
  */
 export const gulpNcc = (cfg?: IPluginConfig): Transform => {
