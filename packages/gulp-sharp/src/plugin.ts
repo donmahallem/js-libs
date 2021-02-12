@@ -13,7 +13,13 @@ import { handleConfig } from './handle-config';
 import { handleMethod } from './handle-method';
 import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer';
 
+// Autopopulated by rollup
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
+
+/**
+ * Creates the gulp plugin
+ * @param cfg sharp config to be used
+ */
 export const gulpSharp = (cfg: IConfig): Transform => {
     // tslint:disable-next-line:triple-equals
     if (cfg == undefined || cfg.transform == undefined) {
