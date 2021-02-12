@@ -31,4 +31,4 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
       - name: Upload Package
-        run: npx lerna publish --dist-tag next --canary -y
+        run: npx lerna publish from-package --dist-tag next --canary -y
