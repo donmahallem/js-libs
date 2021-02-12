@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@1.0.0...@donmahallem/turbo@1.0.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sharp to ~0.27.1 ([7e14320](https://github.com/donmahallem/js-libs/commit/7e143209eeb2c7f2cb2cc8de74aedabc5d2ebf3e))
+
+
+
+
+
+
 # [1.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@0.3.1...@donmahallem/turbo@1.0.0) (2021-02-12)
 
 **Note:** Version bump only for package @donmahallem/turbo
