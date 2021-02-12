@@ -2,6 +2,9 @@
  * Source https://github.com/donmahallem/js-libs Package: turbo
  */
 
+/**
+ * Error that should be compatible with express errors
+ */
 export class RequestError extends Error {
     /**
      *
