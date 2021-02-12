@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@0.3.0...@donmahallem/turbo@0.3.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* use template literals ([#275](https://github.com/donmahallem/js-libs/issues/275)) ([ac65563](https://github.com/donmahallem/js-libs/commit/ac65563ec4ffc52e839c58bf48a697fe140ccf3d))
+
+
+### Features
+
+* **turbo:** seperate validator by request part ([#266](https://github.com/donmahallem/js-libs/issues/266)) ([9646364](https://github.com/donmahallem/js-libs/commit/96463643b8e12fd2098b203dc3090a0ded397398))
+
+
+
+
+
+
 ## [0.3.1-alpha.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@0.3.0...@donmahallem/turbo@0.3.1-alpha.0) (2021-02-12)
 
 

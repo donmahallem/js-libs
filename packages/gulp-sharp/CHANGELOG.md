@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@0.5.10...@donmahallem/gulp-sharp@0.5.11) (2021-02-12)
+
+
+### Bug Fixes
+
+* use template literals ([#275](https://github.com/donmahallem/js-libs/issues/275)) ([ac65563](https://github.com/donmahallem/js-libs/commit/ac65563ec4ffc52e839c58bf48a697fe140ccf3d))
+
+
+
+
+
+
 ## [0.5.11-alpha.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@0.5.10...@donmahallem/gulp-sharp@0.5.11-alpha.0) (2021-02-12)
 
 
