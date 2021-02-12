@@ -15,6 +15,11 @@ import through from 'through2';
 import VinylFile from 'vinyl';
 import { IPluginConfig } from './config';
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
+
+/**
+ * 
+ * @param cfg ncc config object
+ */
 export const gulpNcc = (cfg?: IPluginConfig): Transform => {
     // tslint:disable-next-line:triple-equals
     return through.obj(function (file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void {
