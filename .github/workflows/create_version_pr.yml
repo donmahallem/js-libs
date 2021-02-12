@@ -34,6 +34,8 @@ jobs:
         run: npx lerna version -y --no-push --no-git-tag-version --include-merged-tags
       - name: Push Changes
         run: |
+          git add *
+          git commit -m "chore(release): publish"
           git push origin lernaversion --set-upstream -f
       - name: pull-request
         uses: repo-sync/pull-request@v2
