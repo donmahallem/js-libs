@@ -9,17 +9,28 @@
     "packageRules": [
         {
             "depTypeList": [
-                "devDependencies",
+                "devDependencies"
+            ],
+            "rangeStrategy": "pin",
+            "pin": true
+        },
+        {
+            "depTypeList": [
                 "dependencies"
             ],
-            "automerge": true
+            "rangeStrategy": "bump"
         },
         {
             "depTypeList": [
                 "peerDependencies"
             ],
-            "automerge": true,
             "rangeStrategy": "replace"
+        },
+        {
+            "depTypeList": [
+                "optionalDependencies"
+            ],
+            "rangeStrategy": "update-lockfile"
         }
     ]
 }
