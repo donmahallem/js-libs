@@ -17,7 +17,7 @@ describe('plugin', (): void => {
     describe('gulpSharp', (): void => {
         describe('convert with object', (): void => {
             testFormats.forEach((expectedFormat: any): void => {
-                it('should convert the image to ' + expectedFormat + ' and keep size', (done: Mocha.Done): void => {
+                it(`should convert the image to ${expectedFormat} and keep size`, (done: Mocha.Done): void => {
                     const testBuffer: Buffer = readFileSync('test/test.png');
                     const testFile: Vinyl = new Vinyl({
                         contents: testBuffer,
@@ -44,7 +44,7 @@ describe('plugin', (): void => {
                 });
             });
             testSizes.forEach((expectedWidth: number): void => {
-                it('should keep format and scale the image to fit width ' + expectedWidth, (done: Mocha.Done): void => {
+                it(`should keep format and scale the image to fit width ${expectedWidth}`, (done: Mocha.Done): void => {
                     const testBuffer: Buffer = readFileSync('test/test.png');
                     const testFile: Vinyl = new Vinyl({
                         contents: testBuffer,
@@ -73,7 +73,7 @@ describe('plugin', (): void => {
                 });
             });
             testSizes.forEach((expectedHeight: number): void => {
-                it('should keep format and scale the image to fit height ' + expectedHeight, (done: Mocha.Done): void => {
+                it(`should keep format and scale the image to fit height ${expectedHeight}`, (done: Mocha.Done): void => {
                     const testBuffer: Buffer = readFileSync('test/test.png');
                     const testFile: Vinyl = new Vinyl({
                         contents: testBuffer,

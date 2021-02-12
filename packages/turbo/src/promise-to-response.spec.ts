@@ -33,7 +33,7 @@ describe('promise-to-response.ts', (): void => {
         });
         describe('promise resolves', (): void => {
             [true, false].forEach((nextProvided: boolean): void => {
-                describe('next parameter ' + (nextProvided ? '' : 'not') + ' provided', (): void => {
+                describe(`next parameter ${(nextProvided ? '' : 'not')} provided`, (): void => {
                     it('should forward the resolved value to the response', (done: Mocha.Done): void => {
                         if (nextProvided) {
                             promiseToResponse(Promise.resolve(testResponse), resObj, nextSpy);

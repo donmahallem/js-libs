@@ -17,9 +17,9 @@ export const sharpToVinylBuffer: (input: Sharp, sourceFile: BufferFile, cfg: ICo
                 newFile.contents = data.data;
                 if (cfg.modifyFilename !== false) {
                     const fileBasename: string = basename(sourceFile.basename, extname(sourceFile.basename));
-                    newFile.basename = fileBasename + `_${data.info.width}w_${data.info.height}h`;
+                    newFile.basename = `${fileBasename}_${data.info.width}w_${data.info.height}h`;
                 }
-                newFile.extname = '.' + data.info.format;
+                newFile.extname = `.${data.info.format}`;
                 return newFile;
             });
     };
