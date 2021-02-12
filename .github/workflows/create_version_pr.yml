@@ -31,7 +31,7 @@ jobs:
           git config --global user.name "donmahallem-ci"
           git checkout -b lernaversion
       - name: Run Lerna Version
-        run: npx lerna version -y --no-push
+        run: npx lerna version -y --no-push --no-git-tag-version --include-merged-tags
       - name: Push Changes
         run: git push origin lernaversion --set-upstream -f --tags
       - name: pull-request
