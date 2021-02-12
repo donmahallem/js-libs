@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/ico@0.1.4...@donmahallem/ico@1.0.0) (2021-02-12)
+
+**Note:** Version bump only for package @donmahallem/ico
+
+
+
+
+
+
 ## [0.1.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/ico@0.1.3...@donmahallem/ico@0.1.4) (2021-02-07)
 
 **Note:** Version bump only for package @donmahallem/ico
