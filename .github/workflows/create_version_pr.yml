@@ -33,7 +33,8 @@ jobs:
       - name: Run Lerna Version
         run: npx lerna version -y --no-push --no-git-tag-version --include-merged-tags
       - name: Push Changes
-        run: git push origin lernaversion --set-upstream -f --tags
+        run: |
+          git push origin lernaversion --set-upstream -f
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
