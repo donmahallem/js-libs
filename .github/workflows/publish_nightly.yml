@@ -33,5 +33,7 @@ jobs:
       - name: Prepare Package
         run: |
           npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      - name: Update Version
+        run: npx lerna version prerelease
       - name: Upload Package
         run: npx lerna publish --dist-tag next --canary -y
