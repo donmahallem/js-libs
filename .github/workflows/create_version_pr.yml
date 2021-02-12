@@ -1,0 +1,44 @@
+name: Create PR into master
+on:
+  push:
+    branches:
+    - master  # Support wildcard matching
+
+jobs:
+  create-version-pr:
+    runs-on: ubuntu-latest
+    name: Create 
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: '14'
+      - name: Install Packages
+        run: |
+          npm ci
+          npx lerna bootstrap --ci
+      - name: Build Package
+        run: npm run build
+      - name: Setup Git
+        run: |
+          git config --global user.email "donmahallem@users.noreply.github.com"
+          git config --global user.name "donmahallem-ci"
+          git checkout -b lernaversion
+      - name: Run Lerna Version
+        run: npx lerna version -y --no-push
+      - name: Push Changes
+        run: git push origin lernaversion --set-upstream -f --tags
+      - name: pull-request
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: "lernaversion"
+          destination_branch: "master"                      # If blank, default: master
+          pr_title: "ci(lerna): run version bump" # Title of pull request
+          pr_body: "This is an automated version bump"              # Full markdown support, requires pr_title to be set
+          pr_reviewer: "donmahallem"                         # Comma-separated list (no spaces)
+          pr_assignee: "donmahallem"                         # Comma-separated list (no spaces)
+          pr_allow_empty: false                              # Creates pull request even if there are no changes
+          github_token: ${{ secrets.GITHUB_TOKEN }}
