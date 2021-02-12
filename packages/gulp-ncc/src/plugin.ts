@@ -30,12 +30,12 @@ export const gulpNcc = (cfg?: IPluginConfig): Transform => {
                     this.push(outputFile, 'utf8');
                     const fileExtension: string = extname(file.basename);
                     const filename: string = basename(file.basename, fileExtension);
-                    outputFile.basename = filename + '.js';
+                    outputFile.basename = `${filename}.js`;
                     if (cfg?.sourceMap === true) {
                         const outputSourcemapFile: VinylFile = new VinylFile({
                             contents: Buffer.from(output.map, 'utf8'),
                             cwd: file.cwd,
-                            path: join(dirname(file.path), filename + '.map.js'),
+                            path: join(dirname(file.path), `${filename}.map.js`),
                         });
                         // callback(undefined, outputSourcemapFile);
                         this.push(outputSourcemapFile, 'utf8');
