@@ -1,4 +1,4 @@
-name: Create PR into master
+name: Create Lerna Version Bump PR
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
 jobs:
   create-version-pr:
     runs-on: ubuntu-latest
-    name: Create 
+    name: Create Lerna Version Bump PR
     timeout-minutes: 30
     steps:
       - name: Checkout

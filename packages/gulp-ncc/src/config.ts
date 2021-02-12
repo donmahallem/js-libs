@@ -2,6 +2,9 @@
  * Source https://github.com/donmahallem/js-libs Package: gulp-ncc
  */
 
+/**
+ * NCC Plugin config
+ */
 export interface IPluginConfig {
     // provide a custom cache path or disable caching
     cache?: string | false;
