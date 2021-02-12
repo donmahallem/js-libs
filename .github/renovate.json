@@ -6,6 +6,7 @@
     "extends": [
         "config:base"
     ],
+    "lockFileMaintenance": true,
     "packageRules": [
         {
             "depTypeList": [
@@ -22,15 +23,10 @@
         },
         {
             "depTypeList": [
-                "peerDependencies"
-            ],
-            "rangeStrategy": "replace"
-        },
-        {
-            "depTypeList": [
+                "peerDependencies",
                 "optionalDependencies"
             ],
-            "rangeStrategy": "update-lockfile"
+            "rangeStrategy": "replace"
         }
     ]
 }
