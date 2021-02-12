@@ -4,9 +4,6 @@ name: Publish Nightly Packages
 on:
   schedule:
     - cron: "0/5 * * * *"
-  push:
-    branches:
-    - nightlyversion
 
 jobs:
   release_npm:
