@@ -1,0 +1,56 @@
+{
+  "name": "@donmahallem/sync-gist",
+  "version": "0.0.0",
+  "description": "Helper for syncing files with gist",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "private": false,
+  "keywords": [
+    "express",
+    "helpers"
+  ],
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js && npm run build:types",
+    "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+    "test": "mocha --config ../../.mocharc.yml",
+    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+    "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
+    "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+    "docs": "typedoc --options ../../typedoc.json",
+    "prepublishOnly": "npm run test && npm run docs && npm run build",
+    "version": "npm run build:readme && git add README.md"
+  },
+  "homepage": "https://donmahallem.github.io/js-libs/",
+  "author": {
+    "name": "donmahallem",
+    "email": "donmahallem@users.noreply.github.com",
+    "url": "https://github.com/donmahallem"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/donmahallem/js-libs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donmahallem/js-libs.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "!src/**/*.spec.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@octokit/core": "^3.2.5"
+  },
+  "devDependencies": {
+    "@octokit/types": "6.8.4"
+  }
+}

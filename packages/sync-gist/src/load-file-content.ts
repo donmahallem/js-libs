@@ -1,0 +1,17 @@
+/*!
+ * Source https://github.com/donmahallem/js-libs Package: sync-gist
+ */
+
+import { readFile } from "fs/promises"
+import { basename, resolve } from "path";
+import { InputFile, InputFileContent } from "./types"
+
+export const loadFileContent: (file: InputFile, cwd?: string) => Promise<InputFileContent> = async (file: InputFile, cwd?: string): Promise<InputFileContent> => {
+    const resolvedFilePath: string = cwd ? resolve(cwd, file.source) : resolve(file.source);
+    const fileContent: string = await readFile(resolvedFilePath, 'utf-8')
+    return {
+        filename: basename(file.filename ? file.filename : resolvedFilePath),
+        content: fileContent,
+        source: resolvedFilePath,
+    }
+}
