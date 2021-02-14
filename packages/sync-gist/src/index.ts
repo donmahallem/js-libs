@@ -1,7 +1,6 @@
 /*!
- * Source https://github.com/donmahallem/deploy-gist
+ * Source https://github.com/donmahallem/js-libs Package: sync-gist
  */
 
-export { syncFiles } from "./sync-files";
-export { IConfig, InputFile } from './types';
-'./sync-files'
+export { syncFiles } from './sync-files';
+export { IConfig, IInputFile } from './types';
