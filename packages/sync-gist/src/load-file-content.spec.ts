@@ -17,12 +17,12 @@ type ReadFileReturnType = ReturnType<typeof fsp['readFile']>;
 const testSources: string[] = ['//absolute/path.js',
     'relative/path.js',
     'file.js'];
-const testFilenames: string[] = ['final.js', 'README.md'];
+const testFilenames: (string | undefined)[] = ['final.js', 'README.md', undefined];
 
 const testInputFiles: IInputFile[] = [];
 testSources
     .forEach((source: string): void => {
-        testFilenames.forEach((filename: string): void => {
+        testFilenames.forEach((filename?: string): void => {
             testInputFiles.push({
                 filename,
                 source,
