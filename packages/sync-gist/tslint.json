@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "./../../tslint.json"
+    ],
+    "rules": {
+        "file-header": [
+            true,
+            {
+                "match": "Source https://github.com/donmahallem/js-libs Package: sync-gist",
+                "allow-single-line-comments": true,
+                "default": "Source https://github.com/donmahallem/js-libs Package: sync-gist",
+                "enforce-trailing-newline": false
+            }
+        ]
+    }
+}
