@@ -14,7 +14,7 @@
 
 
 <p align="center">
-  <b>Helper for syncing files with gist</b></br>
+  <b>Wrapper around octokit for syncing gist files</b></br>
   <sub><sub>
 </p>
 
