@@ -52,6 +52,6 @@
   },
   "devDependencies": {
     "@octokit/core": "3.2.5",
-    "@octokit/types": "6.8.4"
+    "@octokit/types": "6.8.5"
   }
 }
