@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/sync-gist",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Helper for syncing files with gist",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
