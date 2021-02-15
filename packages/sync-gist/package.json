@@ -1,18 +1,19 @@
 {
   "name": "@donmahallem/sync-gist",
   "version": "0.1.0",
-  "description": "Helper for syncing files with gist",
+  "description": "Wrapper around octokit for syncing gist files",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "private": false,
   "keywords": [
-    "express",
-    "helpers"
+    "octokit",
+    "gist",
+    "wrapper"
   ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js && npm run build:types",
-    "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+    "build:types": "tsc --project ./tsconfig.lib.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
     "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
     "test": "mocha --config ../../.mocharc.yml",
     "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",

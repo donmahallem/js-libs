@@ -10,9 +10,10 @@ export const loadFileContent: (file: IInputFile, cwd?: string) => Promise<InputF
     = async (file: IInputFile, cwd?: string): Promise<InputFileContent> => {
         const resolvedFilePath: string = cwd ? resolve(cwd, file.source) : resolve(file.source);
         const fileContent: string = await fsp.readFile(resolvedFilePath, 'utf-8');
+        const filename: string = basename(file.filename ? file.filename : file.source);
         return {
             content: fileContent,
-            filename: basename(file.filename ? file.filename : resolvedFilePath),
+            filename,
             source: resolvedFilePath,
         };
     };
