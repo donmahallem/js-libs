@@ -9,8 +9,6 @@ import { Done } from 'mocha';
 import { RequestError } from '../request-error';
 import { validateRequest, ValidationSchema } from './validate-request';
 
-type CheckKeys = 'query' | 'params' | 'body';
-const checkKeys: CheckKeys[] = ['query', 'params', 'body'];
 // tslint:disable:no-unused-expression
 describe('validate-request/validate-request.ts', (): void => {
     describe('validateRequest', (): void => {
@@ -25,8 +23,65 @@ describe('validate-request/validate-request.ts', (): void => {
                 done();
             });
         });
-        checkKeys.forEach((key: CheckKeys): void => {
-            it(`should check property '${key}' correctly`, (done: Done): void => {
+        describe(`should check 'query'`, (): void => {
+            it(`should pass correctly`, (done: Done): void => {
+                const configObj: ValidationSchema<'query'> = {
+                    properties: {
+                        bottom: {
+                            $id: 'bottom',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                        top: {
+                            $id: 'top',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                    },
+                    required: [],
+                    type: 'object',
+                };
+                const validationResult: RequestHandler = validateRequest('query', configObj);
+                validationResult({
+                    query: { top: '123', bottom: '-123' },
+                } as any, {} as any, (res?: any): void => {
+                    expect(res).to.be.undefined;
+                    done();
+                });
+            });
+            it(`should reject property 'query' correctly`, (done: Done): void => {
+                const configObj: ValidationSchema<'query'> = {
+                    properties: {
+                        bottom: {
+                            $id: 'bottom',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                        top: {
+                            $id: 'top',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                    },
+                    required: [],
+                    type: 'object',
+                };
+                const validationResult: RequestHandler = validateRequest('query', configObj);
+                validationResult({
+                    query: { top: 'asdf', bottom: '-123' },
+                } as any, {} as any, (res?: any): void => {
+                    expect(res).to.not.be.undefined;
+                    expect(res).to.be.instanceOf(RequestError);
+                    done();
+                });
+            });
+        });
+        describe(`should check 'body'`, (): void => {
+            it(`should pass correctly`, (done: Done): void => {
                 const configObj: ValidationSchema<'body'> = {
                     properties: {
                         bottom: {
@@ -45,16 +100,16 @@ describe('validate-request/validate-request.ts', (): void => {
                     required: [],
                     type: 'object',
                 };
-                const validationResult: RequestHandler = validateRequest(key, configObj);
+                const validationResult: RequestHandler = validateRequest('body', configObj);
                 validationResult({
-                    [key]: { top: '123', bottom: '-123' },
+                    body: { top: '123', bottom: '-123' },
                 } as any, {} as any, (res?: any): void => {
                     expect(res).to.be.undefined;
                     done();
                 });
             });
-            it(`should reject property '${key}' correctly`, (done: Done): void => {
-                const configObj: ValidationSchema<typeof key> = {
+            it(`should reject property 'body' correctly`, (done: Done): void => {
+                const configObj: ValidationSchema<'body'> = {
                     properties: {
                         bottom: {
                             $id: 'bottom',
@@ -72,9 +127,66 @@ describe('validate-request/validate-request.ts', (): void => {
                     required: [],
                     type: 'object',
                 };
-                const validationResult: RequestHandler = validateRequest(key, configObj);
+                const validationResult: RequestHandler = validateRequest('body', configObj);
                 validationResult({
-                    [key]: { top: 'asdf', bottom: '-123' },
+                    body: { top: 'asdf', bottom: '-123' },
+                } as any, {} as any, (res?: any): void => {
+                    expect(res).to.not.be.undefined;
+                    expect(res).to.be.instanceOf(RequestError);
+                    done();
+                });
+            });
+        });
+        describe(`should check 'params'`, (): void => {
+            it(`should pass correctly`, (done: Done): void => {
+                const configObj: ValidationSchema<'params'> = {
+                    properties: {
+                        bottom: {
+                            $id: 'bottom',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                        top: {
+                            $id: 'top',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                    },
+                    required: [],
+                    type: 'object',
+                };
+                const validationResult: RequestHandler = validateRequest('params', configObj);
+                validationResult({
+                    params: { top: '123', bottom: '-123' },
+                } as any, {} as any, (res?: any): void => {
+                    expect(res).to.be.undefined;
+                    done();
+                });
+            });
+            it(`should reject property 'params' correctly`, (done: Done): void => {
+                const configObj: ValidationSchema<'params'> = {
+                    properties: {
+                        bottom: {
+                            $id: 'bottom',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                        top: {
+                            $id: 'top',
+                            nullable: true,
+                            pattern: '^[\\+\\-]?\\d+$',
+                            type: 'string',
+                        },
+                    },
+                    required: [],
+                    type: 'object',
+                };
+                const validationResult: RequestHandler = validateRequest('params', configObj);
+                validationResult({
+                    params: { top: 'asdf', bottom: '-123' },
                 } as any, {} as any, (res?: any): void => {
                     expect(res).to.not.be.undefined;
                     expect(res).to.be.instanceOf(RequestError);
