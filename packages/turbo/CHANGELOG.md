@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@1.0.2...@donmahallem/turbo@1.1.0) (2021-02-17)
+
+
+### Features
+
+* **turbo:** make validateRequest less strict on typings ([#311](https://github.com/donmahallem/js-libs/issues/311)) ([808f6ea](https://github.com/donmahallem/js-libs/commit/808f6eab38f74a0f79f2309f671e2fdd2165ebbb))
+
+
+
+
+
+
 ## [1.0.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@1.0.1...@donmahallem/turbo@1.0.2) (2021-02-15)
 
 **Note:** Version bump only for package @donmahallem/turbo
