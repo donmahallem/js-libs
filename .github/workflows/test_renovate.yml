@@ -1,5 +1,8 @@
 name: Test renovate.json
-on: [push,pull_request]
+on:
+  push:
+    paths:
+      - '.github/renovate.json'
 
 jobs:
   test_suite:
