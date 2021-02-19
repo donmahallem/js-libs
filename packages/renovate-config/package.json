@@ -1,0 +1,77 @@
+{
+  "name": "@donmahallem/renovate-config",
+  "version": "0.0.0",
+  "description": "General renovate config",
+  "private": false,
+  "keywords": [
+    "renovate"
+  ],
+  "scripts": {
+    "test": "renovate-config-validator",
+    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+    "prepublishOnly": "npm run test && npm run docs && npm run build",
+    "version": "npm run build:readme && git add README.md"
+  },
+  "homepage": "https://donmahallem.github.io/js-libs/",
+  "author": {
+    "name": "donmahallem",
+    "email": "donmahallem@users.noreply.github.com",
+    "url": "https://github.com/donmahallem"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/donmahallem/js-libs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donmahallem/js-libs.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "!src/**/*.spec.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "renovate": "^24.56.0"
+  },
+  "renovate-config": {
+    "default": {
+      "automerge": true,
+      "extends": [
+        "config:base"
+      ],
+      "lockFileMaintenance": true,
+      "labels": [
+        "dependencies"
+      ],
+      "packageRules": [
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "rangeStrategy": "pin",
+          "pin": true
+        },
+        {
+          "depTypeList": [
+            "dependencies"
+          ],
+          "rangeStrategy": "bump"
+        },
+        {
+          "depTypeList": [
+            "peerDependencies",
+            "optionalDependencies"
+          ],
+          "rangeStrategy": "replace"
+        }
+      ]
+    }
+  }
+}
