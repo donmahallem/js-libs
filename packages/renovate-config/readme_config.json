@@ -8,8 +8,8 @@
         },
         {
             "alt": "npm version",
-            "url": "https://badge.fury.io/js/%40donmahallem%2Fturbo",
-            "img": "https://badge.fury.io/js/%40donmahallem%2Fturbo.svg"
+            "url": "https://badge.fury.io/js/%40donmahallem%2Frenovate-config",
+            "img": "https://badge.fury.io/js/%40donmahallem%2Frenovate-config.svg"
         },
         {
             "alt": "GitHub license",
@@ -18,13 +18,13 @@
         },
         {
             "alt": "dependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/turbo",
-            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/turbo"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/renovate-config",
+            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/renovate-config"
         },
         {
             "alt": "devDependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/turbo&type=dev",
-            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/turbo"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/renovate-config&type=dev",
+            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/renovate-config"
         },
         {
             "alt": "GitHub contributors",
