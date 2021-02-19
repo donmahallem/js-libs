@@ -1,5 +1,5 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+ * Source https://github.com/donmahallem/js-libs Package: turbo-validate-request
  */
 
 import Ajv, { DefinedError, JSONSchemaType, ValidateFunction } from 'ajv';
