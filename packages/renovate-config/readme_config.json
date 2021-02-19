@@ -7,11 +7,6 @@
             "img": "https://github.com/donmahallem/js-libs/workflows/Test/badge.svg?branch=master&event=push"
         },
         {
-            "alt": "codecov",
-            "url": "https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs",
-            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=Turbo"
-        },
-        {
             "alt": "npm version",
             "url": "https://badge.fury.io/js/%40donmahallem%2Fturbo",
             "img": "https://badge.fury.io/js/%40donmahallem%2Fturbo.svg"
