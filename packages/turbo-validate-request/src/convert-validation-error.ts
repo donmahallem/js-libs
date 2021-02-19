@@ -1,9 +1,9 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+ * Source https://github.com/donmahallem/js-libs Package: turbo-validate-request
  */
 
+import { RequestError } from '@donmahallem/turbo';
 import { DefinedError } from 'ajv';
-import { RequestError } from '../request-error';
 
 export const convertValidationError: (error: DefinedError) => RequestError =
     (error: DefinedError): RequestError => {

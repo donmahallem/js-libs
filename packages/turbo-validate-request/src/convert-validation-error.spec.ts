@@ -1,14 +1,14 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+ * Source https://github.com/donmahallem/js-libs Package: turbo-validate-request
  */
 
+import { RequestError } from '@donmahallem/turbo';
 import Ajv, { DefinedError, ValidateFunction } from 'ajv';
 import { expect } from 'chai';
 import 'mocha';
-import { RequestError } from '../request-error';
 import { convertValidationError } from './convert-validation-error';
 
-describe('validate-request/convert-validation-error.ts', (): void => {
+describe('convert-validation-error.ts', (): void => {
     describe('convertValidationError', (): void => {
         let ajv: Ajv;
         beforeEach((): void => {

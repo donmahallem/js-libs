@@ -1,10 +1,10 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+ * Source https://github.com/donmahallem/js-libs Package: turbo-pb
  */
 
+import { RequestError } from '@donmahallem/turbo';
 import { NextFunction, Response } from 'express';
 import { Message, Type, Writer } from 'protobufjs';
-import { RequestError } from './request-error';
 
 type MessageKey<T extends object> = ({
     encode: (msg: T) => Writer;

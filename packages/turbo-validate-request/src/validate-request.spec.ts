@@ -1,13 +1,13 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+ * Source https://github.com/donmahallem/js-libs Package: turbo-validate-request
  */
 
+import { RequestError } from '@donmahallem/turbo';
 import { JSONSchemaType } from 'ajv';
 import { expect } from 'chai';
 import { RequestHandler } from 'express';
 import 'mocha';
 import { Done } from 'mocha';
-import { RequestError } from '../request-error';
 import { validateRequest } from './validate-request';
 
 interface ITestObject {
@@ -33,7 +33,7 @@ const TEST_SCHEMA: JSONSchemaType<ITestObject> = {
     type: 'object',
 };
 // tslint:disable:no-unused-expression
-describe('validate-request/validate-request.ts', (): void => {
+describe('validate-request.ts', (): void => {
     describe('validateRequest', (): void => {
         it('should pass if empty hash is provided', (done: Done): void => {
             const validationResult: RequestHandler = validateRequest('body', {
