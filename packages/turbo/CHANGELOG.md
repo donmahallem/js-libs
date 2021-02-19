@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@1.1.0...@donmahallem/turbo@2.0.0) (2021-02-19)
+
+
+### Features
+
+* **turbo:** remove splitout modules ([#319](https://github.com/donmahallem/js-libs/issues/319)) ([cfbab9c](https://github.com/donmahallem/js-libs/commit/cfbab9c6082fcf423e3dc5635308039bd767280c))
+
+
+### BREAKING CHANGES
+
+* **turbo:** missing exports
+
+
+
+
+
+
 # [1.1.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@1.0.2...@donmahallem/turbo@1.1.0) (2021-02-17)
 
 
