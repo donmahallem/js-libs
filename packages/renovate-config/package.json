@@ -58,6 +58,12 @@
           ]
         },
         {
+          "groupName": "manniwatch monorepo {{currentVersion}}",
+          "matchPackagePatterns": [
+            "^@manniwatch/"
+          ]
+        },
+        {
           "depTypeList": [
             "devDependencies"
           ],
