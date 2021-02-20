@@ -4,19 +4,24 @@
 
 import { AxiosError } from 'axios';
 import { NextFunction, Response } from 'express';
+import { IErrorResponse } from './error-response';
 
 type MethodType = <T>(prom: Promise<T>,
     res: Response,
     next?: NextFunction) => void;
+
 /**
- * takes promises and passes them on to an express response
+ * Awaits an promise and returns it
+ * @param prom promise to convert
+ * @param res the express.Response to use
+ * @param next (optional) response object
  */
 export const promiseToResponse: MethodType = <T>(prom: Promise<T>,
-    res: Response,
+    res: Response<T | IErrorResponse>,
     next?: NextFunction): void => {
     prom
         .then((value: T): void => {
-            res.status(200).json(value);
+            (res.headersSent ? res : res.status(200)).json(value);
         })
         .catch((err: any | AxiosError): void => {
             if (next) {
