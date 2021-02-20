@@ -9,7 +9,10 @@ type MethodType = <T>(prom: Promise<T>,
     res: Response,
     next?: NextFunction) => void;
 /**
- * takes promises and passes them on to an express response
+ * Awaits an promise and returns it
+ * @param prom promise to convert
+ * @param res the express.Response to use
+ * @param next (optional) response object
  */
 export const promiseToResponse: MethodType = <T>(prom: Promise<T>,
     res: Response,
