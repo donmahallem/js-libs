@@ -4,15 +4,12 @@
 
 import { AxiosError } from 'axios';
 import { NextFunction, Response } from 'express';
+import { IErrorResponse } from './error-response';
 
 type MethodType = <T>(prom: Promise<T>,
     res: Response,
     next?: NextFunction) => void;
 
-export interface IErrorResponse {
-    error: true;
-    statusCode: number;
-}
 /**
  * Awaits an promise and returns it
  * @param prom promise to convert
