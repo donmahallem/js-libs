@@ -52,6 +52,12 @@
       ],
       "packageRules": [
         {
+          "groupName": "@donmahallem/turbo packages",
+          "matchPackagePatterns": [
+            "^@donmahallem/turbo"
+          ]
+        },
+        {
           "depTypeList": [
             "devDependencies"
           ],
