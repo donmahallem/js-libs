@@ -8,6 +8,11 @@ import { NextFunction, Response } from 'express';
 type MethodType = <T>(prom: Promise<T>,
     res: Response,
     next?: NextFunction) => void;
+
+export interface IErrorResponse {
+    error: true;
+    statusCode: number;
+}
 /**
  * Awaits an promise and returns it
  * @param prom promise to convert
@@ -15,11 +20,11 @@ type MethodType = <T>(prom: Promise<T>,
  * @param next (optional) response object
  */
 export const promiseToResponse: MethodType = <T>(prom: Promise<T>,
-    res: Response,
+    res: Response<T | IErrorResponse>,
     next?: NextFunction): void => {
     prom
         .then((value: T): void => {
-            res.status(200).json(value);
+            (res.headersSent ? res : res.status(200)).json(value);
         })
         .catch((err: any | AxiosError): void => {
             if (next) {
