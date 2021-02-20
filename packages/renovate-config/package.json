@@ -38,7 +38,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "renovate": "^24.56.0"
+    "renovate": "24.58.0"
   },
   "renovate-config": {
     "default": {
@@ -51,6 +51,18 @@
         "dependencies"
       ],
       "packageRules": [
+        {
+          "groupName": "@donmahallem/turbo packages",
+          "matchPackagePatterns": [
+            "^@donmahallem/turbo"
+          ]
+        },
+        {
+          "groupName": "manniwatch monorepo {{currentVersion}}",
+          "matchPackagePatterns": [
+            "^@manniwatch/"
+          ]
+        },
         {
           "depTypeList": [
             "devDependencies"
