@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@2.0.1...@donmahallem/turbo@2.1.0) (2021-02-20)
+
+
+### Bug Fixes
+
+* **turbo:** only update status if headers not sent ([#331](https://github.com/donmahallem/js-libs/issues/331)) ([f0b89e6](https://github.com/donmahallem/js-libs/commit/f0b89e65333d781d1f2ebf121332c928ac929ffc))
+
+
+### Features
+
+* **turbo:** add promiseRequestHandler ([#332](https://github.com/donmahallem/js-libs/issues/332)) ([aa3dcc8](https://github.com/donmahallem/js-libs/commit/aa3dcc8935c18382ac0a22e66a2263f1f8ad36e6))
+
+
+
+
+
+
 ## [2.0.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@2.0.0...@donmahallem/turbo@2.0.1) (2021-02-19)
 
 **Note:** Version bump only for package @donmahallem/turbo
