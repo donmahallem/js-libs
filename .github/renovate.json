@@ -1,35 +1,8 @@
 {
-    "automerge": true,
     "baseBranches": [
         "dev"
     ],
     "extends": [
-        "config:base"
-    ],
-    "lockFileMaintenance": true,
-    "labels": [
-        "dependencies"
-    ],
-    "packageRules": [
-        {
-            "depTypeList": [
-                "devDependencies"
-            ],
-            "rangeStrategy": "pin",
-            "pin": true
-        },
-        {
-            "depTypeList": [
-                "dependencies"
-            ],
-            "rangeStrategy": "bump"
-        },
-        {
-            "depTypeList": [
-                "peerDependencies",
-                "optionalDependencies"
-            ],
-            "rangeStrategy": "replace"
-        }
+        "@donmahallem"
     ]
 }
