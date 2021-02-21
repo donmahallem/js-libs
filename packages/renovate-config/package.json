@@ -9,7 +9,7 @@
   "scripts": {
     "test": "renovate-config-validator",
     "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "prepublishOnly": "npm run test && npm run docs && npm run build",
+    "prepublishOnly": "npm run test",
     "version": "npm run build:readme && git add README.md"
   },
   "homepage": "https://donmahallem.github.io/js-libs/",
@@ -38,7 +38,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "renovate": "24.58.0"
+    "renovate": "24.59.1"
   },
   "renovate-config": {
     "default": {
