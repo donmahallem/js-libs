@@ -11,10 +11,8 @@ jobs:
         node: [14]
         os: [ubuntu-latest] #, windows-latest]
     steps:
-      - name: Checkout
+      - name: Checkout current branch
         uses: actions/checkout@v2
-        with:
-          ref: 'master'
       - name: Setup Node
         uses: actions/setup-node@v2.1.4
         with:
@@ -35,5 +33,9 @@ jobs:
         run: |
           npm ci
           npx lerna bootstrap --ci
+      - name: Checkout master
+        uses: actions/checkout@v2
+        with:
+          ref: 'master'
       - name: Run Build
         run: npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angular --release-count 2 --commit-path $PWD --pkg $PWD/package.json --verbose --lerna-package $LERNA_PACKAGE_NAME -t $LERNA_PACKAGE_NAME'
