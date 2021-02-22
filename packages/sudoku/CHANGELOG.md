@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.1.0...@donmahallem/sudoku@0.1.1) (2021-02-22)
+
+**Note:** Version bump only for package @donmahallem/sudoku
+
+
+
+
+
+
 # 0.1.0 (2021-02-22)
 
 
