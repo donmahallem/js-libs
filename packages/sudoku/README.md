@@ -4,11 +4,11 @@
 # ➤ <h1 align="center">@donmahallem/sudoku</h1>
 <p align="center">
 		<a href="https://github.com/donmahallem/js-libs/actions?query=workflow%3ATest+branch%3Amaster"><img alt="Test" src="https://github.com/donmahallem/js-libs/workflows/Test/badge.svg?branch=master&event=push" height="20"/></a>
-<a href="https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs"><img alt="codecov" src="https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=Turbo" height="20"/></a>
-<a href="https://badge.fury.io/js/%40donmahallem%2Fturbo"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Fturbo.svg" height="20"/></a>
+<a href="https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs"><img alt="codecov" src="https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=Sudoku" height="20"/></a>
+<a href="https://badge.fury.io/js/%40donmahallem%2Fsudoku"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Fsudoku.svg" height="20"/></a>
 <a href="https://github.com/donmahallem/js-libs/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/donmahallem/js-libs" height="20"/></a>
-<a href="https://david-dm.org/donmahallem/js-libs?path=packages/turbo"><img alt="dependencies Status" src="https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/turbo" height="20"/></a>
-<a href="https://david-dm.org/donmahallem/js-libs?path=packages/turbo&type=dev"><img alt="devDependencies Status" src="https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/turbo" height="20"/></a>
+<a href="https://david-dm.org/donmahallem/js-libs?path=packages/sudoku"><img alt="dependencies Status" src="https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/sudoku" height="20"/></a>
+<a href="https://david-dm.org/donmahallem/js-libs?path=packages/sudoku&type=dev"><img alt="devDependencies Status" src="https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/sudoku" height="20"/></a>
 <a href="https://github.com/donmahallem/js-libs/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/donmahallem/js-libs" height="20"/></a>
 	</p>
 

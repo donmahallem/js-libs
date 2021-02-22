@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/sudoku",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Sudoku Solver",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -18,7 +18,6 @@
         "prepublishOnly": "npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md"
     },
-    "devDependencies": {},
     "files": [
         "dist/*",
         "src/*"
