@@ -49,6 +49,23 @@ describe('promise-to-response.ts', (): void => {
                             done();
                         }, 100);
                     });
+                    it('should forward the resolved value to the response and not send status', (done: Mocha.Done): void => {
+                        const testResponseObject: any = Object.assign({
+                            headersSent: true,
+                        }, resObj);
+                        if (nextProvided) {
+                            promiseToResponse(Promise.resolve(testResponse), testResponseObject, nextSpy);
+                        } else {
+                            promiseToResponse(Promise.resolve(testResponse), testResponseObject);
+                        }
+                        setTimeout((): void => {
+                            expect(nextSpy.callCount).to.equal(0);
+                            expect(statusStub.callCount).to.equal(0);
+                            expect(jsonSpy.callCount).to.equal(1);
+                            expect(jsonSpy.getCall(0).args).to.deep.equal([testResponse]);
+                            done();
+                        }, 100);
+                    });
                 });
             });
         });
