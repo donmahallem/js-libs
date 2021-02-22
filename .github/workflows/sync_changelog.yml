@@ -33,9 +33,6 @@ jobs:
         run: |
           npm ci
           npx lerna bootstrap --ci
-      - name: Checkout master
-        uses: actions/checkout@v2
-        with:
-          ref: 'master'
-      - name: Run Build
+          npm install -g conventional-changelog-cli
+      - name: Run Build Changelog
         run: npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angular --release-count 2 --commit-path $PWD --pkg $PWD/package.json --verbose --lerna-package $LERNA_PACKAGE_NAME -t $LERNA_PACKAGE_NAME'
