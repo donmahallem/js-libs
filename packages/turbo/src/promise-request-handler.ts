@@ -8,6 +8,11 @@ import { promiseToResponse } from './promise-to-response';
 
 type MethodInterface<T> = (req?: Request, res?: Response<T>) => Promise<T>;
 
+/**
+ * Does create an request handler that transforms a provided promise
+ * into an response
+ * @param prom a promise to handle
+ */
 export const promiseRequestHandler: <T>(prom: MethodInterface<T>) => RequestHandler =
     <T>(prom: MethodInterface<T>): RequestHandler => {
         return (req: Request, res: Response<T | IErrorResponse>, next: NextFunction): void => {
