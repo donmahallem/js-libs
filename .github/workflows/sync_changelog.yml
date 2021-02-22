@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout current branch
         uses: actions/checkout@v2
+        with:
+          ref: 'master'
       - name: Setup Node
         uses: actions/setup-node@v2.1.4
         with:
