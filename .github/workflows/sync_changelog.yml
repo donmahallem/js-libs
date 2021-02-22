@@ -14,7 +14,7 @@ jobs:
       - name: Checkout current branch
         uses: actions/checkout@v2
         with:
-          ref: 'master'
+          ref: '@donmahallem/turbo@2.1.1'
       - name: Setup Node
         uses: actions/setup-node@v2.1.4
         with:
