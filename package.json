@@ -39,7 +39,8 @@
     "lint": "lerna run lint",
     "docs": "lerna run docs",
     "lint:fix": "lerna run lint:fix",
-    "version": "npm run build:readme && git add README.md"
+    "version": "npm run build:readme && git add README.md",
+    "changelog": "node ./scripts/create_changelog.js"
   },
   "nyc": {
     "include": [
