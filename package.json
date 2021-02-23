@@ -27,7 +27,7 @@
     "sinon": "9.2.4",
     "ts-node": "9.1.1",
     "tslint": "6.1.3",
-    "typedoc": "0.20.27",
+    "typedoc": "0.20.28",
     "typescript": "4.1.5"
   },
   "scripts": {
@@ -39,7 +39,8 @@
     "lint": "lerna run lint",
     "docs": "lerna run docs",
     "lint:fix": "lerna run lint:fix",
-    "version": "npm run build:readme && git add README.md"
+    "version": "npm run build:readme && git add README.md",
+    "changelog": "node ./scripts/create_changelog.js"
   },
   "nyc": {
     "include": [
