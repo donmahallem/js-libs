@@ -2,6 +2,7 @@ name: Update Changelog
 on:
   push:
     tags:
+      - '@donmahallem/*@[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   update_changelogs:
