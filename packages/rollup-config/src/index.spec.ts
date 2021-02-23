@@ -1,4 +1,8 @@
 /*!
+ * Source https://github.com/donmahallem/js-libs Package: rollup-config
+ */
+
+/*!
  * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
  */
 
