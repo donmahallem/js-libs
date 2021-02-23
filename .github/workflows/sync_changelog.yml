@@ -39,4 +39,4 @@ jobs:
       - name: Run Build Changelog
         run: |
           npx lerna exec --concurrency 1 --stream -- 'echo $PWD $LERNA_PACKAGE_NAME'
-          npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angular --release-count 2 --commit-path ./ --pkg ./package.json --verbose --lerna-package $LERNA_PACKAGE_NAME'
+          npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angular --release-count 2 --commit-path $PWD --pkg $PWD/package.json --verbose --lerna-package $LERNA_PACKAGE_NAME'
