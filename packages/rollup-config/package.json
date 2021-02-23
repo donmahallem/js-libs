@@ -1,0 +1,59 @@
+{
+    "name": "@donmahallem/rollup-config",
+    "version": "0.0.0",
+    "description": "My Rollup config. Do not use!",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "private": false,
+    "scripts": {
+        "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+        "build:esm": "tsc --project ./tsconfig.json --outDir ./dist/esm --module esnext",
+        "build:cjs": "tsc --project ./tsconfig.json --outDir ./dist/cjs --module commonjs",
+        "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "test": "mocha --config ../../.mocharc.yml",
+        "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
+        "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+        "docs": "typedoc --options ../../typedoc.json",
+        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "version": "npm run build:readme && git add README.md"
+    },
+    "files": [
+        "dist/*",
+        "src/*"
+    ],
+    "homepage": "https://spielhalle.github.io/spielhalle/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "11.2.0",
+        "@rollup/plugin-replace": "2.4.0",
+        "@rollup/plugin-typescript": "8.2.0",
+        "rollup": "2.39.1"
+    },
+    "peerDependencies": {
+        "@rollup/plugin-node-resolve": "^11.2.0",
+        "@rollup/plugin-replace": "^2.4.0",
+        "@rollup/plugin-typescript": "^8.2.0",
+        "rollup": "^2.39.0"
+    }
+}
