@@ -1,8 +1,7 @@
 name: Update Changelog
 on:
   push:
-  release:
-    types: [published, edited, created]
+    tags:
 
 jobs:
   update_changelogs:
