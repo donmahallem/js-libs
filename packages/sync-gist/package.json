@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@octokit/core": "3.2.5",
-    "@octokit/types": "6.11.0"
+    "@octokit/types": "6.11.0",
+    "fetch-mock": "^9.11.0"
   }
 }
