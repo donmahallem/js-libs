@@ -17,3 +17,15 @@ export interface IConfig {
     readonly gist_id: string;
     readonly files: IInputFile[];
 }
+
+export enum SyncType {
+    UPDATE = 'update',
+    CREATE = 'create',
+    DELETE = 'delete'
+}
+export interface ISyncResult {
+    type: SyncType,
+    source: string;
+    name: string;
+    size: number;
+}
