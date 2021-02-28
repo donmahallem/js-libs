@@ -54,6 +54,8 @@
   "devDependencies": {
     "@octokit/core": "3.2.5",
     "@octokit/types": "6.11.0",
-    "fetch-mock": "^9.11.0"
+    "@types/nodegit": "^0.26.14",
+    "fetch-mock": "^9.11.0",
+    "nodegit": "^0.27.0"
   }
 }
