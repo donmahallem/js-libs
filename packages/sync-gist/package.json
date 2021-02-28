@@ -52,6 +52,7 @@
     "@octokit/core": "^3.2.0"
   },
   "devDependencies": {
+    "@actions/io": "^1.0.2",
     "@octokit/core": "3.2.5",
     "@octokit/types": "6.11.0",
     "@types/nodegit": "^0.26.14",
