@@ -21,6 +21,7 @@
     "**/tsconfig.json",
     "*.md",
     "tslint.json",
-    "tsconfig.json"
+    "tsconfig.json",
+    "**/rollup.config.js"
   ]
 }
