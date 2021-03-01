@@ -3,20 +3,43 @@
  */
 
 import { Octokit } from '@octokit/core';
-import { Endpoints } from '@octokit/types';
+import { calculateDiff } from './calculate-diff';
+import { getGistFiles } from './get-gist-files';
 import { loadFileContent } from './load-file-content';
-import { InputFileContent, IConfig, IInputFile } from './types';
+import {
+    InputFileContent,
+    IConfig,
+    IInputFile,
+    IRequestMap,
+    GistUpdateParamater,
+    ISyncResult,
+    GistUpdateResponse,
+    SyncFile,
+    SyncType,
+    Changelog,
+    GistGetResponseData,
+    ChangelogItem
+} from './types';
 
-type GistUpdateParamater = Endpoints['PATCH /gists/{gist_id}']['parameters'];
-type GistUpdateResponse = Endpoints['PATCH /gists/{gist_id}']['response'];
-interface IRequestMap { [name: string]: InputFileContent; }
-export const syncFiles = async (config: IConfig, octokit: Octokit): Promise<GistUpdateResponse> => {
+export const syncFiles = async (config: IConfig, octokit: Octokit): Promise<ISyncResult> => {
     const loadPromises: Promise<InputFileContent>[] = config.files
         .map((file: IInputFile): Promise<InputFileContent> => loadFileContent(file));
     const gistFiles: InputFileContent[] = await Promise.all(loadPromises);
-    const requestMap: IRequestMap = gistFiles
-        .reduce((prev: IRequestMap, cur: InputFileContent): IRequestMap => {
-            prev[cur.filename] = cur;
+    const currentGistState: GistGetResponseData = await getGistFiles(config.gist_id, octokit);
+    const diff: Changelog = calculateDiff(currentGistState, gistFiles);
+    const requestMap: IRequestMap = diff
+        .reduce((prev: IRequestMap, cur: ChangelogItem): IRequestMap => {
+            switch (cur.type) {
+                case SyncType.CREATE:
+                case SyncType.UPDATE:
+                    prev[cur.data.filename] = cur.data;
+                    break;
+                case SyncType.DELETE:
+                    if (config.prune === true) {
+                        prev[cur.filename] = null;
+                    }
+                    break;
+            }
             return prev;
         }, {});
     const params: GistUpdateParamater = {
@@ -24,5 +47,16 @@ export const syncFiles = async (config: IConfig, octokit: Octokit): Promise<Gist
         gist_id: config.gist_id,
     };
     const response: GistUpdateResponse = await octokit.gists.update(params);
-    return response;
+    return {
+        files: gistFiles
+            .map((inpFile: InputFileContent): SyncFile => {
+                return {
+                    filename: inpFile.filename,
+                    source: inpFile.source,
+                    size: inpFile.content.length,
+                    type: SyncType.UPDATE,
+                };
+            }),
+        response: response.data,
+    };
 };
