@@ -39,23 +39,15 @@ jobs:
         run: npm run test:coverage --no-sort
       - name: Merge Test Reports
         run: npm run coverage:merge
-      - name: Upload Coverage to Coveralls
-        uses: coverallsapp/github-action@master
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1.2.1
         with:
-          github-token: ${{ secrets.github_token }}
-          flag-name: ${{ matrix.os }}_node${{ matrix.node }}
-          parallel: true
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true
       - name: Run Lint
         run: npm run lint --no-sort
       - name: Run Docs
         run: npm run docs --no-sort
-  finish:
-    needs: test_suite
-    name: Finish Test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel-finished: true
