@@ -44,7 +44,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           flags: unittests # optional
-          name: codecov-umbrella # optional
+          name: ${{ matrix.os }}_node${{ matrix.node }} # optional
           fail_ci_if_error: true # optional (default = false)
           verbose: true
       - name: Run Lint
