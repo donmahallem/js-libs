@@ -43,6 +43,7 @@
   "renovate-config": {
     "default": {
       "automerge": true,
+      "dependencyDashboard": true,
       "extends": [
         "config:base"
       ],
