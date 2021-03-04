@@ -82,6 +82,14 @@
             "optionalDependencies"
           ],
           "rangeStrategy": "replace"
+        },
+        {
+          "matchPackageNames": [
+            "renovate"
+          ],
+          "extends": [
+            "schedule:daily"
+          ]
         }
       ]
     }
