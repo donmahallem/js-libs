@@ -38,11 +38,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "renovate": "24.67.5"
+    "renovate": "24.72.4"
   },
   "renovate-config": {
     "default": {
       "automerge": true,
+      "dependencyDashboard": true,
       "extends": [
         "config:base"
       ],
@@ -82,6 +83,14 @@
             "optionalDependencies"
           ],
           "rangeStrategy": "replace"
+        },
+        {
+          "matchPackageNames": [
+            "renovate"
+          ],
+          "extends": [
+            "schedule:daily"
+          ]
         }
       ]
     }

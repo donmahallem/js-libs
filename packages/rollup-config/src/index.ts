@@ -44,6 +44,7 @@ export default (pkg: any): any => {
                 __BUILD_DATE__: (): string => new Date().toString(),
                 __BUILD_PACKAGE_NAME__: pkg.name,
                 __BUILD_VERSION__: pkg.version,
+                preventAssignment: true,
             }),
         ],
         preserveSymlinks: true,
