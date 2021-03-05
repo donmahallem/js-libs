@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "@donmahallem tslint config",
   "private": false,
+  "main": "./tslint.json",
   "keywords": [
     "renovate"
   ],
