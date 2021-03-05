@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/tslint-config@0.1.0...@donmahallem/tslint-config@0.1.1) (2021-03-05)
+
+
+### Bug Fixes
+
+* **tslint-config:** fix typo in included package files ([0a7d24a](https://github.com/donmahallem/js-libs/commit/0a7d24abb399878ef0a76f9d0698acdbf2402fc7))
+
+
+
+
+
+
 # 0.1.0 (2021-03-05)
 
 
