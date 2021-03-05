@@ -40,7 +40,7 @@ jobs:
       - name: Run Test
         run: npm run test:coverage --no-sort
       - name: Upload coverage to Codecov Monorepo
-        uses: donmahallem/codecov-monorepo@beta
+        uses: donmahallem/codecov-monorepo@release
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Run Lint
