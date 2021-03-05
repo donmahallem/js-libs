@@ -4,10 +4,10 @@
 # ➤ <h1 align="center">@donmahallem/tslint-config</h1>
 <p align="center">
 		<a href="https://github.com/donmahallem/js-libs/actions?query=workflow%3ATest+branch%3Amaster"><img alt="Test" src="https://github.com/donmahallem/js-libs/workflows/Test/badge.svg?branch=master&event=push" height="20"/></a>
-<a href="https://badge.fury.io/js/%40donmahallem%2Frenovate-config"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Frenovate-config.svg" height="20"/></a>
+<a href="https://badge.fury.io/js/%40donmahallem%2Ftslint-config"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Ftslint-config.svg" height="20"/></a>
 <a href="https://github.com/donmahallem/js-libs/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/donmahallem/js-libs" height="20"/></a>
-<a href="https://david-dm.org/donmahallem/js-libs?path=packages/renovate-config"><img alt="dependencies Status" src="https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/renovate-config" height="20"/></a>
-<a href="https://david-dm.org/donmahallem/js-libs?path=packages/renovate-config&type=dev"><img alt="devDependencies Status" src="https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/renovate-config" height="20"/></a>
+<a href="https://david-dm.org/donmahallem/js-libs?path=packages/tslint-config"><img alt="dependencies Status" src="https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/tslint-config" height="20"/></a>
+<a href="https://david-dm.org/donmahallem/js-libs?path=packages/tslint-config&type=dev"><img alt="devDependencies Status" src="https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/tslint-config" height="20"/></a>
 <a href="https://github.com/donmahallem/js-libs/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/donmahallem/js-libs" height="20"/></a>
 	</p>
 
