@@ -32,7 +32,7 @@
   "files": [
     "dist/*",
     "src/*",
-    "tslint.sjon",
+    "tslint.json",
     "!src/**/*.spec.ts"
   ],
   "publishConfig": {
