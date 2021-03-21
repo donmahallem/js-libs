@@ -9,12 +9,12 @@
         {
             "alt": "codecov",
             "url": "https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs",
-            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=gist-sync"
+            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=label-gh"
         },
         {
             "alt": "npm version",
-            "url": "https://badge.fury.io/js/%40donmahallem%2Fgist-sync",
-            "img": "https://badge.fury.io/js/%40donmahallem%2Fgist-sync.svg"
+            "url": "https://badge.fury.io/js/%40donmahallem%2Flabel-gh",
+            "img": "https://badge.fury.io/js/%40donmahallem%2Flabel-gh.svg"
         },
         {
             "alt": "GitHub license",
@@ -23,13 +23,13 @@
         },
         {
             "alt": "dependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/gist-sync",
-            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/gist-sync"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/label-gh",
+            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/label-gh"
         },
         {
             "alt": "devDependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/gist-sync&type=dev",
-            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/gist-sync"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/label-gh&type=dev",
+            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/label-gh"
         },
         {
             "alt": "GitHub contributors",

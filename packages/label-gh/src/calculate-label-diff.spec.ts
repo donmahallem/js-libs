@@ -1,5 +1,5 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: label-pr
+ * Source https://github.com/donmahallem/js-libs Package: label-gh
  */
 
 import { expect } from 'chai';

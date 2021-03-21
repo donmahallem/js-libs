@@ -1,7 +1,7 @@
 {
-  "name": "@donmahallem/label-pr",
+  "name": "@donmahallem/label-gh",
   "version": "0.0.0",
-  "description": "Wrapper around octokit for syncing gist files",
+  "description": "Helpers for working with github issue labels",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
