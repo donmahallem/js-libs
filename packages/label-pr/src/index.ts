@@ -2,5 +2,5 @@
  * Source https://github.com/donmahallem/js-libs Package: sync-gist
  */
 
-export { syncFiles } from './sync-files';
-export { IConfig, IInputFile } from './types';
+export { calculateLabelDiff } from './calculate-label-diff';
+export { syncPrLabels } from './sync-pr-labels';
