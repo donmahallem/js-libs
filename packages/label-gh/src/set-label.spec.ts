@@ -8,6 +8,7 @@ import 'mocha';
 import Sinon from 'sinon';
 import { setLabels } from './set-labels';
 
+const API_ENDPOINT: string = 'PUT /repos/{owner}/{repo}/issues/{issue_number}/labels';
 describe('set-label', (): void => {
     let sandbox: Sinon.SinonSandbox;
     before('setup sandbox', (): void => {
@@ -37,7 +38,33 @@ describe('set-label', (): void => {
             }).then((result: any): void => {
                 expect(result).to.equal(testResponseData);
                 expect(requestStub.args).to.deep.eq([[
-                    'PUT /repos/{owner}/{repo}/issues/{issue_number}/labels',
+                    API_ENDPOINT,
+                    {
+                        issue_number: 2,
+                        labels: [
+                            'test',
+                            'label',
+                        ],
+                        owner: 'some_owner',
+                        repo: 'anyrepo',
+                    },
+                ]]);
+            });
+        });
+        it('should return rejections', (): Promise<void> => {
+            const testError: Error = new Error('test error');
+            requestStub.rejects(testError);
+            return setLabels({ request: requestStub } as any, {
+                issue_number: 2,
+                labels: ['test', 'label'],
+                owner: 'some_owner',
+                repo: 'anyrepo',
+            }).then((result: any): void => {
+                throw new Error('Should not resolve');
+            }).catch((err: any): void => {
+                expect(err).to.equal(testError);
+                expect(requestStub.args).to.deep.eq([[
+                    API_ENDPOINT,
                     {
                         issue_number: 2,
                         labels: [
