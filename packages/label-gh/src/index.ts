@@ -3,4 +3,4 @@
  */
 
 export { calculateLabelDiff } from './calculate-label-diff';
-export { syncPrLabels } from './sync-pr-labels';
+export { syncLabels } from './sync-labels';
