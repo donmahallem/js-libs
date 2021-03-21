@@ -20,7 +20,7 @@ export interface IOpts {
      */
     repo: string;
 }
-export const syncLabels = async (octokit: Octokit,
+export const syncLabels = (octokit: Octokit,
     opts: IOpts,
     labels: string[],
     replace: boolean = true): Promise<ResponseData> => {
