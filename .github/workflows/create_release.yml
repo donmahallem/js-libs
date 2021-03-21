@@ -21,7 +21,6 @@ jobs:
       - name: Create Changelog
         id: create-changelog
         run: |
-          npm install -g conventional-changelog-cli
           npx conventional-changelog --preset cli --release-count 2 -u false >> tmp_readme.md
       - name: Echo Readme
         run: echo "$(cat ./tmp_readme.md)"
