@@ -1,7 +1,11 @@
+/*!
+ * Source https://github.com/donmahallem/js-libs Package: label-pr
+ */
+
 export interface ILabelDiff {
-    add: string[],
-    remove: string[],
-    unchanged: string[],
+    add: string[];
+    remove: string[];
+    unchanged: string[];
 }
 export const calculateLabelDiff = (expectedLabels: string[], currentLabels: string[]): ILabelDiff => {
     return {
@@ -15,5 +19,4 @@ export const calculateLabelDiff = (expectedLabels: string[], currentLabels: stri
             return expectedLabels.indexOf(label) >= 0;
         }),
     };
-
-}
+};

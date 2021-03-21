@@ -1,24 +1,24 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: sync-gist
+ * Source https://github.com/donmahallem/js-libs Package: label-pr
  */
 
 import { Octokit } from '@octokit/core';
 import { addLabels } from './add-labels';
-import { ResponseData, setLabels } from './set-labels';
+import { setLabels, ResponseData } from './set-labels';
 
 export interface IOpts {
     /**
      * Issue or pull request number
      */
-    issue_number: number,
+    issue_number: number;
     /**
      * Repository owner
      */
-    owner: string,
+    owner: string;
     /**
      * Repository name
      */
-    repo: string,
+    repo: string;
 }
 export const syncPrLabels = async (octokit: Octokit,
     opts: IOpts,
@@ -27,12 +27,12 @@ export const syncPrLabels = async (octokit: Octokit,
     if (replace) {
         return setLabels(octokit, {
             ...opts,
-            labels: labels,
+            labels,
         });
     } else {
         return addLabels(octokit, {
             ...opts,
-            labels: labels,
+            labels,
         });
     }
 };

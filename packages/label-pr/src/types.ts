@@ -1,5 +1,5 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: sync-gist
+ * Source https://github.com/donmahallem/js-libs Package: label-pr
  */
 
 export interface IInputFile {
