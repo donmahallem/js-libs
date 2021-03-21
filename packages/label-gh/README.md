@@ -14,7 +14,7 @@
 
 
 <p align="center">
-  <b>Wrapper around octokit for syncing gist files</b></br>
+  <b>Helpers for working with github issue labels</b></br>
   <sub><sub>
 </p>
 
