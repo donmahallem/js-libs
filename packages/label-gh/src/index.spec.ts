@@ -9,7 +9,7 @@ import * as index from './index';
 // tslint:disable:no-unused-expression
 describe('index', (): void => {
     it('should export defaults', (): void => {
-        expect(index.syncPrLabels).to.not.be.undefined;
+        expect(index.syncLabels).to.not.be.undefined;
         expect(index.calculateLabelDiff).to.not.be.undefined;
     });
 });
