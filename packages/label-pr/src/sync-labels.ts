@@ -2,7 +2,7 @@
  * Source https://github.com/donmahallem/js-libs Package: label-gh
  */
 
-import { calculateLabelDiff, syncLabels } from '@donmahallem/label-gh';
+import { calculateLabelDiff, syncLabels, ILabelDiff } from '@donmahallem/label-gh';
 import { Octokit } from '@octokit/core';
 import { PRLabel } from './github-types';
 import { getPullRequestLabels } from './pull-request-labels';
@@ -39,5 +39,10 @@ export const syncPackageLabels = async (octokit: Octokit,
         return false;
     }) as string[];
     const diff: ILabelDiff = calculateLabelDiff(expectedLabels, filteredPrLabels);
-    await syncLabels(octokit, opts, diff.)
+    const finalLabels: string[] = [];
+    finalLabels.push(...diff.add);
+    await syncLabels(octokit, {
+        ...opts,
+        issue_number: opts.pull_number,
+    }, diff);
 };
