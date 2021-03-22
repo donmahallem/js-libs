@@ -1,13 +1,12 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+ * Source https://github.com/donmahallem/js-libs Package: label-pr
  */
 
+import * as labelgh from '@donmahallem/label-gh';
 import { expect } from 'chai';
 import 'mocha';
 import Sinon from 'sinon';
-import * as addLabels from './add-labels';
-import * as setLabels from './set-labels';
-import { syncLabels } from './sync-labels';
+import { syncPRLabels } from './sync-pr-labels';
 
 describe('syncLabels', (): void => {
     let sandbox: Sinon.SinonSandbox;
@@ -21,51 +20,80 @@ describe('syncLabels', (): void => {
         sandbox.restore();
     });
     describe('syncLabels', (): void => {
-        let addLabelsStub: Sinon.SinonStub;
-        let setLabelsStub: Sinon.SinonStub;
+        let getPullRequestLabelsStub: Sinon.SinonStub;
+        let syncLabelsStub: Sinon.SinonStub;
         before('setup octokit stub instance', (): void => {
-            addLabelsStub = sandbox.stub(addLabels, 'addLabels');
-            setLabelsStub = sandbox.stub(setLabels, 'setLabels');
+            getPullRequestLabelsStub = sandbox.stub(labelgh, 'getPullRequestLabels');
+            syncLabelsStub = sandbox.stub(labelgh, 'syncLabels');
         });
         beforeEach('setup octokit stub instance', (): void => {
-            addLabelsStub.resolves('add label');
-            setLabelsStub.resolves('set label');
+            syncLabelsStub.resolves('set label');
         });
-        it('should call addLabel with replace parameter being false', (): Promise<void> => {
-            return syncLabels({} as any, {
-                issue_number: 2,
+        it('should ignore non prefixed labels and set prefixed', (): Promise<void> => {
+            getPullRequestLabelsStub.resolves([{ name: 'label1' }]);
+            return syncPRLabels({} as any, {
                 owner: 'some_owner',
+                pull_number: 2,
                 repo: 'anyrepo',
-            }, ['test', 'label'], false)
+            }, ['test', 'label'])
                 .then((result: any): void => {
-                    expect(setLabelsStub.callCount).to.equal(0, 'should not be called');
-                    expect(addLabelsStub.args).to.deep.eq([[{},
+                    expect(syncLabelsStub.callCount).to.equal(1, 'should be called');
+                    expect(syncLabelsStub.args).to.deep.eq([[{},
                     {
                         issue_number: 2,
-                        labels: ['test', 'label'],
                         owner: 'some_owner',
                         repo: 'anyrepo',
-                    }]]);
-                    expect(result).to.equal('add label');
+                    }, [
+                        'pkg:test',
+                        'pkg:label',
+                        'label1',
+                    ], true]]);
+                    expect(result).to.equal('set label');
                 });
         });
-        it('should call setLabel with replace parameter being true', (): Promise<void> => {
-            const testPromise: Promise<any> = syncLabels({} as any, {
-                issue_number: 2,
+        it('should ignore non prefixed labels and set non default prefix', (): Promise<void> => {
+            getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:any' }]);
+            return syncPRLabels({} as any, {
                 owner: 'some_owner',
+                pull_number: 2,
                 repo: 'anyrepo',
-            }, ['test', 'label'], true);
-            return testPromise.then((result: any): void => {
-                expect(addLabelsStub.callCount).to.equal(0, 'should not be called');
-                expect(setLabelsStub.args).to.deep.eq([[{},
-                {
-                    issue_number: 2,
-                    labels: ['test', 'label'],
-                    owner: 'some_owner',
-                    repo: 'anyrepo',
-                }]]);
-                expect(result).to.equal('set label');
-            });
+            }, ['test', 'label'], 'asdf')
+                .then((result: any): void => {
+                    expect(syncLabelsStub.callCount).to.equal(1, 'should be called');
+                    expect(syncLabelsStub.args).to.deep.eq([[{},
+                    {
+                        issue_number: 2,
+                        owner: 'some_owner',
+                        repo: 'anyrepo',
+                    }, [
+                        'asdf:test',
+                        'asdf:label',
+                        'label1',
+                    ], true]]);
+                    expect(result).to.equal('set label');
+                });
+        });
+        it('should keep previous labels', (): Promise<void> => {
+            getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:test' }]);
+            return syncPRLabels({} as any, {
+                owner: 'some_owner',
+                pull_number: 2,
+                repo: 'anyrepo',
+            }, ['test', 'label'], 'asdf')
+                .then((result: any): void => {
+                    expect(syncLabelsStub.callCount).to.equal(1, 'should be called');
+                    expect(syncLabelsStub.args).to.deep.eq([[{},
+                    {
+                        issue_number: 2,
+                        owner: 'some_owner',
+                        repo: 'anyrepo',
+                    }, [
+                        'asdf:label',
+                        'asdf:test',
+                        'label1',
+                    ], true]]);
+                    expect(result).to.equal('set label');
+                });
         });
     });
 });

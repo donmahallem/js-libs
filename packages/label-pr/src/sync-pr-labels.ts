@@ -1,8 +1,8 @@
 /*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+ * Source https://github.com/donmahallem/js-libs Package: label-pr
  */
 
-import { calculateLabelDiff, syncLabels, GithubLabel, ILabelDiff } from '@donmahallem/label-gh';
+import { calculateLabelDiff, getPullRequestLabels, syncLabels, GithubLabel, ILabelDiff } from '@donmahallem/label-gh';
 import { Octokit } from '@octokit/core';
 
 export interface IOpts {
@@ -22,14 +22,15 @@ export interface IOpts {
 export const syncPRLabels = async (octokit: Octokit,
     opts: IOpts,
     packageLabel: string[],
-    prefix: string = 'pkg'): Promise<GithubLabel> => {
+    prefix: string = 'pkg'): Promise<GithubLabel[]> => {
     const expectedLabels: string[] = packageLabel.map((baseLabel: string): string => {
         return `${prefix}:${baseLabel}`;
-    })
-    const prLabels: PRLabel[] = await getPullRequestLabels(octokit, opts);
-    const prLabelNames: string[] = prLabels.map((lab: PRLabel): string | undefined => {
+    });
+    const prLabels: Partial<GithubLabel>[] = await getPullRequestLabels(octokit, opts);
+    const prLabelNames: string[] = prLabels.map((lab: GithubLabel): string | undefined => {
         return lab.name;
     }).filter((label: string | undefined): boolean => {
+        // tslint:disable-next-line:triple-equals
         return label != undefined;
     }) as string[];
     const diff: ILabelDiff = calculateLabelDiff(expectedLabels, prLabelNames);
@@ -40,7 +41,7 @@ export const syncPRLabels = async (octokit: Octokit,
         .filter((label: string): boolean => {
             return !label.startsWith(`${prefix}:`);
         }));
-    await syncLabels(octokit, {
+    return syncLabels(octokit, {
         issue_number: opts.pull_number,
         owner: opts.owner,
         repo: opts.repo,
