@@ -1,0 +1,66 @@
+name: Force Changelog Update
+on: 
+  workflow_dispatch:
+    inputs:
+      tagname:
+        description: 'Tag'     
+        required: true
+        default: '@donmahallem'
+
+jobs:
+  update_changelogs:
+    runs-on: ${{ matrix.os }}
+    name: Update Changelogs
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        node: [14]
+        os: [ubuntu-latest] #, windows-latest]
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v2
+        with:
+          ref: '${{ github.event.inputs.tagname }}'
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Setup Cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: |
+            ${{ steps.npm-cache.outputs.dir }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Deps
+        run: |
+          npm ci
+          npx lerna bootstrap --ci
+          npm install -g conventional-changelog-cli
+      - name: Extract Package Name
+        id: package_name
+        run: node ./scripts/strip_package_name.js ${{ github.event.inputs.tagname }}
+      - name: Run Build Changelog
+        run: |
+          npx lerna exec --concurrency 1 --stream -- 'echo $PWD $LERNA_PACKAGE_NAME'
+          npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angular --release-count 2 --commit-path $PWD --pkg $PWD/package.json --verbose --lerna-package $LERNA_PACKAGE_NAME'
+          conventional-changelog --preset angular --release-count 2 --commit-path ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }} --pkg ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}/package.json --verbose -o TMP_README.md --lerna-package ${{ steps.package_name.outputs.PACKAGE_NAME }}
+      - name: Get color
+        run: echo "The selected color is ${{ steps.package_name.outputs.PACKAGE_NAME }}"
+      - name: Update Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: '${{ github.event.inputs.tagname }}'
+          release_name: 'Release ${{ github.event.inputs.tagname }}'
+          body_path: ./TMP_README.md
+          draft: false
+          prerelease: false
