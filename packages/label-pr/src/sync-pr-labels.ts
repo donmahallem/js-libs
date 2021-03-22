@@ -4,8 +4,6 @@
 
 import { calculateLabelDiff, syncLabels, GithubLabel, ILabelDiff } from '@donmahallem/label-gh';
 import { Octokit } from '@octokit/core';
-import { PRLabel } from './github-types';
-import { getPullRequestLabels } from './pull-request-labels';
 
 export interface IOpts {
     /**
@@ -21,7 +19,7 @@ export interface IOpts {
      */
     repo: string;
 }
-export const syncPackageLabels = async (octokit: Octokit,
+export const syncPRLabels = async (octokit: Octokit,
     opts: IOpts,
     packageLabel: string[],
     prefix: string = 'pkg'): Promise<GithubLabel> => {
