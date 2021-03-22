@@ -3,4 +3,5 @@
  */
 
 export { calculateLabelDiff, ILabelDiff } from './calculate-label-diff';
+export { GithubLabel } from './github-types';
 export { syncLabels } from './sync-labels';
