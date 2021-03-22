@@ -2,7 +2,7 @@
  * Source https://github.com/donmahallem/js-libs Package: label-gh
  */
 
-import { calculateLabelDiff, syncLabels, ILabelDiff } from '@donmahallem/label-gh';
+import { calculateLabelDiff, syncLabels, GithubLabel, ILabelDiff } from '@donmahallem/label-gh';
 import { Octokit } from '@octokit/core';
 import { PRLabel } from './github-types';
 import { getPullRequestLabels } from './pull-request-labels';
@@ -24,25 +24,27 @@ export interface IOpts {
 export const syncPackageLabels = async (octokit: Octokit,
     opts: IOpts,
     packageLabel: string[],
-    prefix: string = 'pkg'): Promise<ResponseData> => {
+    prefix: string = 'pkg'): Promise<GithubLabel> => {
     const expectedLabels: string[] = packageLabel.map((baseLabel: string): string => {
         return `${prefix}:${baseLabel}`;
     })
     const prLabels: PRLabel[] = await getPullRequestLabels(octokit, opts);
-    const prLabelNames: (string | undefined)[] = prLabels.map((lab: PRLabel): string | undefined => {
+    const prLabelNames: string[] = prLabels.map((lab: PRLabel): string | undefined => {
         return lab.name;
-    });
-    const filteredPrLabels: string[] = prLabelNames.filter((label: string | undefined): boolean => {
-        if (label) {
-            return label.startsWith(`${prefix}:`);
-        }
-        return false;
+    }).filter((label: string | undefined): boolean => {
+        return label != undefined;
     }) as string[];
-    const diff: ILabelDiff = calculateLabelDiff(expectedLabels, filteredPrLabels);
+    const diff: ILabelDiff = calculateLabelDiff(expectedLabels, prLabelNames);
     const finalLabels: string[] = [];
     finalLabels.push(...diff.add);
+    finalLabels.push(...diff.unchanged);
+    finalLabels.push(...diff.remove
+        .filter((label: string): boolean => {
+            return !label.startsWith(`${prefix}:`);
+        }));
     await syncLabels(octokit, {
-        ...opts,
         issue_number: opts.pull_number,
-    }, diff);
+        owner: opts.owner,
+        repo: opts.repo,
+    }, finalLabels, true);
 };
