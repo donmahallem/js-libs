@@ -4,7 +4,8 @@
 
 import { Octokit } from '@octokit/core';
 import { addLabels } from './add-labels';
-import { setLabels, ResponseData } from './set-labels';
+import { GithubLabel } from './github-types';
+import { setLabels } from './set-labels';
 
 export interface IOpts {
     /**
@@ -23,7 +24,7 @@ export interface IOpts {
 export const syncLabels = (octokit: Octokit,
     opts: IOpts,
     labels: string[],
-    replace: boolean = true): Promise<ResponseData> => {
+    replace: boolean = true): Promise<GithubLabel[]> => {
     if (replace) {
         return setLabels(octokit, {
             ...opts,
