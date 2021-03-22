@@ -47,3 +47,10 @@ jobs:
         run: npm run lint --no-sort
       - name: Run Docs
         run: npm run docs --no-sort
+  finish:
+    needs: test_suite
+    name: Finish Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      run: echo "finish"
