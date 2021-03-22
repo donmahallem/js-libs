@@ -8,9 +8,9 @@ on:
         default: '@donmahallem'
 
 jobs:
-  update_changelogs:
+  update_changelog:
     runs-on: ${{ matrix.os }}
-    name: Update Changelogs
+    name: Update Package Changelog
     timeout-minutes: 30
     strategy:
       matrix:
