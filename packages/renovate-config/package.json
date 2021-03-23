@@ -90,7 +90,7 @@
             "renovate"
           ],
           "extends": [
-            "schedule:daily"
+            "schedule:weekly"
           ]
         }
       ]
