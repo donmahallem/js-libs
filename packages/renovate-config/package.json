@@ -45,7 +45,8 @@
       "automerge": true,
       "dependencyDashboard": true,
       "extends": [
-        "config:base"
+        "config:base",
+        ":prHourlyLimit4"
       ],
       "lockFileMaintenance": true,
       "labels": [
