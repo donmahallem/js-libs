@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.3.4...@donmahallem/renovate-config@0.4.0) (2021-03-23)
+
+
+### Features
+
+* **renovate-config:** increase hourly pr limit to 4 ([#474](https://github.com/donmahallem/js-libs/issues/474)) ([8d93a89](https://github.com/donmahallem/js-libs/commit/8d93a8977a43f04b944f13c17d27a7803f56ad9a))
+* **renovate-config:** update renovate dependency only weekly ([#475](https://github.com/donmahallem/js-libs/issues/475)) ([d9b9e2f](https://github.com/donmahallem/js-libs/commit/d9b9e2fe5abf044afa2cb05cb38d641d9c6d5646))
+
+
+
+
+
+
 ## [0.3.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.3.3...@donmahallem/renovate-config@0.3.4) (2021-03-22)
 
 **Note:** Version bump only for package @donmahallem/renovate-config
