@@ -7,7 +7,7 @@ import { DefinedError } from 'ajv';
 
 export const convertValidationError: (error: DefinedError) => RequestError =
     (error: DefinedError): RequestError => {
-        const errorPath: string = error.dataPath === '' ? 'root' : error.dataPath;
+        const errorPath: string = error.instancePath === '' ? 'root' : error.instancePath;
         switch (error.keyword) {
             case 'required':
                 return new RequestError(`Missing property ${error.params.missingProperty} at '${errorPath}'`, 400);
