@@ -70,6 +70,10 @@
           "matchPackageNames": [
             "ajv",
             "ajv-formats"
+          ],
+          "matchSourceUrlPrefixes": [
+            "https://github.com/ajv-validator",
+            "git+https://github.com/ajv-validator"
           ]
         },
         {
