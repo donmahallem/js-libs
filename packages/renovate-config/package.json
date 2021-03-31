@@ -66,6 +66,17 @@
           ]
         },
         {
+          "groupName": "ajv {{currentVersion}}",
+          "matchPackageNames": [
+            "ajv",
+            "ajv-formats"
+          ],
+          "matchSourceUrlPrefixes": [
+            "https://github.com/ajv-validator",
+            "git+https://github.com/ajv-validator"
+          ]
+        },
+        {
           "depTypeList": [
             "devDependencies"
           ],
