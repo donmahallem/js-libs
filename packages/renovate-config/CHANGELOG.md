@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.4.1...@donmahallem/renovate-config@0.5.0) (2021-03-31)
+
+
+### Features
+
+* **renovate-config:** group ajv dependencies ([#500](https://github.com/donmahallem/js-libs/issues/500)) ([4ec1b73](https://github.com/donmahallem/js-libs/commit/4ec1b73905d87702c70d8a3fada7b2de3767106f))
+
+
+
+
+
+
 ## [0.4.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.4.0...@donmahallem/renovate-config@0.4.1) (2021-03-30)
 
 **Note:** Version bump only for package @donmahallem/renovate-config

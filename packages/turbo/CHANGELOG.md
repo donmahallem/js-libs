@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@2.1.6...@donmahallem/turbo@2.1.7) (2021-03-31)
+
+**Note:** Version bump only for package @donmahallem/turbo
+
+
+
+
+
+
 ## [2.1.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo@2.1.5...@donmahallem/turbo@2.1.6) (2021-03-30)
 
 **Note:** Version bump only for package @donmahallem/turbo

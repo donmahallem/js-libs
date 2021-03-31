@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/turbo-pb",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Protobuf Helpers for express.js",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -60,6 +60,6 @@
     "protobufjs": "^6.10.2"
   },
   "dependencies": {
-    "@donmahallem/turbo": "^2.1.6"
+    "@donmahallem/turbo": "^2.1.7"
   }
 }
