@@ -66,6 +66,13 @@
           ]
         },
         {
+          "groupName": "ajv {{currentVersion}}",
+          "matchPackageNames": [
+            "ajv",
+            "ajv-formats"
+          ]
+        },
+        {
           "depTypeList": [
             "devDependencies"
           ],
