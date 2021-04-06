@@ -23,5 +23,6 @@ export const syncFiles = async (config: IConfig, octokit: Octokit): Promise<Gist
         files: requestMap,
         gist_id: config.gist_id,
     };
-    return await octokit.request('PATCH /gists/{gist_id}', params);
+    const response: GistUpdateResponse = await octokit.request('PATCH /gists/{gist_id}', params);
+    return response;
 };
