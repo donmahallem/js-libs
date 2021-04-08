@@ -8,10 +8,16 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import * as index from './index';
+import defaultConfig from './index';
 
 describe('index', (): void => {
-    it('should contain FlowApiValidator', (): void => {
-        expect(index).to.not.equal(undefined);
+    it('should set all plugins with default config', (): void => {
+        const result: any = defaultConfig({ name: 'testname', version: '1.2.3' });
+        expect(result.plugins).to.have.lengthOf(4);
+    });
+    it('should exclude commonjs with false as config', (): void => {
+        const result: any = defaultConfig({ name: 'testname', version: '1.2.3' },
+            { plugins: { commonjs: false } });
+        expect(result.plugins).to.have.lengthOf(3);
     });
 });
