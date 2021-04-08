@@ -2,12 +2,17 @@
  * Source https://github.com/donmahallem/js-libs Package: rollup-config
  */
 
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs, { RollupCommonJSOptions } from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 
-export default (pkg: any): any => {
+export interface IConfig {
+    plugins?: {
+        commonjs?: false | RollupCommonJSOptions,
+    };
+}
+export default (pkg: any, cfg: IConfig = {}): any => {
     const output: any[] = [];
     if (pkg.main) {
         output.push({
@@ -27,6 +32,21 @@ export default (pkg: any): any => {
             sourcemap: true,
         });
     }
+    const plugins: any[] = [
+        nodeResolve(),
+        typescript({
+            tsconfig: './tsconfig.json',
+        }),
+    ];
+    if (cfg.plugins?.commonjs !== false) {
+        plugins.push(commonjs(cfg.plugins?.commonjs));
+    }
+    plugins.push(replace({
+        __BUILD_DATE__: (): string => new Date().toString(),
+        __BUILD_PACKAGE_NAME__: pkg.name,
+        __BUILD_VERSION__: pkg.version,
+        preventAssignment: true,
+    }));
     return {
         external: [
             ...Object.keys(pkg.dependencies || {}),
@@ -36,19 +56,7 @@ export default (pkg: any): any => {
         ],
         input: 'src/index.ts',
         output,
-        plugins: [
-            nodeResolve(),
-            typescript({
-                tsconfig: './tsconfig.json',
-            }),
-            commonjs(),
-            replace({
-                __BUILD_DATE__: (): string => new Date().toString(),
-                __BUILD_PACKAGE_NAME__: pkg.name,
-                __BUILD_VERSION__: pkg.version,
-                preventAssignment: true,
-            }),
-        ],
+        plugins,
         preserveSymlinks: true,
     };
 };
