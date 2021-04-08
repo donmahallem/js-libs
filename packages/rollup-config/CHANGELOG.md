@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.1.6...@donmahallem/rollup-config@0.2.0) (2021-04-08)
+
+
+### Features
+
+* **rollup-config:** add commonjs plugin to config ([#516](https://github.com/donmahallem/js-libs/issues/516)) ([437756c](https://github.com/donmahallem/js-libs/commit/437756ce4b7d2bdafc70b147a948a5119140b262))
+* **rollup-config:** adds typing for package parameter ([#518](https://github.com/donmahallem/js-libs/issues/518)) ([82c9844](https://github.com/donmahallem/js-libs/commit/82c984482f442d15ad9f88e2bbeed6c38847beea)), closes [#517](https://github.com/donmahallem/js-libs/issues/517)
+
+
+
+
+
+
 ## [0.1.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.1.5...@donmahallem/rollup-config@0.1.6) (2021-03-30)
 
 **Note:** Version bump only for package @donmahallem/rollup-config
