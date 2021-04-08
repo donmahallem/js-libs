@@ -12,7 +12,17 @@ export interface IConfig {
         commonjs?: false | RollupCommonJSOptions,
     };
 }
-export default (pkg: any, cfg: IConfig = {}): any => {
+export interface IPartialPackage {
+    dependencies?: { [key: string]: string };
+    devDependencies?: { [key: string]: string };
+    main?: string;
+    module?: string;
+    name?: string;
+    optionalDependencies?: { [key: string]: string };
+    peerDependencies?: { [key: string]: string };
+    version?: string;
+}
+export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
     const output: any[] = [];
     if (pkg.main) {
         output.push({
