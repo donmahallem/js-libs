@@ -2,6 +2,7 @@
  * Source https://github.com/donmahallem/js-libs Package: rollup-config
  */
 
+import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
@@ -40,6 +41,7 @@ export default (pkg: any): any => {
             typescript({
                 tsconfig: './tsconfig.json',
             }),
+            commonjs(),
             replace({
                 __BUILD_DATE__: (): string => new Date().toString(),
                 __BUILD_PACKAGE_NAME__: pkg.name,
