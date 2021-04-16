@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.2.2...@donmahallem/label-gh@0.2.3) (2021-04-16)
+
+**Note:** Version bump only for package @donmahallem/label-gh
+
+
+
+
+
+
 ## [0.2.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.2.1...@donmahallem/label-gh@0.2.2) (2021-04-08)
 
 **Note:** Version bump only for package @donmahallem/label-gh

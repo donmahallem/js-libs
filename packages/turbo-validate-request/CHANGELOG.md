@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.1.10...@donmahallem/turbo-validate-request@0.1.11) (2021-04-16)
+
+**Note:** Version bump only for package @donmahallem/turbo-validate-request
+
+
+
+
+
+
 ## [0.1.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.1.9...@donmahallem/turbo-validate-request@0.1.10) (2021-04-08)
 
 **Note:** Version bump only for package @donmahallem/turbo-validate-request
