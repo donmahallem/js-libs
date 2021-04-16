@@ -54,7 +54,7 @@
   "devDependencies": {
     "@types/gulp": "4.0.8",
     "@types/through2": "2.0.36",
-    "@vercel/ncc": "0.28.2"
+    "@vercel/ncc": "0.28.3"
   },
   "dependencies": {
     "gulp": "~4.0.2",
