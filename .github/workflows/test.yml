@@ -18,7 +18,7 @@ jobs:
       packages: ${{ steps.packages.outputs.packages }}
   test_suite:
     runs-on: ${{ matrix.os }}
-    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }}
+    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - Package ${{ matrix.package }}
     timeout-minutes: 30
     needs: ["collect-packages"]
     strategy:
