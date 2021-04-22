@@ -8,23 +8,40 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
-
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Setup Cache
+        uses: actions/cache@v2.1.5
+        with:
+          path: |
+            ${{ steps.npm-cache.outputs.dir }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Root Dependencies
+        run: npm ci
       - name: "Find Dockerfiles"
         id: "packages"
         run: |
-          SOLUTIONS=$(find . -type f -name package.json -exec dirname {} \;| sed -e 's|^./||' | jq -R '[.]' | jq -s -c -M 'add')
+          SOLUTIONS=$(npx lerna list --json)
           echo "::set-output name=packages::${SOLUTIONS}"
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
-  test_suite:
+  test_suite_10:
     runs-on: ${{ matrix.os }}
-    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - Package ${{ matrix.package }}
+    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - Package ${{ matrix.package.name }}
     timeout-minutes: 30
     needs: ["collect-packages"]
     strategy:
       matrix:
         package: ${{ fromJson(needs.collect-packages.outputs.packages) }}
-        node: [10, 12, 14]
+        node: [10, 14]
         os: [ubuntu-latest] #, windows-latest]
     steps:
       - name: Checkout
@@ -52,17 +69,17 @@ jobs:
           npm ci
           npx lerna bootstrap --ci
       - name: Run Build
-        run: npm run build
+        run: npx lerna run build --include-dependencies --scope=${{ matrix.package.name }}
       - name: Run Test
-        run: npm run test:coverage --no-sort
+        run: npx lerna run test --scope=${{ matrix.package.name }}
       - name: Upload coverage to Codecov Monorepo
         uses: donmahallem/codecov-monorepo@release
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Run Lint
-        run: npm run lint --no-sort
+        run: npx lerna run lint --scope=${{ matrix.package.name }}
       - name: Run Docs
-        run: npm run docs --no-sort
+        run: npx lerna run docs --scope=${{ matrix.package.name }}
   finish:
     needs: test_suite
     name: Finish Test
