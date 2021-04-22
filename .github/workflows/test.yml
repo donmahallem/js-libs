@@ -33,7 +33,7 @@ jobs:
           echo "::set-output name=packages::${SOLUTIONS}"
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
-  test_suite_10:
+  test_suite:
     runs-on: ${{ matrix.os }}
     name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - Package ${{ matrix.package.name }}
     timeout-minutes: 30
