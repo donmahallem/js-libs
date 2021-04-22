@@ -30,6 +30,7 @@ jobs:
         id: "packages"
         run: |
           SOLUTIONS=$(npx lerna list --json --loglevel silent) | tr -d '\r'
+          echo $SOLUTIONS
           echo "::set-output name=packages::${SOLUTIONS}"
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
