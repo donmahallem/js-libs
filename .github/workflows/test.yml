@@ -3,8 +3,8 @@ on: [push,pull_request]
 
 jobs:
   collect-packages:
-    runs-on: ubuntu-20.04
-
+    runs-on: ubuntu-latest
+    name: Collect Lerna Packages
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
       packages: ${{ steps.packages.outputs.packages }}
   test_suite:
     runs-on: ${{ matrix.os }}
-    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - Package ${{ matrix.package.name }}
+    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - ${{ matrix.package.name }}
     timeout-minutes: 30
     needs: ["collect-packages"]
     strategy:
