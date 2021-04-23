@@ -29,12 +29,13 @@ jobs:
       - name: "Find Dockerfiles"
         id: "packages"
         run: |
-          SOLUTIONS=$(npx lerna list --json --loglevel silent) | tr -d '\r'
+          SOLUTIONS=$(npx lerna list --json --loglevel silent | tr -d '\r') 
           echo $SOLUTIONS
           echo "::set-output name=packages::${SOLUTIONS}"
       - name: Found Packages
         run: |
           echo ${{ steps.packages.outputs.packages }}
+          npx lerna list --json --loglevel silent | tr -d '\r'
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
   test_suite:
