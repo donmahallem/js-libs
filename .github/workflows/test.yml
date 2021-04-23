@@ -26,16 +26,14 @@ jobs:
           key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
       - name: Install Root Dependencies
         run: npm ci
-      - name: "Find Dockerfiles"
+      - name: Find Lerna Packages
         id: "packages"
         run: |
-          SOLUTIONS=$(npx lerna list --json --loglevel silent | tr -d '\r') 
-          echo $SOLUTIONS
+          SOLUTIONS=$(npx lerna list --json --loglevel silent | tr -d '[\r\n]+') 
           echo "::set-output name=packages::${SOLUTIONS}"
       - name: Found Packages
         run: |
           echo ${{ steps.packages.outputs.packages }}
-          npx lerna list --json --loglevel silent | tr -d '[\r\n]+'
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
   test_suite:
