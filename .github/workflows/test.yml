@@ -35,7 +35,7 @@ jobs:
       - name: Found Packages
         run: |
           echo ${{ steps.packages.outputs.packages }}
-          npx lerna list --json --loglevel silent | tr -d '\r'
+          npx lerna list --json --loglevel silent | tr -d '[\r\n]+'
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
   test_suite:
