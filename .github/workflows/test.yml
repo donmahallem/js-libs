@@ -30,7 +30,7 @@ jobs:
         id: "packages"
         run: |
           SOLUTIONS=$(npx lerna list --json --loglevel silent | tr -d '[\r\n]+') 
-          echo "::set-output name=packages::${SOLUTIONS}"
+          echo "::set-output name=packages::[${SOLUTIONS}]"
       - name: Found Packages
         run: |
           echo ${{ steps.packages.outputs.packages }}
