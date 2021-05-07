@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.12](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.1.11...@donmahallem/sync-gist@0.1.12) (2021-05-07)
+
+**Note:** Version bump only for package @donmahallem/sync-gist
+
+
+
+
+
+
 ## [0.1.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.1.10...@donmahallem/sync-gist@0.1.11) (2021-04-20)
 
 **Note:** Version bump only for package @donmahallem/sync-gist
