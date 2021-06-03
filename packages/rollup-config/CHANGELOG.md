@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.2.3...@donmahallem/rollup-config@0.2.4) (2021-06-03)
+
+**Note:** Version bump only for package @donmahallem/rollup-config
+
+
+
+
+
+
 ## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.2.2...@donmahallem/rollup-config@0.2.3) (2021-05-07)
 
 **Note:** Version bump only for package @donmahallem/rollup-config
