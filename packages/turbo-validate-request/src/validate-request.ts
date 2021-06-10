@@ -7,8 +7,8 @@ import { NextFunction, Request, RequestHandler, Response } from 'express';
 import { convertValidationError } from './convert-validation-error';
 
 type CheckKeys = 'query' | 'params' | 'body';
-type MethodSignature = < T = object, _partial extends boolean = false >(key: CheckKeys,
-    schema: JSONSchemaType<T, _partial>,
+type MethodSignature = < T = object>(key: CheckKeys,
+    schema: JSONSchemaType<T>,
     ajvInstance?: Ajv) => RequestHandler;
 /**
  * Checks a request against the given schema
@@ -18,7 +18,7 @@ type MethodSignature = < T = object, _partial extends boolean = false >(key: Che
  */
 export const validateRequest: MethodSignature =
     <T, _partial extends boolean = false>(key: CheckKeys,
-        schema: JSONSchemaType<T, _partial>,
+        schema: JSONSchemaType<T>,
         ajvInstance: Ajv = new Ajv()): RequestHandler => {
         const validateFunction: ValidateFunction = ajvInstance.compile(schema);
         return (req: Request, res: Response, next: NextFunction): void => {
