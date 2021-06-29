@@ -7,8 +7,7 @@
     "types": "dist/types/index.d.ts",
     "private": false,
     "scripts": {
-        "build": "rollup -c ./rollup.config.js && npm run build:types",
-        "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+        "build": "npm run asbuild:untouched && npm run asbuild:optimized",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.yml",
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
@@ -18,8 +17,7 @@
         "prepublishOnly": "npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md",
         "asbuild:untouched": "asc src/index.ts --target debug",
-        "asbuild:optimized": "asc src/index.ts --target release",
-        "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+        "asbuild:optimized": "asc src/index.ts --target release"
     },
     "files": [
         "dist/*",

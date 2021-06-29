@@ -1,5 +1,6 @@
-// The entry file of your WebAssembly module.
+/**!
+ * Source https://github.com/donmahallem/js-libs Package: sudoku
+ */
 
-export function add(a: i32, b: i32): i32 {
-  return a + b;
-}
+export { solve as knuthSolve } from './solve';
+export { solveNum as knuthSolveNum } from './solve';
