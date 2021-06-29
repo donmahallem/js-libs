@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/label-pr",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Helpers for working with github issue labels",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -56,6 +56,6 @@
     "@octokit/types": "6.13.1"
   },
   "dependencies": {
-    "@donmahallem/label-gh": "^0.2.7"
+    "@donmahallem/label-gh": "^0.2.8"
   }
 }
