@@ -16,7 +16,7 @@
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
         "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
         "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-        "docs": "typedoc --options ../../typedoc.json",
+        "docs": "typedoc --options  ./typedoc.config.js",
         "prepublishOnly": "npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md"
     },
@@ -48,7 +48,7 @@
         "@rollup/plugin-node-resolve": "13.0.0",
         "@rollup/plugin-replace": "2.4.2",
         "@rollup/plugin-typescript": "8.2.1",
-        "rollup": "2.51.1"
+        "rollup": "2.52.3"
     },
     "peerDependencies": {
         "@rollup/plugin-node-resolve": "^13.0.0",
