@@ -52,7 +52,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/gulp": "4.0.8",
+    "@types/gulp": "4.0.9",
     "@types/sharp": "0.28.4",
     "@types/through2": "2.0.36"
   },
