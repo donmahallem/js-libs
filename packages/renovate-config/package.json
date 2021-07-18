@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/renovate-config",
-  "version": "0.5.3",
+  "version": "0.5.7",
   "description": "General renovate config",
   "private": false,
   "keywords": [
@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "test": "renovate-config-validator",
+    "test:coverage": "npm run test",
     "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
     "prepublishOnly": "npm run test",
     "version": "npm run build:readme && git add README.md"
@@ -38,7 +39,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "renovate": "24.117.0"
+    "renovate": "25.53.3"
   },
   "renovate-config": {
     "default": {

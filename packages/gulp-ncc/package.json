@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/gulp-ncc",
-  "version": "1.0.10",
+  "version": "1.0.14",
   "description": "ncc Plugin for Gulp",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -22,7 +22,7 @@
     "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
     "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
     "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-    "docs": "typedoc --options ../../typedoc.json",
+    "docs": "typedoc --options ./typedoc.config.js",
     "prepublishOnly": "npm run test && npm run docs && npm run build",
     "version": "npm run build:readme && git add README.md"
   },
@@ -52,9 +52,9 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/gulp": "4.0.8",
+    "@types/gulp": "4.0.9",
     "@types/through2": "2.0.36",
-    "@vercel/ncc": "0.28.3"
+    "@vercel/ncc": "0.29.0"
   },
   "dependencies": {
     "gulp": "~4.0.2",

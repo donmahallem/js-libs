@@ -20,7 +20,7 @@ jobs:
           ref: '${{ github.ref }}'
           fetch-depth: 0
       - name: Setup Node
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v2.2.0
         with:
           node-version: ${{ matrix.node }}
       - name: Get npm cache directory
@@ -28,7 +28,7 @@ jobs:
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
       - name: Setup Cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@v2.1.6
         with:
           path: |
             ${{ steps.npm-cache.outputs.dir }}
