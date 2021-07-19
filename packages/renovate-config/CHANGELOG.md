@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.5.8...@donmahallem/renovate-config@0.6.0) (2021-07-19)
+
+
+### Features
+
+* **renovate-config:** group rollup plugins dependencies ([2b4bae6](https://github.com/donmahallem/js-libs/commit/2b4bae6b2fec1132e73b4f88a9e56f70ffaab576))
+
+
+
+
+
+
 ## [0.5.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.5.7...@donmahallem/renovate-config@0.5.8) (2021-07-19)
 
 **Note:** Version bump only for package @donmahallem/renovate-config
