@@ -9,15 +9,18 @@ function createTempFile() {
         return `<a href="https://badge.fury.io/js/${encodedName}"><img alt="npm version" `
             + `src="https://badge.fury.io/js/${encodedName}.svg" height="20"/></a>`;
     }
-
+    const path = require('path');
     const dataArray = [['Name', 'Description', 'Version']]
         .concat(packages
             .map((package) => {
+                const relativePath = package.get('homepage') ?
+                    package.get('homepage') :
+                    `https://github.com/manniwatch/manniwatch/tree/master/${path.relative(package.rootPath, package.location)}`;
                 const name = package.get('name');
                 const description = package.get('description');
                 const version = package.get('version');
                 return [
-                    name ? name : 'unknown',
+                    `[${name}](${relativePath})`,
                     description ? description : ' - ',
                     version ? createVersionLabel(name) : ' - ',
                 ];
