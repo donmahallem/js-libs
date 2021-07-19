@@ -1,4 +1,5 @@
 {
+    "extend": "temp_readme_config.json",
     "line": "water",
     "badges": [
         {
@@ -33,5 +34,22 @@
         }
     ],
     "lineBreak": "\r\n",
-    "silent": true
+    "silent": true,
+    "properties": [
+        [
+            "Attribute",
+            "Type",
+            "Description"
+        ],
+        [
+            "**size**",
+            "'medium', 'large'",
+            "Determines the size"
+        ],
+        [
+            "**active**",
+            "boolean",
+            "Whether the element is active or not"
+        ]
+    ]
 }

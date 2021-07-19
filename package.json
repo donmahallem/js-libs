@@ -33,6 +33,8 @@
   },
   "scripts": {
     "build": "lerna run build",
+    "prebuild:readme": "node ./scripts/extract_packages.js",
+    "postbuild:readme": "node ./scripts/extract_packages.js clear",
     "build:readme": "npx @appnest/readme generate --input readme_blueprint.md --config readme_config.json && lerna run build:readme",
     "test": "lerna run test",
     "test:coverage": "lerna run test:coverage",
