@@ -61,6 +61,14 @@
           ]
         },
         {
+          "groupName": "rollup packages",
+          "matchPackagePatterns": [
+            "^@donmahallem/rollup-config",
+            "^@rollup/plugin",
+            "^rollup$"
+          ]
+        },
+        {
           "groupName": "manniwatch monorepo {{currentVersion}}",
           "matchPackagePatterns": [
             "^@manniwatch/"
