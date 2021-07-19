@@ -2,13 +2,50 @@ name: Test
 on: [push,pull_request]
 
 jobs:
+  collect-packages:
+    runs-on: ubuntu-latest
+    name: Collect Lerna Packages
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Setup Cache
+        uses: actions/cache@v2.1.6
+        with:
+          path: |
+            ${{ steps.npm-cache.outputs.dir }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Root Dependencies
+        run: npm ci
+      - name: Find Lerna Packages
+        id: "packages"
+        run: |
+          SOLUTIONS=$(npx lerna list --json --loglevel silent | tr -d '[\r\n]+') 
+          echo "::set-output name=packages::[${SOLUTIONS}]"
+      - name: Found Packages
+        run: |
+          echo ${{ steps.packages.outputs.packages }}
+    outputs:
+      packages: ${{ steps.packages.outputs.packages }}
   test_suite:
     runs-on: ${{ matrix.os }}
-    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }}
+    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - ${{ matrix.package.name }}
     timeout-minutes: 30
+    needs: ["collect-packages"]
     strategy:
+      max-parallel: 4
       matrix:
-        node: [10, 12, 14]
+        package: ${{ fromJson(needs.collect-packages.outputs.packages) }}
+        node: [10, 14]
         os: [ubuntu-latest] #, windows-latest]
     steps:
       - name: Checkout
@@ -16,7 +53,7 @@ jobs:
         with:
           fetch-depth: 200
       - name: Setup Node
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v2.2.0
         with:
           node-version: ${{ matrix.node }}
       - name: Get npm cache directory
@@ -36,17 +73,17 @@ jobs:
           npm ci
           npx lerna bootstrap --ci
       - name: Run Build
-        run: npm run build
+        run: npx lerna run build --include-dependencies --scope=${{ matrix.package.name }}
       - name: Run Test
-        run: npm run test:coverage --no-sort
+        run: npx lerna run test:coverage --scope=${{ matrix.package.name }}
       - name: Upload coverage to Codecov Monorepo
         uses: donmahallem/codecov-monorepo@release
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Run Lint
-        run: npm run lint --no-sort
+        run: npx lerna run lint --scope=${{ matrix.package.name }}
       - name: Run Docs
-        run: npm run docs --no-sort
+        run: npx lerna run docs --scope=${{ matrix.package.name }}
   finish:
     needs: test_suite
     name: Finish Test
