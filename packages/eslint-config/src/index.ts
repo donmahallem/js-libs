@@ -3,7 +3,6 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-/* eslint quote-props: ["error", "always"]*/
 /* eslint-env es6*/
 import path from 'path';
 // eslint-disable-next-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-assignment
