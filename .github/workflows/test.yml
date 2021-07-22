@@ -5,6 +5,10 @@ jobs:
   collect-packages:
     runs-on: ubuntu-latest
     name: Collect Lerna Packages
+    strategy:
+      max-parallel: 1
+      matrix:
+        node: [16]
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
@@ -45,7 +49,7 @@ jobs:
       max-parallel: 4
       matrix:
         package: ${{ fromJson(needs.collect-packages.outputs.packages) }}
-        node: [10, 14]
+        node: [12, 16]
         os: [ubuntu-latest] #, windows-latest]
     steps:
       - name: Checkout
