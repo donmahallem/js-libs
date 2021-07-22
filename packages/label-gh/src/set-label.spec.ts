@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Octokit } from '@octokit/core';
@@ -59,7 +60,7 @@ describe('set-label', (): void => {
                 labels: ['test', 'label'],
                 owner: 'some_owner',
                 repo: 'anyrepo',
-            }).then((result: any): void => {
+            }).then((): void => {
                 throw new Error('Should not resolve');
             }).catch((err: any): void => {
                 expect(err).to.equal(testError);

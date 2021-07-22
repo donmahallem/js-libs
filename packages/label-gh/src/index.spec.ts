@@ -1,12 +1,13 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';
 import 'mocha';
 import * as index from './index';
 
-// tslint:disable:no-unused-expression
+/* eslint-disable no-unused-expressions, @typescript-eslint/no-unused-expressions */
 describe('index', (): void => {
     it('should export defaults', (): void => {
         expect(index.syncLabels).to.not.be.undefined;

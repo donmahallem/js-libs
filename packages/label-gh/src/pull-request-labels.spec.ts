@@ -1,11 +1,13 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Octokit } from '@octokit/core';
 import { expect } from 'chai';
 import 'mocha';
 import Sinon from 'sinon';
+import { PRLabelsResponse } from './github-types';
 import { getPullRequestLabels } from './pull-request-labels';
 
 const API_ENDPOINT: string = 'GET /repos/{owner}/{repo}/pulls/{pull_number}';
@@ -26,12 +28,14 @@ describe('set-label', (): void => {
             requestStub = sandbox.stub<Parameters<Octokit['request']>>();
         });
         it('should pass on all correct data', (): Promise<void> => {
-            const testResponseData: any = {
-                labels: ['any response'],
+            const testResponseData: Partial<PRLabelsResponse['data']> = {
+                labels: [{
+                    name: 'any response',
+                }],
             };
             requestStub.resolves({
                 data: testResponseData,
-            } as any);
+            });
             return getPullRequestLabels({ request: requestStub } as any, {
                 owner: 'some_owner',
                 pull_number: 2,
@@ -76,7 +80,7 @@ describe('set-label', (): void => {
                 owner: 'some_owner',
                 pull_number: 2,
                 repo: 'anyrepo',
-            }).then((result: any): void => {
+            }).then((): void => {
                 throw new Error('Should not resolve');
             }).catch((err: any): void => {
                 expect(err).to.equal(testError);
