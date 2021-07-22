@@ -5,6 +5,10 @@ jobs:
   collect-packages:
     runs-on: ubuntu-latest
     name: Collect Lerna Packages
+    strategy:
+      max-parallel: 1
+      matrix:
+        node: [16]
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
