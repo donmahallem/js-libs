@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Label the PR
-        uses: donmahallem/lerna-label@0.0.3
+        uses: donmahallem/lerna-label@dev
         with:
           github_secret: "${{ secrets.GITHUB_TOKEN }}"
           prefix: "pkg"
