@@ -15,9 +15,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v2.3.0
         with:
-          node-version: '12.x'
+          node-version: 16
       - name: Create Changelog
         id: create-changelog
         run: |

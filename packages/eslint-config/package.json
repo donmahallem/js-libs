@@ -1,0 +1,62 @@
+{
+    "name": "@donmahallem/eslint-config",
+    "version": "0.0.0",
+    "description": "My personal eslint config. Do not use!",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "private": false,
+    "scripts": {
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc --project ./tsconfig.app.json --outDir ./dist/esm --module esnext",
+        "build:cjs": "tsc --project ./tsconfig.app.json --outDir ./dist/cjs --module commonjs",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "test": "mocha --config ../../.mocharc.yml",
+        "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+        "prelint": "npm run build",
+        "lint": "eslint -c ./dist/cjs/index.js --ext .ts ./src",
+        "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+        "lint:fix": "eslint -c ./dist/cjs/index.js --ext .ts ./src --fix",
+        "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
+        "docs": "typedoc --options  ./typedoc.config.js",
+        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "version": "npm run build:readme && git add README.md"
+    },
+    "files": [
+        "dist/*",
+        "src/*"
+    ],
+    "homepage": "https://donmahallem.github.io/js-libs/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "4.28.4",
+        "@typescript-eslint/eslint-plugin-tslint": "4.28.4",
+        "@typescript-eslint/parser": "4.28.4",
+        "eslint": "7.31.0",
+        "eslint-config-prettier": "8.3.0",
+        "eslint-plugin-header": "3.1.1",
+        "eslint-plugin-import": "2.23.4",
+        "eslint-plugin-jsdoc": "35.5.0",
+        "eslint-plugin-no-null": "1.0.2",
+        "eslint-plugin-prefer-arrow": "1.2.3",
+        "prettier": "2.3.2"
+    }
+}

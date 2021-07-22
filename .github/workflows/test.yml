@@ -5,11 +5,15 @@ jobs:
   collect-packages:
     runs-on: ubuntu-latest
     name: Collect Lerna Packages
+    strategy:
+      max-parallel: 1
+      matrix:
+        node: [16]
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
       - name: Setup Node
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v2.3.0
         with:
           node-version: ${{ matrix.node }}
       - name: Get npm cache directory
@@ -45,7 +49,7 @@ jobs:
       max-parallel: 4
       matrix:
         package: ${{ fromJson(needs.collect-packages.outputs.packages) }}
-        node: [10, 14]
+        node: [12, 16]
         os: [ubuntu-latest] #, windows-latest]
     steps:
       - name: Checkout
@@ -53,7 +57,7 @@ jobs:
         with:
           fetch-depth: 200
       - name: Setup Node
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v2.3.0
         with:
           node-version: ${{ matrix.node }}
       - name: Get npm cache directory
