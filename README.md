@@ -22,6 +22,7 @@ This repository holds several packages being published under the @donmahallem sc
 
 | Name                                             | Description                                     | Version                                          |
 |--------------------------------------------------|-------------------------------------------------|--------------------------------------------------|
+| [@donmahallem/eslint-config](https://donmahallem.github.io/js-libs/) | My personal eslint config. Do not use!          | <a href="https://badge.fury.io/js/%40donmahallem%2Feslint-config"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Feslint-config.svg" height="20"/></a> |
 | [@donmahallem/gulp-ncc](https://donmahallem.github.io/js-libs/) | ncc Plugin for Gulp                             | <a href="https://badge.fury.io/js/%40donmahallem%2Fgulp-ncc"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Fgulp-ncc.svg" height="20"/></a> |
 | [@donmahallem/gulp-sharp](https://donmahallem.github.io/js-libs/) | Sharp Plugin for Gulp. Modify images via sharp. | <a href="https://badge.fury.io/js/%40donmahallem%2Fgulp-sharp"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Fgulp-sharp.svg" height="20"/></a> |
 | [@donmahallem/ico](https://donmahallem.github.io/js-libs/) | Library to read and write ico files             | <a href="https://badge.fury.io/js/%40donmahallem%2Fico"><img alt="npm version" src="https://badge.fury.io/js/%40donmahallem%2Fico.svg" height="20"/></a> |
