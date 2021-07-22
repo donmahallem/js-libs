@@ -29,9 +29,11 @@ describe('set-label', (): void => {
         });
         it('should pass on all correct data', (): Promise<void> => {
             const testResponseData: Partial<PRLabelsResponse['data']> = {
-                labels: [{
-                    name: 'any response',
-                }],
+                labels: [
+                    {
+                        name: 'any response',
+                    },
+                ],
             };
             requestStub.resolves({
                 data: testResponseData,
@@ -42,17 +44,19 @@ describe('set-label', (): void => {
                 repo: 'anyrepo',
             }).then((result: any): void => {
                 expect(result).to.deep.equal(testResponseData.labels);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        owner: 'some_owner',
-                        pull_number: 2,
-                        repo: 'anyrepo',
-                    },
-                ]]);
+                expect(requestStub.args).to.deep.eq([
+                    [
+                        API_ENDPOINT,
+                        {
+                            owner: 'some_owner',
+                            pull_number: 2,
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
             });
         });
-        it('should return empty array if labels isn\'t defined', (): Promise<void> => {
+        it("should return empty array if labels isn't defined", (): Promise<void> => {
             const testResponseData: string = 'any response';
             requestStub.resolves({
                 data: testResponseData,
@@ -63,14 +67,16 @@ describe('set-label', (): void => {
                 repo: 'anyrepo',
             }).then((result: any): void => {
                 expect(result).to.deep.equal([]);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        owner: 'some_owner',
-                        pull_number: 2,
-                        repo: 'anyrepo',
-                    },
-                ]]);
+                expect(requestStub.args).to.deep.eq([
+                    [
+                        API_ENDPOINT,
+                        {
+                            owner: 'some_owner',
+                            pull_number: 2,
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
             });
         });
         it('should return rejections', (): Promise<void> => {
@@ -80,19 +86,23 @@ describe('set-label', (): void => {
                 owner: 'some_owner',
                 pull_number: 2,
                 repo: 'anyrepo',
-            }).then((): void => {
-                throw new Error('Should not resolve');
-            }).catch((err: any): void => {
-                expect(err).to.equal(testError);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        owner: 'some_owner',
-                        pull_number: 2,
-                        repo: 'anyrepo',
-                    },
-                ]]);
-            });
+            })
+                .then((): void => {
+                    throw new Error('Should not resolve');
+                })
+                .catch((err: any): void => {
+                    expect(err).to.equal(testError);
+                    expect(requestStub.args).to.deep.eq([
+                        [
+                            API_ENDPOINT,
+                            {
+                                owner: 'some_owner',
+                                pull_number: 2,
+                                repo: 'anyrepo',
+                            },
+                        ],
+                    ]);
+                });
         });
     });
 });

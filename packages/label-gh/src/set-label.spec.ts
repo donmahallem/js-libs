@@ -38,18 +38,17 @@ describe('set-label', (): void => {
                 repo: 'anyrepo',
             }).then((result: any): void => {
                 expect(result).to.equal(testResponseData);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        issue_number: 2,
-                        labels: [
-                            'test',
-                            'label',
-                        ],
-                        owner: 'some_owner',
-                        repo: 'anyrepo',
-                    },
-                ]]);
+                expect(requestStub.args).to.deep.eq([
+                    [
+                        API_ENDPOINT,
+                        {
+                            issue_number: 2,
+                            labels: ['test', 'label'],
+                            owner: 'some_owner',
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
             });
         });
         it('should return rejections', (): Promise<void> => {
@@ -60,23 +59,24 @@ describe('set-label', (): void => {
                 labels: ['test', 'label'],
                 owner: 'some_owner',
                 repo: 'anyrepo',
-            }).then((): void => {
-                throw new Error('Should not resolve');
-            }).catch((err: any): void => {
-                expect(err).to.equal(testError);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        issue_number: 2,
-                        labels: [
-                            'test',
-                            'label',
+            })
+                .then((): void => {
+                    throw new Error('Should not resolve');
+                })
+                .catch((err: any): void => {
+                    expect(err).to.equal(testError);
+                    expect(requestStub.args).to.deep.eq([
+                        [
+                            API_ENDPOINT,
+                            {
+                                issue_number: 2,
+                                labels: ['test', 'label'],
+                                owner: 'some_owner',
+                                repo: 'anyrepo',
+                            },
                         ],
-                        owner: 'some_owner',
-                        repo: 'anyrepo',
-                    },
-                ]]);
-            });
+                    ]);
+                });
         });
     });
 });

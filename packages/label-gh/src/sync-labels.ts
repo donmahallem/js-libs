@@ -22,10 +22,7 @@ export interface IOpts {
      */
     repo: string;
 }
-export const syncLabels = (octokit: Octokit,
-    opts: IOpts,
-    labels: string[],
-    replace: boolean = true): Promise<GithubLabel[]> => {
+export const syncLabels = (octokit: Octokit, opts: IOpts, labels: string[], replace: boolean = true): Promise<GithubLabel[]> => {
     if (replace) {
         return setLabels(octokit, {
             ...opts,
