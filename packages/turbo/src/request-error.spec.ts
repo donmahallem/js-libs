@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+/*
+ * Package @donmahallem/turbo
+ * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
  */
 
 import { expect } from 'chai';
@@ -10,7 +11,7 @@ describe('./request-error', (): void => {
     const testStatuses: any[] = [undefined, 200, 333];
     const testMessages: string[] = ['test1', 'test2'];
     describe('RequestError', (): void => {
-        testStatuses.forEach((testStatus: any): void => {
+        testStatuses.forEach((testStatus: number | undefined): void => {
             const expectedStatus: number = testStatus || 500;
             testMessages.forEach((testMessage: string): void => {
                 it(`should create a new RequestError(${testMessage},${expectedStatus})`, (): void => {
