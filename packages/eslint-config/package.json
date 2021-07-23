@@ -15,7 +15,6 @@
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
         "prelint": "npm run build",
         "lint": "eslint -c ./dist/cjs/index.js --ext .ts ./src",
-        "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
         "lint:fix": "eslint -c ./dist/cjs/index.js --ext .ts ./src --fix",
         "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
         "docs": "typedoc --options  ./typedoc.config.js",
