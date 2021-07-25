@@ -69,6 +69,7 @@ module.exports = {
                 code: 140,
             },
         ],
+        'no-multiple-empty-lines': ['error', { 'max': 2, 'maxBOF': 1 }],
         'sort-keys': [
             'error',
             'asc',
