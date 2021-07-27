@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/label-gh",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Helpers for working with github issue labels",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
