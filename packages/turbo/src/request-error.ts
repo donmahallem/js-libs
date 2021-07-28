@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+/*
+ * Package @donmahallem/turbo
+ * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
  */
 
 /**
