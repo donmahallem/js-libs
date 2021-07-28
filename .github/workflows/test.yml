@@ -84,12 +84,45 @@ jobs:
         uses: donmahallem/codecov-monorepo@release
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Run Lint
-        run: npx lerna run lint --scope=${{ matrix.package.name }}
       - name: Run Docs
         run: npx lerna run docs --scope=${{ matrix.package.name }}
+  test_lint:
+    runs-on: ${{ matrix.os }}
+    name: Test - ${{ matrix.os }} - Node ${{ matrix.node }} - ${{ matrix.package.name }}
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        node: [16]
+        os: [ubuntu-latest] #, windows-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v2.3.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Setup Cache
+        uses: actions/cache@v2.1.6
+        with:
+          path: |
+            ${{ steps.npm-cache.outputs.dir }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Deps
+        run: |
+          npm ci
+          npx lerna bootstrap --ci
+      - name: Run Lint
+        run: npx lerna run lint --scope=${{ matrix.package.name }}
   finish:
-    needs: test_suite
+    needs: [test_suite, test_lint]
     name: Finish Test
     runs-on: ubuntu-latest
     steps:
