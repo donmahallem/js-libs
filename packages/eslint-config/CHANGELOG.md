@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.2...@donmahallem/eslint-config@0.2.3) (2021-07-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.4 ([b457bcf](https://github.com/donmahallem/js-libs/commit/b457bcfb64b2a8cb3bae1c86c0ed519e47316962))
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.5 ([94de65a](https://github.com/donmahallem/js-libs/commit/94de65a807344e1b7e369ee624ebc0e163840709))
+
+
+
+
+
+## [0.2.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.1...@donmahallem/eslint-config@0.2.2) (2021-07-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.3 ([e36722c](https://github.com/donmahallem/js-libs/commit/e36722c54a6e835dd3413400e8f402527c1d7ecd))
+* **deps:** update typescript-eslint monorepo to v4.28.5 ([1d381c8](https://github.com/donmahallem/js-libs/commit/1d381c8f03594b6f71570d1b8b19dd792f4c3a47))
+
+
+
+
+
+## [0.2.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.0...@donmahallem/eslint-config@0.2.1) (2021-07-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36 ([0703705](https://github.com/donmahallem/js-libs/commit/070370552af8e2e0f92aba81ad4665496f00bae7))
+
+
+
+
+
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.1.0...@donmahallem/eslint-config@0.2.0) (2021-07-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v35.5.1 ([30dd72c](https://github.com/donmahallem/js-libs/commit/30dd72c037f97d3bd01449db735a962c73dc10a8))
+
+
+### Features
+
+* **eslint-config:** reduce redundant eslint typescript rules ([#687](https://github.com/donmahallem/js-libs/issues/687)) ([9014663](https://github.com/donmahallem/js-libs/commit/9014663aefa74756b7ce50ce98bbd861ecbdd89f))
+
+
+
+
+
 # 0.1.0 (2021-07-22)
 
 
