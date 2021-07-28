@@ -20,6 +20,7 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
+        'plugin:jsdoc/recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -30,14 +31,7 @@ module.exports = {
         project: 'tsconfig.json',
         sourceType: 'module',
     },
-    plugins: [
-        'eslint-plugin-jsdoc',
-        'eslint-plugin-prefer-arrow',
-        'eslint-plugin-import',
-        'eslint-plugin-no-null',
-        'header',
-        '@typescript-eslint',
-    ],
+    plugins: ['jsdoc', 'eslint-plugin-prefer-arrow', 'eslint-plugin-import', 'eslint-plugin-no-null', 'header', '@typescript-eslint'],
     rules: {
         '@typescript-eslint/naming-convention': [
             'error',
