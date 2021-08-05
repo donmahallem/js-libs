@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.21](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@1.0.20...@donmahallem/gulp-sharp@1.0.21) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+
+
+
+
+
 ## [1.0.20](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@1.0.19...@donmahallem/gulp-sharp@1.0.20) (2021-07-28)
 
 **Note:** Version bump only for package @donmahallem/gulp-sharp

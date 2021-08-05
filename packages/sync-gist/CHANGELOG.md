@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.21](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.1.20...@donmahallem/sync-gist@0.1.21) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+
+
+
+
+
 ## [0.1.20](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.1.19...@donmahallem/sync-gist@0.1.20) (2021-07-28)
 
 **Note:** Version bump only for package @donmahallem/sync-gist

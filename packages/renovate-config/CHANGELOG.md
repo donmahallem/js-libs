@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.4...@donmahallem/renovate-config@0.7.0) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+
+
+### Features
+
+* **renovate-config:** group octokit dependencies in one PR ([#731](https://github.com/donmahallem/js-libs/issues/731)) ([809ab28](https://github.com/donmahallem/js-libs/commit/809ab282df398011bcd50a09c4bec4710d6fcfa4))
+
+
+
+
+
 ## [0.6.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.3...@donmahallem/renovate-config@0.6.4) (2021-07-28)
 
 **Note:** Version bump only for package @donmahallem/renovate-config

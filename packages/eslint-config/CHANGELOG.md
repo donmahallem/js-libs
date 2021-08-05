@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.3...@donmahallem/eslint-config@0.2.4) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint to v7.32.0 ([aaba2ca](https://github.com/donmahallem/js-libs/commit/aaba2ca9c074c690bb61c4b6fff8aeabd27100d1))
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+* **deps:** update typescript-eslint monorepo to v4.29.0 ([102c67a](https://github.com/donmahallem/js-libs/commit/102c67a2c62aef4a66e11ad222a7cecfe4ca017a))
+
+
+
+
+
 ## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.2...@donmahallem/eslint-config@0.2.3) (2021-07-28)
 
 
