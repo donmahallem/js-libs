@@ -1,11 +1,14 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo
+/*
+ * Package @donmahallem/turbo
+ * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
  */
 
 import { expect } from 'chai';
 import 'mocha';
 import sinon from 'sinon';
 import { promiseToResponse } from './promise-to-response';
+
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
 describe('promise-to-response.ts', (): void => {
     describe('promiseToResponse(prom,res)', (): void => {
         let jsonSpy: sinon.SinonSpy;
@@ -33,7 +36,7 @@ describe('promise-to-response.ts', (): void => {
         });
         describe('promise resolves', (): void => {
             [true, false].forEach((nextProvided: boolean): void => {
-                describe(`next parameter ${(nextProvided ? '' : 'not')} provided`, (): void => {
+                describe(`next parameter ${nextProvided ? '' : 'not'} provided`, (): void => {
                     it('should forward the resolved value to the response', (done: Mocha.Done): void => {
                         if (nextProvided) {
                             promiseToResponse(Promise.resolve(testResponse), resObj, nextSpy);
@@ -50,9 +53,12 @@ describe('promise-to-response.ts', (): void => {
                         }, 100);
                     });
                     it('should forward the resolved value to the response and not send status', (done: Mocha.Done): void => {
-                        const testResponseObject: any = Object.assign({
-                            headersSent: true,
-                        }, resObj);
+                        const testResponseObject: any = Object.assign(
+                            {
+                                headersSent: true,
+                            },
+                            resObj
+                        );
                         if (nextProvided) {
                             promiseToResponse(Promise.resolve(testResponse), testResponseObject, nextSpy);
                         } else {
@@ -140,10 +146,12 @@ describe('promise-to-response.ts', (): void => {
                             expect(statusStub.callCount).to.equal(1);
                             expect(jsonSpy.callCount).to.equal(1);
                             expect(statusStub.getCall(0).args).to.deep.equal([testError.response.statusCode]);
-                            expect(jsonSpy.getCall(0).args).to.deep.equal([{
-                                error: true,
-                                statusCode: testError.response.statusCode,
-                            }]);
+                            expect(jsonSpy.getCall(0).args).to.deep.equal([
+                                {
+                                    error: true,
+                                    statusCode: testError.response.statusCode,
+                                },
+                            ]);
                             done();
                         }, 100);
                     });
