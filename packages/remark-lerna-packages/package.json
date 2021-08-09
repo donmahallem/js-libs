@@ -6,6 +6,15 @@
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
     "private": false,
+    "keywords": [
+        "unified",
+        "remark",
+        "remark-plugin",
+        "plugin",
+        "mdast",
+        "markdown",
+        "lerna"
+    ],
     "scripts": {
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
