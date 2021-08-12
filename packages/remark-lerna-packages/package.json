@@ -6,6 +6,7 @@
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
     "private": false,
+    "type": "module",
     "keywords": [
         "unified",
         "remark",
@@ -19,10 +20,12 @@
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-        "test": "mocha --config ../../.mocharc.yml",
-        "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
-        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
-        "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+        "test": "mocha --experimental-specifier-resolution=node",
+        "test:coverage": "c8 npm run test",
+        "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
+        "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+        "lint:fix": "eslint -c ./.eslintrc.cjs --ext .ts ./src --fix",
+        "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
         "docs": "typedoc --options  ./typedoc.config.js",
         "prepublishOnly": "npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md"
@@ -53,9 +56,27 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=10.0.0"
+        "node": ">=12.0.0"
     },
     "publishConfig": {
         "access": "public"
+    },
+    "devDependencies": {
+        "remark-gfm": "2.0.0",
+        "remark-parse": "10.0.0",
+        "remark-stringify": "10.0.0",
+        "unified": "10.1.0",
+        "vfile": "5.0.2"
+    },
+    "peerDependencies": {
+        "unified": ">=10.1.0",
+        "vfile": ">=5.0.0"
+    },
+    "dependencies": {
+        "@lerna/package": "^4.0.0",
+        "@lerna/project": "^4.0.0",
+        "mdast-util-heading-range": "^3.1.0",
+        "unist-builder": "^3.0.0",
+        "vfile-find-up": "^6.0.0"
     }
 }

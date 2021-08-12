@@ -3,12 +3,14 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
-        "declaration": false
+        "declaration": false,
+        "module": "ESNext",
+        "target": "ESNext",
     },
     "include": [
         "./src"
     ],
     "exclude": [
         "node_modules"
-    ],
+    ]
 }
