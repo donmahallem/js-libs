@@ -53,7 +53,7 @@ export interface IPluginOptions {
     lernaConfig?: string;
 }
 
-export const remarkLernaPlugings: Plugin = (...args: IPluginOptions[]): Transformer =>
+export const remarkLernaPlugin: Plugin = (...args: IPluginOptions[]): Transformer =>
     async (node: Node | Parent, file: VFile): Promise<Node> => {
         const base: string = file.dirname ? pathResolve(file.cwd, file.dirname) : pathResolve(file.cwd);
         const lernaConfigPath: string = args[0]?.lernaConfig || (await findUpOne('lerna.json', base)).path;

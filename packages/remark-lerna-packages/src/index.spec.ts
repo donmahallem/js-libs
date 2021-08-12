@@ -11,7 +11,7 @@ import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import { Processor, unified } from 'unified';
 import { Node } from 'unist-builder';
-import { createRowFromPackage, plug } from './plugin';
+import { createRowFromPackage, remarkLernaPlugin } from './plugin';
 describe('index', (): void => {
     describe('plug', (): void => {
         it('should set all plugins with default config', async (): Promise<void> => {
@@ -20,7 +20,7 @@ describe('index', (): void => {
             const processor: Processor = unified()
                 .use(remarkParse)
                 .use(remarkGfm)
-                .use(plug, { lernaConfig: './test' })
+                .use(remarkLernaPlugin, { lernaConfig: './test' })
             const parsedData: any = processor.parse(data);
             return processor.run(parsedData)
                 .then((value: any): void => {
@@ -48,9 +48,16 @@ describe('index', (): void => {
                             "url": "test.url",
                             "title": "package description",
                             "children": [{ "type": "text", "value": "pck1" }]
-                        }]
+                        }],
                     },
-                    { "type": "tableCell", "children": [{ "type": "text", "value": "<a href=\"https://badge.fury.io/js/pck1\"><img alt=\"npm version\" src=\"https://badge.fury.io/js/pck1.svg\" height=\"20\"/></a>" }] }]
+                    {
+                        "type": "tableCell",
+                        "children": [{
+                            "type": "text",
+                            "value": '<a href=\"https://badge.fury.io/js/pck1\"><img alt=\"npm version\"' +
+                                ' src=\"https://badge.fury.io/js/pck1.svg\" height=\"20\"/></a>',
+                        }],
+                    }]
                 });
         });
     });

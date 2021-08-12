@@ -1,3 +1,3 @@
-import { remarkLernaPlugings } from "./plugin";
-export { remarkLernaPlugings, IPluginOptions } from './plugin';
-export default remarkLernaPlugings;
+import { remarkLernaPlugin } from "./plugin";
+export { remarkLernaPlugin, IPluginOptions } from './plugin';
+export default remarkLernaPlugin;
