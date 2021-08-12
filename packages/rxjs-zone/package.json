@@ -37,7 +37,7 @@
     "url": "https://github.com/donmahallem/js-libs.git"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "files": [
     "dist/*",
@@ -48,7 +48,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@angular/core": "12.2.0",
+    "@angular/core": "12.2.1",
     "rxjs": "7.3.0"
   },
   "peerDependencies": {
