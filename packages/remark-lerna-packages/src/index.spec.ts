@@ -5,7 +5,7 @@
 
 import { Package } from '@lerna/package';
 import { expect } from 'chai';
-import { readFile } from 'fs/promises';
+import { promises as fsp } from 'fs';
 import 'mocha';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
@@ -16,7 +16,7 @@ describe('index', (): void => {
     describe('plug', (): void => {
         it('should set all plugins with default config', async (): Promise<void> => {
             const data = '# Lerna packages\n\ndata\n\n # Lerna\n';
-            const expectedTree: any = JSON.parse(await readFile('./test/expect.json', 'utf-8'));
+            const expectedTree: any = JSON.parse(await fsp.readFile('./test/expect.json', 'utf-8'));
             const processor: Processor = unified()
                 .use(remarkParse)
                 .use(remarkGfm)
