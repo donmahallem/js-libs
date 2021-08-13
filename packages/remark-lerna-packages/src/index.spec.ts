@@ -16,14 +16,14 @@ describe('index', (): void => {
     describe('plug', (): void => {
         it('should set all plugins with default config', async (): Promise<void> => {
             const data = '# Lerna packages\n\ndata\n\n # Lerna\n';
-            const expectedTree: any = JSON.parse(await fsp.readFile('./test/expect.json', 'utf-8'));
+            const expectedTree: Node = JSON.parse(await fsp.readFile('./test/expect.json', 'utf-8')) as Node;
             const processor: Processor = unified()
                 .use(remarkParse)
                 .use(remarkGfm)
                 .use(remarkLernaPlugin, { lernaConfig: './test' })
-            const parsedData: any = processor.parse(data);
+            const parsedData: Node = processor.parse(data);
             return processor.run(parsedData)
-                .then((value: any): void => {
+                .then((value: Node): void => {
                     expect(value).to.be.instanceOf(Object);
                     expect(expectedTree).to.be.instanceOf(Object);
                     expect(value).to.deep.equal(expectedTree);
@@ -32,32 +32,36 @@ describe('index', (): void => {
     });
     describe('createRowFromPackage', (): void => {
         it('should create row with homepage and title', (): void => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
             const row: Node = createRowFromPackage(Package.lazy({
-                name: 'pck1',
-                homepage: 'test.url',
                 description: 'package description',
+                homepage: 'test.url',
+                name: 'pck1',
             }));
 
             expect(row)
                 .to.deep.equal({
-                    "type": "tableRow",
-                    "children": [{
-                        "type": "tableCell",
-                        "children": [{
-                            "type": "link",
-                            "url": "test.url",
-                            "title": "package description",
-                            "children": [{ "type": "text", "value": "pck1" }]
+                    children: [{
+                        children: [{
+                            children: [{
+                                type: 'text',
+                                value: 'pck1'
+                            }],
+                            title: 'package description',
+                            type: 'link',
+                            url: 'test.url',
                         }],
+                        type: 'tableCell',
                     },
                     {
-                        "type": "tableCell",
-                        "children": [{
-                            "type": "text",
-                            "value": '<a href=\"https://badge.fury.io/js/pck1\"><img alt=\"npm version\"' +
-                                ' src=\"https://badge.fury.io/js/pck1.svg\" height=\"20\"/></a>',
+                        children: [{
+                            type: 'text',
+                            value: '<a href="https://badge.fury.io/js/pck1"><img alt="npm version"' +
+                                ' src="https://badge.fury.io/js/pck1.svg" height="20"/></a>',
                         }],
-                    }]
+                        type: 'tableCell',
+                    }],
+                    type: 'tableRow',
                 });
         });
     });
