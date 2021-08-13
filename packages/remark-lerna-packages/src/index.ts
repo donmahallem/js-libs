@@ -3,6 +3,6 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { remarkLernaPlugin } from "./plugin";
+import { remarkLernaPlugin } from './plugin';
 export { remarkLernaPlugin, IPluginOptions } from './plugin';
 export default remarkLernaPlugin;
