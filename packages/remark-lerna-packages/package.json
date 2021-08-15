@@ -16,6 +16,12 @@
         "markdown",
         "lerna"
     ],
+    "exports": {
+        ".": {
+            "require": "./dist/cjs/index.js",
+            "default": "./dist/esm/index.js"
+        }
+    },
     "scripts": {
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
