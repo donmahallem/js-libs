@@ -3,13 +3,16 @@
  */
 
 import commonjs, { RollupCommonJSOptions } from '@rollup/plugin-commonjs';
-import nodeResolve from '@rollup/plugin-node-resolve';
+import json, { RollupJsonOptions } from '@rollup/plugin-json';
+import nodeResolve, { RollupNodeResolveOptions } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 
 export interface IConfig {
     plugins?: {
         commonjs?: false | RollupCommonJSOptions,
+        nodeResolve?: RollupNodeResolveOptions,
+        json?: false | RollupJsonOptions,
     };
 }
 export interface IPartialPackage {
@@ -43,13 +46,20 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
         });
     }
     const plugins: any[] = [
-        nodeResolve(),
+        nodeResolve(cfg.plugins?.nodeResolve || {
+            preferBuiltins: true,
+        }),
         typescript({
             tsconfig: './tsconfig.json',
         }),
     ];
     if (cfg.plugins?.commonjs !== false) {
         plugins.push(commonjs(cfg.plugins?.commonjs));
+    }
+    if (cfg.plugins?.json !== false) {
+        plugins.push(json(cfg.plugins?.json || {
+            compact: true,
+        }));
     }
     plugins.push(replace({
         __BUILD_DATE__: (): string => new Date().toString(),
