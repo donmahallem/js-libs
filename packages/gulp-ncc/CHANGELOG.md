@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.20...@donmahallem/gulp-ncc@2.0.0) (2021-08-16)
+
+
+### chore
+
+* **gulp-ncc:** bump node engine requirement to v12+ ([7459c9f](https://github.com/donmahallem/js-libs/commit/7459c9f0bbb5536b73fb3b32cae32f0ecb5743e7))
+
+
+### BREAKING CHANGES
+
+* **gulp-ncc:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [1.0.20](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.19...@donmahallem/gulp-ncc@1.0.20) (2021-08-05)
 
 

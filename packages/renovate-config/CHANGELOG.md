@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.7.0...@donmahallem/renovate-config@0.8.0) (2021-08-16)
+
+
+### chore
+
+* **renovate-config:** bump node engine requirement to v12 ([9fab7de](https://github.com/donmahallem/js-libs/commit/9fab7de694509643f039dadf5844c99d9ebcd0c2))
+
+
+### BREAKING CHANGES
+
+* **renovate-config:** Could throw errors in node versions below 12
+
+
+
+
+
 # [0.7.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.4...@donmahallem/renovate-config@0.7.0) (2021-08-05)
 
 

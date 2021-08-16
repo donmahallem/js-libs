@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.2.14...@donmahallem/label-gh@0.3.0) (2021-08-16)
+
+
+### chore
+
+* **label-gh:** bump node engine requirement to 12 ([e1b2881](https://github.com/donmahallem/js-libs/commit/e1b288196f11625a0b82982ff35369c9d6a49ba4))
+
+
+### BREAKING CHANGES
+
+* **label-gh:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.2.14](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.2.13...@donmahallem/label-gh@0.2.14) (2021-08-05)
 
 

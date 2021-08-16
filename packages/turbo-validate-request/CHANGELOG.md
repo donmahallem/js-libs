@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.1.22...@donmahallem/turbo-validate-request@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **turbo-validate-request:** bump node engine requirement to v12 ([10d74f6](https://github.com/donmahallem/js-libs/commit/10d74f60d9b2b6b11814b3fd7c3d0b61f85e9049))
+
+
+### BREAKING CHANGES
+
+* **turbo-validate-request:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.1.22](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.1.21...@donmahallem/turbo-validate-request@0.1.22) (2021-08-05)
 
 

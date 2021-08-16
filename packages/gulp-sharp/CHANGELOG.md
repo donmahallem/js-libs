@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@1.0.21...@donmahallem/gulp-sharp@2.0.0) (2021-08-16)
+
+
+### chore
+
+* **gulp-sharp:** bump node engine requirement to v12 ([9483094](https://github.com/donmahallem/js-libs/commit/9483094c4f191a9d03c4089f4352900987770065))
+
+
+### BREAKING CHANGES
+
+* **gulp-sharp:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [1.0.21](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@1.0.20...@donmahallem/gulp-sharp@1.0.21) (2021-08-05)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.1.21...@donmahallem/sync-gist@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **sync-gist:** bump node engine requirement to v12 ([908c430](https://github.com/donmahallem/js-libs/commit/908c430545648bb213e5960968e3c2492139e15d))
+
+
+### BREAKING CHANGES
+
+* **sync-gist:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.1.21](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.1.20...@donmahallem/sync-gist@0.1.21) (2021-08-05)
 
 
