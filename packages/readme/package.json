@@ -6,10 +6,14 @@
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
     "private": false,
+    "bin": {
+        "@donmahallem/readme": "./dist/index.js"
+    },
     "scripts": {
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
-        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "prebuild:readme": "npm run build",
+        "build:readme": "node ./dist/esm/index.js -i README.md",
         "test": "mocha --config ../../.mocharc.yml",
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.js --ext .ts ./src",
@@ -43,5 +47,16 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "remark": "^14.0.1",
+        "remark-gfm": "^2.0.0",
+        "remark-git-contributors": "^4.0.0",
+        "remark-html": "^14.0.0",
+        "remark-license": "^6.0.0",
+        "remark-toc": "^8.0.0",
+        "to-vfile": "^7.2.1",
+        "vfile": "^5.0.2",
+        "vfile-reporter": "^7.0.1"
     }
 }
