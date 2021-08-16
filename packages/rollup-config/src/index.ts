@@ -3,13 +3,14 @@
  */
 
 import commonjs, { RollupCommonJSOptions } from '@rollup/plugin-commonjs';
-import nodeResolve from '@rollup/plugin-node-resolve';
+import nodeResolve, { RollupNodeResolveOptions } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 
 export interface IConfig {
     plugins?: {
         commonjs?: false | RollupCommonJSOptions,
+        nodeResolve?: RollupNodeResolveOptions,
     };
 }
 export interface IPartialPackage {
@@ -43,7 +44,9 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
         });
     }
     const plugins: any[] = [
-        nodeResolve(),
+        nodeResolve(cfg.plugins?.nodeResolve || {
+            preferBuiltins: true,
+        }),
         typescript({
             tsconfig: './tsconfig.json',
         }),
