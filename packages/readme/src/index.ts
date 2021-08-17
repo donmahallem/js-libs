@@ -10,6 +10,7 @@ import remarkGfm from 'remark-gfm';
 import remarkGitContributors from 'remark-git-contributors';
 import remarkLicense from 'remark-license';
 import remarkParse from 'remark-parse';
+import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
 import remarkToc from 'remark-toc';
 import { read } from 'to-vfile';
 import { VFile } from 'vfile';
@@ -25,7 +26,7 @@ async function run(opts: { dryRun: boolean; input: string; output?: string }): P
             .use(remarkParse)
             .use(remarkGitContributors)
             .use(remarkLicense)
-            // .use(remarkPresetLintRecommended)
+            .use(remarkPresetLintRecommended)
             .process(data)
             .then((file: VFile): Promise<void> | void => {
                 console.error(reporter(file));

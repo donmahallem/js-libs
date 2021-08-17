@@ -54,6 +54,8 @@
         "remark-git-contributors": "^4.0.0",
         "remark-html": "^14.0.0",
         "remark-license": "^6.0.0",
+        "remark-lint": "^9.0.1",
+        "remark-preset-lint-recommended": "^6.0.1",
         "remark-toc": "^8.0.0",
         "to-vfile": "^7.2.1",
         "vfile": "^5.0.2",
