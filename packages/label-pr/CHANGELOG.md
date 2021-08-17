@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.1.14...@donmahallem/label-pr@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **label-pr:** bump node engine requirement to 12+ ([19d88ce](https://github.com/donmahallem/js-libs/commit/19d88ce8bd88367081d9d056b4a347de933b3793))
+
+
+### BREAKING CHANGES
+
+* **label-pr:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.1.14](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.1.13...@donmahallem/label-pr@0.1.14) (2021-08-05)
 
 

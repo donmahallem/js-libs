@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.2.13...@donmahallem/rollup-config@0.3.0) (2021-08-16)
+
+
+### chore
+
+* **rollup-config:** bump node engine requirement to v12 ([66202cc](https://github.com/donmahallem/js-libs/commit/66202ccf09de7419a26efd96c76ba1ee9f0d7e18))
+
+
+### Features
+
+* **rollup-config:** add option to import json files as esm ([#753](https://github.com/donmahallem/js-libs/issues/753)) ([f57e386](https://github.com/donmahallem/js-libs/commit/f57e386a8e2290b0b721e23c5626d4080dde1713))
+* **rollup-config:** provide option to modify node-resolve config ([#752](https://github.com/donmahallem/js-libs/issues/752)) ([6b5d332](https://github.com/donmahallem/js-libs/commit/6b5d332a76bbb684b7525d9086189bc3e0762284))
+
+
+### BREAKING CHANGES
+
+* **rollup-config:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.2.13](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.2.12...@donmahallem/rollup-config@0.2.13) (2021-08-05)
 
 

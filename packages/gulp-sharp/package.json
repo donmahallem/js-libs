@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/gulp-sharp",
-  "version": "1.0.21",
+  "version": "2.0.0",
   "description": "Sharp Plugin for Gulp. Modify images via sharp.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -60,7 +60,7 @@
     "deepmerge": "~4.2.2",
     "gulp": "~4.0.2",
     "plugin-error": "~1.0.1",
-    "sharp": "~0.28.3",
+    "sharp": "~0.29.0",
     "through2": "~4.0.2",
     "vinyl": "~2.2.1"
   }

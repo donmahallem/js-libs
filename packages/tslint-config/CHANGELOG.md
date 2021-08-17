@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/tslint-config@0.1.3...@donmahallem/tslint-config@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **tslint-config:** bump node engine requirement to v12 ([d613758](https://github.com/donmahallem/js-libs/commit/d613758bca6aee5477033371dbd896d7c74992ae))
+
+
+### BREAKING CHANGES
+
+* **tslint-config:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.1.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/tslint-config@0.1.2...@donmahallem/tslint-config@0.1.3) (2021-04-16)
 
 **Note:** Version bump only for package @donmahallem/tslint-config

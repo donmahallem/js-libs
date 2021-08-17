@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.22...@donmahallem/turbo-pb@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **turbo-pb:** bump node engine requirement to v12 ([675c29d](https://github.com/donmahallem/js-libs/commit/675c29dc75d7e04c67cf4b67f8a07616ff37c70d))
+
+
+### BREAKING CHANGES
+
+* **turbo-pb:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.1.22](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.21...@donmahallem/turbo-pb@0.1.22) (2021-08-05)
 
 

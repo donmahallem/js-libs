@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rxjs-zone@0.1.11...@donmahallem/rxjs-zone@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **rxjs-zone:** bump node engine requirement to v12 ([241833a](https://github.com/donmahallem/js-libs/commit/241833a158010b42fbaeb0bdfbf9d28c30aed815))
+
+
+### BREAKING CHANGES
+
+* **rxjs-zone:** Could throw errors in node versions below 12
+
+
+
+
+
 ## [0.1.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/rxjs-zone@0.1.10...@donmahallem/rxjs-zone@0.1.11) (2021-08-05)
 
 
