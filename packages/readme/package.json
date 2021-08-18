@@ -5,7 +5,6 @@
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
     "private": false,
-    "type": "module",
     "bin": {
         "@donmahallem/readme": "./dist/index.js"
     },
@@ -14,8 +13,7 @@
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "prebuild:readme": "npm run build",
         "build:readme": "node ./dist/esm/index.js -i README.md",
-        "test": "mocha --config .mocharc.yml",
-        "test2": "node --loader ts-node/esm.mjs ../../node_modules/mocha/bin/mocha --extension ts",
+        "test": "mocha --config ../../.mocharc.yml",
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
