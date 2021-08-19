@@ -15,7 +15,12 @@ import { read } from 'to-vfile';
 import { VFile } from 'vfile';
 import { reporter } from 'vfile-reporter';
 
-export async function convert(opts: { dryRun: boolean; input: string; output?: string }): Promise<void> {
+export async function convert(opts: {
+    dryRun: boolean;
+    input: string;
+    output?: string,
+    report?: boolean,
+}): Promise<void> {
     const output: string = opts.output || opts.input;
     const data: VFile = await read(opts.input);
     return remark()
@@ -27,7 +32,9 @@ export async function convert(opts: { dryRun: boolean; input: string; output?: s
         .use(remarkPresetLintRecommended)
         .process(data)
         .then((file: VFile): Promise<void> | void => {
-            console.error(reporter(file));
+            if (opts.report !== false) {
+                console.error(reporter(file));
+            }
             if (opts.dryRun) {
                 console.log(String(file));
             } else {
