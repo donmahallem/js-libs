@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.3.0...@donmahallem/label-gh@0.3.1) (2021-08-19)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v4.29.2 ([871a63e](https://github.com/donmahallem/js-libs/commit/871a63ee706f59c9cf0c681a2582989edd9b1f28))
+
+
+
+
+
 # [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.2.14...@donmahallem/label-gh@0.3.0) (2021-08-16)
 
 
