@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { main } from './index';
-main()
+import { command } from './command';
+command()
     .then((): void => {
         console.log('File converted');
     })

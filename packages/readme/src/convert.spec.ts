@@ -21,7 +21,7 @@ describe('syncLabels', (): void => {
     });
     describe('syncLabels', (): void => {
         it('should call addLabel with replace parameter being false', (): Promise<void> => {
-            return idx.main().then((result: void): void => {
+            return idx.command().then((result: void): void => {
                 expect(12).to.equal('add label');
             });
         });

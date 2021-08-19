@@ -4,6 +4,7 @@
     "description": "Opinionated readme generator",
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
+    "type": "module",
     "private": false,
     "bin": {
         "@donmahallem/readme": "./dist/index.js"
@@ -12,8 +13,9 @@
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "prebuild:readme": "npm run build",
+        "builda": "ts-node ./src/index.ts",
         "build:readme": "node ./dist/esm/index.js -i README.md",
-        "test": "mocha --config ../../.mocharc.yml",
+        "test": "mocha --config .mocharc.yml --experimental-specifier-resolution=node",
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
