@@ -15,7 +15,7 @@ jobs:
       - name: Checkout current branch
         uses: actions/checkout@v2
         with:
-          ref: '@donmahallem/rollup-config@0.3.1'
+          ref: '@donmahallem/eslint-config@0.2.5'
           fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v2.4.0
@@ -45,6 +45,7 @@ jobs:
         run: |
           npx conventional-changelog --preset angular --release-count 4 -u false --commit-path ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }} --pkg ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}/package.json -o TMP_README.md --lerna-package ${{ steps.package_name.outputs.PACKAGE_NAME }}
           npx conventional-changelog --preset angular --release-count 4 -u false --commit-path ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }} --pkg ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}/package.json --lerna-package ${{ steps.package_name.outputs.PACKAGE_NAME }}
+          npx conventional-changelog --preset angular --release-count 2 -u false --commit-path packages/eslint-config --pkg packages/eslint-config/package.json -t @donmahallem/eslint-config@
       - name: Get color
         run: echo "The selected color is ${{ steps.package_name.outputs.PACKAGE_NAME }}"
       - name: Without fetch tags
