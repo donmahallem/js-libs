@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/turbo",
-  "version": "2.1.21",
+  "version": "2.1.22",
   "description": "Turbo Helpers for express.js",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -54,7 +54,7 @@
     "@types/supertest": "2.0.11",
     "axios": "0.21.1",
     "express": "4.17.1",
-    "supertest": "6.1.5"
+    "supertest": "6.1.6"
   },
   "peerDependencies": {
     "axios": "^0.21.1",

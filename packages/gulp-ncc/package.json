@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/gulp-ncc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ncc Plugin for Gulp",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -54,7 +54,7 @@
   "devDependencies": {
     "@types/gulp": "4.0.9",
     "@types/through2": "2.0.36",
-    "@vercel/ncc": "0.29.1"
+    "@vercel/ncc": "0.29.2"
   },
   "dependencies": {
     "gulp": "~4.0.2",
