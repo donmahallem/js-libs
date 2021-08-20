@@ -15,18 +15,12 @@
         "markdown",
         "lerna"
     ],
-    "exports": {
-        ".": {
-            "require": "./dist/cjs/index.js",
-            "default": "./dist/esm/index.js"
-        }
-    },
     "scripts": {
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --experimental-specifier-resolution=node",
-        "test:coverage": "c8 npm run test",
+        "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
         "lint:fix": "eslint -c ./.eslintrc.cjs --ext .ts ./src --fix",
