@@ -38,7 +38,9 @@ jobs:
           npm ci
       - name: Extract Package Name
         id: package_name
-        run: node ./scripts/strip_package_name.js ${{ github.ref }}
+        run: |
+          echo "::set-output name=PACKAGE_NAME::@donmahallem/rollup-config"
+          echo "::set-output name=PACKAGE_NAME_SUFFIX::rollup-config"
       - name: Run Build Changelog
         run: |
           npx conventional-changelog --preset angular --release-count 4 -u false --commit-path ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }} --pkg ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}/package.json -o TMP_README.md --lerna-package ${{ steps.package_name.outputs.PACKAGE_NAME }}
