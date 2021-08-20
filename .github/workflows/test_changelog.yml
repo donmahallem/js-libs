@@ -47,10 +47,5 @@ jobs:
       - name: Without fetch tags
         run: |
           git tag --list
-      - name: With fetch tags
-        run: |
-          git fetch --unshallow --tags
-          echo $?
-          git tag --list
       - name: Echo
         run: cat TMP_README.md
