@@ -1,0 +1,56 @@
+name: Update Changelog
+on:
+  push:
+
+jobs:
+  update_changelogs:
+    runs-on: ${{ matrix.os }}
+    name: Update Changelogs
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        node: [16]
+        os: [ubuntu-latest] #, windows-latest]
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v2
+        with:
+          ref: '@donmahallem/rollup-config@0.3.1'
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Setup Cache
+        uses: actions/cache@v2.1.6
+        with:
+          path: |
+            ${{ steps.npm-cache.outputs.dir }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Deps
+        run: |
+          npm ci
+      - name: Extract Package Name
+        id: package_name
+        run: node ./scripts/strip_package_name.js ${{ github.ref }}
+      - name: Run Build Changelog
+        run: |
+          conventional-changelog --preset angular --release-count 4 -u false --commit-path ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }} --pkg ./packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}/package.json -o TMP_README.md --lerna-package ${{ steps.package_name.outputs.PACKAGE_NAME }}
+      - name: Get color
+        run: echo "The selected color is ${{ steps.package_name.outputs.PACKAGE_NAME }}"
+      - name: Without fetch tags
+        run: |
+          git tag --list
+      - name: With fetch tags
+        run: |
+          git fetch --unshallow --tags
+          echo $?
+          git tag --list
+      - name: Echo
+        run: cat TMP_README.md
