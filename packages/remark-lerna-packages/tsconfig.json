@@ -4,8 +4,8 @@
         "outDir": "./dist",
         "rootDir": "./src",
         "declaration": false,
-        "module": "ESNext",
         "target": "ESNext",
+        "module": "ES2020",
     },
     "include": [
         "./src"
