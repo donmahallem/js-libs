@@ -13,7 +13,7 @@ import { Processor, unified } from 'unified';
 import { Node } from 'unist-builder';
 import { createRowFromPackage, remarkLernaPlugin } from './plugin';
 describe('index', (): void => {
-    describe('plug', (): void => {
+    describe('base config', (): void => {
         it('should set all plugins with default config', async (): Promise<void> => {
             const data = '# Lerna packages\n\ndata\n\n # Lerna\n';
             const expectedTree: Node = JSON.parse(await fsp.readFile('./test/expect.json', 'utf-8')) as Node;
