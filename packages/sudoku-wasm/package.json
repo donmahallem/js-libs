@@ -44,9 +44,9 @@
         "access": "public"
     },
     "dependencies": {
-        "@assemblyscript/loader": "~0.19.2"
+        "@assemblyscript/loader": "~0.19.11"
     },
     "devDependencies": {
-        "assemblyscript": "0.19.2"
+        "assemblyscript": "0.19.11"
     }
 }
