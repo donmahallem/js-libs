@@ -13,8 +13,8 @@
         },
         {
             "alt": "npm version",
-            "url": "https://badge.fury.io/js/%40donmahallem%2Fsudoku",
-            "img": "https://badge.fury.io/js/%40donmahallem%2Fsudoku.svg"
+            "url": "https://badge.fury.io/js/%40donmahallem%2Fremark-lerna-packages",
+            "img": "https://badge.fury.io/js/%40donmahallem%2Fremark-lerna-packages.svg"
         },
         {
             "alt": "GitHub license",
@@ -23,13 +23,13 @@
         },
         {
             "alt": "dependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/sudoku",
-            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/sudoku"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/remark-lerna-packages",
+            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/remark-lerna-packages"
         },
         {
             "alt": "devDependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/sudoku&type=dev",
-            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/sudoku"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/remark-lerna-packages&type=dev",
+            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/remark-lerna-packages"
         },
         {
             "alt": "GitHub contributors",
