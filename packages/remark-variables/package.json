@@ -2,16 +2,17 @@
     "name": "@donmahallem/remark-variables",
     "version": "0.0.0",
     "description": "Remark plugin",
-    "main": "dist/cjs/index.js",
+    "main": "dist/esm/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
     "private": false,
+    "type": "module",
     "scripts": {
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-        "test": "mocha --config ../../.mocharc.yml",
-        "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+        "test": "mocha --config .mocharc.yml --experimental-specifier-resolution=node",
+        "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
         "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
         "docs": "typedoc --options  ./typedoc.config.js",
@@ -45,11 +46,13 @@
     "dependencies": {
         "dot-prop": "~6.0.1",
         "mdast-util-find-and-replace": "~2.1.0",
+        "remark-stringify": "~10.0.0",
         "unified": "~10.1.0"
     },
     "devDependencies": {
         "remark-gfm": "2.0.0",
         "remark-parse": "10.0.0",
+        "remark-stringify": "10.0.0",
         "unist-builder": "3.0.0"
     }
 }
