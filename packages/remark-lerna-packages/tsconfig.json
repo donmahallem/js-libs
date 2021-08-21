@@ -6,6 +6,8 @@
         "declaration": false,
         "target": "ESNext",
         "module": "ES2020",
+        "moduleResolution": "Node",
+        "esModuleInterop": true
     },
     "include": [
         "./src"
