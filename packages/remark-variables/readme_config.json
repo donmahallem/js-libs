@@ -9,12 +9,12 @@
         {
             "alt": "codecov",
             "url": "https://codecov.io/gh/donmahallem/js-libs/donmahallem/master/packages/js-libs",
-            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=Sudoku"
+            "img": "https://codecov.io/gh/donmahallem/js-libs/branch/master/graph/badge.svg?flag=RemarkVariables"
         },
         {
             "alt": "npm version",
-            "url": "https://badge.fury.io/js/%40donmahallem%2Fsudoku",
-            "img": "https://badge.fury.io/js/%40donmahallem%2Fsudoku.svg"
+            "url": "https://badge.fury.io/js/%40donmahallem%2Fremark-variables",
+            "img": "https://badge.fury.io/js/%40donmahallem%2Fremark-variables.svg"
         },
         {
             "alt": "GitHub license",
@@ -23,13 +23,13 @@
         },
         {
             "alt": "dependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/sudoku",
-            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/sudoku"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/remark-variables",
+            "img": "https://david-dm.org/donmahallem/js-libs/status.svg?path=packages/remark-variables"
         },
         {
             "alt": "devDependencies Status",
-            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/sudoku&type=dev",
-            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/sudoku"
+            "url": "https://david-dm.org/donmahallem/js-libs?path=packages/remark-variables&type=dev",
+            "img": "https://david-dm.org/donmahallem/js-libs/dev-status.svg?path=packages/remark-variables"
         },
         {
             "alt": "GitHub contributors",
