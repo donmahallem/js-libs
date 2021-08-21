@@ -43,12 +43,13 @@
         "access": "public"
     },
     "dependencies": {
-        "mdast-util-find-and-replace": "^2.1.0",
-        "unified": "^10.1.0"
+        "dot-prop": "~6.0.1",
+        "mdast-util-find-and-replace": "~2.1.0",
+        "unified": "~10.1.0"
     },
     "devDependencies": {
-        "remark-gfm": "^2.0.0",
-        "remark-parse": "^10.0.0",
-        "unist-builder": "^3.0.0"
+        "remark-gfm": "2.0.0",
+        "remark-parse": "10.0.0",
+        "unist-builder": "3.0.0"
     }
 }
