@@ -1,0 +1,18 @@
+{
+  "loader": "ts-node/esm",
+  "extensions": [
+    "ts",
+    "tsx"
+  ],
+  "spec": [
+    "src/**/*.spec.ts"
+  ],
+  "watch-files": [
+    "src"
+  ],
+  "check-leaks": true,
+  "color": true,
+  "inline-diffs": true,
+  "diff": true,
+  "slow": 75
+}
