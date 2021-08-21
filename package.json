@@ -3,8 +3,8 @@
   "private": true,
   "devDependencies": {
     "@appnest/readme": "1.2.7",
-    "@donmahallem/eslint-config": "0.2.2",
-    "@donmahallem/rollup-config": "0.2.8",
+    "@donmahallem/eslint-config": "file:./packages/eslint-config",
+    "@donmahallem/rollup-config": "file:./packages/rollup-config",
     "@rollup/plugin-commonjs": "20.0.0",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-node-resolve": "13.0.4",
