@@ -1,20 +1,25 @@
 {
-    "name": "@donmahallem/readme",
-    "version": "0.1.0",
-    "description": "Opinionated readme generator",
+    "name": "@donmahallem/remark-lerna-packages",
+    "version": "0.0.0",
+    "description": "Remark plugin extracting lerna packages and presenting as table",
+    "main": "dist/esm/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
-    "type": "module",
     "private": false,
-    "bin": {
-        "@donmahallem/readme": "./dist/index.js"
-    },
+    "type": "module",
+    "keywords": [
+        "unified",
+        "remark",
+        "remark-plugin",
+        "plugin",
+        "mdast",
+        "markdown",
+        "lerna"
+    ],
     "scripts": {
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
-        "prebuild:readme": "npm run build",
-        "builda": "ts-node ./src/index.ts",
-        "build:readme": "node ./dist/esm/index.js -i README.md",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config .mocharc.yml --experimental-specifier-resolution=node",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
@@ -35,6 +40,13 @@
         "email": "donmahallem@users.noreply.github.com",
         "url": "https://github.com/donmahallem"
     },
+    "contributors": [
+        {
+            "name": "donmahallem",
+            "email": "donmahallem@users.noreply.github.com",
+            "url": "https://github.com/donmahallem"
+        }
+    ],
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/donmahallem/js-libs/issues"
@@ -49,17 +61,22 @@
     "publishConfig": {
         "access": "public"
     },
+    "devDependencies": {
+        "remark-gfm": "2.0.0",
+        "remark-parse": "10.0.0",
+        "remark-stringify": "10.0.0",
+        "unified": "10.1.0",
+        "vfile": "5.1.0"
+    },
+    "peerDependencies": {
+        "unified": ">=10.1.0",
+        "vfile": ">=5.0.0"
+    },
     "dependencies": {
-        "remark": "~14.0.1",
-        "remark-gfm": "~2.0.0",
-        "remark-git-contributors": "~4.0.0",
-        "remark-html": "~14.0.0",
-        "remark-license": "~6.0.0",
-        "remark-lint": "~9.0.1",
-        "remark-preset-lint-recommended": "~6.0.1",
-        "remark-toc": "~8.0.0",
-        "to-vfile": "~7.2.2",
-        "vfile": "~5.1.0",
-        "vfile-reporter": "~7.0.1"
+        "@lerna/package": "^4.0.0",
+        "@lerna/project": "^4.0.0",
+        "mdast-util-heading-range": "^3.1.0",
+        "unist-builder": "^3.0.0",
+        "vfile-find-up": "^6.0.0"
     }
 }

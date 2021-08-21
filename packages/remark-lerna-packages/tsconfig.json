@@ -1,7 +1,7 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "outDir": "./dist/esm",
+        "outDir": "./dist",
         "rootDir": "./src",
         "declaration": false,
         "target": "ES2018",
@@ -14,5 +14,5 @@
     ],
     "exclude": [
         "node_modules"
-    ],
+    ]
 }
