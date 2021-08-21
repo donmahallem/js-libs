@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.1.5...@donmahallem/sudoku@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **sudoku:** bump node version to v12+ ([2fa6891](https://github.com/donmahallem/js-libs/commit/2fa6891055627b988ff936a2b329aecad7d67df4))
+
+
+### BREAKING CHANGES
+
+* **sudoku:** Could throw errors in node versions below 12
+
+
+
+
+
+## [0.1.5](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.1.4...@donmahallem/sudoku@0.1.5) (2021-06-29)
+
+**Note:** Version bump only for package @donmahallem/sudoku
+
+
+
+
+
+
 ## [0.1.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.1.3...@donmahallem/sudoku@0.1.4) (2021-04-16)
 
 **Note:** Version bump only for package @donmahallem/sudoku

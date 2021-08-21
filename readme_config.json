@@ -32,6 +32,6 @@
             "img": "https://img.shields.io/github/contributors-anon/donmahallem/js-libs"
         }
     ],
-    "lineBreak": "\r\n",
+    "lineBreak": "\n",
     "silent": true
 }

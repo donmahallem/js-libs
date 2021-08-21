@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/sync-gist",
-  "version": "0.1.14",
+  "version": "0.2.1",
   "description": "Wrapper around octokit for syncing gist files",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,7 +19,7 @@
     "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
     "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
     "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-    "docs": "typedoc --options ../../typedoc.json",
+    "docs": "typedoc --options  ./typedoc.config.js",
     "prepublishOnly": "npm run test && npm run docs && npm run build",
     "version": "npm run build:readme && git add README.md"
   },
@@ -38,7 +38,7 @@
     "url": "https://github.com/donmahallem/js-libs.git"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "files": [
     "dist/*",

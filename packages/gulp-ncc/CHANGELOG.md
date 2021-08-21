@@ -3,6 +3,94 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.0.0...@donmahallem/gulp-ncc@2.0.1) (2021-08-19)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v4.29.2 ([871a63e](https://github.com/donmahallem/js-libs/commit/871a63ee706f59c9cf0c681a2582989edd9b1f28))
+
+
+
+
+
+# [2.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.20...@donmahallem/gulp-ncc@2.0.0) (2021-08-16)
+
+
+### chore
+
+* **gulp-ncc:** bump node engine requirement to v12+ ([7459c9f](https://github.com/donmahallem/js-libs/commit/7459c9f0bbb5536b73fb3b32cae32f0ecb5743e7))
+
+
+### BREAKING CHANGES
+
+* **gulp-ncc:** Could throw errors in node versions below 12
+
+
+
+
+
+## [1.0.20](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.19...@donmahallem/gulp-ncc@1.0.20) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+
+
+
+
+
+## [1.0.19](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.18...@donmahallem/gulp-ncc@1.0.19) (2021-07-28)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
+## [1.0.18](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.17...@donmahallem/gulp-ncc@1.0.18) (2021-07-27)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
+## [1.0.17](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.16...@donmahallem/gulp-ncc@1.0.17) (2021-07-23)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
+## [1.0.16](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.15...@donmahallem/gulp-ncc@1.0.16) (2021-07-22)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
+## [1.0.15](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.14...@donmahallem/gulp-ncc@1.0.15) (2021-07-19)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
+
+## [1.0.14](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.13...@donmahallem/gulp-ncc@1.0.14) (2021-06-29)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
+
 ## [1.0.13](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@1.0.12...@donmahallem/gulp-ncc@1.0.13) (2021-06-10)
 
 **Note:** Version bump only for package @donmahallem/gulp-ncc

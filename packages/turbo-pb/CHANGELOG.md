@@ -3,6 +3,94 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.2.0...@donmahallem/turbo-pb@0.2.1) (2021-08-19)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v4.29.2 ([871a63e](https://github.com/donmahallem/js-libs/commit/871a63ee706f59c9cf0c681a2582989edd9b1f28))
+
+
+
+
+
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.22...@donmahallem/turbo-pb@0.2.0) (2021-08-16)
+
+
+### chore
+
+* **turbo-pb:** bump node engine requirement to v12 ([675c29d](https://github.com/donmahallem/js-libs/commit/675c29dc75d7e04c67cf4b67f8a07616ff37c70d))
+
+
+### BREAKING CHANGES
+
+* **turbo-pb:** Could throw errors in node versions below 12
+
+
+
+
+
+## [0.1.22](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.21...@donmahallem/turbo-pb@0.1.22) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+
+
+
+
+
+## [0.1.21](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.20...@donmahallem/turbo-pb@0.1.21) (2021-07-28)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
+## [0.1.20](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.19...@donmahallem/turbo-pb@0.1.20) (2021-07-27)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
+## [0.1.19](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.18...@donmahallem/turbo-pb@0.1.19) (2021-07-23)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
+## [0.1.18](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.17...@donmahallem/turbo-pb@0.1.18) (2021-07-22)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
+## [0.1.17](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.16...@donmahallem/turbo-pb@0.1.17) (2021-07-19)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
+
+## [0.1.16](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.15...@donmahallem/turbo-pb@0.1.16) (2021-06-29)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
+
 ## [0.1.15](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.1.14...@donmahallem/turbo-pb@0.1.15) (2021-06-10)
 
 **Note:** Version bump only for package @donmahallem/turbo-pb

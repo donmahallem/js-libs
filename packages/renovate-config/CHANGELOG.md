@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.8.0...@donmahallem/renovate-config@0.8.1) (2021-08-19)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v4.29.2 ([871a63e](https://github.com/donmahallem/js-libs/commit/871a63ee706f59c9cf0c681a2582989edd9b1f28))
+
+
+
+
+
+# [0.8.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.7.0...@donmahallem/renovate-config@0.8.0) (2021-08-16)
+
+
+### chore
+
+* **renovate-config:** bump node engine requirement to v12 ([9fab7de](https://github.com/donmahallem/js-libs/commit/9fab7de694509643f039dadf5844c99d9ebcd0c2))
+
+
+### BREAKING CHANGES
+
+* **renovate-config:** Could throw errors in node versions below 12
+
+
+
+
+
+# [0.7.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.4...@donmahallem/renovate-config@0.7.0) (2021-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v36.0.6 ([#713](https://github.com/donmahallem/js-libs/issues/713)) ([ca2ba06](https://github.com/donmahallem/js-libs/commit/ca2ba06621b095c8c5a1245b108b56cafa9830f3))
+
+
+### Features
+
+* **renovate-config:** group octokit dependencies in one PR ([#731](https://github.com/donmahallem/js-libs/issues/731)) ([809ab28](https://github.com/donmahallem/js-libs/commit/809ab282df398011bcd50a09c4bec4710d6fcfa4))
+
+
+
+
+
+## [0.6.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.3...@donmahallem/renovate-config@0.6.4) (2021-07-28)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
+## [0.6.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.2...@donmahallem/renovate-config@0.6.3) (2021-07-27)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
+## [0.6.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.1...@donmahallem/renovate-config@0.6.2) (2021-07-23)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
+## [0.6.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.6.0...@donmahallem/renovate-config@0.6.1) (2021-07-22)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
+# [0.6.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.5.8...@donmahallem/renovate-config@0.6.0) (2021-07-19)
+
+
+### Features
+
+* **renovate-config:** group rollup plugins dependencies ([2b4bae6](https://github.com/donmahallem/js-libs/commit/2b4bae6b2fec1132e73b4f88a9e56f70ffaab576))
+
+
+
+
+
+
+## [0.5.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.5.7...@donmahallem/renovate-config@0.5.8) (2021-07-19)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
+
+## [0.5.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.5.6...@donmahallem/renovate-config@0.5.7) (2021-06-29)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
+
 ## [0.5.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.5.5...@donmahallem/renovate-config@0.5.6) (2021-06-10)
 
 **Note:** Version bump only for package @donmahallem/renovate-config
