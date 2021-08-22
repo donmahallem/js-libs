@@ -3,6 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
+import remarkLernaPlugin from '@donmahallem/remark-lerna-packages';
 import { promises as fsp } from 'fs';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
@@ -25,6 +26,7 @@ export async function convert(opts: { dryRun: boolean; input: string; output?: s
         .use(remarkGitContributors)
         .use(remarkLicense)
         .use(remarkPresetLintRecommended)
+        .use(remarkLernaPlugin)
         .process(data)
         .then((file: VFile): Promise<void> | void => {
             if (opts.report !== false) {
