@@ -9,6 +9,10 @@ import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 
 export interface IConfig {
+    output?: {
+        cjs?: boolean,
+        esm?: boolean,
+    },
     plugins?: {
         commonjs?: false | RollupCommonJSOptions,
         nodeResolve?: RollupNodeResolveOptions,
@@ -27,7 +31,7 @@ export interface IPartialPackage {
 }
 export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
     const output: any[] = [];
-    if (pkg.main) {
+    if (pkg.main && (cfg?.output?.cjs) !== false) {
         output.push({
             file: pkg.main,
             footer: '// BUILD: __BUILD_DATE__\n\n',
@@ -36,7 +40,7 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
             sourcemap: true,
         });
     }
-    if (pkg.module) {
+    if (pkg.module && (cfg?.output?.esm) !== false) {
         output.push({
             file: pkg.module,
             footer: '// BUILD: __BUILD_DATE__\n\n',
