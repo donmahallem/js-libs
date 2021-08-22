@@ -12,7 +12,7 @@ export interface IConfig {
     output?: {
         cjs?: boolean,
         esm?: boolean,
-    },
+    };
     plugins?: {
         commonjs?: false | RollupCommonJSOptions,
         nodeResolve?: RollupNodeResolveOptions,
