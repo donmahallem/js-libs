@@ -4,6 +4,7 @@
  */
 
 import remarkLernaPlugin from '@donmahallem/remark-lerna-packages';
+import remarkVariables from '@donmahallem/remark-variables';
 import { promises as fsp } from 'fs';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
@@ -16,7 +17,15 @@ import { read } from 'to-vfile';
 import { VFile } from 'vfile';
 import { reporter } from 'vfile-reporter';
 
-export async function convert(opts: { dryRun: boolean; input: string; output?: string; report?: boolean }): Promise<void> {
+export interface IOptions {
+    dryRun: boolean;
+    input: string;
+    output?: string;
+    report?: boolean;
+    variables?: any;
+}
+
+export async function convert(opts: IOptions): Promise<void> {
     const output: string = opts.output || opts.input;
     const data: VFile = await read(opts.input);
     return remark()
@@ -27,6 +36,9 @@ export async function convert(opts: { dryRun: boolean; input: string; output?: s
         .use(remarkLicense)
         .use(remarkPresetLintRecommended)
         .use(remarkLernaPlugin)
+        .use(remarkVariables, {
+            data: opts.variables,
+        })
         .process(data)
         .then((file: VFile): Promise<void> | void => {
             if (opts.report !== false) {

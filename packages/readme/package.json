@@ -13,8 +13,7 @@
         "build": "rollup -c ./rollup.config.js && npm run build:types",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "prebuild:readme": "npm run build",
-        "builda": "ts-node ./src/index.ts",
-        "build:readme": "node ./dist/esm/index.js -i README.md",
+        "build:readme": "node ./dist/esm/cli.js -i README.md",
         "test": "mocha --config .mocharc.yml --experimental-specifier-resolution=node",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
@@ -51,6 +50,7 @@
     },
     "dependencies": {
         "@donmahallem/remark-lerna-packages": "^0.0.0",
+        "@donmahallem/remark-variables": "^0.0.0",
         "remark": "~14.0.1",
         "remark-gfm": "~2.0.0",
         "remark-git-contributors": "~4.0.0",

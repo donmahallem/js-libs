@@ -110,6 +110,26 @@ describe('convert', (): void => {
                         expect(fsWrite.getCall(0).args).to.deep.equal(['./tests/test1_output.md', expectedOutputs[0], 'utf-8']);
                     });
             });
+            it('should inline template vars', async (): Promise<void> => {
+                return convert
+                    .convert({
+                        dryRun: false,
+                        input: './tests/test2.md',
+                        output: './tests/test1_output.md',
+                        report: true,
+                        variables: {
+                            pkg: {
+                                name: 'test name',
+                            },
+                        },
+                    })
+                    .then((): void => {
+                        expect(logStub.callCount).to.equal(0, 'should not log to console');
+                        expect(errorStub.callCount).to.equal(1, 'should log lint messages');
+                        expect(fsWrite.callCount).to.equal(1, 'should output to file');
+                        expect(fsWrite.getCall(0).args).to.deep.equal(['./tests/test1_output.md', '# Title\n\n## Subtitle\n\ntest name\n', 'utf-8']);
+                    });
+            });
         });
     });
 });
