@@ -5,9 +5,13 @@
 
 import { get } from 'dot-prop';
 import { Root } from 'mdast';
-import { Content, findAndReplace, Node } from 'mdast-util-find-and-replace';
-import { Transformer } from 'unified';
+import { Content, findAndReplace, Node, Parent } from 'mdast-util-find-and-replace';
+import { Plugin, Transformer } from 'unified';
+import { VFile } from 'vfile';
 
+interface IPluginOptions {
+    data: any;
+}
 /**
  * Remark Plugin for inline template variables
  *
@@ -16,8 +20,9 @@ import { Transformer } from 'unified';
  * @returns Plugin
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function plugin(options: { data: any } = { data: {} }): Transformer {
-    return (node: Node): Node => {
+export const plugin: Plugin =
+    (options: IPluginOptions): Transformer =>
+    (node: Node | Parent, file: VFile): Node => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const result: Node & {
             index: number | null;
@@ -46,4 +51,3 @@ export function plugin(options: { data: any } = { data: {} }): Transformer {
         ] as Content[];
         return rootNode;
     };
-}
