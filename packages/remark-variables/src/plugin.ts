@@ -15,7 +15,8 @@ import { Transformer } from 'unified';
  * @param options.data data to inline
  * @returns Plugin
  */
-export function plugin(options: { data: object } = { data: {} }): Transformer {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function plugin(options: { data: any } = { data: {} }): Transformer {
     return (node: Node): Node => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const result: Node & {
