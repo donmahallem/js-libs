@@ -22,32 +22,32 @@ interface IPluginOptions {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const plugin: Plugin =
     (options: IPluginOptions): Transformer =>
-        async (node: Node | Parent, file: VFile): Promise<Node> => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            const result: Node & {
-                index: number | null;
-                map: Node | null;
-                endIndex: number | null;
-            } = findAndReplace(
-                node,
-                // eslint-disable-next-line no-useless-escape
-                /\{\{[a-zA-Z\.\- ]+\}\}/,
-                (match: string): string => {
-                    const cleanedKey: string = match.slice(2, match.length - 2).trim();
-                    return get(options.data, cleanedKey) || 'unknown';
-                }
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            ) as any;
-
-            if (result.endIndex === null || result.index === null || result.index === -1 || !result.map) {
-                return node;
+    (node: Node | Parent, file: VFile): Node => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const result: Node & {
+            index: number | null;
+            map: Node | null;
+            endIndex: number | null;
+        } = findAndReplace(
+            node,
+            // eslint-disable-next-line no-useless-escape
+            /\{\{[a-zA-Z\.\- ]+\}\}/,
+            (match: string): string => {
+                const cleanedKey: string = match.slice(2, match.length - 2).trim();
+                return get(options.data, cleanedKey) || 'unknown';
             }
-            const rootNode: Root = node as Root;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ) as any;
 
-            rootNode.children = [
-                ...rootNode.children.slice(0, result.index),
-                result.map,
-                ...rootNode.children.slice(result.endIndex),
-            ] as Content[];
-            return rootNode;
-        };
+        if (result.endIndex === null || result.index === null || result.index === -1 || !result.map) {
+            return node;
+        }
+        const rootNode: Root = node as Root;
+
+        rootNode.children = [
+            ...rootNode.children.slice(0, result.index),
+            result.map,
+            ...rootNode.children.slice(result.endIndex),
+        ] as Content[];
+        return rootNode;
+    };
