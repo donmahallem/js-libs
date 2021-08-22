@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.3.1...@donmahallem/rollup-config@0.4.0) (2021-08-22)
+
+
+### Features
+
+* **rollup-config:** specify which outputs to build ([#781](https://github.com/donmahallem/js-libs/issues/781)) ([b1a6810](https://github.com/donmahallem/js-libs/commit/b1a68103fe94150022ba71c552528c8a88b7a7c1))
+
+
+
+
+
 ## [0.3.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.3.0...@donmahallem/rollup-config@0.3.1) (2021-08-19)
 
 

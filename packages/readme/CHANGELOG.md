@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.1.0...@donmahallem/readme@0.2.0) (2021-08-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency to-vfile to ^7.2.2 ([9f61067](https://github.com/donmahallem/js-libs/commit/9f61067dce8318df5688e13c8221a0752e9f0716))
+* **deps:** update dependency vfile to ^5.1.0 ([20f61e6](https://github.com/donmahallem/js-libs/commit/20f61e6522b4a5eed53cc42771955acfdc47fbda))
+* **readme:** build missing cli.js ([#780](https://github.com/donmahallem/js-libs/issues/780)) ([9a5aad9](https://github.com/donmahallem/js-libs/commit/9a5aad9795e5602a3056ec6e3fa3b1167c5dbdf1)), closes [#779](https://github.com/donmahallem/js-libs/issues/779)
+* **readme:** use ES2018 as tsc target ([#778](https://github.com/donmahallem/js-libs/issues/778)) ([2534297](https://github.com/donmahallem/js-libs/commit/253429731c3c1d4301c3e618d736d901e3fb51db)), closes [#777](https://github.com/donmahallem/js-libs/issues/777)
+
+
+### Features
+
+* **readme:** add remark-lerna-packages ([#776](https://github.com/donmahallem/js-libs/issues/776)) ([08ac38f](https://github.com/donmahallem/js-libs/commit/08ac38f00a3dce8d25071a21e5f4ab8b697f351b))
+
+
+
+
+
 # 0.1.0 (2021-08-19)
 
 
