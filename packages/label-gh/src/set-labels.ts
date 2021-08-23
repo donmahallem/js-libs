@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Octokit } from '@octokit/core';
@@ -8,11 +9,10 @@ import { GithubLabel } from './github-types';
 
 type PutLabelParameters = Endpoints['PUT /repos/{owner}/{repo}/issues/{issue_number}/labels']['parameters'];
 type PutLabelResponse = Endpoints['PUT /repos/{owner}/{repo}/issues/{issue_number}/labels']['response'];
-export const setLabels = async (octokit: Octokit,
-  params: PutLabelParameters): Promise<GithubLabel[]> => {
-  return octokit
-    .request('PUT /repos/{owner}/{repo}/issues/{issue_number}/labels', params)
-    .then((resp: PutLabelResponse): GithubLabel[] => {
-      return resp.data;
-    });
+export const setLabels = async (octokit: Octokit, params: PutLabelParameters): Promise<GithubLabel[]> => {
+    return octokit
+        .request('PUT /repos/{owner}/{repo}/issues/{issue_number}/labels', params)
+        .then((resp: PutLabelResponse): GithubLabel[] => {
+            return resp.data;
+        });
 };
