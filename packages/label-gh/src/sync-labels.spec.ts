@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';
@@ -32,38 +33,55 @@ describe('syncLabels', (): void => {
             setLabelsStub.resolves('set label');
         });
         it('should call addLabel with replace parameter being false', (): Promise<void> => {
-            return syncLabels({} as any, {
-                issue_number: 2,
-                owner: 'some_owner',
-                repo: 'anyrepo',
-            }, ['test', 'label'], false)
-                .then((result: any): void => {
-                    expect(setLabelsStub.callCount).to.equal(0, 'should not be called');
-                    expect(addLabelsStub.args).to.deep.eq([[{},
-                    {
-                        issue_number: 2,
-                        labels: ['test', 'label'],
-                        owner: 'some_owner',
-                        repo: 'anyrepo',
-                    }]]);
-                    expect(result).to.equal('add label');
-                });
-        });
-        it('should call setLabel with replace parameter being true', (): Promise<void> => {
-            const testPromise: Promise<any> = syncLabels({} as any, {
-                issue_number: 2,
-                owner: 'some_owner',
-                repo: 'anyrepo',
-            }, ['test', 'label'], true);
-            return testPromise.then((result: any): void => {
-                expect(addLabelsStub.callCount).to.equal(0, 'should not be called');
-                expect(setLabelsStub.args).to.deep.eq([[{},
+            return syncLabels(
+                {} as any,
                 {
                     issue_number: 2,
-                    labels: ['test', 'label'],
                     owner: 'some_owner',
                     repo: 'anyrepo',
-                }]]);
+                },
+                ['test', 'label'],
+                false
+            ).then((result: any): void => {
+                expect(setLabelsStub.callCount).to.equal(0, 'should not be called');
+                expect(addLabelsStub.args).to.deep.eq([
+                    [
+                        {},
+                        {
+                            issue_number: 2,
+                            labels: ['test', 'label'],
+                            owner: 'some_owner',
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
+                expect(result).to.equal('add label');
+            });
+        });
+        it('should call setLabel with replace parameter being true', (): Promise<void> => {
+            const testPromise: Promise<any> = syncLabels(
+                {} as any,
+                {
+                    issue_number: 2,
+                    owner: 'some_owner',
+                    repo: 'anyrepo',
+                },
+                ['test', 'label'],
+                true
+            );
+            return testPromise.then((result: any): void => {
+                expect(addLabelsStub.callCount).to.equal(0, 'should not be called');
+                expect(setLabelsStub.args).to.deep.eq([
+                    [
+                        {},
+                        {
+                            issue_number: 2,
+                            labels: ['test', 'label'],
+                            owner: 'some_owner',
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
                 expect(result).to.equal('set label');
             });
         });
