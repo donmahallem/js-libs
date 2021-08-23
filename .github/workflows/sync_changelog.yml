@@ -3,6 +3,9 @@ on:
   push:
     tags:
       - '@donmahallem/*@[0-9]+.[0-9]+.[0-9]+'
+  create:
+    tags:
+      - '@donmahallem/*@[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   update_changelogs:
@@ -43,13 +46,11 @@ jobs:
       - name: Extract Package Name
         id: package_name
         run: node ./scripts/strip_package_name.js ${{ github.ref }}
+      - name: Get color
+        run: echo "${{ steps.package_name.outputs.PACKAGE_NAME }} ${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}"
       - name: Run Build Changelog
         run: |
-          npx lerna exec --concurrency 1 --stream -- 'echo $PWD $LERNA_PACKAGE_NAME'
-          npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angular --release-count 2 --commit-path $PWD --pkg $PWD/package.json --verbose --lerna-package $LERNA_PACKAGE_NAME'
           npx conventional-changelog --preset angular --release-count 2 -u false --commit-path packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }} --pkg packages/${{ steps.package_name.outputs.PACKAGE_NAME_SUFFIX }}/package.json -t ${{ steps.package_name.outputs.PACKAGE_NAME }}@ -o TMP_README.md
-      - name: Get color
-        run: echo "The selected color is ${{ steps.package_name.outputs.PACKAGE_NAME }}"
       - name: Update Release
         id: create_release
         uses: actions/create-release@v1
