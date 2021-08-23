@@ -61,6 +61,6 @@
         "remark-toc": "~8.0.0",
         "to-vfile": "~7.2.2",
         "vfile": "~5.1.0",
-        "vfile-reporter": "~7.0.1"
+        "vfile-reporter": "~7.0.2"
     }
 }
