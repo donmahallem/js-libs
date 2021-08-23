@@ -33,6 +33,7 @@ describe('syncLabels', (): void => {
         it('should ignore non prefixed labels and set prefixed', (): Promise<void> => {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }]);
             return syncPRLabels(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 {} as any,
                 {
                     owner: 'some_owner',
@@ -40,6 +41,7 @@ describe('syncLabels', (): void => {
                     repo: 'anyrepo',
                 },
                 ['test', 'label']
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ).then((result: any): void => {
                 expect(syncLabelsStub.callCount).to.equal(1, 'should be called');
                 expect(syncLabelsStub.args).to.deep.eq([
@@ -60,6 +62,7 @@ describe('syncLabels', (): void => {
         it('should ignore non prefixed labels and set non default prefix', (): Promise<void> => {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:any' }]);
             return syncPRLabels(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 {} as any,
                 {
                     owner: 'some_owner',
@@ -68,6 +71,7 @@ describe('syncLabels', (): void => {
                 },
                 ['test', 'label'],
                 'asdf'
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ).then((result: any): void => {
                 expect(syncLabelsStub.callCount).to.equal(1, 'should be called');
                 expect(syncLabelsStub.args).to.deep.eq([
@@ -88,6 +92,7 @@ describe('syncLabels', (): void => {
         it('should keep previous labels', (): Promise<void> => {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:test' }]);
             return syncPRLabels(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 {} as any,
                 {
                     owner: 'some_owner',
@@ -96,6 +101,7 @@ describe('syncLabels', (): void => {
                 },
                 ['test', 'label'],
                 'asdf'
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ).then((result: any): void => {
                 expect(syncLabelsStub.callCount).to.equal(1, 'should be called');
                 expect(syncLabelsStub.args).to.deep.eq([
