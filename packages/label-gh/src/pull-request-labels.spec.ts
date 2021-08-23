@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Octokit } from '@octokit/core';
@@ -8,7 +9,7 @@ import 'mocha';
 import Sinon from 'sinon';
 import { getPullRequestLabels } from './pull-request-labels';
 
-const API_ENDPOINT: string = 'GET /repos/{owner}/{repo}/pulls/{pull_number}';
+const API_ENDPOINT = 'GET /repos/{owner}/{repo}/pulls/{pull_number}';
 describe('set-label', (): void => {
     let sandbox: Sinon.SinonSandbox;
     before('setup sandbox', (): void => {
@@ -30,6 +31,7 @@ describe('set-label', (): void => {
                 labels: ['any response'],
             };
             requestStub.resolves({
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 data: testResponseData,
             } as any);
             return getPullRequestLabels({ request: requestStub } as any, {
@@ -37,19 +39,22 @@ describe('set-label', (): void => {
                 pull_number: 2,
                 repo: 'anyrepo',
             }).then((result: any): void => {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                 expect(result).to.deep.equal(testResponseData.labels);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        owner: 'some_owner',
-                        pull_number: 2,
-                        repo: 'anyrepo',
-                    },
-                ]]);
+                expect(requestStub.args).to.deep.eq([
+                    [
+                        API_ENDPOINT,
+                        {
+                            owner: 'some_owner',
+                            pull_number: 2,
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
             });
         });
-        it('should return empty array if labels isn\'t defined', (): Promise<void> => {
-            const testResponseData: string = 'any response';
+        it("should return empty array if labels isn't defined", (): Promise<void> => {
+            const testResponseData = 'any response';
             requestStub.resolves({
                 data: testResponseData,
             } as any);
@@ -59,14 +64,16 @@ describe('set-label', (): void => {
                 repo: 'anyrepo',
             }).then((result: any): void => {
                 expect(result).to.deep.equal([]);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        owner: 'some_owner',
-                        pull_number: 2,
-                        repo: 'anyrepo',
-                    },
-                ]]);
+                expect(requestStub.args).to.deep.eq([
+                    [
+                        API_ENDPOINT,
+                        {
+                            owner: 'some_owner',
+                            pull_number: 2,
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
             });
         });
         it('should return rejections', (): Promise<void> => {
@@ -76,19 +83,23 @@ describe('set-label', (): void => {
                 owner: 'some_owner',
                 pull_number: 2,
                 repo: 'anyrepo',
-            }).then((result: any): void => {
-                throw new Error('Should not resolve');
-            }).catch((err: any): void => {
-                expect(err).to.equal(testError);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        owner: 'some_owner',
-                        pull_number: 2,
-                        repo: 'anyrepo',
-                    },
-                ]]);
-            });
+            })
+                .then((result: any): void => {
+                    throw new Error('Should not resolve');
+                })
+                .catch((err: any): void => {
+                    expect(err).to.equal(testError);
+                    expect(requestStub.args).to.deep.eq([
+                        [
+                            API_ENDPOINT,
+                            {
+                                owner: 'some_owner',
+                                pull_number: 2,
+                                repo: 'anyrepo',
+                            },
+                        ],
+                    ]);
+                });
         });
     });
 });

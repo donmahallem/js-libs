@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';

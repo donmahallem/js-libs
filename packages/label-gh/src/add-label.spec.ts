@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Octokit } from '@octokit/core';
@@ -8,7 +9,7 @@ import 'mocha';
 import Sinon from 'sinon';
 import { addLabels } from './add-labels';
 
-const API_ENDPOINT: string = 'POST /repos/{owner}/{repo}/issues/{issue_number}/labels';
+const API_ENDPOINT = 'POST /repos/{owner}/{repo}/issues/{issue_number}/labels';
 describe('add-label', (): void => {
     let sandbox: Sinon.SinonSandbox;
     before('setup sandbox', (): void => {
@@ -26,7 +27,7 @@ describe('add-label', (): void => {
             requestStub = sandbox.stub<Parameters<Octokit['request']>>();
         });
         it('should pass on all correct data', (): Promise<void> => {
-            const testResponseData: string = 'any response';
+            const testResponseData = 'any response';
             requestStub.resolves({
                 data: testResponseData,
             } as any);
@@ -37,18 +38,17 @@ describe('add-label', (): void => {
                 repo: 'anyrepo',
             }).then((result: any): void => {
                 expect(result).to.equal(testResponseData);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        issue_number: 2,
-                        labels: [
-                            'test',
-                            'label',
-                        ],
-                        owner: 'some_owner',
-                        repo: 'anyrepo',
-                    },
-                ]]);
+                expect(requestStub.args).to.deep.eq([
+                    [
+                        API_ENDPOINT,
+                        {
+                            issue_number: 2,
+                            labels: ['test', 'label'],
+                            owner: 'some_owner',
+                            repo: 'anyrepo',
+                        },
+                    ],
+                ]);
             });
         });
         it('should return rejections', (): Promise<void> => {
@@ -59,23 +59,24 @@ describe('add-label', (): void => {
                 labels: ['test', 'label'],
                 owner: 'some_owner',
                 repo: 'anyrepo',
-            }).then((result: any): void => {
-                throw new Error('Should not resolve');
-            }).catch((err: any): void => {
-                expect(err).to.equal(testError);
-                expect(requestStub.args).to.deep.eq([[
-                    API_ENDPOINT,
-                    {
-                        issue_number: 2,
-                        labels: [
-                            'test',
-                            'label',
+            })
+                .then((result: any): void => {
+                    throw new Error('Should not resolve');
+                })
+                .catch((err: any): void => {
+                    expect(err).to.equal(testError);
+                    expect(requestStub.args).to.deep.eq([
+                        [
+                            API_ENDPOINT,
+                            {
+                                issue_number: 2,
+                                labels: ['test', 'label'],
+                                owner: 'some_owner',
+                                repo: 'anyrepo',
+                            },
                         ],
-                        owner: 'some_owner',
-                        repo: 'anyrepo',
-                    },
-                ]]);
-            });
+                    ]);
+                });
         });
     });
 });

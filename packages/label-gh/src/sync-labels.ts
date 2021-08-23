@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: label-gh
+/*
+ * Package @donmahallem/label-gh
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Octokit } from '@octokit/core';
@@ -21,10 +22,7 @@ export interface IOpts {
      */
     repo: string;
 }
-export const syncLabels = (octokit: Octokit,
-    opts: IOpts,
-    labels: string[],
-    replace: boolean = true): Promise<GithubLabel[]> => {
+export const syncLabels = (octokit: Octokit, opts: IOpts, labels: string[], replace = true): Promise<GithubLabel[]> => {
     if (replace) {
         return setLabels(octokit, {
             ...opts,
