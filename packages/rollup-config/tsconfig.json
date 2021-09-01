@@ -3,7 +3,11 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
-        "declaration": false
+        "target": "ESNext",
+        "declaration": false,
+        "lib": [
+            "ESNext"
+        ],
     },
     "include": [
         "./src"
