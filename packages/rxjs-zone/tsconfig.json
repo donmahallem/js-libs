@@ -3,7 +3,11 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
-        "declaration": false
+        "declaration": false,
+        "lib": [
+            "DOM",
+            "ES2019"
+        ]
     },
     "include": [
         "./src"
