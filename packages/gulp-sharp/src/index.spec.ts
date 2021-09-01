@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
+/*
+ * Package @donmahallem/gulp-sharp
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';

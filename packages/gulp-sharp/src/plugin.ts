@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
+/*
+ * Package @donmahallem/gulp-sharp
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import deepmerge from 'deepmerge';
@@ -14,10 +15,11 @@ import { handleMethod } from './handle-method';
 import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer';
 
 // Autopopulated by rollup
-const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
+const PLUGIN_NAME = '__BUILD_PACKAGE_NAME__';
 
 /**
  * Creates the gulp plugin
+ *
  * @param cfg sharp config to be used
  */
 export const gulpSharp = (cfg: IConfig): Transform => {
@@ -31,19 +33,21 @@ export const gulpSharp = (cfg: IConfig): Transform => {
         } else if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer()) {
-            const mergedConfig: IConfig = (cfg && file.sharp_config) ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
+            const mergedConfig: IConfig = cfg && file.sharp_config ? deepmerge(cfg, file.sharp_config as IConfig) : cfg;
             let sharpInstance: Sharp;
-            if (typeof (mergedConfig.transform) === 'function') {
+            if (typeof mergedConfig.transform === 'function') {
                 sharpInstance = handleMethod(file, mergedConfig.transform, cfg.config);
             } else {
                 sharpInstance = handleConfig(file, mergedConfig.transform, cfg.config);
             }
-            sharpToVinylBuffer(sharpInstance, file, mergedConfig)
-                .then((convertedFile: VinylFile.BufferFile): void => {
+            sharpToVinylBuffer(sharpInstance, file, mergedConfig).then(
+                (convertedFile: VinylFile.BufferFile): void => {
                     callback(undefined, convertedFile);
-                }, (err: any): void => {
+                },
+                (err: any): void => {
                     callback(new PluginError(PLUGIN_NAME, err, { message: 'Error while transforming file' }));
-                });
+                }
+            );
         }
     });
 };

@@ -1,6 +1,8 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
+
 import { COVER_START_IDX } from '../constants';
 import { CoverBoard } from './cover-board';
 import { getIndex } from './get-index';
