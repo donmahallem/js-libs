@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: gulp-sharp
+/*
+ * Package @donmahallem/gulp-sharp
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';
@@ -16,7 +17,7 @@ const testSizes: number[] = [128, 256, 1024];
 describe('plugin', (): void => {
     describe('gulpSharp', (): void => {
         describe('convert with object', (): void => {
-            testFormats.forEach((expectedFormat: any): void => {
+            testFormats.forEach((expectedFormat: keyof sharp.FormatEnum): void => {
                 it(`should convert the image to ${expectedFormat} and keep size`, (done: Mocha.Done): void => {
                     const testBuffer: Buffer = readFileSync('test/test.png');
                     const testFile: Vinyl = new Vinyl({
@@ -50,8 +51,8 @@ describe('plugin', (): void => {
                         contents: testBuffer,
                         path: '/test/anywhere.jpg',
                     });
-                    const testInstance: Transform = gulpSharp({ transform: { resize: { width: expectedWidth, fit: 'cover' } } });
-                    const expectedHeight: number = Math.round(expectedWidth * 564 / 696);
+                    const testInstance: Transform = gulpSharp({ transform: { resize: { fit: 'cover', width: expectedWidth } } });
+                    const expectedHeight: number = Math.round((expectedWidth * 564) / 696);
 
                     testInstance.once('data', (file: Vinyl): void => {
                         sharp(file.contents as Buffer)
@@ -79,8 +80,8 @@ describe('plugin', (): void => {
                         contents: testBuffer,
                         path: '/test/anywhere.jpg',
                     });
-                    const testInstance: Transform = gulpSharp({ transform: { resize: { height: expectedHeight, fit: 'cover' } } });
-                    const expectedWidth: number = Math.round(expectedHeight * 696 / 564);
+                    const testInstance: Transform = gulpSharp({ transform: { resize: { fit: 'cover', height: expectedHeight } } });
+                    const expectedWidth: number = Math.round((expectedHeight * 696) / 564);
 
                     testInstance.once('data', (file: Vinyl): void => {
                         sharp(file.contents as Buffer)
@@ -102,7 +103,7 @@ describe('plugin', (): void => {
                 });
             });
             it('should override default config with the VinylFile provided', (done: Mocha.Done): void => {
-                const expectedWidth: number = 128;
+                const expectedWidth = 128;
                 const testBuffer: Buffer = readFileSync('test/test.png');
                 const testFile: Vinyl = new Vinyl({
                     base: '/test/',
@@ -111,8 +112,8 @@ describe('plugin', (): void => {
                     path: '/test/anywhere.jpg',
                     sharp_config: { transform: { resize: { width: expectedWidth } } },
                 });
-                const testInstance: Transform = gulpSharp({ transform: { resize: { width: 512, fit: 'cover' } } });
-                const expectedHeight: number = Math.round(128 * 564 / 696);
+                const testInstance: Transform = gulpSharp({ transform: { resize: { fit: 'cover', width: 512 } } });
+                const expectedHeight: number = Math.round((128 * 564) / 696);
                 testInstance.once('data', (file: Vinyl): void => {
                     sharp(file.contents as Buffer)
                         .metadata()
@@ -138,7 +139,7 @@ describe('plugin', (): void => {
                 // tslint:disable-next-line:no-null-keyword
                 contents: null,
             });
-            const testInstance: Transform = gulpSharp({ transform: { resize: { width: 512, fit: 'cover' } } });
+            const testInstance: Transform = gulpSharp({ transform: { resize: { fit: 'cover', width: 512 } } });
             testInstance.once('data', (file: Vinyl): void => {
                 expect(file).to.deep.equal(testFile);
                 done();
@@ -153,7 +154,7 @@ describe('plugin', (): void => {
                 cwd: '/',
                 path: '/test/anywhere.jpg',
             });
-            const testInstance: Transform = gulpSharp({ transform: { resize: { width: 512, fit: 'cover' } } });
+            const testInstance: Transform = gulpSharp({ transform: { resize: { fit: 'cover', width: 512 } } });
             testInstance.once('data', (file: Vinyl): void => {
                 done(new Error('should not yield data'));
             });
@@ -165,7 +166,7 @@ describe('plugin', (): void => {
             testInstance.end(testFile);
         });
         it('should use sharp input config', (done: Mocha.Done): void => {
-            const expectedWidth: number = 139;
+            const expectedWidth = 139;
             const testBuffer: Buffer = readFileSync('test/test.svg');
             const testFile: Vinyl = new Vinyl({
                 base: '/test/',
@@ -180,7 +181,7 @@ describe('plugin', (): void => {
                 },
                 transform: {},
             });
-            const expectedHeight: number = 139;
+            const expectedHeight = 139;
             testInstance.once('data', (file: Vinyl): void => {
                 sharp(file.contents as Buffer)
                     .metadata()
