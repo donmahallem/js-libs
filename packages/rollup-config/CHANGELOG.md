@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.4.1...@donmahallem/rollup-config@0.4.2) (2021-08-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency vfile-reporter to ~7.0.2 ([56a150d](https://github.com/donmahallem/js-libs/commit/56a150db5020a5e44e5c0f78ce0ef11d2a0f6d90))
+
+
+
+
+
 ## [0.4.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.4.0...@donmahallem/rollup-config@0.4.1) (2021-08-23)
 
 **Note:** Version bump only for package @donmahallem/rollup-config

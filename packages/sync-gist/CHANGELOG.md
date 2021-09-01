@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.2.3...@donmahallem/sync-gist@0.2.4) (2021-08-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency vfile-reporter to ~7.0.2 ([56a150d](https://github.com/donmahallem/js-libs/commit/56a150db5020a5e44e5c0f78ce0ef11d2a0f6d90))
+
+
+
+
+
 ## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.2.2...@donmahallem/sync-gist@0.2.3) (2021-08-23)
 
 **Note:** Version bump only for package @donmahallem/sync-gist

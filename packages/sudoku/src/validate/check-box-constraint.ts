@@ -1,11 +1,12 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { checkConstraint } from './check-constraint';
 
 export const checkBoxConstraint = (board: number[][], row: number, column: number, boardSize: number, boxSize: number): boolean => {
-    const constraint: boolean[] = new Array(boardSize).fill(false);
+    const constraint: boolean[] = new Array<boolean>(boardSize).fill(false);
     const subsectionRowStart: number = Math.floor(row / boxSize) * boxSize;
     const subsectionRowEnd: number = subsectionRowStart + boxSize;
 
