@@ -1,5 +1,6 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { COVER_START_IDX } from '../constants';
@@ -11,8 +12,8 @@ export const createBoxConstraints = (matrix: CoverBoard, header: number, boardSi
     for (let row: number = COVER_START_IDX; row <= boardSize; row += boxSize) {
         for (let column: number = COVER_START_IDX; column <= boardSize; column += boxSize) {
             for (let n: number = COVER_START_IDX; n <= boardSize; n++, headerIter++) {
-                for (let rowDelta: number = 0; rowDelta < boxSize; rowDelta++) {
-                    for (let columnDelta: number = 0; columnDelta < boxSize; columnDelta++) {
+                for (let rowDelta = 0; rowDelta < boxSize; rowDelta++) {
+                    for (let columnDelta = 0; columnDelta < boxSize; columnDelta++) {
                         const index: number = getIndex(row + rowDelta, column + columnDelta, n, boardSize);
                         matrix[index][headerIter] = true;
                     }

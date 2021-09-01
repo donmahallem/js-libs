@@ -1,5 +1,6 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
@@ -7,11 +8,10 @@ import { CoverBoard } from './cover-board';
 import { ColumnNode, DancingNode } from './dancing-node';
 export type ResultCallback = (board: number[][]) => boolean;
 export class DLX {
-
     private header: ColumnNode;
     private answer: DancingNode[];
     private resultCallback: ResultCallback;
-    private isDone: boolean = false;
+    private isDone = false;
     public constructor(cover: CoverBoard, public readonly boardSize: number) {
         this.header = this.createDLXList(cover);
     }
@@ -21,18 +21,18 @@ export class DLX {
         let headerNode: ColumnNode = new ColumnNode('header');
         const columnNodes: ColumnNode[] = [];
 
-        for (let i: number = 0; i < nbColumns; i++) {
+        for (let i = 0; i < nbColumns; i++) {
             const n: ColumnNode = new ColumnNode(`${i}`);
             columnNodes.push(n);
             headerNode = headerNode.linkRight(n) as ColumnNode;
         }
 
-        headerNode = headerNode.right.column as ColumnNode;
+        headerNode = headerNode.right.column;
 
         for (const aGrid of grid) {
-            let prev: DancingNode = undefined as any;
+            let prev: DancingNode | undefined = undefined;
 
-            for (let j: number = 0; j < nbColumns; j++) {
+            for (let j = 0; j < nbColumns; j++) {
                 if (aGrid[j]) {
                     const col: ColumnNode = columnNodes[j];
                     const newNode: DancingNode = new DancingNode(col);
@@ -57,7 +57,7 @@ export class DLX {
     private selectColumnNodeHeuristic(): ColumnNode {
         let min: number = Number.MAX_VALUE;
         // tslint:disable-next-line:no-unnecessary-initializer
-        let ret: ColumnNode = undefined as any;
+        let ret: ColumnNode = this.header.right as ColumnNode;
         for (let c: ColumnNode = this.header.right as ColumnNode; c !== this.header; c = c.right as ColumnNode) {
             if (c.size < min) {
                 min = c.size;
@@ -128,5 +128,4 @@ export class DLX {
         this.resultCallback = cb;
         this.search(0);
     }
-
 }

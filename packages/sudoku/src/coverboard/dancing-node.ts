@@ -1,6 +1,8 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
+
 // tslint:disable:max-classes-per-file
 
 export class DancingNode {
@@ -15,7 +17,9 @@ export class DancingNode {
         this.right = this;
         this.top = this;
         this.bottom = this;
-        this.column = columnNode as any;
+        if (columnNode) {
+            this.column = columnNode;
+        }
     }
 
     public linkDown(node: DancingNode): DancingNode {
@@ -56,7 +60,6 @@ export class DancingNode {
 }
 
 export class ColumnNode extends DancingNode {
-
     public size: number;
 
     public constructor(public name: string) {

@@ -1,6 +1,8 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
+
 import { CONSTRAINTS } from '../constants';
 import { CoverBoard } from './cover-board';
 import { createBoxConstraints } from './create-box-constraint';
@@ -13,7 +15,7 @@ export const createCoverMatrix = (boardSize: number, boxSize: number): CoverBoar
         .fill([])
         .map((): boolean[] => new Array<boolean>(boardSize * boardSize * CONSTRAINTS).fill(false));
 
-    let header: number = 0;
+    let header = 0;
     header = createCellConstraints(coverMatrix, header, boardSize);
     header = createRowConstraints(coverMatrix, header, boardSize);
     header = createColumnConstraints(coverMatrix, header, boardSize);
