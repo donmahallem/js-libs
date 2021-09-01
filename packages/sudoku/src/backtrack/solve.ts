@@ -1,6 +1,8 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
+
 import { BOARD_START_IDX, CELL_VALUE_MIN, EMPTY_CELL } from '../constants';
 import { isValid } from '../validate';
 

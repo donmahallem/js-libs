@@ -1,5 +1,6 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';
@@ -10,17 +11,50 @@ import { solve } from './solve';
 describe('coverboard/solve.ts', (): void => {
     describe('solve()', (): void => {
         it('should solve empty field with boxSize 2', (): void => {
-            expect(solve([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], 4, 2)).to.equal(true);
+            expect(
+                solve(
+                    [
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                    ],
+                    4,
+                    2
+                )
+            ).to.equal(true);
         });
         it('should solve non empty field with boxSize 2', (): void => {
-            expect(solve([[1, 2, 3, 4], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], 4, 2)).to.equal(true);
-            expect(solve([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 3, 0]], 4, 2)).to.equal(true);
+            expect(
+                solve(
+                    [
+                        [1, 2, 3, 4],
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                    ],
+                    4,
+                    2
+                )
+            ).to.equal(true);
+            expect(
+                solve(
+                    [
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                        [0, 0, 3, 0],
+                    ],
+                    4,
+                    2
+                )
+            ).to.equal(true);
         });
         it('should setup with a client instance as endpoint3', (): void => {
             expect(solve(createEmptySudokuBoard(4), 4, 2)).to.equal(true);
         });
         it('should setup with a client instance as endpoint4', (): void => {
-            const test: any = JSON.parse(JSON.stringify(createEmptySudokuBoard(4)));
+            const test: number[][] = JSON.parse(JSON.stringify(createEmptySudokuBoard(4))) as number[][];
             expect(solve(test, 4, 2)).to.equal(true);
         });
         [2, 3, 4].forEach((testSize: number): void => {

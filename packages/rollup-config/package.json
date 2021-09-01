@@ -8,7 +8,7 @@
     "private": false,
     "scripts": {
         "build": "npm run build:esm && npm run build:cjs && npm run build:types",
-        "build:esm": "tsc --project ./tsconfig.json --outDir ./dist/esm --module esnext",
+        "build:esm": "tsc --project ./tsconfig.json --outDir ./dist/esm --module ES2020",
         "build:cjs": "tsc --project ./tsconfig.json --outDir ./dist/cjs --module commonjs",
         "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
