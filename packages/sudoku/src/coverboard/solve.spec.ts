@@ -1,5 +1,6 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: sudoku
+/*
+ * Package @donmahallem/sudoku
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';
@@ -11,7 +12,12 @@ import { solve } from './solve';
 describe('coverboard/solve.ts', (): void => {
     describe('solve()', (): void => {
         it('should solve non empty field with boxSize 2', (done: Mocha.Done): void => {
-            const testField: number[][] = [[1, 2, 3, 4], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+            const testField: number[][] = [
+                [1, 2, 3, 4],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ];
             solve(testField, 4, 2, (board: number[][]): true => {
                 expect(board.length).greaterThan(0);
                 done();
