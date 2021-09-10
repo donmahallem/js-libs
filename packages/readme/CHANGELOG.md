@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.2.3...@donmahallem/readme@0.2.4) (2021-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency remark-html to ~14.0.1 ([ec255d9](https://github.com/donmahallem/js-libs/commit/ec255d9ea4dd495850cd881270371ca30c9217ac))
+
+
+
+
+
 ## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.2.2...@donmahallem/readme@0.2.3) (2021-09-01)
 
 **Note:** Version bump only for package @donmahallem/readme
