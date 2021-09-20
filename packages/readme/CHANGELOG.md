@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.2.4...@donmahallem/readme@0.2.5) (2021-09-20)
+
+
+### Bug Fixes
+
+* **deps:** update remark monorepo ([0a9ef42](https://github.com/donmahallem/js-libs/commit/0a9ef42bd5df594a47c19596d1aea357cba52865))
+
+
+
+
+
 ## [0.2.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.2.3...@donmahallem/readme@0.2.4) (2021-09-10)
 
 
