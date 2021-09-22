@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/rollup-config",
-    "version": "0.4.4",
+    "version": "0.4.5",
     "description": "My Rollup config. Do not use!",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
