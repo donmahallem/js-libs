@@ -23,7 +23,7 @@ jobs:
           ref: '${{ github.event.inputs.tagname }}'
           fetch-depth: 0
       - name: Setup Node
-        uses: actions/setup-node@v2.4.0
+        uses: actions/setup-node@v2.4.1
         with:
           node-version: ${{ matrix.node }}
       - name: Get npm cache directory
