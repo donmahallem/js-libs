@@ -54,7 +54,7 @@
         "remark": "~14.0.1",
         "remark-gfm": "~3.0.0",
         "remark-git-contributors": "~4.0.0",
-        "remark-html": "~14.0.1",
+        "remark-html": "~15.0.0",
         "remark-license": "~6.0.0",
         "remark-lint": "~9.1.0",
         "remark-preset-lint-recommended": "~6.1.0",
