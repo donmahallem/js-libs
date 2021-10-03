@@ -52,7 +52,7 @@
     "dependencies": {
         "@donmahallem/remark-lerna-packages": "^0.1.6",
         "remark": "~14.0.1",
-        "remark-gfm": "~2.0.0",
+        "remark-gfm": "~3.0.0",
         "remark-git-contributors": "~4.0.0",
         "remark-html": "~14.0.1",
         "remark-license": "~6.0.0",
