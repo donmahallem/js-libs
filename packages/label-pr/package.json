@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@octokit/core": "3.5.1",
-    "@octokit/types": "6.31.3"
+    "@octokit/types": "6.32.0"
   },
   "dependencies": {
     "@donmahallem/label-gh": "^0.3.8"
