@@ -57,7 +57,7 @@
         "remark-html": "~15.0.0",
         "remark-license": "~6.0.0",
         "remark-lint": "~9.1.0",
-        "remark-preset-lint-recommended": "~6.1.0",
+        "remark-preset-lint-recommended": "~6.1.1",
         "remark-toc": "~8.0.0",
         "to-vfile": "~7.2.2",
         "vfile": "~5.1.0",
