@@ -8,7 +8,9 @@ import 'mocha';
 import sinon from 'sinon';
 import { promiseToResponse } from './promise-to-response';
 
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument,
+ @typescript-eslint/no-unsafe-assignment,
+ @typescript-eslint/no-unsafe-member-access */
 describe('promise-to-response.ts', (): void => {
     describe('promiseToResponse(prom,res)', (): void => {
         let jsonSpy: sinon.SinonSpy;

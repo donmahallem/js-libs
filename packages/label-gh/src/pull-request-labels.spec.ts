@@ -9,6 +9,7 @@ import 'mocha';
 import Sinon from 'sinon';
 import { getPullRequestLabels } from './pull-request-labels';
 
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 const API_ENDPOINT = 'GET /repos/{owner}/{repo}/pulls/{pull_number}';
 describe('set-label', (): void => {
     let sandbox: Sinon.SinonSandbox;

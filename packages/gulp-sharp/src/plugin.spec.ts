@@ -14,6 +14,7 @@ import { gulpSharp } from './plugin';
 
 const testFormats: (keyof sharp.FormatEnum)[] = ['jpeg', 'png', 'webp'];
 const testSizes: number[] = [128, 256, 1024];
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 describe('plugin', (): void => {
     describe('gulpSharp', (): void => {
         describe('convert with object', (): void => {

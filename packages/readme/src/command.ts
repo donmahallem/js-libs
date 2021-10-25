@@ -5,6 +5,9 @@
 
 import commander from 'commander';
 import { convert } from './convert';
+/**
+ *
+ */
 export async function command(): Promise<commander.Command> {
     const prg = new commander.Command()
         .version('0.0.1')
