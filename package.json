@@ -88,6 +88,9 @@
     "email": "donmahallem@users.noreply.github.com",
     "url": "https://github.com/donmahallem"
   },
+  "engines": {
+    "node": "^12 || ^14 || ^16"
+  },
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/donmahallem/js-libs/issues"
