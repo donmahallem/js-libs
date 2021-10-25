@@ -26,24 +26,26 @@ import { reporter } from 'vfile-reporter';
 export async function convert(opts: { dryRun: boolean; input: string; output?: string; report?: boolean }): Promise<void> {
     const output: string = opts.output || opts.input;
     const data: VFile = await read(opts.input);
-    return remark()
-        .use(remarkToc)
-        .use(remarkGfm)
-        .use(remarkParse)
-        .use(remarkGitContributors)
-        .use(remarkLicense)
-        .use(remarkPresetLintRecommended)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        .use(remarkLernaPlugin)
-        .process(data)
-        .then((file: VFile): Promise<void> | void => {
-            if (opts.report !== false) {
-                console.error(reporter(file));
-            }
-            if (opts.dryRun) {
-                console.log(String(file));
-            } else {
-                return fsp.writeFile(output, String(file), 'utf-8');
-            }
-        });
+    return (
+        remark()
+            .use(remarkToc)
+            .use(remarkGfm)
+            .use(remarkParse)
+            .use(remarkGitContributors)
+            .use(remarkLicense)
+            .use(remarkPresetLintRecommended)
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            .use(remarkLernaPlugin)
+            .process(data)
+            .then((file: VFile): Promise<void> | void => {
+                if (opts.report !== false) {
+                    console.error(reporter(file));
+                }
+                if (opts.dryRun) {
+                    console.log(String(file));
+                } else {
+                    return fsp.writeFile(output, String(file), 'utf-8');
+                }
+            })
+    );
 }
