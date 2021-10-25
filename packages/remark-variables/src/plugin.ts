@@ -34,7 +34,7 @@ export const plugin: Plugin =
             /\{\{[a-zA-Z\.\- ]+\}\}/,
             (match: string): string => {
                 const cleanedKey: string = match.slice(2, match.length - 2).trim();
-                return get(options.data, cleanedKey) || 'unknown';
+                return get(options.data, cleanedKey) || match;
             }
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ) as any;

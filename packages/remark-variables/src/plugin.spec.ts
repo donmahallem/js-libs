@@ -30,7 +30,7 @@ describe('plugin', (): void => {
                 expect(String(value)).to.equal('# Lerna packages\n\nasdf\n\n# Lerna\n');
             });
         });
-        it('should not set all plugins with default config', async (): Promise<void> => {
+        it('should keep undefined template variables', async (): Promise<void> => {
             const data = '# Lerna packages\n\n{{ name }}\n\n# Lerna\n';
             const processor: Processor = unified()
                 .use(remarkParse)
@@ -38,7 +38,7 @@ describe('plugin', (): void => {
                 .use(plugin, { data: { namee: 'not match' } })
                 .use(remarkStringify);
             return processor.process(data).then((value): void => {
-                expect(String(value)).to.equal('# Lerna packages\n\nunknown\n\n# Lerna\n');
+                expect(String(value)).to.equal('# Lerna packages\n\n{{ name }}\n\n# Lerna\n');
             });
         });
         it('should work with dot notation variables', async (): Promise<void> => {
@@ -50,6 +50,29 @@ describe('plugin', (): void => {
                 .use(remarkStringify);
             return processor.process(data).then((value): void => {
                 expect(String(value)).to.equal('# Lerna packages\n\nusername\n\n# Lerna\n');
+            });
+        });
+        it('should work with dot notation variables', async (): Promise<void> => {
+            const data = '# Lerna packages\n\n{{ user.name }}\n\n# Lerna\n';
+            const processor: Processor = unified()
+                .use(remarkParse)
+                .use(remarkGfm)
+                .use(plugin, { data: { user: { name: 'username' } } })
+                .use(remarkStringify);
+            return processor.process(data).then((value): void => {
+                expect(String(value)).to.equal('# Lerna packages\n\nusername\n\n# Lerna\n');
+            });
+        });
+        it('should work with dot notation variables', async (): Promise<void> => {
+            const testData: string = 'Run the following command to install the package:\n\n' + '    npm install {{ pkg.name }}';
+            const testOutput: string = 'Run the following command to install the package:\n\n' + '    npm install username';
+            const processor: Processor = unified()
+                .use(remarkParse)
+                .use(remarkGfm)
+                .use(plugin, { data: { pkg: { name: 'username' } } })
+                .use(remarkStringify);
+            return processor.process(testData).then((value): void => {
+                expect(String(value)).to.equal(testOutput);
             });
         });
     });
