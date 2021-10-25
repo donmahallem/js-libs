@@ -33,6 +33,7 @@ export async function convert(opts: { dryRun: boolean; input: string; output?: s
         .use(remarkGitContributors)
         .use(remarkLicense)
         .use(remarkPresetLintRecommended)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         .use(remarkLernaPlugin)
         .process(data)
         .then((file: VFile): Promise<void> | void => {
