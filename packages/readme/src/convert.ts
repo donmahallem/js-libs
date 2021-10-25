@@ -16,6 +16,13 @@ import { read } from 'to-vfile';
 import { VFile } from 'vfile';
 import { reporter } from 'vfile-reporter';
 
+/**
+ * @param opts
+ * @param opts.dryRun
+ * @param opts.input
+ * @param opts.output
+ * @param opts.report
+ */
 export async function convert(opts: { dryRun: boolean; input: string; output?: string; report?: boolean }): Promise<void> {
     const output: string = opts.output || opts.input;
     const data: VFile = await read(opts.input);
