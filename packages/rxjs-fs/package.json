@@ -1,0 +1,54 @@
+{
+  "name": "@donmahallem/rxjs-fs",
+  "version": "0.0.0",
+  "description": "Rxjs wrapper for fs methods",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc --project ./tsconfig.json --outDir ./dist/esm --module ES2020",
+    "build:cjs": "tsc --project ./tsconfig.json --outDir ./dist/cjs --module commonjs",
+    "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+    "test": "mocha --config ../../.mocharc.yml",
+    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+    "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
+    "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+    "docs": "typedoc --options  ./typedoc.config.js",
+    "prepublishOnly": "npm run test && npm run docs && npm run build",
+    "version": "npm run build:readme && git add README.md",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "homepage": "https://donmahallem.github.io/js-libs/",
+  "author": {
+    "name": "donmahallem",
+    "email": "donmahallem@users.noreply.github.com",
+    "url": "https://github.com/donmahallem"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/donmahallem/js-libs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donmahallem/js-libs.git"
+  },
+  "engines": {
+    "node": "^12 || ^14 || ^16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "rxjs": "7.4.0"
+  },
+  "peerDependencies": {
+    "rxjs": "^7.4.0"
+  }
+}
