@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.0.8...@donmahallem/gulp-ncc@2.0.9) (2021-10-26)
+
+
+### Bug Fixes
+
+* **renovate:** fix issues with renovate and node 17 ([#939](https://github.com/donmahallem/js-libs/issues/939)) ([57f6057](https://github.com/donmahallem/js-libs/commit/57f6057542b9b7f8d70a544a37fe36bf98c859dc))
+
+
+
+
+
 ## [2.0.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.0.7...@donmahallem/gulp-ncc@2.0.8) (2021-10-02)
 
 **Note:** Version bump only for package @donmahallem/gulp-ncc

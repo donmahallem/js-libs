@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/ico@2.0.0...@donmahallem/ico@2.0.1) (2021-10-26)
+
+
+### Bug Fixes
+
+* **renovate:** fix issues with renovate and node 17 ([#939](https://github.com/donmahallem/js-libs/issues/939)) ([57f6057](https://github.com/donmahallem/js-libs/commit/57f6057542b9b7f8d70a544a37fe36bf98c859dc))
+
+
+
+
+
 # [2.0.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/ico@1.0.2...@donmahallem/ico@2.0.0) (2021-08-16)
 
 
