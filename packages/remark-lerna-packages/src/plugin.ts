@@ -7,6 +7,7 @@ import { Package } from '@lerna/package';
 import { getPackages } from '@lerna/project';
 import { headingRange } from 'mdast-util-heading-range';
 import { resolve as pathResolve } from 'path';
+import { Root } from 'remark-gfm';
 import { Plugin, Transformer } from 'unified';
 import { Node, Parent } from 'unist';
 import { u } from 'unist-builder';
@@ -16,6 +17,9 @@ const extractPackages: (path: string) => Promise<Package[]> = async (path: strin
     return await getPackages(path);
 };
 
+/**
+ * @param packageName
+ */
 function createVersionLabel(packageName: string) {
     const encodedName = encodeURIComponent(packageName);
     return (
@@ -62,7 +66,7 @@ export const remarkLernaPlugin: Plugin =
         const rows: Node[] = [u('tableRow', [u('tableCell', [u('text', 'Package Name')]), u('tableCell', [u('text', 'Version')])])];
         rows.push(...(await extractPackages(lernaConfigPath)).map((val: Package): Node => createRowFromPackage(val)));
         // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-        headingRange(node as any, 'Lerna Packages', (start, nodes: Node[], end) => {
+        headingRange(node as Root, 'Lerna Packages', (start, nodes: Node[], end) => {
             return [start, u('table', { align: [] }, rows), end];
         });
         return node;

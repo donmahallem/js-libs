@@ -37,7 +37,7 @@
     "url": "https://github.com/donmahallem/js-libs.git"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": "^12 || ^14 || ^16"
   },
   "files": [
     "dist/*",
@@ -55,7 +55,7 @@
     "supertest": "6.1.6"
   },
   "peerDependencies": {
-    "axios": "^0.22.0",
+    "axios": "^0.24.0",
     "express": "^4.17.1",
     "protobufjs": "^6.10.2"
   },

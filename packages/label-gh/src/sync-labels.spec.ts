@@ -10,6 +10,7 @@ import * as addLabels from './add-labels';
 import * as setLabels from './set-labels';
 import { syncLabels } from './sync-labels';
 
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 describe('syncLabels', (): void => {
     let sandbox: Sinon.SinonSandbox;
     before('setup sandbox', (): void => {

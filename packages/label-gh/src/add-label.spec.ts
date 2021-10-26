@@ -9,6 +9,7 @@ import 'mocha';
 import Sinon from 'sinon';
 import { addLabels } from './add-labels';
 
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 const API_ENDPOINT = 'POST /repos/{owner}/{repo}/issues/{issue_number}/labels';
 describe('add-label', (): void => {
     let sandbox: Sinon.SinonSandbox;
