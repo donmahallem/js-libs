@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.13...@donmahallem/eslint-config@0.3.0) (2021-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint to v8.1.0 ([208d4ee](https://github.com/donmahallem/js-libs/commit/208d4eeed7e1f2d27028b49451d87f69d69a98fd))
+* **deps:** update dependency eslint-plugin-import to v2.25.2 ([1ce5943](https://github.com/donmahallem/js-libs/commit/1ce594334c027609362a3f55d8250941f0f12312))
+* **deps:** update dependency eslint-plugin-jsdoc to v36.1.1 ([9495415](https://github.com/donmahallem/js-libs/commit/9495415fb124f5e92a17e1f8ed9b005abbafc495))
+* **deps:** update dependency eslint-plugin-jsdoc to v37 ([958504a](https://github.com/donmahallem/js-libs/commit/958504a2b3223dffeaca502369e222f0c66233ea))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.0.2 ([#948](https://github.com/donmahallem/js-libs/issues/948)) ([6ba9a97](https://github.com/donmahallem/js-libs/commit/6ba9a978d6295187305e472e799a1add66893fb6))
+* **deps:** update typescript-eslint monorepo to v4.33.0 ([3c1124d](https://github.com/donmahallem/js-libs/commit/3c1124d8603ca87ccc75f83d1f56effdc1b781eb))
+* **deps:** update typescript-eslint monorepo to v5.2.0 ([c1cd0a2](https://github.com/donmahallem/js-libs/commit/c1cd0a2ce40098fdaa97514932cc93b77baade00))
+* **renovate:** fix issues with renovate and node 17 ([#939](https://github.com/donmahallem/js-libs/issues/939)) ([57f6057](https://github.com/donmahallem/js-libs/commit/57f6057542b9b7f8d70a544a37fe36bf98c859dc))
+
+
+### Features
+
+* **eslint:** upgrade eslint to v8 ([#936](https://github.com/donmahallem/js-libs/issues/936)) ([f50da41](https://github.com/donmahallem/js-libs/commit/f50da417e4a616fdc7f0969f7eeef29d7d517d49))
+
+
+
+
+
 ## [0.2.13](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.12...@donmahallem/eslint-config@0.2.13) (2021-10-02)
 
 

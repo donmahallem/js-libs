@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-variables@0.1.6...@donmahallem/remark-variables@0.2.0) (2021-10-26)
+
+
+### Bug Fixes
+
+* **renovate:** fix issues with renovate and node 17 ([#939](https://github.com/donmahallem/js-libs/issues/939)) ([57f6057](https://github.com/donmahallem/js-libs/commit/57f6057542b9b7f8d70a544a37fe36bf98c859dc))
+
+
+### Features
+
+* **eslint:** upgrade eslint to v8 ([#936](https://github.com/donmahallem/js-libs/issues/936)) ([f50da41](https://github.com/donmahallem/js-libs/commit/f50da417e4a616fdc7f0969f7eeef29d7d517d49))
+
+
+
+
+
 ## [0.1.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-variables@0.1.5...@donmahallem/remark-variables@0.1.6) (2021-10-02)
 
 **Note:** Version bump only for package @donmahallem/remark-variables

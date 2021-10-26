@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.2.6...@donmahallem/readme@0.3.0) (2021-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency remark-html to v15 ([8a40846](https://github.com/donmahallem/js-libs/commit/8a4084652224b672f8737135d40a83155e217f3b))
+* **deps:** update dependency remark-preset-lint-recommended to ~6.1.1 ([0302397](https://github.com/donmahallem/js-libs/commit/030239799cef87d294c959b1f8cfb51d20b18bad))
+* **renovate:** fix issues with renovate and node 17 ([#939](https://github.com/donmahallem/js-libs/issues/939)) ([57f6057](https://github.com/donmahallem/js-libs/commit/57f6057542b9b7f8d70a544a37fe36bf98c859dc))
+
+
+### Features
+
+* **eslint:** upgrade eslint to v8 ([#936](https://github.com/donmahallem/js-libs/issues/936)) ([f50da41](https://github.com/donmahallem/js-libs/commit/f50da417e4a616fdc7f0969f7eeef29d7d517d49))
+
+
+
+
+
 ## [0.2.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.2.5...@donmahallem/readme@0.2.6) (2021-10-02)
 
 **Note:** Version bump only for package @donmahallem/readme
