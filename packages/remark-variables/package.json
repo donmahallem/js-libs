@@ -59,6 +59,6 @@
         "remark-stringify": "10.0.1",
         "unified": "10.1.0",
         "unist-builder": "3.0.0",
-        "vfile": "5.1.1"
+        "vfile": "5.2.0"
     }
 }
