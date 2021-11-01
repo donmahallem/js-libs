@@ -5,4 +5,5 @@
   "printWidth": 140,
   "tabWidth": 4,
   "endOfLine": "lf",
+  "quoteProps": "as-needed"
 }
