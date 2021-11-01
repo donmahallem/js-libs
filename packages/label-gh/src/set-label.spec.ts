@@ -9,7 +9,7 @@ import 'mocha';
 import Sinon from 'sinon';
 import { setLabels } from './set-labels';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
 const API_ENDPOINT = 'PUT /repos/{owner}/{repo}/issues/{issue_number}/labels';
 describe('set-label', (): void => {
     let sandbox: Sinon.SinonSandbox;
@@ -61,7 +61,7 @@ describe('set-label', (): void => {
                 owner: 'some_owner',
                 repo: 'anyrepo',
             })
-                .then((result: any): void => {
+                .then((): void => {
                     throw new Error('Should not resolve');
                 })
                 .catch((err: any): void => {

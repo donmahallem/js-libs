@@ -10,7 +10,7 @@ import * as addLabels from './add-labels';
 import * as setLabels from './set-labels';
 import { syncLabels } from './sync-labels';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
 describe('syncLabels', (): void => {
     let sandbox: Sinon.SinonSandbox;
     before('setup sandbox', (): void => {
@@ -23,8 +23,8 @@ describe('syncLabels', (): void => {
         sandbox.restore();
     });
     describe('syncLabels', (): void => {
-        let addLabelsStub: Sinon.SinonStub;
-        let setLabelsStub: Sinon.SinonStub;
+        let addLabelsStub: Sinon.SinonStub<Parameters<typeof addLabels['addLabels']>>;
+        let setLabelsStub: Sinon.SinonStub<Parameters<typeof setLabels['setLabels']>>;
         before('setup octokit stub instance', (): void => {
             addLabelsStub = sandbox.stub(addLabels, 'addLabels');
             setLabelsStub = sandbox.stub(setLabels, 'setLabels');
