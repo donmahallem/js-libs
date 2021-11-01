@@ -64,8 +64,8 @@ module.exports = {
             },
         ],
         'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 1 }],
-        quotes: ['error', 'single'],
         'quote-props': ['error', 'as-needed'],
+        quotes: ['error', 'single'],
         'sort-keys': [
             'error',
             'asc',
