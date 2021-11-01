@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-variables@0.2.0...@donmahallem/remark-variables@0.2.1) (2021-11-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v37.0.3 ([dd8fa6e](https://github.com/donmahallem/js-libs/commit/dd8fa6e3dc463891aaaaa3be8647cc785f46c282))
+
+
+
+
+
 # [0.2.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-variables@0.1.6...@donmahallem/remark-variables@0.2.0) (2021-10-26)
 
 

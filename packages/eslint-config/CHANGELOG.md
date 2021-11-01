@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.3.0...@donmahallem/eslint-config@0.4.0) (2021-11-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v37.0.3 ([dd8fa6e](https://github.com/donmahallem/js-libs/commit/dd8fa6e3dc463891aaaaa3be8647cc785f46c282))
+
+
+### Features
+
+* **eslint-config:** change quotes and quote-props eslint config ([#960](https://github.com/donmahallem/js-libs/issues/960)) ([4cf9bef](https://github.com/donmahallem/js-libs/commit/4cf9bef3b05f8aa364e3a8ee7b49529b1764c5fe))
+
+
+
+
+
 # [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.2.13...@donmahallem/eslint-config@0.3.0) (2021-10-26)
 
 
