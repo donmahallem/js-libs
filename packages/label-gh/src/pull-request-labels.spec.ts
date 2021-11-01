@@ -54,7 +54,7 @@ describe('set-label', (): void => {
                 ]);
             });
         });
-        it("should return empty array if labels isn't defined", (): Promise<void> => {
+        it(`should return empty array if labels isn't defined`, (): Promise<void> => {
             const testResponseData = 'any response';
             requestStub.resolves({
                 data: testResponseData,
