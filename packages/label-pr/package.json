@@ -9,7 +9,10 @@
   "keywords": [
     "octokit",
     "gist",
-    "wrapper"
+    "github",
+    "pull request",
+    "label",
+    "synchronize"
   ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js && npm run build:types",
