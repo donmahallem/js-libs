@@ -8,6 +8,7 @@ import json, { RollupJsonOptions } from '@rollup/plugin-json';
 import nodeResolve, { RollupNodeResolveOptions } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
+import { RollupOptions, OutputOptions, OutputPlugin } from 'rollup';
 
 export interface IConfig {
     output?: {
@@ -30,8 +31,8 @@ export interface IPartialPackage {
     peerDependencies?: { [key: string]: string };
     version?: string;
 }
-export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
-    const output: any[] = [];
+export default (pkg: IPartialPackage, cfg: IConfig = {}): RollupOptions => {
+    const output: OutputOptions[] = [];
     if (pkg.main && cfg?.output?.cjs !== false) {
         output.push({
             file: pkg.main,
@@ -50,7 +51,7 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
             sourcemap: true,
         });
     }
-    const plugins: any[] = [
+    const plugins: OutputPlugin[] = [
         nodeResolve(
             cfg.plugins?.nodeResolve || {
                 preferBuiltins: true,
