@@ -39,6 +39,10 @@
   "engines": {
     "node": "^12 || ^14 || ^16 || ^17"
   },
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
   "files": [
     "dist/*",
     "src/*",
