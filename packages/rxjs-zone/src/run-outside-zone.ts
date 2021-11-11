@@ -1,20 +1,24 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: rxjs-zone
+/*
+ * Package @donmahallem/rxjs-zone
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { NgZone } from '@angular/core';
-import {
-    MonoTypeOperatorFunction,
-    Observable,
-    Subscriber,
-    Subscription,
-} from 'rxjs';
+import { MonoTypeOperatorFunction, Observable, Subscriber, Subscription } from 'rxjs';
 
 export const runOutsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
     <T>(zone: NgZone): MonoTypeOperatorFunction<T> =>
-        (source: Observable<T>): Observable<T> =>
-            new Observable<T>((observer: Subscriber<T>): Subscription =>
+    (source: Observable<T>): Observable<T> =>
+        new Observable<T>(
+            (observer: Subscriber<T>): Subscription =>
                 source.subscribe({
+                    complete(): void {
+                        observer.complete();
+                    },
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    error(err: any): void {
+                        observer.error(err);
+                    },
                     next(x: T): void {
                         if (NgZone.isInAngularZone()) {
                             zone.runOutsideAngular((): void => {
@@ -24,6 +28,5 @@ export const runOutsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
                             observer.next(x);
                         }
                     },
-                    error(err: any): void { observer.error(err); },
-                    complete(): void { observer.complete(); },
-                }));
+                })
+        );
