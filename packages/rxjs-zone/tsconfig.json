@@ -4,6 +4,10 @@
         "outDir": "./dist",
         "rootDir": "./src",
         "declaration": false,
+        "lib": [
+            "DOM",
+            "ES2020"
+        ],
         "target": "ES2018",
         "module": "ES2020",
         "moduleResolution": "Node",
