@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.2.10...@donmahallem/label-pr@0.2.11) (2021-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.3.0 ([9133ccd](https://github.com/donmahallem/js-libs/commit/9133ccd0e089a93be0ddfac41cd8c3ccf4172130))
+
+
+
+
+
 ## [0.2.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.2.9...@donmahallem/label-pr@0.2.10) (2021-11-01)
 
 

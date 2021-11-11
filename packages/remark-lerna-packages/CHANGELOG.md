@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-lerna-packages@0.2.1...@donmahallem/remark-lerna-packages@0.2.2) (2021-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.3.0 ([9133ccd](https://github.com/donmahallem/js-libs/commit/9133ccd0e089a93be0ddfac41cd8c3ccf4172130))
+
+
+
+
+
 ## [0.2.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-lerna-packages@0.2.0...@donmahallem/remark-lerna-packages@0.2.1) (2021-11-01)
 
 

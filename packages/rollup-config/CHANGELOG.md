@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.4.8...@donmahallem/rollup-config@0.5.0) (2021-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.3.0 ([9133ccd](https://github.com/donmahallem/js-libs/commit/9133ccd0e089a93be0ddfac41cd8c3ccf4172130))
+
+
+### Features
+
+* **rollup-config:** add rollup typings for export ([#993](https://github.com/donmahallem/js-libs/issues/993)) ([50a4036](https://github.com/donmahallem/js-libs/commit/50a4036fd40bdbadf27d7aef767a8fc3312769d8))
+
+
+
+
+
 ## [0.4.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.4.7...@donmahallem/rollup-config@0.4.8) (2021-11-01)
 
 

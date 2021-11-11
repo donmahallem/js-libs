@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.0.10...@donmahallem/gulp-ncc@2.0.11) (2021-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.3.0 ([9133ccd](https://github.com/donmahallem/js-libs/commit/9133ccd0e089a93be0ddfac41cd8c3ccf4172130))
+
+
+
+
+
 ## [2.0.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.0.9...@donmahallem/gulp-ncc@2.0.10) (2021-11-01)
 
 
