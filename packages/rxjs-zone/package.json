@@ -8,8 +8,10 @@
   "private": false,
   "type": "module",
   "keywords": [
-    "express",
-    "helpers"
+    "rxjs",
+    "angular",
+    "zone",
+    "zone.js"
   ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js && npm run build:types",
