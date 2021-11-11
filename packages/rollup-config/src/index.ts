@@ -1,5 +1,6 @@
-/**!
- * Source https://github.com/donmahallem/js-libs Package: rollup-config
+/*
+ * Package @donmahallem/rollup-config
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import commonjs, { RollupCommonJSOptions } from '@rollup/plugin-commonjs';
@@ -10,13 +11,13 @@ import typescript from '@rollup/plugin-typescript';
 
 export interface IConfig {
     output?: {
-        cjs?: boolean,
-        esm?: boolean,
+        cjs?: boolean;
+        esm?: boolean;
     };
     plugins?: {
-        commonjs?: false | RollupCommonJSOptions,
-        nodeResolve?: RollupNodeResolveOptions,
-        json?: false | RollupJsonOptions,
+        commonjs?: false | RollupCommonJSOptions;
+        nodeResolve?: RollupNodeResolveOptions;
+        json?: false | RollupJsonOptions;
     };
 }
 export interface IPartialPackage {
@@ -31,7 +32,7 @@ export interface IPartialPackage {
 }
 export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
     const output: any[] = [];
-    if (pkg.main && (cfg?.output?.cjs) !== false) {
+    if (pkg.main && cfg?.output?.cjs !== false) {
         output.push({
             file: pkg.main,
             footer: '// BUILD: __BUILD_DATE__\n\n',
@@ -40,7 +41,7 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
             sourcemap: true,
         });
     }
-    if (pkg.module && (cfg?.output?.esm) !== false) {
+    if (pkg.module && cfg?.output?.esm !== false) {
         output.push({
             file: pkg.module,
             footer: '// BUILD: __BUILD_DATE__\n\n',
@@ -50,9 +51,11 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
         });
     }
     const plugins: any[] = [
-        nodeResolve(cfg.plugins?.nodeResolve || {
-            preferBuiltins: true,
-        }),
+        nodeResolve(
+            cfg.plugins?.nodeResolve || {
+                preferBuiltins: true,
+            }
+        ),
         typescript({
             tsconfig: './tsconfig.json',
         }),
@@ -61,16 +64,22 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): any => {
         plugins.push(commonjs(cfg.plugins?.commonjs));
     }
     if (cfg.plugins?.json !== false) {
-        plugins.push(json(cfg.plugins?.json || {
-            compact: true,
-        }));
+        plugins.push(
+            json(
+                cfg.plugins?.json || {
+                    compact: true,
+                }
+            )
+        );
     }
-    plugins.push(replace({
-        __BUILD_DATE__: (): string => new Date().toString(),
-        __BUILD_PACKAGE_NAME__: pkg.name,
-        __BUILD_VERSION__: pkg.version,
-        preventAssignment: true,
-    }));
+    plugins.push(
+        replace({
+            __BUILD_DATE__: (): string => new Date().toString(),
+            __BUILD_PACKAGE_NAME__: pkg.name,
+            __BUILD_VERSION__: pkg.version,
+            preventAssignment: true,
+        })
+    );
     return {
         external: [
             ...Object.keys(pkg.dependencies || {}),
