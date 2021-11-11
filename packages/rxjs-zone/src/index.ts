@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: rxjs-zone
+/*
+ * Package @donmahallem/rxjs-zone
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 export { runInsideZone } from './run-inside-zone';

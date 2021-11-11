@@ -6,19 +6,24 @@
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "private": false,
+  "type": "module",
   "keywords": [
-    "express",
-    "helpers"
+    "rxjs",
+    "angular",
+    "zone",
+    "zone.js"
   ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js && npm run build:types",
     "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
     "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "test": "mocha --config ../../.mocharc.yml",
-    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
-    "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
-    "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-    "docs": "typedoc --options  ./typedoc.config.js",
+    "test": "mocha --config ../../.mocharc.esm.yml --experimental-specifier-resolution=node",
+    "test:coverage": "c8 --config ../../.nycrc.json npm run test",
+    "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
+    "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+    "lint:fix": "eslint -c ./.eslintrc.cjs --ext .ts ./src --fix",
+    "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
+    "docs": "typedoc --options  ./typedoc.config.cjs",
     "prepublishOnly": "npm run test && npm run docs && npm run build",
     "version": "npm run build:readme && git add README.md"
   },
@@ -37,7 +42,11 @@
     "url": "https://github.com/donmahallem/js-libs.git"
   },
   "engines": {
-    "node": "^12 || ^14 || ^16"
+    "node": "^12 || ^14 || ^16 || ^17"
+  },
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
   },
   "files": [
     "dist/*",
@@ -48,11 +57,11 @@
     "access": "public"
   },
   "devDependencies": {
-    "@angular/core": "12.2.12",
+    "@angular/core": "13.0.1",
     "rxjs": "7.4.0"
   },
   "peerDependencies": {
-    "@angular/core": "<13.0.0",
+    "@angular/core": "<14.0.0",
     "rxjs": "<8.0.0"
   }
 }
