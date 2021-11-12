@@ -23,4 +23,4 @@ flags:
     paths:
       - packages/gulp-ncc/
 ignore:
-  - "packages/*/node_modules"  # ingore files submodules
+  - "packages/*/node_modules"  # ignore files submodules
