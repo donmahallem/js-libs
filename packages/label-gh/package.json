@@ -7,8 +7,12 @@
   "types": "dist/types/index.d.ts",
   "private": false,
   "keywords": [
+    "github",
+    "label",
+    "github label",
+    "pull request",
+    "issue",
     "octokit",
-    "gist",
     "wrapper"
   ],
   "scripts": {
