@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.5.1...@donmahallem/label-gh@0.5.2) (2021-11-14)
+
+
+### Bug Fixes
+
+* **label-gh:** update package meta data ([#998](https://github.com/donmahallem/js-libs/issues/998)) ([2e1db39](https://github.com/donmahallem/js-libs/commit/2e1db3977d07ec8a19fc61d514c6aafc88409328))
+
+
+
+
+
 ## [0.5.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.5.0...@donmahallem/label-gh@0.5.1) (2021-11-11)
 
 

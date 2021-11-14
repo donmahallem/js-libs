@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.4.1...@donmahallem/eslint-config@0.4.2) (2021-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ajv to v8 ([86763b0](https://github.com/donmahallem/js-libs/commit/86763b037d737fa876bc2a48e9143d4a46dd9559))
+* **eslint-config:** add ajv as fixed dependency to eslint-config ([#1006](https://github.com/donmahallem/js-libs/issues/1006)) ([5570597](https://github.com/donmahallem/js-libs/commit/55705978cde9c6f11d1d9e55e07af07fa93f4cc2))
+
+
+
+
+
 ## [0.4.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.4.0...@donmahallem/eslint-config@0.4.1) (2021-11-11)
 
 
