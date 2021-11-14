@@ -135,12 +135,21 @@ jobs:
         run: |
           npm ci
           npx lerna bootstrap --ci
-      - name: Run Lint
-        run: npx lerna run lint
+      - name: Lint ALL Packages
+        if: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' || ( github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) }}
+        run: |
+          npx lerna run lint
+      - name: Lint Packages changed since dev
+        if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/dev' && github.ref != 'refs/heads/master' }}
+        run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/dev:refs/remotes/origin/dev
+          npx lerna run lint --since origin/dev
   docs_suite:
     needs: build_suite
     runs-on: ${{ matrix.os }}
     name: Docs - ${{ matrix.os }} - Node ${{ matrix.node }}
+    # only run docs on pull_requests and non feature branches
+    if: ${{ github.event_name == 'pull_request' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev' }}
     timeout-minutes: 30
     strategy:
       max-parallel: 4
