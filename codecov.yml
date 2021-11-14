@@ -16,12 +16,15 @@ flags:
   turbo:
     paths:
       - packages/turbo/
+    carryforward: true
   turbo-rxjs:
     paths:
       - packages/turbo-rxjs/
+    carryforward: true
   gulp-ncc:
     paths:
       - packages/gulp-ncc/
+    carryforward: true
 ignore:
-  - "packages/*/node_modules"
-  - "*.json"  # ignore files submodules
+  - "packages/*/node_modules/**"
+  - "**/*.json"  # ignore files submodules
