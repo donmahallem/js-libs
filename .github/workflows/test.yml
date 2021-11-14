@@ -136,10 +136,7 @@ jobs:
           npm ci
           npx lerna bootstrap --ci
       - name: Lint ALL Packages
-        if: |
-          ${{ github.event_name == 'pull_request' || 
-              github.event_name == 'pull_request_target' ||
-              ( github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) }}
+        if: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' || ( github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) }}
         run: |
           npx lerna run lint
       - name: Lint Packages changed since dev
