@@ -23,4 +23,5 @@ flags:
     paths:
       - packages/gulp-ncc/
 ignore:
-  - "packages/*/node_modules"  # ignore files submodules
+  - "packages/*/node_modules"
+  - "*.json"  # ignore files submodules
