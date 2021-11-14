@@ -95,7 +95,7 @@ jobs:
         uses: codecov/codecov-action@v2.1.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          flags: ${{ steps.flagname.outputs.flagname }}
+          flags: unit #${{ steps.flagname.outputs.flagname }}
           directory: ${{ matrix.package.location }}
           name: Test
           fail_ci_if_error: false

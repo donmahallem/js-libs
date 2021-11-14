@@ -12,6 +12,9 @@ coverage:
       gulp-ncc:
         paths:
           - packages/gulp-ncc/*
+      unit:
+        paths:
+          - packages/*/coverage/**
 flags:
   turbo:
     paths:
