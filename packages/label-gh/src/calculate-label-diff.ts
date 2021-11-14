@@ -1,6 +1,6 @@
 /*
  * Package @donmahallem/label-gh
- * Source https://donmahallem.github.io/js-libs/
+ * Source https://github.com/donmahallem/js-libs/tree/master/packages/label-gh
  */
 
 export interface ILabelDiff {
