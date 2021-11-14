@@ -5,29 +5,36 @@ coverage:
     project:
       turbo:
         paths:
-          - packages/turbo/*
+          - packages/turbo/src/**/*
       turbo-rxjs:
         paths:
-          - packages/turbo-rxjs/*
+          - packages/turbo-rxjs/src/**/*
+      turbo-pb:
+        paths:
+          - packages/turbo-pb/src/**/*
       gulp-ncc:
         paths:
-          - packages/gulp-ncc/*
-      unit:
+          - packages/gulp-ncc/src/**/*
+      label-pr:
         paths:
-          - packages/*/coverage/**
+          - packages/label-pr/src/**/*
+      label-gh:
+        paths:
+          - packages/label-gh/src/**/*
+      turbo-validate-request:
+        paths:
+          - packages/turbo-validate-request/src/**/*
+      turbo-validate-request:
+        paths:
+          - packages/turbo-validate-request/src/**/*
+      ico:
+        paths:
+          - packages/ico/src/**/*
 flags:
-  turbo:
+  unit:
     paths:
-      - packages/turbo/
-    carryforward: true
-  turbo-rxjs:
-    paths:
-      - packages/turbo-rxjs/
-    carryforward: true
-  gulp-ncc:
-    paths:
-      - packages/gulp-ncc/
-    carryforward: true
+      - packages/*/src
+    carryforward: false
 ignore:
   - "packages/*/node_modules/**"
   - "**/*.json"  # ignore files submodules
