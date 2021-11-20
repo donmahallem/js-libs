@@ -40,6 +40,7 @@ module.exports = {
                 selector: 'enumMember',
             },
         ],
+        '@typescript-eslint/unbound-method': 'off',
         'header/header': [
             2,
             'block',
