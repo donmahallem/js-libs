@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.3.3...@donmahallem/readme@0.3.4) (2021-11-20)
+
+**Note:** Version bump only for package @donmahallem/readme
+
+
+
+
+
 ## [0.3.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.3.2...@donmahallem/readme@0.3.3) (2021-11-14)
 
 
