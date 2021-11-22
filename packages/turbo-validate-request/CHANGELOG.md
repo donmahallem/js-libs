@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.14](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.2.13...@donmahallem/turbo-validate-request@0.2.14) (2021-11-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint to v8.3.0 ([f47936e](https://github.com/donmahallem/js-libs/commit/f47936e1413b5fbe580e6af3269a3cbf781f50e0))
+
+
+
+
+
 ## [0.2.13](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.2.12...@donmahallem/turbo-validate-request@0.2.13) (2021-11-20)
 
 **Note:** Version bump only for package @donmahallem/turbo-validate-request
