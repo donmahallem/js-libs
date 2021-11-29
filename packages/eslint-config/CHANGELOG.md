@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.4.4...@donmahallem/eslint-config@0.4.5) (2021-11-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency prettier to v2.5.0 ([687bca3](https://github.com/donmahallem/js-libs/commit/687bca3d5154910585fd3a25cd761bb97cbac68c))
+
+
+
+
+
 ## [0.4.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.4.3...@donmahallem/eslint-config@0.4.4) (2021-11-22)
 
 
