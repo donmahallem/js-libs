@@ -49,7 +49,9 @@
         "config:base",
         ":prHourlyLimit4"
       ],
-      "lockFileMaintenance": true,
+      "lockFileMaintenance": {
+        "enabled": true
+      },
       "labels": [
         "dependencies"
       ],
@@ -92,24 +94,26 @@
           ]
         },
         {
-          "depTypeList": [
-            "devDependencies"
-          ],
           "rangeStrategy": "pin",
-          "pin": true
+          "pin": {
+            "enabled": true
+          },
+          "matchDepTypes": [
+            "devDependencies"
+          ]
         },
         {
-          "depTypeList": [
+          "rangeStrategy": "bump",
+          "matchDepTypes": [
             "dependencies"
-          ],
-          "rangeStrategy": "bump"
+          ]
         },
         {
-          "depTypeList": [
+          "rangeStrategy": "replace",
+          "matchDepTypes": [
             "peerDependencies",
             "optionalDependencies"
-          ],
-          "rangeStrategy": "replace"
+          ]
         },
         {
           "matchPackageNames": [
