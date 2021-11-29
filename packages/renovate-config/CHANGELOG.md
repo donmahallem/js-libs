@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.15](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.8.14...@donmahallem/renovate-config@0.8.15) (2021-11-29)
+
+
+### Bug Fixes
+
+* **renovate-config:** change required node version ([d814aa6](https://github.com/donmahallem/js-libs/commit/d814aa6c59a7d893dff664b1060401af4e38a21c))
+
+
+
+
+
 ## [0.8.14](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.8.13...@donmahallem/renovate-config@0.8.14) (2021-11-22)
 
 **Note:** Version bump only for package @donmahallem/renovate-config
