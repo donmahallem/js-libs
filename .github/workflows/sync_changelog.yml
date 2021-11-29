@@ -15,23 +15,18 @@ jobs:
         os: [ubuntu-latest] #, windows-latest]
     steps:
       - name: Checkout current branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.0
         with:
           ref: '${{ github.ref }}'
           fetch-depth: 0
       - name: Setup Node
-        uses: actions/setup-node@v2.4.1
+        uses: actions/setup-node@v2.5.0
         with:
           node-version: ${{ matrix.node }}
-      - name: Get npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
       - name: Setup Cache
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.7
         with:
           path: |
-            ${{ steps.npm-cache.outputs.dir }}
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}

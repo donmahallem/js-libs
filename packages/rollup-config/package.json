@@ -52,7 +52,7 @@
         "@rollup/plugin-node-resolve": "13.0.6",
         "@rollup/plugin-replace": "3.0.0",
         "@rollup/plugin-typescript": "8.3.0",
-        "rollup": "2.60.0"
+        "rollup": "2.60.1"
     },
     "peerDependencies": {
         "@rollup/plugin-json": "^4.1.0",
