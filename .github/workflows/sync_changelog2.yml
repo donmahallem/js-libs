@@ -26,15 +26,10 @@ jobs:
         uses: actions/setup-node@v2.5.0
         with:
           node-version: ${{ matrix.node }}
-      - name: Get npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
       - name: Setup Cache
         uses: actions/cache@v2.1.7
         with:
           path: |
-            ${{ steps.npm-cache.outputs.dir }}
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
