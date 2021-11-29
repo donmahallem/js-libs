@@ -39,7 +39,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "renovate": "29.27.0"
+    "renovate": "29.28.1"
   },
   "renovate-config": {
     "default": {
@@ -49,7 +49,9 @@
         "config:base",
         ":prHourlyLimit4"
       ],
-      "lockFileMaintenance": true,
+      "lockFileMaintenance": {
+        "enabled": true
+      },
       "labels": [
         "dependencies"
       ],
@@ -92,24 +94,26 @@
           ]
         },
         {
-          "depTypeList": [
-            "devDependencies"
-          ],
           "rangeStrategy": "pin",
-          "pin": true
+          "pin": {
+            "enabled": true
+          },
+          "matchDepTypes": [
+            "devDependencies"
+          ]
         },
         {
-          "depTypeList": [
+          "rangeStrategy": "bump",
+          "matchDepTypes": [
             "dependencies"
-          ],
-          "rangeStrategy": "bump"
+          ]
         },
         {
-          "depTypeList": [
+          "rangeStrategy": "replace",
+          "matchDepTypes": [
             "peerDependencies",
             "optionalDependencies"
-          ],
-          "rangeStrategy": "replace"
+          ]
         },
         {
           "matchPackageNames": [
