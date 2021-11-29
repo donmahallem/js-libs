@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.16](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.8.15...@donmahallem/renovate-config@0.8.16) (2021-11-29)
+
+
+### Bug Fixes
+
+* **renovate-config:** update renovate config format ([#1042](https://github.com/donmahallem/js-libs/issues/1042)) ([4dabba6](https://github.com/donmahallem/js-libs/commit/4dabba68ec8d3b6f2c773eebae8abb75abb1f913))
+
+
+
+
+
 ## [0.8.15](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.8.14...@donmahallem/renovate-config@0.8.15) (2021-11-29)
 
 

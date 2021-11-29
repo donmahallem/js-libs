@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/eslint-config",
-    "version": "0.4.5",
+    "version": "0.4.6",
     "description": "My personal eslint config. Do not use!",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
