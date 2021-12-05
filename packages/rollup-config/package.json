@@ -7,10 +7,9 @@
     "types": "dist/types/index.d.ts",
     "private": false,
     "scripts": {
-        "build": "npm run build:esm && npm run build:cjs && npm run build:types",
-        "build:esm": "tsc --project ./tsconfig.json --outDir ./dist/esm --module ES2020",
-        "build:cjs": "tsc --project ./tsconfig.json --outDir ./dist/cjs --module commonjs",
-        "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc --project ./tsconfig.dist-esm.json",
+        "build:cjs": "tsc --project ./tsconfig.dist-cjs.json",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.yml",
         "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
@@ -54,13 +53,15 @@
         "@rollup/plugin-node-resolve": "13.0.6",
         "@rollup/plugin-replace": "3.0.0",
         "@rollup/plugin-typescript": "8.3.0",
-        "rollup": "2.60.2"
+        "rollup": "2.60.2",
+        "rollup-plugin-dts": "4.0.1"
     },
     "peerDependencies": {
         "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-node-resolve": "^13.0.0",
         "@rollup/plugin-replace": "^3.0.0",
         "@rollup/plugin-typescript": "^8.2.0",
-        "rollup": "^2.39.0"
+        "rollup": "^2.39.0",
+        "rollup-plugin-dts": "^4.0.0"
     }
 }

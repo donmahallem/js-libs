@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.dist.json",
+    "compilerOptions": {
+        "outDir": "./dist/esm",
+        "declaration": true,
+        "declarationDir": "./dist/types",
+        "declarationMap": true,
+        "module": "ES2020"
+    },
+}
