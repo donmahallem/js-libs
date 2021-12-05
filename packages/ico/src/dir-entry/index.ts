@@ -11,5 +11,4 @@ export {
     IIcoData,
     ImageFormat,
 } from './dir-entry';
-export { } from './create-entry';
 export { readDirEntry } from './read-dir-entry';
