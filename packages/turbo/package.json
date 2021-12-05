@@ -21,8 +21,9 @@
     "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
     "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
     "docs": "typedoc --options  ./typedoc.config.js",
-    "prepublishOnly": "npm run test && npm run docs && npm run build",
-    "version": "npm run build:readme && git add README.md"
+    "prepublishOnly": "npm run clean && npm run test && npm run docs && npm run build",
+    "version": "npm run build:readme && git add README.md",
+    "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
   },
   "homepage": "https://github.com/donmahallem/js-libs/tree/master/packages/turbo",
   "author": {
