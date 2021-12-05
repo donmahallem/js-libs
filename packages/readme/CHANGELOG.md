@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.3.7...@donmahallem/readme@0.3.8) (2021-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency vfile-reporter to ~7.0.3 ([cd14807](https://github.com/donmahallem/js-libs/commit/cd1480744d14bcc60a6f90c295d7e923d98fd6da))
+* **deps:** update typescript-eslint monorepo to v5.5.0 ([24069b9](https://github.com/donmahallem/js-libs/commit/24069b9aee9cc6364cfb5cdad2883d5937a3bce4))
+
+
+
+
+
 ## [0.3.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.3.6...@donmahallem/readme@0.3.7) (2021-11-29)
 
 **Note:** Version bump only for package @donmahallem/readme

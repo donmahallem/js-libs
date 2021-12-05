@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@2.1.7...@donmahallem/gulp-sharp@2.1.8) (2021-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.5.0 ([24069b9](https://github.com/donmahallem/js-libs/commit/24069b9aee9cc6364cfb5cdad2883d5937a3bce4))
+
+
+
+
+
 ## [2.1.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@2.1.6...@donmahallem/gulp-sharp@2.1.7) (2021-11-29)
 
 **Note:** Version bump only for package @donmahallem/gulp-sharp
