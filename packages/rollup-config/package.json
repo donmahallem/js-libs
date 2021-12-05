@@ -22,7 +22,8 @@
         "prepublishOnly": "npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md",
         "prepare": "npm run build",
-        "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
+        "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs",
+        "postclean": "npm run build"
     },
     "files": [
         "dist/*",
