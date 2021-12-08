@@ -56,7 +56,7 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": "^12 || ^14 || ^16"
+        "node": ">=14"
     },
     "publishConfig": {
         "access": "public"
