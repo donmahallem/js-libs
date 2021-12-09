@@ -120,11 +120,6 @@ jobs:
         run: |
           npm ci
           npx lerna bootstrap --ci
-      - name: Download Build artifacts
-        uses: actions/download-artifact@v2.1.0
-        with:
-          name: build-${{matrix.os}}-${{matrix.node}}
-          path: ./packages
       - name: Lint ALL Packages
         if: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' || ( github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) }}
         run: |
