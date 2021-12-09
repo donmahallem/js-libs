@@ -28,7 +28,7 @@
     "url": "https://github.com/donmahallem/js-libs.git"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "files": [
     "dist/*",
@@ -39,7 +39,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "renovate": "29.28.1"
+    "renovate": "29.32.4"
   },
   "renovate-config": {
     "default": {
