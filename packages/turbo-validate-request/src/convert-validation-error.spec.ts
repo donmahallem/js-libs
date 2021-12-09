@@ -27,7 +27,7 @@ describe('convert-validation-error.ts', (): void => {
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
-                expect(testError.message).to.equal("Invalid type at 'root'. Expected array");
+                expect(testError.message).to.equal(`Invalid type at 'root'. Expected array`);
             });
             it('should report missing top parameter', (): void => {
                 const validate: ValidateFunction = ajv.compile({
@@ -53,7 +53,7 @@ describe('convert-validation-error.ts', (): void => {
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
-                expect(testError.message).to.equal("Missing property top at 'root'");
+                expect(testError.message).to.equal(`Missing property top at 'root'`);
             });
             it('should report invalid param', (): void => {
                 const validate: ValidateFunction = ajv.compile({
@@ -77,7 +77,7 @@ describe('convert-validation-error.ts', (): void => {
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
-                expect(testError.message).to.equal("Value doesn't match pattern at: '/bottom'");
+                expect(testError.message).to.equal(`Value doesn't match pattern at: '/bottom'`);
             });
             it('should report invalid param', (): void => {
                 const validate: ValidateFunction = ajv.compile({
@@ -100,7 +100,7 @@ describe('convert-validation-error.ts', (): void => {
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
-                expect(testError.message).to.equal("Invalid type at '/bottom'. Expected array");
+                expect(testError.message).to.equal(`Invalid type at '/bottom'. Expected array`);
             });
         });
     });
