@@ -1,5 +1,6 @@
 queue_rules:
   - name: default
+    method: squash
     conditions:
       # Conditions to get out of the queue (= merged)
       - check-success=Finish Test
