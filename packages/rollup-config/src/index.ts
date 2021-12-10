@@ -20,6 +20,12 @@ export interface IConfig {
         nodeResolve?: RollupNodeResolveOptions;
         json?: false | RollupJsonOptions;
     };
+    /**
+     * Path to the tsconfig path to use
+     *
+     * @default './tsconfig.json'
+     */
+    tsconfig?: string;
 }
 export interface IPartialPackage {
     dependencies?: { [key: string]: string };
@@ -58,7 +64,7 @@ export default (pkg: IPartialPackage, cfg: IConfig = {}): RollupOptions => {
             }
         ),
         typescript({
-            tsconfig: './tsconfig.json',
+            tsconfig: cfg.tsconfig || './tsconfig.json',
         }),
     ];
     if (cfg.plugins?.commonjs !== false) {
