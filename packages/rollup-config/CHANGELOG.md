@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.6.0...@donmahallem/rollup-config@0.7.0) (2021-12-10)
+
+
+### Features
+
+* **rollup-config:** add option to specify tsconfig file ([#1085](https://github.com/donmahallem/js-libs/issues/1085)) ([49f1237](https://github.com/donmahallem/js-libs/commit/49f12378373d72d1ffbee5b2b913604d5aeb8abf))
+
+
+
+
+
 # [0.6.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.5.6...@donmahallem/rollup-config@0.6.0) (2021-12-09)
 
 
