@@ -22,6 +22,7 @@ export interface IConfig {
     };
     /**
      * Path to the tsconfig path to use
+     *
      * @default './tsconfig.json'
      */
     tsconfig?: string;
