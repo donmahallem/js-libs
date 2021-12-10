@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo-validate-request
+/*
+ * Package @donmahallem/turbo-validate-request
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { RequestError } from '@donmahallem/turbo';
@@ -32,14 +33,12 @@ const TEST_SCHEMA: JSONSchemaType<ITestObject> = {
     required: [],
     type: 'object',
 };
-// tslint:disable:no-unused-expression
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
 describe('validate-request.ts', (): void => {
     describe('validateRequest', (): void => {
         it('should pass if empty hash is provided', (done: Done): void => {
             const validationResult: RequestHandler = validateRequest('body', {
-                properties: {
-
-                },
+                properties: {},
                 required: [],
                 type: 'object',
             });
@@ -51,64 +50,88 @@ describe('validate-request.ts', (): void => {
         describe(`should check 'query'`, (): void => {
             it(`should pass correctly`, (done: Done): void => {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('query', TEST_SCHEMA);
-                validationResult({
-                    query: { top: '123', bottom: '-123' },
-                } as any, {} as any, (res?: any): void => {
-                    expect(res).to.be.undefined;
-                    done();
-                });
+                validationResult(
+                    {
+                        query: { bottom: '-123', top: '123' },
+                    } as any,
+                    {} as any,
+                    (res?: any): void => {
+                        expect(res).to.be.undefined;
+                        done();
+                    }
+                );
             });
             it(`should reject property 'query' correctly`, (done: Done): void => {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('query', TEST_SCHEMA);
-                validationResult({
-                    query: { top: 'asdf', bottom: '-123' },
-                } as any, {} as any, (res?: any): void => {
-                    expect(res).to.not.be.undefined;
-                    expect(res).to.be.instanceOf(RequestError);
-                    done();
-                });
+                validationResult(
+                    {
+                        query: { bottom: '-123', top: 'asdf' },
+                    } as any,
+                    {} as any,
+                    (res?: any): void => {
+                        expect(res).to.not.be.undefined;
+                        expect(res).to.be.instanceOf(RequestError);
+                        done();
+                    }
+                );
             });
         });
         describe(`should check 'body'`, (): void => {
             it(`should pass correctly`, (done: Done): void => {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('body', TEST_SCHEMA);
-                validationResult({
-                    body: { top: '123', bottom: '-123' },
-                } as any, {} as any, (res?: any): void => {
-                    expect(res).to.be.undefined;
-                    done();
-                });
+                validationResult(
+                    {
+                        body: { bottom: '-123', top: '123' },
+                    } as any,
+                    {} as any,
+                    (res?: any): void => {
+                        expect(res).to.be.undefined;
+                        done();
+                    }
+                );
             });
             it(`should reject property 'body' correctly`, (done: Done): void => {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('body', TEST_SCHEMA);
-                validationResult({
-                    body: { top: 'asdf', bottom: '-123' },
-                } as any, {} as any, (res?: any): void => {
-                    expect(res).to.not.be.undefined;
-                    expect(res).to.be.instanceOf(RequestError);
-                    done();
-                });
+                validationResult(
+                    {
+                        body: { bottom: '-123', top: 'asdf' },
+                    } as any,
+                    {} as any,
+                    (res?: any): void => {
+                        expect(res).to.not.be.undefined;
+                        expect(res).to.be.instanceOf(RequestError);
+                        done();
+                    }
+                );
             });
         });
         describe(`should check 'params'`, (): void => {
             it(`should pass correctly`, (done: Done): void => {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('params', TEST_SCHEMA);
-                validationResult({
-                    params: { top: '123', bottom: '-123' },
-                } as any, {} as any, (res?: any): void => {
-                    expect(res).to.be.undefined;
-                    done();
-                });
+                validationResult(
+                    {
+                        params: { bottom: '-123', top: '123' },
+                    } as any,
+                    {} as any,
+                    (res?: any): void => {
+                        expect(res).to.be.undefined;
+                        done();
+                    }
+                );
             });
             it(`should reject property 'params' correctly`, (done: Done): void => {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('params', TEST_SCHEMA);
-                validationResult({
-                    params: { top: 'asdf', bottom: '-123' },
-                } as any, {} as any, (res?: any): void => {
-                    expect(res).to.not.be.undefined;
-                    expect(res).to.be.instanceOf(RequestError);
-                    done();
-                });
+                validationResult(
+                    {
+                        params: { bottom: '-123', top: 'asdf' },
+                    } as any,
+                    {} as any,
+                    (res?: any): void => {
+                        expect(res).to.not.be.undefined;
+                        expect(res).to.be.instanceOf(RequestError);
+                        done();
+                    }
+                );
             });
         });
     });

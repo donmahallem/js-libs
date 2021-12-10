@@ -1,7 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo-validate-request
+/*
+ * Package @donmahallem/turbo-validate-request
+ * Source https://donmahallem.github.io/js-libs/
  */
 
-export {
-    validateRequest,
-} from './validate-request';
+export { validateRequest } from './validate-request';
