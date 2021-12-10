@@ -177,6 +177,7 @@ jobs:
     needs: [test_suite, lint_suite, docs_suite]
     name: Finish Test
     runs-on: ubuntu-latest
+    if: ${{ !failure() && !cancelled() }}
     steps:
     - name: Coveralls Finished
       run: echo "Test Finished"
