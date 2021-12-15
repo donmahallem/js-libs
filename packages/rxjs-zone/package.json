@@ -57,7 +57,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@angular/core": "13.1.0",
+    "@angular/core": "13.1.1",
     "rxjs": "7.4.0"
   },
   "peerDependencies": {
