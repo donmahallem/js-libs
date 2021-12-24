@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.5.1...@donmahallem/eslint-config@0.5.2) (2021-12-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint to v8.5.0 ([26f6db8](https://github.com/donmahallem/js-libs/commit/26f6db8502cd631888241a4907c4bb0793dbfadb))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.2.1 ([80b99f8](https://github.com/donmahallem/js-libs/commit/80b99f8c0f12915767618fae98c846a709c1851e))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.2.2 ([b412692](https://github.com/donmahallem/js-libs/commit/b412692e68c045a377ef4f18a12da01db618a3dc))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.2.3 ([556147e](https://github.com/donmahallem/js-libs/commit/556147edfc361756c5bb2daa32a27f5295f11a10))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.2.4 ([bf35d4e](https://github.com/donmahallem/js-libs/commit/bf35d4e100560c6d887484bc463ce8fae3e3cbd1))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.2.8 ([66f490f](https://github.com/donmahallem/js-libs/commit/66f490f20b96d8f026b98a0e5aa4d3c8b8acfd59))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.3.0 ([487be57](https://github.com/donmahallem/js-libs/commit/487be57d9992397f82d9ec49d896478c90d93d00))
+* **deps:** update dependency eslint-plugin-jsdoc to v37.4.0 ([852e34b](https://github.com/donmahallem/js-libs/commit/852e34b20b9c6870ee8755b8ff0813e75d8c691d))
+* **deps:** update typescript-eslint monorepo to v5.7.0 ([3905c34](https://github.com/donmahallem/js-libs/commit/3905c348965fef2083aaf762c71a46c250027ea7))
+* **deps:** update typescript-eslint monorepo to v5.8.0 ([a878a50](https://github.com/donmahallem/js-libs/commit/a878a502948ccdc4a3d24ad31fa010acbad3d2d9))
+
+
+
+
+
 ## [0.5.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/eslint-config@0.5.0...@donmahallem/eslint-config@0.5.1) (2021-12-10)
 
 **Note:** Version bump only for package @donmahallem/eslint-config
