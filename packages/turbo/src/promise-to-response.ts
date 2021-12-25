@@ -3,9 +3,9 @@
  * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
  */
 
-import { AxiosError } from 'axios';
-import { NextFunction, Response } from 'express';
 import { IErrorResponse } from './error-response';
+import type { AxiosError } from 'axios';
+import type { NextFunction, Response } from 'express';
 
 type MethodType = <T>(prom: Promise<T>, res: Response, next?: NextFunction) => void;
 

@@ -3,9 +3,9 @@
  * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
  */
 
-import { NextFunction, Request, RequestHandler, Response } from 'express';
 import { IErrorResponse } from './error-response';
 import { promiseToResponse } from './promise-to-response';
+import type { NextFunction, Request, RequestHandler, Response } from 'express';
 
 type MethodInterface<T> = (req?: Request, res?: Response<T>) => Promise<T>;
 

@@ -13,12 +13,4 @@ describe('index', (): void => {
         const result: RollupOptions = defaultConfig({ name: 'testname', version: '1.2.3' });
         expect(result.plugins).to.have.lengthOf(5);
     });
-    it('should exclude commonjs with false as config', (): void => {
-        const result: RollupOptions = defaultConfig({ name: 'testname', version: '1.2.3' }, { plugins: { commonjs: false } });
-        expect(result.plugins).to.have.lengthOf(4);
-    });
-    it('should exclude commonjs with false as config', (): void => {
-        const result: RollupOptions = defaultConfig({ name: 'testname', version: '1.2.3' }, { plugins: { json: false } });
-        expect(result.plugins).to.have.lengthOf(4);
-    });
 });
