@@ -4,7 +4,8 @@
  */
 
 import { NgZone } from '@angular/core';
-import { MonoTypeOperatorFunction, Observable, Subscriber, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
+import type { MonoTypeOperatorFunction, Subscriber, Subscription } from 'rxjs';
 
 export const runOutsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
     <T>(zone: NgZone): MonoTypeOperatorFunction<T> =>
