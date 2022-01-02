@@ -1,8 +1,11 @@
+/*
+ * Package @donmahallem/lerna2codecov
+ * Source https://github.com/donmahallem/js-libs/tree/master/packages/lerna2codecov
+ */
 
-
-
+/* eslint-disable */
 declare module '@lerna/package' {
-    import { resolve } from "npm-package-arg";
+    import { resolve } from 'npm-package-arg';
     type ResolveResult = ReturnType<typeof resolve>;
     export type RawManifest = {
         name: string;
@@ -16,7 +19,7 @@ declare module '@lerna/package' {
         peerDependencies?: Record<string, string>;
         publishConfig?: Record<string, string>;
         workspaces?: string[] | { packages: string[] };
-    } & { [key: string]: any; }
+    } & { [key: string]: any };
     /**
      * Lerna's internal representation of a local package, with
      * many values resolved directly from the original JSON.
@@ -42,8 +45,8 @@ declare module '@lerna/package' {
         public get devDependencies(): RawManifest['devDependencies'];
         public get optionalDependencies(): RawManifest['optionalDependencies'];
         public get peerDependencies(): RawManifest['peerDependencies'];
-        get<K extends (keyof RawManifest) | string>(key: K): RawManifest[K];
-        set<K extends (keyof RawManifest) | string>(key: K, val: RawManifest[K]): void;
+        get<K extends keyof RawManifest | string>(key: K): RawManifest[K];
+        set<K extends keyof RawManifest | string>(key: K, val: RawManifest[K]): void;
         /**
          * Provide shallow copy for munging elsewhere
          */
@@ -65,7 +68,7 @@ declare module '@lerna/package' {
 }
 
 declare module '@lerna/project' {
-    import { Package } from "@lerna/package";
+    import { Package } from '@lerna/package';
 
     export interface ProjectConfig {
         packages: string[];
@@ -73,19 +76,19 @@ declare module '@lerna/project' {
         version: string;
     }
     /**
-    * A representation of the entire project managed by Lerna.
-    *
-    * Wherever the lerna.json file is located, that is the project root.
-    * All package globs are rooted from this location.
-    */
+     * A representation of the entire project managed by Lerna.
+     *
+     * Wherever the lerna.json file is located, that is the project root.
+     * All package globs are rooted from this location.
+     */
     export class Project {
         /**
-         * 
+         *
          * @param cwd {string} [cwd] defaults to process.cwd()
          */
         public static getPackges(cwd?: string): Promise<Package[]>;
         /**
-         * 
+         *
          * @param cwd {string} [cwd] defaults to process.cwd()
          */
         public static getPackgesSync(cwd?: string): Package[];

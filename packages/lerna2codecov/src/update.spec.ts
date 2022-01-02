@@ -1,6 +1,6 @@
 /*
- * Package @donmahallem/turbo
- * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
+ * Package @donmahallem/lerna2codecov
+ * Source https://github.com/donmahallem/js-libs/tree/master/packages/lerna2codecov
  */
 
 import { expect } from 'chai';
@@ -8,7 +8,7 @@ import { promises as fsp } from 'fs';
 import 'mocha';
 import sinon from 'sinon';
 import { update } from './update';
-import * as  updateConfig from './update-config';
+import * as updateConfig from './update-config';
 
 /* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions */
 describe('./update', (): void => {
@@ -21,7 +21,7 @@ describe('./update', (): void => {
     });
     after('restore sandbox', (): void => {
         sandbox.restore();
-    })
+    });
     describe('update', (): void => {
         let fspWriteStub: sinon.SinonStub;
         let fspReadStub: sinon.SinonStub;
@@ -36,7 +36,7 @@ describe('./update', (): void => {
         });
 
         it('should output the input if no packages are found in the lerna project', async (): Promise<void> => {
-            const codecovTestPath: string = './../../codecov.yml';
+            const codecovTestPath = './../../codecov.yml';
             fspReadStub.resolves('');
             updateConfigStub.resolves({ asdf: true });
             await update('./', codecovTestPath);
@@ -45,8 +45,8 @@ describe('./update', (): void => {
             expect(fspWriteStub.callCount).to.equal(1);
             expect(fspWriteStub.getCall(0).args).to.deep.eq([codecovTestPath, 'asdf: true\n', 'utf-8']);
         });
-        it('should create a codecov.yml if it doesn\'t exist', async (): Promise<void> => {
-            const codecovTestPath: string = './../../codecov.yml';
+        it("should create a codecov.yml if it doesn't exist", async (): Promise<void> => {
+            const codecovTestPath = './../../codecov.yml';
             fspReadStub.rejects(new Error('test error'));
             updateConfigStub.resolves({ asdf: true });
             await update('./', codecovTestPath);
@@ -55,5 +55,5 @@ describe('./update', (): void => {
             expect(fspWriteStub.callCount).to.equal(1);
             expect(fspWriteStub.getCall(0).args).to.deep.eq([codecovTestPath, 'asdf: true\n', 'utf-8']);
         });
-    })
+    });
 });
