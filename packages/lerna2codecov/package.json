@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@types/deepmerge": "2.2.0",
-    "@types/npm-package-arg": "6.1.1",
-    "npm-package-arg": "8.1.5"
+    "@types/lerna__package": "4.0.0",
+    "@types/lerna__project": "4.0.0"
   }
 }
