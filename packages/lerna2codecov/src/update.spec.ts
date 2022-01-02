@@ -45,7 +45,7 @@ describe('./update', (): void => {
             expect(fspWriteStub.callCount).to.equal(1);
             expect(fspWriteStub.getCall(0).args).to.deep.eq([codecovTestPath, 'asdf: true\n', 'utf-8']);
         });
-        it("should create a codecov.yml if it doesn't exist", async (): Promise<void> => {
+        it(`should create a codecov.yml if it doesn't exist`, async (): Promise<void> => {
             const codecovTestPath = './../../codecov.yml';
             fspReadStub.rejects(new Error('test error'));
             updateConfigStub.resolves({ asdf: true });
