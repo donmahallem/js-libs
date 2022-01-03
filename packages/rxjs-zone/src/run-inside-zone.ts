@@ -7,9 +7,14 @@ import { NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 import type { MonoTypeOperatorFunction, Subscriber, Subscription } from 'rxjs';
 
-export const runInsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
-    <T>(zone: NgZone): MonoTypeOperatorFunction<T> =>
-    (source: Observable<T>): Observable<T> =>
+/**
+ * Runs the provided observable in the NgZone
+ *
+ * @param {import('@angular/core').NgZone} zone Zone to run in
+ * @returns {import('rxjs').MonoTypeOperatorFunction<T>} passes on data in the zone
+ */
+export function runInsideZone<T>(zone: NgZone): MonoTypeOperatorFunction<T> {
+    return (source: Observable<T>): Observable<T> =>
         new Observable<T>(
             (observer: Subscriber<T>): Subscription =>
                 source.subscribe({
@@ -31,3 +36,4 @@ export const runInsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
                     },
                 })
         );
+}
