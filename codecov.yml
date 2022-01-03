@@ -30,6 +30,9 @@ coverage:
       ico:
         paths:
           - packages/ico/src/**/*
+      lerna2codecov:
+        paths:
+          - packages/lerna2codecov/src/**/*
 flags:
   unit:
     paths:
