@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.7.1...@donmahallem/rollup-config@0.8.0) (2022-01-03)
+
+
+### Features
+
+* **rollup-config:** add optional dts bundler ([#1112](https://github.com/donmahallem/js-libs/issues/1112)) ([17ec484](https://github.com/donmahallem/js-libs/commit/17ec48463d321f48e79e78e4a55c524496780ec0))
+
+
+
+
+
 ## [0.7.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.7.0...@donmahallem/rollup-config@0.7.1) (2021-12-24)
 
 **Note:** Version bump only for package @donmahallem/rollup-config
