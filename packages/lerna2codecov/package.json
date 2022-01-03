@@ -1,0 +1,67 @@
+{
+  "name": "@donmahallem/lerna2codecov",
+  "version": "0.0.0",
+  "description": "Updates projects entry in codecov.yml from lerna project",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "private": false,
+  "keywords": [
+    "lerna",
+    "codecov"
+  ],
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js && npm run build:types",
+    "build:types": "tsc --project ./tsconfig.lib.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
+    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+    "test": "mocha --config ../../.mocharc.yml",
+    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+    "lint": "eslint -c ./.eslintrc.js --ext .ts ./src",
+    "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+    "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
+    "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
+    "docs": "typedoc --options  ./typedoc.config.js",
+    "prepublishOnly": "npm run clean && npm run test && npm run docs && npm run build",
+    "version": "npm run build:readme && git add README.md",
+    "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
+  },
+  "homepage": "https://github.com/donmahallem/js-libs/tree/master/packages/lerna2codecov",
+  "author": {
+    "name": "donmahallem",
+    "email": "donmahallem@users.noreply.github.com",
+    "url": "https://github.com/donmahallem"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/donmahallem/js-libs/issues"
+  },
+  "bin": {
+    "lerna2codecov": "./dist/cli/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donmahallem/js-libs.git"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "!src/**/*.spec.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@lerna/project": "~4.0.0",
+    "commander": "^8.3.0",
+    "deepmerge": "~4.2.2",
+    "yaml": "~1.10.2"
+  },
+  "devDependencies": {
+    "@types/deepmerge": "2.2.0",
+    "@types/lerna__package": "4.0.0",
+    "@types/lerna__project": "4.0.0"
+  }
+}

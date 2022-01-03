@@ -4,11 +4,17 @@
  */
 
 import { NgZone } from '@angular/core';
-import { MonoTypeOperatorFunction, Observable, Subscriber, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
+import type { MonoTypeOperatorFunction, Subscriber, Subscription } from 'rxjs';
 
-export const runOutsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
-    <T>(zone: NgZone): MonoTypeOperatorFunction<T> =>
-    (source: Observable<T>): Observable<T> =>
+/**
+ * Runs the provided observable outside the NgZone
+ *
+ * @param {import('@angular/core').NgZone} zone Zone to run outside of
+ * @returns {import('rxjs').MonoTypeOperatorFunction<T>} passes on data outside the zone
+ */
+export function runOutsideZone<T>(zone: NgZone): MonoTypeOperatorFunction<T> {
+    return (source: Observable<T>): Observable<T> =>
         new Observable<T>(
             (observer: Subscriber<T>): Subscription =>
                 source.subscribe({
@@ -30,3 +36,4 @@ export const runOutsideZone: <T>(zone: NgZone) => MonoTypeOperatorFunction<T> =
                     },
                 })
         );
+}
