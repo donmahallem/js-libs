@@ -7,15 +7,19 @@ import { expect } from 'chai';
 import { Command } from 'commander';
 import 'mocha';
 import sinon from 'sinon';
-import { updateCommand } from './update-command';
 import * as update from './update';
+import { updateCommand } from './update-command';
 
+/**
+ *
+ */
 function setupTestCommand(): Command {
     const cmd: Command = updateCommand({ exitOverride: true });
-    cmd.exitOverride();
     cmd.configureOutput({
-        writeOut: () => { },
-        writeErr: () => { }
+        // eslint-disable-next-line  @typescript-eslint/no-empty-function
+        writeErr: () => {},
+        // eslint-disable-next-line  @typescript-eslint/no-empty-function
+        writeOut: () => {},
     });
     return cmd;
 }
@@ -38,24 +42,24 @@ describe('./update-config', (): void => {
         await setupTestCommand().parseAsync(['update', '-l', './', '-c', './codecov.yml'], { from: 'user' });
         expect(updateStub.callCount).to.equal(1);
     });
-    it('should reject with missing argument', async (): Promise<void> => {
+    it('should reject with missing argument', (): void => {
         const cmd: Command = setupTestCommand();
         expect(() => {
-            cmd.parse(['update', '-l', 'asdf'], { from: 'user' })
+            cmd.parse(['update', '-l', 'asdf'], { from: 'user' });
         }).to.throw(`required option '-c, --codecov <path>' not specified`);
         expect(updateStub.callCount).to.equal(0);
     });
-    it('should reject unknown command', async (): Promise<void> => {
+    it('should reject unknown command', (): void => {
         const cmd: Command = setupTestCommand();
         expect(() => {
-            cmd.parse(['cheese', '-l', 'asdf'], { from: 'user' })
+            cmd.parse(['cheese', '-l', 'asdf'], { from: 'user' });
         }).to.throw(`error: unknown command 'cheese'`);
         expect(updateStub.callCount).to.equal(0);
     });
-    it('should output help', async (): Promise<void> => {
+    it('should output help', (): void => {
         const cmd: Command = setupTestCommand();
         expect(() => {
-            cmd.parse(['--help'], { from: 'user' })
+            cmd.parse(['--help'], { from: 'user' });
         }).to.throw(`(outputHelp)`);
     });
 });
