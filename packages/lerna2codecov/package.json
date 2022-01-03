@@ -35,6 +35,9 @@
   "bugs": {
     "url": "https://github.com/donmahallem/js-libs/issues"
   },
+  "bin": {
+    "lerna2codecov": "./dist/cli/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/donmahallem/js-libs.git"
@@ -52,6 +55,7 @@
   },
   "dependencies": {
     "@lerna/project": "~4.0.0",
+    "commander": "^8.3.0",
     "deepmerge": "~4.2.2",
     "yaml": "~1.10.2"
   },
