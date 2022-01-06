@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.8.0...@donmahallem/rollup-config@0.8.1) (2022-01-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsdoc to v37.5.1 ([77411ef](https://github.com/donmahallem/js-libs/commit/77411efae0824f13cbf46ac3d8280873cd1bfa57))
+
+
+
+
+
 # [0.8.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/rollup-config@0.7.1...@donmahallem/rollup-config@0.8.0) (2022-01-03)
 
 

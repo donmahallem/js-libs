@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.9.3...@donmahallem/renovate-config@0.9.4) (2022-01-06)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.9.0 ([11ca3a9](https://github.com/donmahallem/js-libs/commit/11ca3a9b04bf53277e01c899354898d6986c7985))
+
+
+
+
+
 ## [0.9.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.9.2...@donmahallem/renovate-config@0.9.3) (2022-01-03)
 
 **Note:** Version bump only for package @donmahallem/renovate-config

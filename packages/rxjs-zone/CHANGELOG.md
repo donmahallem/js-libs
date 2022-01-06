@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/rxjs-zone@0.3.3...@donmahallem/rxjs-zone@0.3.4) (2022-01-06)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v5.9.0 ([11ca3a9](https://github.com/donmahallem/js-libs/commit/11ca3a9b04bf53277e01c899354898d6986c7985))
+
+
+
+
+
 ## [0.3.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/rxjs-zone@0.3.2...@donmahallem/rxjs-zone@0.3.3) (2022-01-03)
 
 **Note:** Version bump only for package @donmahallem/rxjs-zone
