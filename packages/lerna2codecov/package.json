@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@types/deepmerge": "2.2.0",
-    "@types/lerna__package": "4.0.0",
+    "@types/lerna__package": "4.0.1",
     "@types/lerna__project": "4.0.0"
   }
 }
