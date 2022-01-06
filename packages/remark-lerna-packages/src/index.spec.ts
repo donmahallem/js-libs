@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { Package } from '@lerna/package';
+import { Package, RawManifest } from '@lerna/package';
 import { expect } from 'chai';
 import { promises as fsp } from 'fs';
 import 'mocha';
@@ -34,7 +34,8 @@ describe('index', (): void => {
                     description: 'package description',
                     homepage: 'test.url',
                     name: 'pck1',
-                })
+                    version: '0.0.1',
+                } as RawManifest)
             );
 
             expect(row).to.deep.equal({
