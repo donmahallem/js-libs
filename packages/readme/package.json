@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/readme",
-    "version": "0.4.4",
+    "version": "0.4.5",
     "description": "Opinionated readme generator",
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
@@ -50,7 +50,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@donmahallem/remark-lerna-packages": "^0.3.4",
+        "@donmahallem/remark-lerna-packages": "^0.3.5",
         "remark": "~14.0.1",
         "remark-gfm": "~3.0.1",
         "remark-git-contributors": "~4.0.1",
