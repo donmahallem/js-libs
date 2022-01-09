@@ -173,6 +173,8 @@ jobs:
           path: ./packages
       - name: Run Docs
         run: npx lerna run docs
+      - name: Build READMEs
+        run: npm run build:readme
   finish:
     needs: [test_suite, lint_suite, docs_suite]
     name: Finish Test
