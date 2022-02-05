@@ -68,7 +68,7 @@
         "remark-parse": "10.0.0",
         "remark-stringify": "10.0.1",
         "unified": "10.1.1",
-        "vfile": "5.2.0"
+        "vfile": "5.3.0"
     },
     "peerDependencies": {
         "unified": ">=10.1.0",
