@@ -46,7 +46,7 @@
         "access": "public"
     },
     "dependencies": {
-        "dot-prop": "~6.0.1",
+        "dot-prop": "~7.1.1",
         "mdast-util-find-and-replace": "~2.1.0"
     },
     "peerDependencies": {
@@ -59,6 +59,6 @@
         "remark-stringify": "10.0.1",
         "unified": "10.1.1",
         "unist-builder": "3.0.0",
-        "vfile": "5.2.0"
+        "vfile": "5.3.0"
     }
 }
