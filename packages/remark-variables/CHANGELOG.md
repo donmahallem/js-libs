@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-variables@0.3.6...@donmahallem/remark-variables@0.3.7) (2022-02-06)
+
+
+### Bug Fixes
+
+* **deps:** bump dot-prop to v7.1.1 ([#1215](https://github.com/donmahallem/js-libs/issues/1215)) ([b603a0e](https://github.com/donmahallem/js-libs/commit/b603a0eff24aca9066fdef9eb2115a1a37810b55))
+* **deps:** bump vfile to 5.3.0 ([#1213](https://github.com/donmahallem/js-libs/issues/1213)) ([fb8cda2](https://github.com/donmahallem/js-libs/commit/fb8cda2ef43878f29970d2637b5c947b08b5e494))
+
+
+
+
+
 ## [0.3.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-variables@0.3.5...@donmahallem/remark-variables@0.3.6) (2022-01-09)
 
 **Note:** Version bump only for package @donmahallem/remark-variables

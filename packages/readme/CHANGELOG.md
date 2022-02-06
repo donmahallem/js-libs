@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.4.6...@donmahallem/readme@0.4.7) (2022-02-06)
+
+
+### Bug Fixes
+
+* **deps:** bump to-vfile to 7.2.3 ([#1214](https://github.com/donmahallem/js-libs/issues/1214)) ([e789541](https://github.com/donmahallem/js-libs/commit/e78954148e3347dd2f2a232a87b274e22854a790))
+* **deps:** bump vfile to 5.3.0 ([#1213](https://github.com/donmahallem/js-libs/issues/1213)) ([fb8cda2](https://github.com/donmahallem/js-libs/commit/fb8cda2ef43878f29970d2637b5c947b08b5e494))
+
+
+
+
+
 ## [0.4.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.4.5...@donmahallem/readme@0.4.6) (2022-01-09)
 
 **Note:** Version bump only for package @donmahallem/readme

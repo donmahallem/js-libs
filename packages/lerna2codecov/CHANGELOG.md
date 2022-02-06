@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.1.3...@donmahallem/lerna2codecov@0.1.4) (2022-02-06)
+
+
+### Bug Fixes
+
+* **deps:** bump commander to v9.0.0 ([#1216](https://github.com/donmahallem/js-libs/issues/1216)) ([db30c9f](https://github.com/donmahallem/js-libs/commit/db30c9ff5549954fb59092e53ecda4b894b15980))
+
+
+
+
+
 ## [0.1.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.1.2...@donmahallem/lerna2codecov@0.1.3) (2022-01-09)
 
 **Note:** Version bump only for package @donmahallem/lerna2codecov
