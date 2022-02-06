@@ -71,14 +71,14 @@
         "vfile": "5.3.0"
     },
     "peerDependencies": {
-        "unified": ">=10.1.0",
-        "vfile": ">=5.0.0"
+        "unified": "^10.1.0",
+        "vfile": "^5.0.0"
     },
     "dependencies": {
-        "@lerna/package": "^4.0.0",
-        "@lerna/project": "^4.0.0",
-        "mdast-util-heading-range": "^3.1.0",
-        "unist-builder": "^3.0.0",
-        "vfile-find-up": "^6.0.0"
+        "@lerna/package": "~4.0.0",
+        "@lerna/project": "~4.0.0",
+        "mdast-util-heading-range": "~3.1.0",
+        "unist-builder": "~3.0.0",
+        "vfile-find-up": "~6.0.0"
     }
 }
