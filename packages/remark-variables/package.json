@@ -46,7 +46,7 @@
         "access": "public"
     },
     "dependencies": {
-        "dot-prop": "~6.0.1",
+        "dot-prop": "~7.1.1",
         "mdast-util-find-and-replace": "~2.1.0"
     },
     "peerDependencies": {
