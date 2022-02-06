@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-lerna-packages@0.3.7...@donmahallem/remark-lerna-packages@0.3.8) (2022-02-06)
+
+
+### Bug Fixes
+
+* **deps:** refactor version ranges ([#1219](https://github.com/donmahallem/js-libs/issues/1219)) ([10e6a41](https://github.com/donmahallem/js-libs/commit/10e6a419128dac0e78970713bb51b6a599518407))
+
+
+
+
+
 ## [0.3.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/remark-lerna-packages@0.3.6...@donmahallem/remark-lerna-packages@0.3.7) (2022-02-06)
 
 
