@@ -2,7 +2,7 @@ name: Create Releases
 on:
   workflow_run:
     workflows: [Test]
-    types: [requested]
+    types: [completed]
     branches: [master]
 
 jobs:
