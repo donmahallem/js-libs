@@ -1,14 +1,15 @@
-name: Test
+name: Create Releases
 on:
-  push:
-    branches:
-    - master
-
+  workflow_run:
+    workflows: [Build]
+    types: [requested]
+    branches: [master]
 
 jobs:
   build_suite:
     runs-on: ${{ matrix.os }}
     name: Version Release
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     timeout-minutes: 30
     strategy:
       max-parallel: 4
@@ -24,6 +25,7 @@ jobs:
         uses: actions/setup-node@v2.5.1
         with:
           node-version: ${{ matrix.node }}
+          registry-url: 'https://registry.npmjs.org'
       - name: Install Deps
         run: |
           npm ci
@@ -34,6 +36,7 @@ jobs:
         run: npx lerna version --create-release github -y
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - uses: connor-baer/action-sync-branch@main
         with:
           branch: dev
