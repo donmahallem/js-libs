@@ -1,6 +1,7 @@
 name: Test
 on:
   push:
+    branches:
     - master
 
 
@@ -33,3 +34,8 @@ jobs:
         run: npx lerna version --create-release github -y
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: connor-baer/action-sync-branch@main
+        with:
+          branch: dev
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: false
