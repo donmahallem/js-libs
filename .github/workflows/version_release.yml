@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 200
           token: ${{ secrets.PUB_TOKEN }}
-          ref:  ${{ github.event.workflow_run.head_sha }}
+          ref:  ${{ github.event.workflow_run.head_branch }}
       - name: Setup Node
         uses: actions/setup-node@v2.5.1
         with:
