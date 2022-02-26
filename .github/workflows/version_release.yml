@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.PUB_TOKEN }}
           ref:  ${{ github.event.workflow_run.head_branch }}
       - name: Setup Node
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3.0.0
         with:
           node-version: ${{ matrix.node }}
           registry-url: 'https://registry.npmjs.org'
@@ -63,7 +63,7 @@ jobs:
       - name: Fetch Tags
         run: git fetch --prune --unshallow --tags
       - name: Setup Node
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3.0.0
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
@@ -94,7 +94,7 @@ jobs:
       - name: Fetch Tags
         run: git fetch --prune --unshallow --tags
       - name: Setup Node
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3.0.0
         with:
           node-version: 16
       - name: Install Packages
