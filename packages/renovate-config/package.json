@@ -65,9 +65,13 @@
         {
           "groupName": "rollup packages",
           "matchPackagePatterns": [
-            "^@donmahallem/rollup-config",
+            "^@donmahallem/rollup-config$",
             "^@rollup/plugin",
             "^rollup$"
+          ],
+          "matchPackagePrefixes": [
+            "@rollup/",
+            "@donmahallem/rollup-config"
           ]
         },
         {
