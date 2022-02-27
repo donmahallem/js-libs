@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.10.2...@donmahallem/renovate-config@0.10.3) (2022-02-27)
+
+
+### Bug Fixes
+
+* **renovate:** add matchPackagePrefix for rollup ([#1274](https://github.com/donmahallem/js-libs/issues/1274)) ([1e93700](https://github.com/donmahallem/js-libs/commit/1e937007ce21bf4c3d3f3c53f84c03ae0754b637))
+
+
+
+
+
 ## [0.10.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.10.1...@donmahallem/renovate-config@0.10.2) (2022-02-22)
 
 **Note:** Version bump only for package @donmahallem/renovate-config
