@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/turbo-pb",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "description": "Protobuf Helpers for express.js",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
