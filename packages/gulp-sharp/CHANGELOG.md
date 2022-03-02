@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@2.2.10...@donmahallem/gulp-sharp@2.2.11) (2022-03-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sharp to ~0.30.2 ([f01d39f](https://github.com/donmahallem/js-libs/commit/f01d39fa2adf42a8d862262a470a37ce22cf5516))
+
+
+
+
+
 ## [2.2.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-sharp@2.2.9...@donmahallem/gulp-sharp@2.2.10) (2022-02-27)
 
 **Note:** Version bump only for package @donmahallem/gulp-sharp
