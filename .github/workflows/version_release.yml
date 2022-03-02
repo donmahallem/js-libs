@@ -23,7 +23,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PUB_TOKEN }}
           ref:  ${{ github.event.workflow_run.head_branch }}
-          persist-credentials: false
       - name: Fetch Tags
         run: |
           git fetch --prune --tags
