@@ -45,7 +45,7 @@ jobs:
           git config --local user.email "donmahallem@users.noreply.github.com"
           git config --local user.name "donmahallem"
       - name: Version Packages
-        run: npx lerna version --create-release github -y
+        run: npx lerna version --create-release github -y --force-git-tag
         env:
           GH_TOKEN: ${{ secrets.PUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
