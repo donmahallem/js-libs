@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.10.10...@donmahallem/renovate-config@0.11.0) (2022-03-10)
+
+
+### Features
+
+* **renovate-config:** only create PRs on successful tests ([#1311](https://github.com/donmahallem/js-libs/issues/1311)) ([2d8df6d](https://github.com/donmahallem/js-libs/commit/2d8df6d4d06e654c7d95ce2d147452408432d6c8))
+
+
+
+
+
 ## [0.10.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.10.9...@donmahallem/renovate-config@0.10.10) (2022-03-07)
 
 **Note:** Version bump only for package @donmahallem/renovate-config
