@@ -55,6 +55,7 @@
       "labels": [
         "dependencies"
       ],
+      "prCreation": "status-success",
       "packageRules": [
         {
           "groupName": "@donmahallem/turbo packages",
