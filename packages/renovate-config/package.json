@@ -56,7 +56,9 @@
         "dependencies"
       ],
       "prCreation": "status-success",
-      "postUpdateOptions": "npmDedupe",
+      "postUpdateOptions": [
+        "npmDedupe"
+      ],
       "packageRules": [
         {
           "groupName": "@donmahallem/turbo packages",
