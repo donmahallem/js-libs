@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.11.0...@donmahallem/renovate-config@0.12.0) (2022-03-10)
+
+
+### Features
+
+* **renovate:** enable npm deduping ([#1312](https://github.com/donmahallem/js-libs/issues/1312)) ([693cfd3](https://github.com/donmahallem/js-libs/commit/693cfd38e161e0cd646b1d9f2945a69caa097e83))
+
+
+
+
+
 # [0.11.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.10.10...@donmahallem/renovate-config@0.11.0) (2022-03-10)
 
 
