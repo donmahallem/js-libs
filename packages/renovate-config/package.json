@@ -55,7 +55,7 @@
       "labels": [
         "dependencies"
       ],
-      "prCreation": "status-success",
+      "prCreation": "immediate",
       "postUpdateOptions": [
         "npmDedupe"
       ],
