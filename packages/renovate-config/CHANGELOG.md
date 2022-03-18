@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.12.2...@donmahallem/renovate-config@0.12.3) (2022-03-18)
+
+**Note:** Version bump only for package @donmahallem/renovate-config
+
+
+
+
+
 ## [0.12.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.12.1...@donmahallem/renovate-config@0.12.2) (2022-03-17)
 
 
