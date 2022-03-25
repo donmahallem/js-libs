@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.17](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.4.16...@donmahallem/readme@0.4.17) (2022-03-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency vfile-reporter to ~7.0.4 ([fe33b58](https://github.com/donmahallem/js-libs/commit/fe33b58304757462d36048eebd3f23d5e4b3b1c6))
+
+
+
+
+
 ## [0.4.16](https://github.com/donmahallem/js-libs/compare/@donmahallem/readme@0.4.15...@donmahallem/readme@0.4.16) (2022-03-21)
 
 **Note:** Version bump only for package @donmahallem/readme
