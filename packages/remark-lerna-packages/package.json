@@ -62,7 +62,7 @@
         "access": "public"
     },
     "devDependencies": {
-        "@types/lerna__package": "4.0.1",
+        "@types/lerna__package": "4.0.2",
         "@types/lerna__project": "4.0.0",
         "remark-gfm": "3.0.1",
         "remark-parse": "10.0.0",
