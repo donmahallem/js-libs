@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/label-pr",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "Helpers for working with github issue labels",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
