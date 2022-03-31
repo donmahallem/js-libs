@@ -31,7 +31,7 @@ jobs:
               run: |
                   npm ci
             - name: Run Build
-              run: npx lerna run build
+              run: npm run build
             - name: Archive production artifacts
               uses: actions/upload-artifact@v3.0.0
               with:
@@ -73,7 +73,7 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Test
-              run: npx lerna run test:coverage
+              run: npm run test:coverage
             - name: Retrieve Codecov Flag Name
               id: 'flagname'
               run: |
@@ -125,12 +125,12 @@ jobs:
             - name: Lint ALL Packages
               if: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' || ( github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) }}
               run: |
-                  npx lerna run lint
+                  npm run lint
             - name: Lint Packages changed since dev
               if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/dev' && github.ref != 'refs/heads/master' }}
               run: |
                   git fetch --no-tags --prune --depth=1 origin +refs/heads/dev:refs/remotes/origin/dev
-                  npx lerna run lint --since origin/dev
+                  npm run lint --since origin/dev
     docs_suite:
         needs: build_suite
         runs-on: ${{ matrix.os }}
@@ -168,7 +168,7 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Docs
-              run: npx lerna run docs
+              run: npm run docs
             - name: Build READMEs
               run: npm run build:readme
     finish:
