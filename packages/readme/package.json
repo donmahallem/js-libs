@@ -60,7 +60,7 @@
         "remark-preset-lint-recommended": "~6.1.1",
         "remark-toc": "~8.0.1",
         "to-vfile": "~7.2.3",
-        "vfile": "~5.3.0",
+        "vfile": "~5.3.2",
         "vfile-reporter": "~7.0.4"
     }
 }
