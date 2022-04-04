@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/readme",
-    "version": "0.4.20",
+    "version": "0.4.21",
     "description": "Opinionated readme generator",
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",

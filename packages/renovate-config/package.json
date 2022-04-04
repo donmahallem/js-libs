@@ -1,6 +1,6 @@
 {
   "name": "@donmahallem/renovate-config",
-  "version": "0.12.7",
+  "version": "0.12.8",
   "description": "General renovate config",
   "private": false,
   "keywords": [
