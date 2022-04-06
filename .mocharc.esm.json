@@ -13,5 +13,6 @@
     "inline-diffs": false,
     "package": "./package.json",
     "recursive": true,
-    "reporter": "spec"
+    "reporter": "spec",
+    "loader": "ts-node/esm"
 }

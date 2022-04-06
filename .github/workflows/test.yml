@@ -66,14 +66,14 @@ jobs:
                   key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
             - name: Install Deps
               run: |
-                  npm ci
+                  npm ci -ws
             - name: Download Build artifacts
               uses: actions/download-artifact@v3.0.0
               with:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Test
-              run: npm run test:coverage
+              run: npm run test:coverage -ws --if-present
             - name: Retrieve Codecov Flag Name
               id: 'flagname'
               run: |
@@ -116,21 +116,15 @@ jobs:
                   key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
             - name: Install Deps
               run: |
-                  npm ci
+                  npm ci -ws
             - name: Download Build artifacts
               uses: actions/download-artifact@v3.0.0
               with:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Lint ALL Packages
-              if: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' || ( github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) }}
               run: |
-                  npm run lint
-            - name: Lint Packages changed since dev
-              if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/dev' && github.ref != 'refs/heads/master' }}
-              run: |
-                  git fetch --no-tags --prune --depth=1 origin +refs/heads/dev:refs/remotes/origin/dev
-                  npm run lint --since origin/dev
+                  npm run lint -ws --if-present
     docs_suite:
         needs: build_suite
         runs-on: ${{ matrix.os }}
@@ -161,16 +155,16 @@ jobs:
                   key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
             - name: Install Deps
               run: |
-                  npm ci
+                  npm ci -ws
             - name: Download Build artifacts
               uses: actions/download-artifact@v3.0.0
               with:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Docs
-              run: npm run docs
+              run: npm run docs -ws --if-present
             - name: Build READMEs
-              run: npm run build:readme
+              run: npm run build:readme -ws --if-present
     finish:
         needs: [test_suite, lint_suite, docs_suite]
         name: Finish Test

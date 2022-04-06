@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "ES2019",
-        "module": "ESNext",
+        "module": "CommonJS",
         "sourceMap": true,
         "esModuleInterop": true,
         "declaration": true,

@@ -18,7 +18,7 @@
         "build": "rollup -c rollup.config.js",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
-        "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
+        "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.js --ext .ts ./src",
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
         "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
@@ -55,7 +55,10 @@
     "devDependencies": {
         "@types/gulp": "4.0.9",
         "@types/sharp": "0.30.0",
-        "@types/through2": "2.0.36"
+        "@types/through2": "2.0.36",
+        "c8": "7.11.0",
+        "chai": "4.3.6",
+        "mocha": "9.2.2"
     },
     "dependencies": {
         "deepmerge": "~4.2.2",
