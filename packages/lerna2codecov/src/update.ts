@@ -5,7 +5,7 @@
 
 import { Project } from '@lerna/project';
 import { promises as fsp } from 'fs';
-import { parse, stringify } from 'yaml';
+import yaml from 'yaml';
 import { ICodecovConfig } from './codecov-config';
 import { updateConfig } from './update-config';
 
@@ -21,8 +21,8 @@ export async function update(lernaRoot: string, codecovFile: string): Promise<vo
     } catch (err: unknown) {
         codecovSourceFile = '';
     }
-    const parsedCodecovSource: ICodecovConfig = parse(codecovSourceFile) as ICodecovConfig;
+    const parsedCodecovSource: ICodecovConfig = yaml.parse(codecovSourceFile) as ICodecovConfig;
     const updatedConfig: ICodecovConfig = await updateConfig(new Project(lernaRoot), parsedCodecovSource);
-    const outputCodecovConfig: string = stringify(updatedConfig);
+    const outputCodecovConfig: string = yaml.stringify(updatedConfig);
     return await fsp.writeFile(codecovFile, outputCodecovConfig, 'utf-8');
 }

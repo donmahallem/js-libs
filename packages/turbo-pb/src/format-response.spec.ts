@@ -5,7 +5,7 @@
 import { expect } from 'chai';
 import express from 'express';
 import 'mocha';
-import * as protobuf from 'protobufjs';
+import protobuf from 'protobufjs';
 import * as sinon from 'sinon';
 import supertest from 'supertest';
 import { formatResponse } from './format-response';
@@ -34,11 +34,9 @@ describe('./format-response', (): void => {
         });
         app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction): void => {
             errorSpy(err);
-            res
-                .status(406)
-                .json({
-                    message: err.message,
-                });
+            res.status(406).json({
+                message: err.message,
+            });
         });
     });
     afterEach((): void => {

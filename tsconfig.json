@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
         "target": "ES2019",
-        "module": "commonjs",
+        "module": "ESNext",
         "sourceMap": true,
         "esModuleInterop": true,
         "declaration": true,
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "strictNullChecks": true,
         "noUnusedLocals": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
         "lib": [
             "ES2019"
         ],
