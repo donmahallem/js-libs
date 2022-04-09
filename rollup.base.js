@@ -11,7 +11,7 @@ const pkg = JSON.parse(readFileSync('./package.json', { encoding: 'utf-8' }));
 const defaults = {
     input: 'src/index.ts',
     external: [...Object.keys(pkg.peerDependencies || {}), ...Object.keys(pkg.dependencies || {})],
-    preserveSymlinks: true,
+    preserveSymlinks: false,
 };
 
 export default [
