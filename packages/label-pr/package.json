@@ -1,65 +1,64 @@
 {
-  "name": "@donmahallem/label-pr",
-  "version": "0.3.9",
-  "description": "Helpers for working with github issue labels",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "private": false,
-  "keywords": [
-    "octokit",
-    "gist",
-    "github",
-    "pull request",
-    "label",
-    "synchronize"
-  ],
-  "scripts": {
-    "build": "rollup -c ./rollup.config.js && npm run build:types",
-    "build:types": "tsc --project ./tsconfig.lib.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
-    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "test": "mocha --config ../../.mocharc.yml",
-    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
-    "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
-    "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-    "docs": "typedoc --options  ./typedoc.config.js",
-    "prepublishOnly": "npm run clean && npm run test && npm run docs && npm run build",
-    "version": "npm run build:readme && git add README.md",
-    "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
-  },
-  "homepage": "https://donmahallem.github.io/js-libs/",
-  "author": {
-    "name": "donmahallem",
-    "email": "donmahallem@users.noreply.github.com",
-    "url": "https://github.com/donmahallem"
-  },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/donmahallem/js-libs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/donmahallem/js-libs.git"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "files": [
-    "dist/*",
-    "src/*",
-    "!src/**/*.spec.ts"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "@octokit/core": "^3.2.0"
-  },
-  "devDependencies": {
-    "@octokit/core": "3.6.0",
-    "@octokit/types": "6.34.0"
-  },
-  "dependencies": {
-    "@donmahallem/label-gh": "^0.6.7"
-  }
+    "name": "@donmahallem/label-pr",
+    "version": "0.3.9",
+    "description": "Helpers for working with github issue labels",
+    "main": "./dist/cjs/index.cjs",
+    "types": "./dist/types/index.d.ts",
+    "module": "./dist/esm/index.mjs",
+    "private": false,
+    "keywords": [
+        "octokit",
+        "gist",
+        "github",
+        "pull request",
+        "label",
+        "synchronize"
+    ],
+    "scripts": {
+        "build": "rollup -c rollup.config.js",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "test": "mocha --config ../../.mocharc.json",
+        "test:coverage": "c8 --config ../../.nycrc.json npm run test",
+        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
+        "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+        "docs": "typedoc --options  ./typedoc.config.js",
+        "prepublishOnly": "npm run clean && npm run test && npm run docs && npm run build",
+        "version": "npm run build:readme && git add README.md",
+        "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
+    },
+    "homepage": "https://donmahallem.github.io/js-libs/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "files": [
+        "dist/*",
+        "src/*",
+        "!src/**/*.spec.ts"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "@octokit/core": "^3.2.0"
+    },
+    "devDependencies": {
+        "@octokit/core": "3.6.0",
+        "@octokit/types": "6.34.0"
+    },
+    "dependencies": {
+        "@donmahallem/label-gh": "^0.6.7"
+    }
 }
