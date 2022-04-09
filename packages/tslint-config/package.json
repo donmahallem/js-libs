@@ -7,6 +7,7 @@
     "keywords": [
         "renovate"
     ],
+    "typedocMain": "ignorePackage",
     "scripts": {
         "test": "node ./test.js",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",

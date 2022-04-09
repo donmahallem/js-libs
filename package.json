@@ -50,7 +50,7 @@
         "test:coverage": "lerna run test:coverage",
         "coverage:merge": "node ./scripts/merge_coverage.js",
         "lint": "lerna run lint",
-        "docs": "lerna run docs",
+        "docs": "typedoc --entryPointStrategy packages --out ./docs .",
         "lint:fix": "lerna run lint:fix",
         "version": "npx @donmahallem/lerna-fixer lockfile fixversion && npm run build:readme && git add README.md",
         "changelog": "node ./scripts/create_changelog.js",

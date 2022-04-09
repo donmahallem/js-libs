@@ -6,6 +6,7 @@
     "types": "./dist/types/index.d.ts",
     "module": "./dist/esm/index.mjs",
     "private": false,
+    "typedocMain": "./src/index.ts",
     "scripts": {
         "build": "rollup -c rollup.config.js",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",

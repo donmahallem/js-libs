@@ -10,6 +10,7 @@
     "bin": {
         "@donmahallem/readme": "./dist/index.js"
     },
+    "typedocMain": "./src/index.ts",
     "scripts": {
         "build": "rollup -c rollup.config.js",
         "test": "mocha --config ../../.mocharc.json",

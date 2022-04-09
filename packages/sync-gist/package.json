@@ -11,6 +11,7 @@
         "gist",
         "wrapper"
     ],
+    "typedocMain": "./src/index.ts",
     "scripts": {
         "build": "rollup -c rollup.config.js",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
