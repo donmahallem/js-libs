@@ -1,47 +1,48 @@
 {
-  "name": "@donmahallem/tslint-config",
-  "version": "0.3.2",
-  "description": "@donmahallem tslint config",
-  "private": false,
-  "main": "./tslint.json",
-  "keywords": [
-    "renovate"
-  ],
-  "scripts": {
-    "test": "node ./test.js",
-    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "prepublishOnly": "npm run test",
-    "version": "npm run build:readme && git add README.md"
-  },
-  "homepage": "https://donmahallem.github.io/js-libs/",
-  "author": {
-    "name": "donmahallem",
-    "email": "donmahallem@users.noreply.github.com",
-    "url": "https://github.com/donmahallem"
-  },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/donmahallem/js-libs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/donmahallem/js-libs.git"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "files": [
-    "dist/*",
-    "src/*",
-    "tslint.json",
-    "!src/**/*.spec.ts"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "c8": "7.11.0",
-    "chai": "4.3.6",
-    "mocha": "9.2.2"
-  }
+    "name": "@donmahallem/tslint-config",
+    "version": "0.3.2",
+    "description": "@donmahallem tslint config",
+    "private": false,
+    "main": "./tslint.json",
+    "keywords": [
+        "renovate"
+    ],
+    "scripts": {
+        "test": "node ./test.js",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "prepublishOnly": "npm run test",
+        "version": "npm run build:readme && git add README.md"
+    },
+    "homepage": "https://donmahallem.github.io/js-libs/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "typedocMain": "ignorePackage",
+    "files": [
+        "dist/*",
+        "src/*",
+        "tslint.json",
+        "!src/**/*.spec.ts"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "c8": "7.11.0",
+        "chai": "4.3.6",
+        "mocha": "9.2.2"
+    }
 }

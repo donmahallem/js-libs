@@ -51,7 +51,7 @@
         "test:coverage": "npm run test:coverage --workspaces",
         "coverage:merge": "node ./scripts/merge_coverage.js",
         "lint": "nx run-many --target=lint --all",
-        "docs": "nx run-many --target=docs --all",
+        "docs": "typedoc --out ./docs --entryPointStrategy packages .",
         "lint:fix": "nx run-many --target=lint:fix --all",
         "version": "npx @donmahallem/lerna-fixer lockfile fixversion && npm run build:readme && git add README.md",
         "changelog": "node ./scripts/create_changelog.js",
