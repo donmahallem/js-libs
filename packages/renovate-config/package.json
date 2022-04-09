@@ -1,143 +1,144 @@
 {
-  "name": "@donmahallem/renovate-config",
-  "version": "0.12.6",
-  "description": "General renovate config",
-  "private": false,
-  "keywords": [
-    "renovate"
-  ],
-  "scripts": {
-    "test": "renovate-config-validator",
-    "test:coverage": "npm run test",
-    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "prepublishOnly": "npm run test",
-    "version": "npm run build:readme && git add README.md"
-  },
-  "homepage": "https://donmahallem.github.io/js-libs/",
-  "author": {
-    "name": "donmahallem",
-    "email": "donmahallem@users.noreply.github.com",
-    "url": "https://github.com/donmahallem"
-  },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/donmahallem/js-libs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/donmahallem/js-libs.git"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "files": [
-    "dist/*",
-    "src/*",
-    "!src/**/*.spec.ts"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "renovate": "32.6.7"
-  },
-  "renovate-config": {
-    "default": {
-      "automerge": true,
-      "dependencyDashboard": true,
-      "extends": [
-        "config:base",
-        ":prHourlyLimit4"
-      ],
-      "lockFileMaintenance": {
-        "enabled": true
-      },
-      "labels": [
-        "dependencies"
-      ],
-      "prCreation": "immediate",
-      "postUpdateOptions": [
-        "npmDedupe"
-      ],
-      "packageRules": [
-        {
-          "groupName": "@donmahallem/turbo packages",
-          "matchPackagePatterns": [
-            "^@donmahallem/turbo"
-          ]
-        },
-        {
-          "groupName": "rollup packages",
-          "matchPackagePatterns": [
-            "^@donmahallem/rollup-config$",
-            "^@rollup/plugin",
-            "^rollup$"
-          ],
-          "matchPackagePrefixes": [
-            "@rollup/",
-            "@donmahallem/rollup-config"
-          ]
-        },
-        {
-          "groupName": "manniwatch monorepo {{currentVersion}}",
-          "matchPackagePatterns": [
-            "^@manniwatch/"
-          ]
-        },
-        {
-          "groupName": "octokit monorepo {{currentVersion}}",
-          "matchPackagePatterns": [
-            "^@octokit/"
-          ]
-        },
-        {
-          "groupName": "ajv {{currentVersion}}",
-          "matchPackageNames": [
-            "ajv",
-            "ajv-formats"
-          ],
-          "matchSourceUrlPrefixes": [
-            "https://github.com/ajv-validator",
-            "git+https://github.com/ajv-validator"
-          ]
-        },
-        {
-          "rangeStrategy": "pin",
-          "pin": {
-            "enabled": true
-          },
-          "matchDepTypes": [
-            "devDependencies"
-          ]
-        },
-        {
-          "rangeStrategy": "bump",
-          "matchDepTypes": [
-            "dependencies"
-          ]
-        },
-        {
-          "rangeStrategy": "replace",
-          "matchDepTypes": [
-            "peerDependencies",
-            "optionalDependencies"
-          ]
-        },
-        {
-          "matchPackageNames": [
-            "renovate"
-          ],
-          "extends": [
-            "schedule:weekly"
-          ]
+    "name": "@donmahallem/renovate-config",
+    "version": "0.12.6",
+    "description": "General renovate config",
+    "private": false,
+    "keywords": [
+        "renovate"
+    ],
+    "scripts": {
+        "test": "renovate-config-validator",
+        "test:coverage": "npm run test",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "prepublishOnly": "npm run test",
+        "version": "npm run build:readme && git add README.md"
+    },
+    "homepage": "https://donmahallem.github.io/js-libs/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "typedocMain": "ignorePackage",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "files": [
+        "dist/*",
+        "src/*",
+        "!src/**/*.spec.ts"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "renovate": "32.6.7"
+    },
+    "renovate-config": {
+        "default": {
+            "automerge": true,
+            "dependencyDashboard": true,
+            "extends": [
+                "config:base",
+                ":prHourlyLimit4"
+            ],
+            "lockFileMaintenance": {
+                "enabled": true
+            },
+            "labels": [
+                "dependencies"
+            ],
+            "prCreation": "immediate",
+            "postUpdateOptions": [
+                "npmDedupe"
+            ],
+            "packageRules": [
+                {
+                    "groupName": "@donmahallem/turbo packages",
+                    "matchPackagePatterns": [
+                        "^@donmahallem/turbo"
+                    ]
+                },
+                {
+                    "groupName": "rollup packages",
+                    "matchPackagePatterns": [
+                        "^@donmahallem/rollup-config$",
+                        "^@rollup/plugin",
+                        "^rollup$"
+                    ],
+                    "matchPackagePrefixes": [
+                        "@rollup/",
+                        "@donmahallem/rollup-config"
+                    ]
+                },
+                {
+                    "groupName": "manniwatch monorepo {{currentVersion}}",
+                    "matchPackagePatterns": [
+                        "^@manniwatch/"
+                    ]
+                },
+                {
+                    "groupName": "octokit monorepo {{currentVersion}}",
+                    "matchPackagePatterns": [
+                        "^@octokit/"
+                    ]
+                },
+                {
+                    "groupName": "ajv {{currentVersion}}",
+                    "matchPackageNames": [
+                        "ajv",
+                        "ajv-formats"
+                    ],
+                    "matchSourceUrlPrefixes": [
+                        "https://github.com/ajv-validator",
+                        "git+https://github.com/ajv-validator"
+                    ]
+                },
+                {
+                    "rangeStrategy": "pin",
+                    "pin": {
+                        "enabled": true
+                    },
+                    "matchDepTypes": [
+                        "devDependencies"
+                    ]
+                },
+                {
+                    "rangeStrategy": "bump",
+                    "matchDepTypes": [
+                        "dependencies"
+                    ]
+                },
+                {
+                    "rangeStrategy": "replace",
+                    "matchDepTypes": [
+                        "peerDependencies",
+                        "optionalDependencies"
+                    ]
+                },
+                {
+                    "matchPackageNames": [
+                        "renovate"
+                    ],
+                    "extends": [
+                        "schedule:weekly"
+                    ]
+                }
+            ],
+            "vulnerabilityAlerts": {
+                "enabled": true,
+                "labels": [
+                    "security"
+                ]
+            }
         }
-      ],
-      "vulnerabilityAlerts": {
-        "enabled": true,
-        "labels": [
-          "security"
-        ]
-      }
     }
-  }
 }

@@ -14,6 +14,7 @@
         "image",
         "scale"
     ],
+    "typedocMain": "./src/index.ts",
     "scripts": {
         "build": "rollup -c rollup.config.js",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
@@ -21,7 +22,6 @@
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
         "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-        "docs": "typedoc --options ./typedoc.config.js",
         "prepublishOnly": "npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md"
     },
