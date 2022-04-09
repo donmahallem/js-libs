@@ -15,6 +15,7 @@
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ./../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
+        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
         "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
         "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
