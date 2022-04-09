@@ -66,7 +66,7 @@ jobs:
                   key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
             - name: Install Deps
               run: |
-                  npm ci -ws
+                  npm ci
             - name: Download Build artifacts
               uses: actions/download-artifact@v3.0.0
               with:
@@ -116,7 +116,7 @@ jobs:
                   key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
             - name: Install Deps
               run: |
-                  npm ci -ws
+                  npm ci
             - name: Download Build artifacts
               uses: actions/download-artifact@v3.0.0
               with:
@@ -155,7 +155,7 @@ jobs:
                   key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
             - name: Install Deps
               run: |
-                  npm ci -ws
+                  npm ci
             - name: Download Build artifacts
               uses: actions/download-artifact@v3.0.0
               with:
