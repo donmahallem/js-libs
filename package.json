@@ -48,7 +48,7 @@
         "postbuild:readme": "node ./scripts/extract_packages.js clear",
         "build:readme": "npx @appnest/readme generate --input readme_blueprint.md --config readme_config_root.json && nx run-many --target=build:readme --all",
         "test": "nx run-many --target=test --all",
-        "test:coverage": "npm run test:coverage --workspaces",
+        "test:coverage": "nx run-many --target=test:coverage --all",
         "coverage:merge": "node ./scripts/merge_coverage.js",
         "lint": "nx run-many --target=lint --all",
         "docs": "typedoc --out ./docs --entryPointStrategy packages .",
