@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "cli": "nx",
+    "properties": {
+        "config": {
+            "type": "string",
+            "description": "Path to config file"
+        },
+        "cmd": {
+            "type": "string",
+            "description": "Command to execute"
+        }
+    }
+}
