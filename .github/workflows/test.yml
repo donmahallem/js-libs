@@ -73,7 +73,7 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Test
-              run: npm run test:coverage -ws --if-present
+              run: npm run test:coverage
             - name: Retrieve Codecov Flag Name
               id: 'flagname'
               run: |
@@ -124,7 +124,7 @@ jobs:
                   path: ./packages
             - name: Lint ALL Packages
               run: |
-                  npm run lint -ws --if-present
+                  npm run lint
     docs_suite:
         needs: build_suite
         runs-on: ${{ matrix.os }}
@@ -162,9 +162,9 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Docs
-              run: npm run docs -ws --if-present
+              run: npm run docs
             - name: Build READMEs
-              run: npm run build:readme -ws --if-present
+              run: npm run build:readme
     finish:
         needs: [test_suite, lint_suite, docs_suite]
         name: Finish Test
