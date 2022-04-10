@@ -2,7 +2,7 @@
     "name": "@donmahallem/readme",
     "version": "0.4.22",
     "description": "Opinionated readme generator",
-    "main": "./dist/cjs/index.cjs",
+    "main": "./dist/esm/index.mjs",
     "types": "./dist/types/index.d.ts",
     "module": "./dist/esm/index.mjs",
     "type": "module",

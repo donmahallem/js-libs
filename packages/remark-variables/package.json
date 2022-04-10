@@ -2,7 +2,7 @@
     "name": "@donmahallem/remark-variables",
     "version": "0.3.15",
     "description": "Remark plugin",
-    "main": "./dist/cjs/index.cjs",
+    "main": "./dist/esm/index.mjs",
     "types": "./dist/types/index.d.ts",
     "module": "./dist/esm/index.mjs",
     "private": false,

@@ -2,7 +2,7 @@
     "name": "@donmahallem/remark-lerna-packages",
     "version": "0.3.15",
     "description": "Remark plugin extracting lerna packages and presenting as table",
-    "main": "./dist/cjs/index.cjs",
+    "main": "./dist/esm/index.mjs",
     "types": "./dist/types/index.d.ts",
     "module": "./dist/esm/index.mjs",
     "private": false,

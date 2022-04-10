@@ -62,12 +62,14 @@ export const remarkLernaPlugin: Plugin =
     (...args: IPluginOptions[]): Transformer =>
     async (node: Node | Parent, file: VFile): Promise<Node> => {
         const base: string = file.dirname ? pathResolve(file.cwd, file.dirname) : pathResolve(file.cwd);
-        const lernaConfigPath: string = args[0]?.lernaConfig || (await findUpOne('lerna.json', base)).path;
-        const rows: Node[] = [u('tableRow', [u('tableCell', [u('text', 'Package Name')]), u('tableCell', [u('text', 'Version')])])];
-        rows.push(...(await extractPackages(lernaConfigPath)).map((val: Package): Node => createRowFromPackage(val)));
-        // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-        headingRange(node as Root, 'Lerna Packages', (start, nodes: Node[], end) => {
-            return [start, u('table', { align: [] }, rows), end];
-        });
+        const lernaConfigPath: string | null = args[0]?.lernaConfig || (await findUpOne('lerna.json', base))?.path;
+        if (lernaConfigPath) {
+            const rows: Node[] = [u('tableRow', [u('tableCell', [u('text', 'Package Name')]), u('tableCell', [u('text', 'Version')])])];
+            rows.push(...(await extractPackages(lernaConfigPath)).map((val: Package): Node => createRowFromPackage(val)));
+            // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+            headingRange(node as Root, 'Lerna Packages', (start, nodes: Node[], end) => {
+                return [start, u('table', { align: [] }, rows), end];
+            });
+        }
         return node;
     };
