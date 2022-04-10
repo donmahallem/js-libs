@@ -45,7 +45,7 @@
         "build": "lerna run build",
         "prebuild:readme": "node ./scripts/extract_packages.js",
         "postbuild:readme": "node ./scripts/extract_packages.js clear",
-        "build:readme": "npx @appnest/readme generate --input readme_blueprint.md --config readme_config_root.json && lerna run build:readme",
+        "build:readme": "npx @appnest/readme generate --input readme_blueprint.md --config readme_config_root.json && nx run-many --target=build:readme --all",
         "test": "lerna run test",
         "test:coverage": "lerna run test:coverage",
         "coverage:merge": "node ./scripts/merge_coverage.js",
