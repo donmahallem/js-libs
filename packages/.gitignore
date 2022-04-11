@@ -2,3 +2,4 @@
 */node_modules/*
 */docs/*
 */.nyc_output/*
+*/package-lock.json

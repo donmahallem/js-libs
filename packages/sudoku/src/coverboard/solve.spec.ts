@@ -23,7 +23,7 @@ describe('coverboard/solve.ts', (): void => {
                 done();
                 return true;
             });
-        });
+        }).timeout(20000);
         [2, 3, 4, 5].forEach((testSize: number): void => {
             const boardSize: number = testSize ** 2;
             it(`should pass for boxSize ${testSize} and boardSize ${boardSize}`, (done: Mocha.Done): void => {
@@ -35,7 +35,7 @@ describe('coverboard/solve.ts', (): void => {
                     done();
                     return true;
                 });
-            });
+            }).timeout(20000);
         });
     });
 });

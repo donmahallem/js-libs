@@ -10,7 +10,7 @@
         "noUnusedLocals": true,
         "lib": [
             "ES2019"
-        ],
+        ]
     },
     "typeAcquisition": {
         "enable": true

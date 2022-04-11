@@ -1,69 +1,68 @@
 {
-  "name": "@donmahallem/gulp-sharp",
-  "version": "2.2.19",
-  "description": "Sharp Plugin for Gulp. Modify images via sharp.",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "private": false,
-  "keywords": [
-    "gulp",
-    "sharp",
-    "gulp-plugin",
-    "convert",
-    "image",
-    "scale"
-  ],
-  "scripts": {
-    "build": "rollup -c ./rollup.config.js && npm run build:types",
-    "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
-    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "test": "mocha --config ../../.mocharc.yml",
-    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
-    "lint": "eslint -c ./.eslintrc.js --ext .ts ./src",
-    "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
-    "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
-    "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
-    "docs": "typedoc --options  ./typedoc.config.js",
-    "prepublishOnly": "npm run test && npm run docs && npm run build",
-    "version": "npm run build:readme && git add README.md"
-  },
-  "homepage": "https://donmahallem.github.io/js-libs/",
-  "author": {
-    "name": "donmahallem",
-    "email": "donmahallem@users.noreply.github.com",
-    "url": "https://github.com/donmahallem"
-  },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/donmahallem/js-libs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/donmahallem/js-libs.git"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "files": [
-    "dist/*",
-    "src/*",
-    "!src/**/*.spec.ts"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "@types/gulp": "4.0.9",
-    "@types/sharp": "0.30.1",
-    "@types/through2": "2.0.36"
-  },
-  "dependencies": {
-    "deepmerge": "~4.2.2",
-    "gulp": "~4.0.2",
-    "plugin-error": "~1.0.1",
-    "sharp": "~0.30.3",
-    "through2": "~4.0.2",
-    "vinyl": "~2.2.1"
-  }
+    "name": "@donmahallem/gulp-sharp",
+    "version": "2.2.17",
+    "description": "Sharp Plugin for Gulp. Modify images via sharp.",
+    "main": "./dist/cjs/index.cjs",
+    "types": "./dist/types/index.d.ts",
+    "module": "./dist/esm/index.mjs",
+    "private": false,
+    "keywords": [
+        "gulp",
+        "sharp",
+        "gulp-plugin",
+        "convert",
+        "image",
+        "scale"
+    ],
+    "typedocMain": "./src/index.ts",
+    "scripts": {
+        "build": "rollup -c rollup.config.js",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "test": "mocha --config ../../.mocharc.json",
+        "test:coverage": "c8 --config ../../.nycrc.json npm run test",
+        "lint": "eslint -c ./.eslintrc.js --ext .ts ./src",
+        "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+        "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
+        "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
+        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "version": "npm run build:readme && git add README.md"
+    },
+    "homepage": "https://donmahallem.github.io/js-libs/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "files": [
+        "dist/*",
+        "src/*",
+        "!src/**/*.spec.ts"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@types/gulp": "4.0.9",
+        "@types/sharp": "0.30.0",
+        "@types/through2": "2.0.36"
+    },
+    "dependencies": {
+        "deepmerge": "~4.2.2",
+        "gulp": "~4.0.2",
+        "plugin-error": "~1.0.1",
+        "sharp": "~0.30.3",
+        "through2": "~4.0.2",
+        "vinyl": "~2.2.1"
+    }
 }

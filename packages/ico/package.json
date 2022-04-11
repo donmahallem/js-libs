@@ -1,50 +1,49 @@
 {
-  "name": "@donmahallem/ico",
-  "version": "2.1.2",
-  "description": "Library to read and write ico files",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "private": false,
-  "keywords": [
-    "ico",
-    "converter"
-  ],
-  "scripts": {
-    "build": "rollup -c ./rollup.config.js && npm run build:types",
-    "build:types": "tsc --project ./tsconfig.json  -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
-    "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-    "test": "mocha --config ../../.mocharc.yml",
-    "test:coverage": "nyc --nycrc-path ../../.nycrc.json npm run test",
-    "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
-    "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-    "docs": "typedoc --options  ./typedoc.config.js --tsconfig ./tsconfig.json",
-    "prepublishOnly": "npm run test && npm run docs && npm run build",
-    "version": "npm run build:readme && git add README.md"
-  },
-  "homepage": "https://donmahallem.github.io/js-libs/",
-  "author": {
-    "name": "donmahallem",
-    "email": "donmahallem@users.noreply.github.com",
-    "url": "https://github.com/donmahallem"
-  },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/donmahallem/js-libs/issues?q=is%3Aissue+label%3Apkg%3Aico"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/donmahallem/js-libs.git"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "files": [
-    "dist/*",
-    "src/*",
-    "!src/**/*.spec.ts"
-  ],
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@donmahallem/ico",
+    "version": "2.1.2",
+    "description": "Library to read and write ico files",
+    "main": "./dist/cjs/index.cjs",
+    "types": "./dist/types/index.d.ts",
+    "module": "./dist/esm/index.mjs",
+    "private": false,
+    "keywords": [
+        "ico",
+        "converter"
+    ],
+    "typedocMain": "./src/index.ts",
+    "scripts": {
+        "build": "rollup -c rollup.config.js",
+        "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
+        "test": "mocha --config ../../.mocharc.json",
+        "test:coverage": "c8 --config ../../.nycrc.json npm run test",
+        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
+        "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "version": "npm run build:readme && git add README.md"
+    },
+    "homepage": "https://donmahallem.github.io/js-libs/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/js-libs/issues?q=is%3Aissue+label%3Apkg%3Aico"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/js-libs.git"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "files": [
+        "dist/*",
+        "src/*",
+        "!src/**/*.spec.ts"
+    ],
+    "publishConfig": {
+        "access": "public"
+    }
 }
