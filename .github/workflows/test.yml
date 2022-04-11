@@ -165,7 +165,8 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Docs
-              run: npm run docs
+              run: echo test
+              # run: npm run docs
             - name: Build READMEs
               run: npm run build:readme
     finish:
