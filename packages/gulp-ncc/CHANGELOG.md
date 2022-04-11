@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.15](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.1.14...@donmahallem/gulp-ncc@2.1.15) (2022-04-11)
+
+**Note:** Version bump only for package @donmahallem/gulp-ncc
+
+
+
+
+
 ## [2.1.14](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.1.13...@donmahallem/gulp-ncc@2.1.14) (2022-03-28)
 
 **Note:** Version bump only for package @donmahallem/gulp-ncc
