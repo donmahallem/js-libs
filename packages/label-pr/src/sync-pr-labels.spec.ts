@@ -24,11 +24,9 @@ describe('syncLabels', (): void => {
     describe('syncLabels', (): void => {
         let getPullRequestLabelsStub: Sinon.SinonStub;
         let syncLabelsStub: Sinon.SinonStub;
-        let octoStub: Sinon.SinonStubbedInstance<Octokit>;
         before('setup octokit stub instance', (): void => {
             getPullRequestLabelsStub = sandbox.stub(labelgh, 'getPullRequestLabels');
             syncLabelsStub = sandbox.stub(labelgh, 'syncLabels');
-            octoStub = sandbox.createStubInstance(Octokit);
         });
         beforeEach('setup octokit stub instance', (): void => {
             syncLabelsStub.resolves('set label');
@@ -36,7 +34,7 @@ describe('syncLabels', (): void => {
         it('should ignore non prefixed labels and set prefixed', (): Promise<void> => {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }]);
             return syncPRLabels(
-                octoStub,
+                {} as Octokit,
                 {
                     owner: 'some_owner',
                     pull_number: 2,
@@ -63,7 +61,7 @@ describe('syncLabels', (): void => {
         it('should ignore non prefixed labels and set non default prefix', (): Promise<void> => {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:any' }]);
             return syncPRLabels(
-                octoStub,
+                {} as Octokit,
                 {
                     owner: 'some_owner',
                     pull_number: 2,
@@ -91,7 +89,7 @@ describe('syncLabels', (): void => {
         it('should keep previous labels', (): Promise<void> => {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:test' }]);
             return syncPRLabels(
-                octoStub,
+                {} as Octokit,
                 {
                     owner: 'some_owner',
                     pull_number: 2,
