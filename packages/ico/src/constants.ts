@@ -1,8 +1,9 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: ico
+/*
+ * Package @donmahallem/ico
+ * Source https://donmahallem.github.io/js-libs/
  */
 
-export const BITMAP_SIZE: number = 40;
-export const COLOR_MODE: number = 0;
-export const DIRECTORY_SIZE: number = 16;
-export const FILE_HEADER_SIZE: number = 6;
+export const BITMAP_SIZE = 40;
+export const COLOR_MODE = 0;
+export const DIRECTORY_SIZE = 16;
+export const FILE_HEADER_SIZE = 6;
