@@ -3,7 +3,7 @@
     "private": true,
     "devDependencies": {
         "@appnest/readme": "1.2.7",
-        "@donmahallem/eslint-config": "1.0.57",
+        "@donmahallem/eslint-config": "1.0.58",
         "@donmahallem/lerna-fixer": "0.1.13",
         "@donmahallem/rollup-config": "2.0.13",
         "@nrwl/workspace": "13.10.1",
