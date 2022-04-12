@@ -1,20 +1,13 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: ico
+/*
+ * Package @donmahallem/ico
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Type } from '../type';
-import {
-    EntryType,
-    IconDirEntry,
-    ICursorDirEntry,
-    IIconDirEntry,
-} from './dir-entry';
+import { EntryType, IconDirEntry, ICursorDirEntry, IIconDirEntry } from './dir-entry';
 
 const writeDirEntryCommon = (buf: Buffer, offset: number, entry: IconDirEntry): void => {
-    if (entry.width > 256 ||
-        entry.height > 256 ||
-        entry.width < 1 ||
-        entry.height < 1) {
+    if (entry.width > 256 || entry.height > 256 || entry.width < 1 || entry.height < 1) {
         throw new Error('Image dimensions must be 1 <= size <= 256');
     }
     // Write width
@@ -32,10 +25,7 @@ const writeDirEntryCommon = (buf: Buffer, offset: number, entry: IconDirEntry): 
 
 export const writeCursorDirEntry = (buf: Buffer, offset: number, entry: ICursorDirEntry): void => {
     writeDirEntryCommon(buf, offset, entry);
-    if (entry.hotspotX >= entry.width ||
-        entry.hotspotY >= entry.height ||
-        entry.hotspotX < 0 ||
-        entry.hotspotY < 0) {
+    if (entry.hotspotX >= entry.width || entry.hotspotY >= entry.height || entry.hotspotX < 0 || entry.hotspotY < 0) {
         throw new Error('The hotspot must be within the image dimensions');
     }
     buf.writeUInt16LE(entry.hotspotX || 0, offset + 4);

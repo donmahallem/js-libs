@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: ico
+/*
+ * Package @donmahallem/ico
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { Type } from '../type';
@@ -28,7 +29,7 @@ export interface IBaseDirEntry {
     byteOffset: number;
 }
 
-export type EntryType<T extends Type> = (T extends Type.ICON ? IIconDirEntry : ICursorDirEntry);
+export type EntryType<T extends Type> = T extends Type.ICON ? IIconDirEntry : T extends Type.CURSOR ? ICursorDirEntry : never;
 
 export interface IIcoData<T extends Type> {
     type: T;
