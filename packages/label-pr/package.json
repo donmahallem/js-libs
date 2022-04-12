@@ -20,8 +20,10 @@
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
-        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
-        "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+        "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
+        "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+        "lint:fix": "eslint -c ./.eslintrc.cjs --ext .ts ./src --fix",
+        "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
         "prepublishOnly": "npm run clean && npm run test && npm run docs && npm run build",
         "version": "npm run build:readme && git add README.md",
         "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
