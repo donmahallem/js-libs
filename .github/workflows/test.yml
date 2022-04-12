@@ -82,7 +82,7 @@ jobs:
                   FLAGNAME=$(echo "${{ matrix.package.name }}" | sed -n -e 's/^.*\///p')
                   echo "::set-output name=flagname::${FLAGNAME}"
             - name: Upload coverage to Codecov Monorepo
-              uses: codecov/codecov-action@v2.1.0
+              uses: codecov/codecov-action@v3.0.0
               with:
                   token: ${{ secrets.CODECOV_TOKEN }}
                   flags: unit #${{ steps.flagname.outputs.flagname }}
