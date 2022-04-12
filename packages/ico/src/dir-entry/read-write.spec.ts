@@ -42,7 +42,6 @@ describe('./read-write', (): void => {
                             byteOffset: 25,
                             byteSize: 292,
                             height: testSize,
-                            type: Type.ICON,
                             width: 32,
                         };
                         testObj.writeDirEntry(
