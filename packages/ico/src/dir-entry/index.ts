@@ -1,14 +1,7 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: ico
+/*
+ * Package @donmahallem/ico
+ * Source https://donmahallem.github.io/js-libs/
  */
 
-export {
-    IconDirEntry,
-    ICursorDirEntry,
-    IIconDirEntry,
-    IconDirEntryInput,
-    EntryType,
-    IIcoData,
-    ImageFormat,
-} from './dir-entry';
+export { IconDirEntry, ICursorDirEntry, IIconDirEntry, IconDirEntryInput, EntryType, IIcoData, ImageFormat } from './dir-entry';
 export { readDirEntry } from './read-dir-entry';
