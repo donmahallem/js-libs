@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo-pb
+/*
+ * Package @donmahallem/turbo-pb
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 import { expect } from 'chai';
@@ -17,6 +18,9 @@ const protoRoot: protobuf.Root = protobuf.loadSync('./test/test.proto');
 const testMessage: protobuf.Type = protoRoot.lookupType('testpackage.TestMessage');
 const testObject: ITestMessage = { message: 'test' };
 const encodedTestMessage: Buffer = Buffer.from(testMessage.encode(testObject).finish());
+
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 describe('./format-response', (): void => {
     let sandbox: sinon.SinonSandbox;
     let app: express.Application;
@@ -32,13 +36,12 @@ describe('./format-response', (): void => {
         app.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
             formatResponse(getResponseBody(), testMessage, res, next);
         });
-        app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction): void => {
+        app.use((err: any, req: express.Request, res: express.Response): void => {
             errorSpy(err);
-            res
-                .status(406)
-                .json({
-                    message: err.message,
-                });
+            res.status(406).json({
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                message: err.message,
+            });
         });
     });
     afterEach((): void => {
