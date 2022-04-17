@@ -39,6 +39,18 @@
                 "target": "build",
                 "projects": "dependencies"
             }
+        ],
+        "eslint": [
+            {
+                "target": "build",
+                "projects": "dependencies"
+            }
+        ],
+        "prettier": [
+            {
+                "target": "eslint",
+                "projects": "self"
+            }
         ]
     }
 }
