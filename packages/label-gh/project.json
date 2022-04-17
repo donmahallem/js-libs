@@ -1,0 +1,41 @@
+{
+    "root": "packages/label-gh",
+    "sourceRoot": "packages/label-gh/src",
+    "projectType": "library",
+    "name": "@donmahallem/label-gh",
+    "targets": {
+        "eslint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "eslintConfig": "packages/label-gh/.eslintrc.cjs",
+                "lintFilePatterns": ["packages/label-gh/src/**/*.ts"],
+                "force": true,
+                "format": "stylish",
+                "silent": true,
+                "maxWarnings": 64,
+                "quiet": false,
+                "noEslintrc": true,
+                "hasTypeAwareRules": true,
+                "cacheStrategy": "metadata"
+            },
+            "configurations": {
+                "fix": {
+                    "fix": true
+                }
+            }
+        },
+        "prettier": {
+            "executor": "@donmahallem/nx-prettier:prettier",
+            "options": {
+                "pattern": ["packages/label-gh/src/**/*.ts", "packages/label-gh/*.{cjs,js,json}"],
+                "check": true
+            },
+            "configurations": {
+                "fix": {
+                    "check": false,
+                    "write": true
+                }
+            }
+        }
+    }
+}
