@@ -1,0 +1,41 @@
+{
+    "root": "packages/label-pr",
+    "sourceRoot": "packages/label-pr/src",
+    "projectType": "library",
+    "name": "@donmahallem/label-pr",
+    "targets": {
+        "eslint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "eslintConfig": "packages/label-pr/.eslintrc.cjs",
+                "lintFilePatterns": ["packages/label-pr/src/**/*.ts"],
+                "force": true,
+                "format": "stylish",
+                "silent": true,
+                "maxWarnings": 64,
+                "quiet": false,
+                "noEslintrc": true,
+                "hasTypeAwareRules": true,
+                "cacheStrategy": "metadata"
+            },
+            "configurations": {
+                "fix": {
+                    "fix": true
+                }
+            }
+        },
+        "prettier": {
+            "executor": "@donmahallem/nx-prettier:prettier",
+            "options": {
+                "pattern": ["packages/label-pr/src/**/*.ts", "packages/label-pr/*.{js,json}"],
+                "check": true
+            },
+            "configurations": {
+                "fix": {
+                    "check": false,
+                    "write": true
+                }
+            }
+        }
+    }
+}
