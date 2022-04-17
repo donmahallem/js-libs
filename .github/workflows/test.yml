@@ -127,6 +127,10 @@ jobs:
                   path: ./packages
             - name: Lint ALL Packages
               run: npx nx run-many --target=lint --all
+            - name: Lint ALL Packages
+              run: npx nx run-many --target=eslint --all
+            - name: Lint ALL Packages
+              run: npx nx run-many --target=prettier --all
     docs_suite:
         needs: build_suite
         runs-on: ${{ matrix.os }}
