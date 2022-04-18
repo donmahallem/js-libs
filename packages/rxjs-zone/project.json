@@ -1,0 +1,41 @@
+{
+    "root": "packages/rxjs-zone",
+    "sourceRoot": "packages/rxjs-zone/src",
+    "projectType": "library",
+    "name": "@donmahallem/rxjs-zone",
+    "targets": {
+        "eslint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "eslintConfig": "packages/rxjs-zone/.eslintrc.cjs",
+                "lintFilePatterns": ["packages/rxjs-zone/src/**/*.ts"],
+                "force": true,
+                "format": "stylish",
+                "silent": true,
+                "maxWarnings": 64,
+                "quiet": false,
+                "noEslintrc": true,
+                "hasTypeAwareRules": true,
+                "cacheStrategy": "metadata"
+            },
+            "configurations": {
+                "fix": {
+                    "fix": true
+                }
+            }
+        },
+        "prettier": {
+            "executor": "@donmahallem/nx-prettier:prettier",
+            "options": {
+                "pattern": ["packages/rxjs-zone/src/**/*.ts", "packages/rxjs-zone/*.{cjs,js,json}"],
+                "check": true
+            },
+            "configurations": {
+                "fix": {
+                    "check": false,
+                    "write": true
+                }
+            }
+        }
+    }
+}
