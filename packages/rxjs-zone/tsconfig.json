@@ -3,19 +3,12 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
-        "lib": [
-            "DOM",
-            "ES2020"
-        ],
+        "lib": ["DOM", "ES2020"],
         "target": "ES2018",
         "module": "ES2020",
         "moduleResolution": "Node",
         "esModuleInterop": true
     },
-    "include": [
-        "./src"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["./src"],
+    "exclude": ["node_modules"]
 }
