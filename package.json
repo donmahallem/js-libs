@@ -4,7 +4,7 @@
     "devDependencies": {
         "@appnest/readme": "1.2.7",
         "@donmahallem/eslint-config": "1.0.62",
-        "@donmahallem/lerna-fixer": "0.1.14",
+        "@donmahallem/lerna-fixer": "0.1.15",
         "@donmahallem/nx-prettier": "1.0.3",
         "@donmahallem/rollup-config": "2.0.17",
         "@nrwl/workspace": "13.10.2",
