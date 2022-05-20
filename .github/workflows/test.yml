@@ -34,7 +34,7 @@ jobs:
             - name: Run Build
               run: npx nx run-many --target=build --all
             - name: Archive production artifacts
-              uses: actions/upload-artifact@v3.0.0
+              uses: actions/upload-artifact@v3.1.0
               with:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: |
