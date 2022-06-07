@@ -32,7 +32,7 @@ jobs:
                   npm install -g npm@8
                   npm ci
             - name: Run Build
-              run: npx nx run-many --target=build --all
+              run: npx lerna run build
             - name: Archive production artifacts
               uses: actions/upload-artifact@v3.1.0
               with:
@@ -75,7 +75,7 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Test
-              run: npx nx run-many --target=test:coverage --all
+              run: npx lerna run test:coverage
             - name: Retrieve Codecov Flag Name
               id: 'flagname'
               run: |
@@ -126,11 +126,11 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Lint ALL Packages
-              run: npx nx run-many --target=lint --all
+              run: npx lerna run lint
             - name: Lint ALL Packages
-              run: npx nx run-many --target=eslint --all
+              run: npx lerna run eslint
             - name: Lint ALL Packages
-              run: npx nx run-many --target=prettier --all
+              run: npx lerna run prettier
     docs_suite:
         needs: build_suite
         runs-on: ${{ matrix.os }}
@@ -169,7 +169,7 @@ jobs:
                   name: build-${{matrix.os}}-${{matrix.node}}
                   path: ./packages
             - name: Run Docs
-              run: echo test
+              run: npx lerna run docs
               # run: npm run docs
             - name: Build READMEs
               run: npm run build:readme
