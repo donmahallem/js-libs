@@ -16,7 +16,7 @@
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
         "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
         "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
-        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "prepublishOnly": "npm run test && npm run build",
         "version": "npm run build:readme && git add README.md"
     },
     "files": [
