@@ -11,7 +11,6 @@
         "test": "renovate-config-validator",
         "test:coverage": "npm run test",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-        "prepublishOnly": "npm run test",
         "version": "npm run build:readme && git add README.md"
     },
     "homepage": "https://donmahallem.github.io/js-libs/",
