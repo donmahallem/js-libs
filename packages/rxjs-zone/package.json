@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/rxjs-zone",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Helper for handling zone.js with rxjs",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
