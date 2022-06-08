@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.20](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.3.21...@donmahallem/turbo-pb@0.3.20) (2022-06-08)
+
+**Note:** Version bump only for package @donmahallem/turbo-pb
+
+
+
+
+
 ## [0.3.21](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-pb@0.3.20...@donmahallem/turbo-pb@0.3.21) (2022-04-11)
 
 **Note:** Version bump only for package @donmahallem/turbo-pb

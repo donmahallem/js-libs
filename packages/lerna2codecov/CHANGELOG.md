@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.1.9...@donmahallem/lerna2codecov@0.1.7) (2022-06-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @lerna/project to v5 ([f247c76](https://github.com/donmahallem/js-libs/commit/f247c763714c3b6e805a73ec9f1bd52e68bfcb55))
+* **deps:** update dependency commander to v9 ([7904034](https://github.com/donmahallem/js-libs/commit/79040343f1928df5bb2df98224fa1f36e38a4d9e))
+* **deps:** update dependency commander to v9 ([4d85219](https://github.com/donmahallem/js-libs/commit/4d852192ea80c936e9f51b61ca5d433613899e8e))
+* **deps:** update dependency commander to v9 ([fd16141](https://github.com/donmahallem/js-libs/commit/fd16141148899e959442906ead8b7d2db5bea459))
+* **deps:** update dependency yaml to ~2.1.0 ([ea7b303](https://github.com/donmahallem/js-libs/commit/ea7b303a97bafaeb656b4e8dd1b5baa9243d1bad))
+* **deps:** update dependency yaml to ~2.1.1 ([9dde51e](https://github.com/donmahallem/js-libs/commit/9dde51e86635ab1a157f0c0900b5e0f580f58872))
+* **deps:** update dependency yaml to v2 ([69ff8eb](https://github.com/donmahallem/js-libs/commit/69ff8eba137b1d3baf25cb39c800932b6ee01174))
+* **deps:** update dependency yaml to v2 ([8b8beed](https://github.com/donmahallem/js-libs/commit/8b8beed2a1cf1e9c92884605d3dac3d55270ca13))
+* **deps:** update lerna monorepo to ~5.1.0 ([673bc7a](https://github.com/donmahallem/js-libs/commit/673bc7a95b45dc7482906a56a41b152967bc3c70))
+
+
+
+
+
 ## [0.1.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.1.8...@donmahallem/lerna2codecov@0.1.9) (2022-04-11)
 
 **Note:** Version bump only for package @donmahallem/lerna2codecov

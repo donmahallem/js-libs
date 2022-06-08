@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/tslint-config@0.3.2...@donmahallem/tslint-config@0.3.3) (2022-06-08)
+
+**Note:** Version bump only for package @donmahallem/tslint-config
+
+
+
+
+
 ## [0.3.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/tslint-config@0.3.1...@donmahallem/tslint-config@0.3.2) (2022-01-09)
 
 **Note:** Version bump only for package @donmahallem/tslint-config
