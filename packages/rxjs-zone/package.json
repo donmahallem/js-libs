@@ -62,5 +62,6 @@
     "peerDependencies": {
         "@angular/core": "<15.0.0",
         "rxjs": "<8.0.0"
-    }
+    },
+    "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

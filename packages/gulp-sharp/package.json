@@ -64,5 +64,6 @@
         "sharp": "~0.30.6",
         "through2": "~4.0.2",
         "vinyl": "~2.2.1"
-    }
+    },
+    "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

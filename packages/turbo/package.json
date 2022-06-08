@@ -20,7 +20,7 @@
         "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
         "lint:fix": "eslint -c ./.eslintrc.js --ext .ts ./src --fix",
         "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
-        "prepublishOnly": "npm run clean && npm run test && npm run docs && npm run build",
+        "prepublishOnly": "npm run clean && npm run test && npm run build",
         "version": "npm run build:readme && git add README.md",
         "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
     },
@@ -59,5 +59,6 @@
     "peerDependencies": {
         "axios": "^0.27.0",
         "express": "^4.17.1"
-    }
+    },
+    "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

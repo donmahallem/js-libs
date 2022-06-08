@@ -60,5 +60,6 @@
     },
     "dependencies": {
         "@donmahallem/turbo": "^2.4.0"
-    }
+    },
+    "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

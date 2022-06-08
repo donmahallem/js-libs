@@ -19,7 +19,7 @@
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
         "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
-        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "prepublishOnly": "npm run test && npm run build",
         "version": "npm run build:readme && git add README.md"
     },
     "homepage": "https://donmahallem.github.io/js-libs/",
@@ -53,5 +53,6 @@
     "devDependencies": {
         "@octokit/core": "3.6.0",
         "@octokit/types": "6.34.0"
-    }
+    },
+    "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
