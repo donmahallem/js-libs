@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/turbo-validate-request",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Turbo Helpers for express.js",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
@@ -60,7 +60,7 @@
         "express": "^4.17.1"
     },
     "dependencies": {
-        "@donmahallem/turbo": "^2.4.0"
+        "@donmahallem/turbo": "^2.4.1"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

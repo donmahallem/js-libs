@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/tslint-config",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "@donmahallem tslint config",
     "private": false,
     "main": "./tslint.json",
