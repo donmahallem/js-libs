@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/turbo",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "description": "Turbo Helpers for express.js",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",

@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/turbo-pb",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "description": "Protobuf Helpers for express.js",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
@@ -59,7 +59,7 @@
         "protobufjs": "^6.10.2"
     },
     "dependencies": {
-        "@donmahallem/turbo": "^2.4.1"
+        "@donmahallem/turbo": "^2.4.2"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
