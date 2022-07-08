@@ -58,7 +58,7 @@
         "@octokit/core": "^4.0.0"
     },
     "devDependencies": {
-        "@octokit/core": "4.0.2",
+        "@octokit/core": "4.0.4",
         "@octokit/types": "6.39.0"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
