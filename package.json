@@ -21,7 +21,7 @@
         "c8": "7.11.3",
         "chai": "4.3.6",
         "colors": "1.4.0",
-        "commitizen": "4.2.4",
+        "commitizen": "4.2.5",
         "conventional-changelog-angular": "5.0.13",
         "conventional-changelog-cli": "2.2.2",
         "coveralls": "3.1.1",
