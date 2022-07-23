@@ -24,7 +24,7 @@ function setupTestCommand(): Command {
     return cmd;
 }
 /* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions */
-describe('./update-config', (): void => {
+describe('./update-command', (): void => {
     let sandbox: sinon.SinonSandbox;
     let updateStub: sinon.SinonStub<Parameters<typeof update['update']>, ReturnType<typeof update['update']>>;
     before('setup sandbox', (): void => {
