@@ -23,9 +23,6 @@ describe('./update-config', (): void => {
     after('restore sandbox', (): void => {
         sandbox.restore();
     });
-    it('should output the input if no packages are found in the lerna project', async (): Promise<void> => {
-        expect(await index.updateConfig(new Project('./../../../'), {})).to.deep.equal({});
-    });
     it('should output all lerna packages', async (): Promise<void> => {
         const project: sinon.SinonStubbedInstance<Project> = sandbox.createStubInstance(Project);
         const package1: sinon.SinonStubbedInstance<Package> = sandbox.createStubInstance(Package);
