@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.2.2...@donmahallem/lerna2codecov@0.2.3) (2022-07-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to ~9.4.0 ([ab84826](https://github.com/donmahallem/js-libs/commit/ab848262cca8c82686f18c7d47790d7d466e84b7))
+* **deps:** update lerna monorepo to ~5.1.5 ([180e1e2](https://github.com/donmahallem/js-libs/commit/180e1e20f4e78b993dbcdd1783f9fe1a00c2f339))
+* **deps:** update lerna monorepo to ~5.1.6 ([a599dd2](https://github.com/donmahallem/js-libs/commit/a599dd29b3170abc6cc7e587980cabb68ab20164))
+* **deps:** update lerna monorepo to ~5.1.7 ([13459cd](https://github.com/donmahallem/js-libs/commit/13459cd9be7a950aa48c9afd3f787e9ba1ce8ba5))
+* **deps:** update lerna monorepo to ~5.1.8 ([1df702f](https://github.com/donmahallem/js-libs/commit/1df702f8f46af649a077d35f06cd750ae5c59e9f))
+* **deps:** update lerna monorepo to ~5.3.0 ([#1733](https://github.com/donmahallem/js-libs/issues/1733)) ([e2422a5](https://github.com/donmahallem/js-libs/commit/e2422a536b147a01f2822ea2479585549735f696))
+
+
+
+
+
 ## [0.2.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.2.1...@donmahallem/lerna2codecov@0.2.2) (2022-06-16)
 
 
