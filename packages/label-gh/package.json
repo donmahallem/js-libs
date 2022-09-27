@@ -59,7 +59,7 @@
     },
     "devDependencies": {
         "@octokit/core": "4.0.5",
-        "@octokit/types": "7.5.0"
+        "@octokit/types": "7.5.1"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
