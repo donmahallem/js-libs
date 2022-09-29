@@ -59,7 +59,7 @@
         "gulp": "^4.0.2",
         "plugin-error": "^2.0.0",
         "through2": "^4.0.2",
-        "vinyl": "^2.2.1"
+        "vinyl": "^3.0.0"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
