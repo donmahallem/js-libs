@@ -61,7 +61,7 @@
         "deepmerge": "~4.2.2",
         "gulp": "~4.0.2",
         "plugin-error": "~2.0.0",
-        "sharp": "~0.31.0",
+        "sharp": "~0.31.1",
         "through2": "~4.0.2",
         "vinyl": "~3.0.0"
     },
