@@ -21,7 +21,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
             - name: Setup Cache
-              uses: actions/cache@v3.0.9
+              uses: actions/cache@v3.0.10
               with:
                   path: |
                       node_modules
@@ -60,7 +60,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
             - name: Setup Cache
-              uses: actions/cache@v3.0.9
+              uses: actions/cache@v3.0.10
               with:
                   path: |
                       node_modules
@@ -112,7 +112,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
             - name: Setup Cache
-              uses: actions/cache@v3.0.9
+              uses: actions/cache@v3.0.10
               with:
                   path: |
                       node_modules
@@ -156,7 +156,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
             - name: Setup Cache
-              uses: actions/cache@v3.0.9
+              uses: actions/cache@v3.0.10
               with:
                   path: |
                       node_modules
