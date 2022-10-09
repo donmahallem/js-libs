@@ -8,7 +8,7 @@
         "@donmahallem/nx-prettier": "1.0.12",
         "@donmahallem/rollup-config": "2.0.78",
         "@nrwl/workspace": "14.8.3",
-        "@rollup/plugin-commonjs": "22.0.2",
+        "@rollup/plugin-commonjs": "23.0.0",
         "@rollup/plugin-json": "4.1.0",
         "@rollup/plugin-node-resolve": "14.1.0",
         "@rollup/plugin-replace": "4.0.0",
