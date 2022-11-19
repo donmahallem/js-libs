@@ -21,5 +21,6 @@
         "tslint.json",
         "tsconfig.json",
         "**/rollup.config.js"
-    ]
+    ],
+    "useNx": false
 }
