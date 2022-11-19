@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/lerna2codecov",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "Updates projects entry in codecov.yml from lerna project",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
