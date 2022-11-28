@@ -12,7 +12,7 @@
     ],
     "typedocMain": "./src/index.ts",
     "scripts": {
-        "build": "rollup -c rollup.config.js",
+        "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
