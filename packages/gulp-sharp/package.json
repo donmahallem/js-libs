@@ -54,7 +54,7 @@
     },
     "devDependencies": {
         "@types/gulp": "4.0.10",
-        "@types/sharp": "0.31.0",
+        "@types/sharp": "0.31.1",
         "@types/through2": "2.0.38"
     },
     "dependencies": {
