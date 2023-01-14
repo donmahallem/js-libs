@@ -54,7 +54,7 @@
     },
     "dependencies": {
         "@lerna/project": "~6.4.1",
-        "commander": "~9.5.0",
+        "commander": "~10.0.0",
         "deepmerge": "~4.2.2",
         "yaml": "~2.2.1"
     },
