@@ -60,7 +60,7 @@
     },
     "devDependencies": {
         "@types/deepmerge": "2.2.0",
-        "@types/lerna__package": "5.1.0",
+        "@types/lerna__package": "5.1.1",
         "@types/lerna__project": "5.1.0"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
