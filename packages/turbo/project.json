@@ -1,0 +1,36 @@
+{
+    "root": "packages/turbo/",
+    "sourceRoot": "packages/turbo/src",
+    "projectType": "library",
+    "name": "@donmahallem/turbo",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "eslintConfig": "packages/turbo/.eslintrc.js",
+                "lintFilePatterns": ["packages/turbo/src/**/*.ts"],
+                "force": true,
+                "format": "stylish",
+                "silent": true,
+                "maxWarnings": 64,
+                "quiet": false,
+                "noEslintrc": true,
+                "hasTypeAwareRules": true,
+                "cacheStrategy": "metadata"
+            },
+            "configurations": {
+                "fix": {
+                    "fix": true
+                }
+            }
+        },
+        "build": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "outputPath": "packages/turbo/dist",
+                "command": "rollup -c rollup.config.js",
+                "cwd": "packages/turbo"
+            }
+        }
+    }
+}
