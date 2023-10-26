@@ -54,11 +54,11 @@
         "access": "public"
     },
     "peerDependencies": {
-        "@octokit/core": "^4.0.0"
+        "@octokit/core": "^5.0.0"
     },
     "devDependencies": {
-        "@octokit/core": "4.2.4",
-        "@octokit/types": "8.2.1"
+        "@octokit/core": "5.0.1",
+        "@octokit/types": "12.1.1"
     },
     "dependencies": {
         "@donmahallem/label-gh": "^0.7.5"

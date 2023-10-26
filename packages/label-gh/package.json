@@ -55,11 +55,11 @@
         "access": "public"
     },
     "peerDependencies": {
-        "@octokit/core": "^4.0.0"
+        "@octokit/core": "^5.0.0"
     },
     "devDependencies": {
-        "@octokit/core": "4.2.4",
-        "@octokit/types": "8.2.1"
+        "@octokit/core": "5.0.1",
+        "@octokit/types": "12.1.1"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
