@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.2.4...@donmahallem/lerna2codecov@0.2.5) (2023-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @lerna/project to ~6.2.0 ([c8ffd50](https://github.com/donmahallem/js-libs/commit/c8ffd50724875fed5e934665b41f294bf00b2809))
+* **deps:** update dependency commander to ~10.0.1 ([14389df](https://github.com/donmahallem/js-libs/commit/14389dfbd4b6952a6e19c834e5bf53bff3b398d8))
+* **deps:** update dependency commander to ~9.5.0 ([a5a87af](https://github.com/donmahallem/js-libs/commit/a5a87af11fdd53ce3c92c755b51f2b75675d8d99))
+* **deps:** update dependency commander to v10 ([f9ac1a9](https://github.com/donmahallem/js-libs/commit/f9ac1a986946a5e6ccff9ffe82695b2c1c34c33e))
+* **deps:** update dependency deepmerge to ~4.3.0 ([3091e9c](https://github.com/donmahallem/js-libs/commit/3091e9cf8660a8403cd909fc3630afd5acd89d49))
+* **deps:** update dependency deepmerge to ~4.3.1 ([7a2bccb](https://github.com/donmahallem/js-libs/commit/7a2bccb0d6534c400f14ec5800d459add618336b))
+* **deps:** update dependency yaml to ~2.2.0 ([ee2e415](https://github.com/donmahallem/js-libs/commit/ee2e4159c13f5be20ad360afe5498a01015771cd))
+* **deps:** update dependency yaml to ~2.2.1 ([cab3d4d](https://github.com/donmahallem/js-libs/commit/cab3d4d6ec18872daf098323e0b291b97b4c51e9))
+* **deps:** update dependency yaml to ~2.3.2 ([7c21a37](https://github.com/donmahallem/js-libs/commit/7c21a37a70ef3ea9d448ebb0d3dc87ddc3b02706))
+* **deps:** update lerna monorepo to ~6.3.0 ([dff6d9f](https://github.com/donmahallem/js-libs/commit/dff6d9f76bcfb14e416862cea1020f6ca0638240))
+* **deps:** update lerna monorepo to ~6.4.0 ([24a2d31](https://github.com/donmahallem/js-libs/commit/24a2d31ccbddeb7db8d914f8c06b79f687787fb3))
+* **deps:** update lerna monorepo to ~6.4.1 ([7858207](https://github.com/donmahallem/js-libs/commit/78582079779eccb380a8a5b043f40862398ceb83))
+
+
+
+
+
 ## [0.2.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.2.3...@donmahallem/lerna2codecov@0.2.4) (2022-11-19)
 
 
