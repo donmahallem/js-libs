@@ -67,6 +67,12 @@
                     ]
                 },
                 {
+                    "groupName": "@typescript-eslint monorepo  {{currentVersion}}",
+                    "matchPackagePatterns": [
+                        "^@typescript-eslint/"
+                    ]
+                },
+                {
                     "groupName": "rollup packages",
                     "matchPackagePatterns": [
                         "^@donmahallem/rollup-config$",
