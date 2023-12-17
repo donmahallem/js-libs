@@ -85,6 +85,13 @@
                     ]
                 },
                 {
+                    "groupName": "nrwl monorepo {{currentVersion}}",
+                    "matchPackagePatterns": [
+                        "^@nrwl/",
+                        "nx"
+                    ]
+                },
+                {
                     "groupName": "octokit monorepo {{currentVersion}}",
                     "matchPackagePatterns": [
                         "^@octokit/"
