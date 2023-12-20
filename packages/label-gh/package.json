@@ -64,7 +64,7 @@
     },
     "devDependencies": {
         "@octokit/core": "4.2.4",
-        "@octokit/types": "8.2.1",
+        "@octokit/types": "12.4.0",
         "esmock": "2.6.0"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
