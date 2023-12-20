@@ -4,13 +4,16 @@
  */
 
 import { expect } from 'chai';
+import * as esmock from 'esmock';
 import 'mocha';
 import Sinon from 'sinon';
-import * as addLabels from './add-labels';
-import * as setLabels from './set-labels';
-import { syncLabels } from './sync-labels';
+import type { addLabels } from './add-labels';
+import type { setLabels } from './set-labels';
+import type { syncLabels } from './sync-labels';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
+type AddLabelsStub = sinon.SinonStub<Parameters<typeof addLabels>, ReturnType<typeof addLabels>>;
+type SetLabelsStub = sinon.SinonStub<Parameters<typeof setLabels>, ReturnType<typeof setLabels>>;
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access */
 describe('syncLabels', (): void => {
     let sandbox: Sinon.SinonSandbox;
     before('setup sandbox', (): void => {
@@ -23,18 +26,29 @@ describe('syncLabels', (): void => {
         sandbox.restore();
     });
     describe('syncLabels', (): void => {
-        let addLabelsStub: Sinon.SinonStub<Parameters<typeof addLabels['addLabels']>>;
-        let setLabelsStub: Sinon.SinonStub<Parameters<typeof setLabels['setLabels']>>;
-        before('setup octokit stub instance', (): void => {
-            addLabelsStub = sandbox.stub(addLabels, 'addLabels');
-            setLabelsStub = sandbox.stub(setLabels, 'setLabels');
+        let testMethod: typeof syncLabels;
+        let addLabelsStub: AddLabelsStub;
+        let setLabelsStub: SetLabelsStub;
+        before('setup octokit stub instance', async (): Promise<void> => {
+            addLabelsStub = sandbox.stub().named('addLabels') as AddLabelsStub;
+            setLabelsStub = sandbox.stub().named('setLabels') as SetLabelsStub;
+            testMethod = (
+                await esmock.strict('./sync-labels', {
+                    './add-labels': {
+                        addLabels: addLabelsStub,
+                    },
+                    './set-labels': {
+                        setLabels: setLabelsStub,
+                    },
+                })
+            ).syncLabels as typeof syncLabels;
         });
         beforeEach('setup octokit stub instance', (): void => {
-            addLabelsStub.resolves('add label');
-            setLabelsStub.resolves('set label');
+            addLabelsStub.resolves('add label' as any);
+            setLabelsStub.resolves('set label' as any);
         });
         it('should call addLabel with replace parameter being false', (): Promise<void> => {
-            return syncLabels(
+            return testMethod(
                 {} as any,
                 {
                     issue_number: 2,
@@ -60,7 +74,7 @@ describe('syncLabels', (): void => {
             });
         });
         it('should call setLabel with replace parameter being true', (): Promise<void> => {
-            const testPromise: Promise<any> = syncLabels(
+            const testPromise: Promise<any> = testMethod(
                 {} as any,
                 {
                     issue_number: 2,

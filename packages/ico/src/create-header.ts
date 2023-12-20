@@ -8,7 +8,6 @@ import { Type } from './type';
 
 /**
  * Creates the header portion of the ico/cur file
- *
  * @param numImages number of images in ico file
  * @param type
  */

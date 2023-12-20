@@ -11,7 +11,6 @@ type MethodType = <T>(prom: Promise<T>, res: Response, next?: NextFunction) => v
 
 /**
  * Awaits an promise and returns it
- *
  * @param prom promise to convert
  * @param res the express.Response to use
  * @param next (optional) response object
@@ -19,28 +18,30 @@ type MethodType = <T>(prom: Promise<T>, res: Response, next?: NextFunction) => v
 export const promiseToResponse: MethodType = <T>(prom: Promise<T>, res: Response<T | IErrorResponse>, next?: NextFunction): void => {
     prom.then((value: T): void => {
         (res.headersSent ? res : res.status(200)).json(value);
-    }).catch((err: any | AxiosError): void => {
-        if (next) {
-            next(err);
-            return;
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        } else if (err && err.isAxiosError === true) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            const axiosError: AxiosError = err;
-            const code: number = axiosError.response?.status || 500;
-            res.status(code).json({
-                error: true,
-                statusCode: code,
-            });
-            return;
-        } else {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
-            const code: number = err?.statusCode || 500;
-            res.status(code).json({
-                error: true,
-                statusCode: code,
-            });
-            return;
-        }
-    });
+    })
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .catch((err: any): void => {
+            if (next) {
+                next(err);
+                return;
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            } else if (err && err.isAxiosError === true) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                const axiosError: AxiosError = err;
+                const code: number = axiosError.response?.status || 500;
+                res.status(code).json({
+                    error: true,
+                    statusCode: code,
+                });
+                return;
+            } else {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
+                const code: number = err?.statusCode || 500;
+                res.status(code).json({
+                    error: true,
+                    statusCode: code,
+                });
+                return;
+            }
+        });
 };

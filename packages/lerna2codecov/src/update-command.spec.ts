@@ -5,31 +5,44 @@
 
 import { expect } from 'chai';
 import { Command } from 'commander';
+import esmock from 'esmock';
 import 'mocha';
 import sinon from 'sinon';
-import * as update from './update';
-import { updateCommand } from './update-command';
+import type { update } from './update';
+import type { updateCommand } from './update-command';
 
-/**
- *
- */
-function setupTestCommand(): Command {
-    const cmd: Command = updateCommand({ exitOverride: true });
-    cmd.configureOutput({
-        // eslint-disable-next-line  @typescript-eslint/no-empty-function
-        writeErr: () => {},
-        // eslint-disable-next-line  @typescript-eslint/no-empty-function
-        writeOut: () => {},
-    });
-    return cmd;
-}
-/* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions */
+type UpdateStub = sinon.SinonStub<Parameters<typeof update>, ReturnType<typeof update>>;
+/* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions, @typescript-eslint/no-unsafe-member-access */
 describe('./update-command', (): void => {
     let sandbox: sinon.SinonSandbox;
-    let updateStub: sinon.SinonStub<Parameters<typeof update['update']>, ReturnType<typeof update['update']>>;
-    before('setup sandbox', (): void => {
+    let updateStub: UpdateStub;
+    let updateCommandMethod: typeof updateCommand;
+    /**
+     * @returns test cmd
+     */
+    function setupTestCommand(): Command {
+        const cmd: Command = updateCommandMethod({ exitOverride: true });
+        cmd.configureOutput({
+            // eslint-disable-next-line  @typescript-eslint/no-empty-function
+            writeErr: () => {},
+            // eslint-disable-next-line  @typescript-eslint/no-empty-function
+            writeOut: () => {},
+        });
+        return cmd;
+    }
+    before('setup sandbox', async (): Promise<void> => {
         sandbox = sinon.createSandbox();
-        updateStub = sandbox.stub(update, 'update');
+        updateStub = sandbox.stub().named('update') as UpdateStub;
+
+        updateCommandMethod = (
+            await esmock.strict(
+                './update-command',
+                {},
+                {
+                    './update': { update: updateStub },
+                }
+            )
+        ).updateCommand as typeof updateCommand;
     });
     afterEach('reset sandbox', (): void => {
         sandbox.reset();

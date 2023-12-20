@@ -9,7 +9,6 @@ import { Type } from './type';
 
 /**
  * Extracts meta data from file
- *
  * @param buff ico file data
  */
 export const parseIco = <T extends Type>(buff: Buffer): IIcoData<T> => {

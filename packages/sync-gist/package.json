@@ -4,8 +4,12 @@
     "description": "Wrapper around octokit for syncing gist files",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
-    "module": "./dist/esm/index.mjs",
     "private": false,
+    "type": "module",
+    "exports": {
+        "require": "./dist/cjs/index.cjs",
+        "import": "./dist/esm/index.mjs"
+    },
     "keywords": [
         "octokit",
         "gist",
@@ -13,12 +17,14 @@
     ],
     "typedocMain": "./src/index.ts",
     "scripts": {
-        "build": "rollup -c rollup.config.js",
+        "build": "rollup -c rollup.config.mjs",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
-        "lint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
-        "lint:fix": "tslint --fix -c tslint.json -p tsconfig.json src/**/*.ts",
+        "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
+        "postlint": "prettier --config ./../../.prettierrc src/**/*.ts --check",
+        "lint:fix": "eslint -c ./.eslintrc.cjs --ext .ts ./src --fix",
+        "postlint:fix": "prettier --config ./../../.prettierrc src/**/*.ts --write",
         "prepublishOnly": "npm run test && npm run build",
         "version": "npm run build:readme && git add README.md"
     },
@@ -52,7 +58,8 @@
     },
     "devDependencies": {
         "@octokit/core": "4.2.4",
-        "@octokit/types": "8.2.1"
+        "@octokit/types": "8.2.1",
+        "esmock": "2.6.0"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

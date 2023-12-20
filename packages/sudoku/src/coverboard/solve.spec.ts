@@ -5,9 +5,9 @@
 
 import { expect } from 'chai';
 import 'mocha';
+import { solve } from './solve';
 import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
 import { isValidField } from '../validate';
-import { solve } from './solve';
 
 describe('coverboard/solve.ts', (): void => {
     describe('solve()', (): void => {

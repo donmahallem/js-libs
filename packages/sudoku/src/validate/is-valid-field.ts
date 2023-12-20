@@ -7,7 +7,6 @@ import { isValid } from './is-valid';
 
 /**
  * checks if a valid field is provided
- *
  * @param {number[][]} board the board
  * @param {number} boardSize boardsize along one side
  * @param {number} boxSize box size

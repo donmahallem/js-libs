@@ -4,7 +4,7 @@
  */
 
 import { Command } from 'commander';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { update } from './update';
 
 interface IUpdateOptions {
@@ -39,7 +39,7 @@ export function updateCommand(opts?: { exitOverride: boolean }): Command {
         .requiredOption('-l, --lerna <path>', 'path to lerna root folder', resolvePath)
         .requiredOption('-c, --codecov <path>', 'path to codecov.yml', resolvePath)
         .usage('-c <codecov file path> -l <lerna root folder>')
-        .action(async (opts: IUpdateOptions, cmd: Command): Promise<void> => {
+        .action(async (opts: IUpdateOptions): Promise<void> => {
             await update(opts.lerna, opts.codecov);
         })
         .addHelpText('after', '\nExamples:\n update -l ./path/to/lerna -c codecov.yml');

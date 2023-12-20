@@ -7,6 +7,10 @@ import { expect } from 'chai';
 import 'mocha';
 import { RequestError } from './request-error';
 
+/* eslint-disable @typescript-eslint/no-unused-expressions,
+ no-unused-expressions,
+ @typescript-eslint/no-unsafe-member-access,
+ @typescript-eslint/no-explicit-any */
 describe('./request-error', (): void => {
     const testStatuses: any[] = [undefined, 200, 333];
     const testMessages: string[] = ['test1', 'test2'];

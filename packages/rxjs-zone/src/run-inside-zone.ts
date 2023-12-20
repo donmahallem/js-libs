@@ -9,7 +9,6 @@ import type { MonoTypeOperatorFunction, Subscriber, Subscription } from 'rxjs';
 
 /**
  * Runs the provided observable in the NgZone
- *
  * @param {import('@angular/core').NgZone} zone Zone to run in
  * @returns {import('rxjs').MonoTypeOperatorFunction<T>} passes on data in the zone
  */
