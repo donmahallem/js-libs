@@ -36,7 +36,6 @@ jobs:
             - name: Install Deps
               run: |
                   npm ci
-                  npx lerna bootstrap --ci
             - name: Run Build
               run: npx lerna run build
             - name: Setup GIT
@@ -70,7 +69,6 @@ jobs:
             - name: Install Packages
               run: |
                   npm ci
-                  npx lerna bootstrap --ci
             - name: Build Package
               run: npm run build
             - name: Prepare Package
@@ -100,7 +98,6 @@ jobs:
             - name: Install Packages
               run: |
                   npm ci
-                  npx lerna bootstrap --ci
             - name: Build Package
               run: npm run build
             - name: Prepare Package
