@@ -103,6 +103,9 @@
     "bugs": {
         "url": "https://github.com/donmahallem/js-libs/issues"
     },
+    "workspaces": [
+        "packages/*"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/donmahallem/js-libs.git"
