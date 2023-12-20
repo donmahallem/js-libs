@@ -13,7 +13,6 @@ const defaults = {
     external: [...Object.keys(pkg.peerDependencies || {}), ...Object.keys(pkg.dependencies || {})],
     preserveSymlinks: true,
 };
-
 export default [
     {
         ...defaults,
@@ -22,7 +21,7 @@ export default [
                 dir: './dist/cjs',
                 format: 'cjs',
                 sourcemap: true,
-                preferConst: true,
+                generatedCode: { constBindings: true },
                 preserveModules: true,
                 preserveModulesRoot: './src',
                 entryFileNames: '[name].cjs',
@@ -31,7 +30,7 @@ export default [
                 dir: './dist/esm',
                 format: 'es',
                 sourcemap: true,
-                preferConst: true,
+                generatedCode: { constBindings: true },
                 preserveModules: true,
                 preserveModulesRoot: './src',
                 entryFileNames: '[name].mjs',
@@ -45,7 +44,7 @@ export default [
                 declaration: false,
                 declarationDir: null,
                 sourceMap: true,
-                module: 'ESNext',
+                //module: 'Node16',
             }),
             commonjs(),
             json({ compact: true }),
@@ -61,7 +60,7 @@ export default [
                 declaration: true,
                 emitDeclarationOnly: true,
                 outDir: './dist/types',
-                module: 'ESNext',
+                //module: 'ESNext',
             }),
             commonjs(),
             json({ compact: true }),

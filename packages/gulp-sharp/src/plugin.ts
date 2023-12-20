@@ -19,7 +19,6 @@ const PLUGIN_NAME = '__BUILD_PACKAGE_NAME__';
 
 /**
  * Creates the gulp plugin
- *
  * @param cfg sharp config to be used
  */
 export const gulpSharp = (cfg: IConfig): Transform => {
@@ -44,6 +43,7 @@ export const gulpSharp = (cfg: IConfig): Transform => {
                 (convertedFile: VinylFile.BufferFile): void => {
                     callback(undefined, convertedFile);
                 },
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (err: any): void => {
                     callback(new PluginError(PLUGIN_NAME, err, { message: 'Error while transforming file' }));
                 }

@@ -9,6 +9,10 @@ import { expect } from 'chai';
 import 'mocha';
 import { convertValidationError } from './convert-validation-error';
 
+/* eslint-disable @typescript-eslint/no-unsafe-argument,
+ @typescript-eslint/no-explicit-any,
+ @typescript-eslint/no-unsafe-assignment,
+ @typescript-eslint/no-unsafe-member-access */
 describe('convert-validation-error.ts', (): void => {
     describe('convertValidationError', (): void => {
         let ajv: Ajv;

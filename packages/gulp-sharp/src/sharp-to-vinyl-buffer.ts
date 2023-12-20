@@ -11,7 +11,6 @@ import { IConfig } from './config';
 
 /**
  * Converts a provided bufferfile with sharp
- *
  * @param input sharp instance
  * @param sourceFile input file
  * @param cfg sharp config

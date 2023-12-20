@@ -4,7 +4,7 @@
  */
 
 import { Project } from '@lerna/project';
-import { promises as fsp } from 'fs';
+import { readFile, writeFile } from 'node:fs/promises';
 import { parse, stringify } from 'yaml';
 import { ICodecovConfig } from './codecov-config';
 import { updateConfig } from './update-config';
@@ -17,12 +17,12 @@ import { updateConfig } from './update-config';
 export async function update(lernaRoot: string, codecovFile: string): Promise<void> {
     let codecovSourceFile: string;
     try {
-        codecovSourceFile = await fsp.readFile(codecovFile, 'utf-8');
+        codecovSourceFile = await readFile(codecovFile, 'utf-8');
     } catch (err: unknown) {
         codecovSourceFile = '';
     }
     const parsedCodecovSource: ICodecovConfig = parse(codecovSourceFile) as ICodecovConfig;
     const updatedConfig: ICodecovConfig = await updateConfig(new Project(lernaRoot), parsedCodecovSource);
     const outputCodecovConfig: string = stringify(updatedConfig);
-    return await fsp.writeFile(codecovFile, outputCodecovConfig, 'utf-8');
+    return await writeFile(codecovFile, outputCodecovConfig, 'utf-8');
 }

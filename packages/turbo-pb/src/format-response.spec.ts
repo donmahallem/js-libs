@@ -5,7 +5,7 @@
 import { expect } from 'chai';
 import express from 'express';
 import 'mocha';
-import * as protobuf from 'protobufjs';
+import protobuf from 'protobufjs';
 import * as sinon from 'sinon';
 import supertest from 'supertest';
 import { formatResponse } from './format-response';
@@ -13,7 +13,7 @@ interface ITestMessage {
     message: string;
 }
 
-const protoRoot: protobuf.Root = protobuf.loadSync('./test/test.proto');
+const protoRoot: protobuf.Root = new protobuf.Root().loadSync('./test/test.proto');
 const testMessage: protobuf.Type = protoRoot.lookupType('testpackage.TestMessage');
 const testObject: ITestMessage = { message: 'test' };
 const encodedTestMessage: Buffer = Buffer.from(testMessage.encode(testObject).finish());

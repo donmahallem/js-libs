@@ -5,9 +5,9 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { Type } from '../type';
 import * as testObj2 from './read-dir-entry';
 import * as testObj from './write-dir-entry';
+import { Type } from '../type';
 
 const testSizes: number[] = [23, 64, 256];
 describe('./read-write', (): void => {
@@ -38,6 +38,7 @@ describe('./read-write', (): void => {
                 testSizes.forEach((testSize: number): void => {
                     it(`should set the width to ${testSize}`, (): void => {
                         const testBuffer: Buffer = Buffer.alloc(16, 0, 'binary');
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         const testData: any = {
                             byteOffset: 25,
                             byteSize: 292,
@@ -55,6 +56,7 @@ describe('./read-write', (): void => {
                             },
                             Type.ICON
                         );
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         const output: any = testObj2.readDirEntry(testBuffer, 0, Type.ICON);
                         expect(testBuffer).to.be.instanceOf(Buffer, 'method should return a buffer instance');
                         expect(output).to.deep.equal(

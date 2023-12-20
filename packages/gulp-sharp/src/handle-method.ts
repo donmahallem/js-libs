@@ -9,7 +9,6 @@ import { BufferFile } from 'vinyl';
 export type SharpHandler = (sh: sharp.Sharp) => sharp.Sharp;
 /**
  * Sharp handler
- *
  * @param {BufferFile} inputFile input file
  * @param {SharpHandler} handler sharp handler
  * @param {sharp.SharpOptions} [sharpInit] sharp options

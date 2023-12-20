@@ -156,7 +156,7 @@ describe('plugin', (): void => {
                 path: '/test/anywhere.jpg',
             });
             const testInstance: Transform = gulpSharp({ transform: { resize: { fit: 'cover', width: 512 } } });
-            testInstance.once('data', (file: Vinyl): void => {
+            testInstance.once('data', (): void => {
                 done(new Error('should not yield data'));
             });
             testInstance.once('error', (err: PluginError): void => {
@@ -204,9 +204,11 @@ describe('plugin', (): void => {
         });
         it('should throw if no Config is provided', (): void => {
             expect((): void => {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 gulpSharp(undefined as any);
             }).to.throws(Error, 'transform must be provided via config');
             expect((): void => {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 gulpSharp({} as any);
             }).to.throws(Error, 'transform must be provided via config');
         });

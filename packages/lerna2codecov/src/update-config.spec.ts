@@ -7,7 +7,7 @@ import { Package } from '@lerna/package';
 import { Project } from '@lerna/project';
 import { expect } from 'chai';
 import 'mocha';
-import { join, sep } from 'path';
+import { join, sep } from 'node:path';
 import sinon from 'sinon';
 import * as index from './update-config';
 

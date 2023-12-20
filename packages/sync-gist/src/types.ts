@@ -1,5 +1,6 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: sync-gist
+/*
+ * Package @donmahallem/sync-gist
+ * Source https://donmahallem.github.io/js-libs/
  */
 
 export interface IInputFile {

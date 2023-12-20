@@ -6,7 +6,7 @@
 import { Package } from '@lerna/package';
 import { Project } from '@lerna/project';
 import deepmerge from 'deepmerge';
-import { relative } from 'path';
+import { relative } from 'node:path';
 import { CodecovProjects, ICodecovConfig } from './codecov-config';
 
 export interface IUpdateOptions {
@@ -15,7 +15,6 @@ export interface IUpdateOptions {
 
 /**
  * Removes potential scopes from the package name
- *
  * @param {Package|string} packageName Package Name
  * @returns {string} the striped package name
  */

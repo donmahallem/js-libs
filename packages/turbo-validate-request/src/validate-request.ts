@@ -11,7 +11,6 @@ type CheckKeys = 'query' | 'params' | 'body';
 type MethodSignature = <T = object>(key: CheckKeys, schema: JSONSchemaType<T>, ajvInstance?: Ajv) => RequestHandler;
 /**
  * Checks a request against the given schema
- *
  * @param {string} key property of the request to check the schema against
  * @param {JSONSchemaType} schema the jsonschema
  * @param {Ajv} ajvInstance optional ajv to be used

@@ -3,16 +3,19 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
 import { CoverBoard } from './cover-board';
 import { ColumnNode, DancingNode } from './dancing-node';
+import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
 export type ResultCallback = (board: number[][]) => boolean;
 export class DLX {
     private header: ColumnNode;
     private answer: DancingNode[];
     private resultCallback: ResultCallback;
     private isDone = false;
-    public constructor(cover: CoverBoard, public readonly boardSize: number) {
+    public constructor(
+        cover: CoverBoard,
+        public readonly boardSize: number
+    ) {
         this.header = this.createDLXList(cover);
     }
 

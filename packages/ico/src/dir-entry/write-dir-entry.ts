@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { Type } from '../type';
 import { EntryType, IconDirEntry, ICursorDirEntry, IIconDirEntry } from './dir-entry';
+import { Type } from '../type';
 
 const writeDirEntryCommon = (buf: Buffer, offset: number, entry: IconDirEntry): void => {
     if (entry.width > 256 || entry.height > 256 || entry.width < 1 || entry.height < 1) {
