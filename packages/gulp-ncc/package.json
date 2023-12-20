@@ -57,7 +57,7 @@
     },
     "devDependencies": {
         "@types/gulp": "4.0.17",
-        "@types/through2": "2.0.39",
+        "@types/through2": "2.0.41",
         "@vercel/ncc": "0.36.1"
     },
     "peerDependencies": {
