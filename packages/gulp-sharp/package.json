@@ -60,7 +60,7 @@
     "devDependencies": {
         "@types/gulp": "4.0.17",
         "@types/sharp": "0.31.1",
-        "@types/through2": "2.0.39"
+        "@types/through2": "2.0.41"
     },
     "dependencies": {
         "deepmerge": "~4.3.1",
