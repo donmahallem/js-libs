@@ -55,11 +55,11 @@
         "access": "public"
     },
     "devDependencies": {
-        "@angular/core": "15.2.10",
+        "@angular/core": "17.0.7",
         "rxjs": "7.8.1"
     },
     "peerDependencies": {
-        "@angular/core": "<16.0.0",
+        "@angular/core": "<18.0.0",
         "rxjs": "<8.0.0"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
