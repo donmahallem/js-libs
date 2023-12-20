@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.7](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.13.6...@donmahallem/renovate-config@0.13.7) (2023-12-20)
+
+
+### Bug Fixes
+
+* **renovate-config:** add [@typescript-eslint](https://github.com/typescript-eslint) package grouping ([24be168](https://github.com/donmahallem/js-libs/commit/24be168742158152789a8637d2e80b668cf383d2))
+
+
+
+
+
 ## [0.13.6](https://github.com/donmahallem/js-libs/compare/@donmahallem/renovate-config@0.13.5...@donmahallem/renovate-config@0.13.6) (2023-12-16)
 
 **Note:** Version bump only for package @donmahallem/renovate-config

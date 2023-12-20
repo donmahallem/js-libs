@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/ico@2.2.2...@donmahallem/ico@2.2.3) (2023-12-20)
+
+
+### Bug Fixes
+
+* fix a lot of dependency issues ([#2282](https://github.com/donmahallem/js-libs/issues/2282)) ([0a8f069](https://github.com/donmahallem/js-libs/commit/0a8f06939c4ef4cdae42fd0fd3d780bf3501bcb5))
+
+
+
+
+
 ## [2.2.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/ico@2.2.1...@donmahallem/ico@2.2.2) (2022-06-08)
 
 **Note:** Version bump only for package @donmahallem/ico
