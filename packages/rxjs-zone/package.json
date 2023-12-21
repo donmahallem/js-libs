@@ -40,11 +40,12 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=14"
+        "node": ">=18"
     },
     "exports": {
-        "import": "./dist/esm/index.js",
-        "require": "./dist/cjs/index.js"
+        "import": "./dist/esm/index.mjs",
+        "require": "./dist/cjs/index.cjs",
+        "types": "./dist/types/index.d.ts"
     },
     "files": [
         "dist/*",
