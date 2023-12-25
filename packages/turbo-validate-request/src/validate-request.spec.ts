@@ -9,7 +9,7 @@ import { expect } from 'chai';
 import { RequestHandler } from 'express';
 import 'mocha';
 import { Done } from 'mocha';
-import { validateRequest } from './validate-request';
+import { validateRequest } from './validate-request.js';
 
 interface ITestObject {
     bottom?: string;

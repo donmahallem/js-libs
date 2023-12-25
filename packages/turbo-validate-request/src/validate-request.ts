@@ -5,7 +5,7 @@
 
 import Ajv, { DefinedError, JSONSchemaType, ValidateFunction } from 'ajv';
 import { NextFunction, Request, RequestHandler, Response } from 'express';
-import { convertValidationError } from './convert-validation-error';
+import { convertValidationError } from './convert-validation-error.js';
 
 type CheckKeys = 'query' | 'params' | 'body';
 type MethodSignature = <T = object>(key: CheckKeys, schema: JSONSchemaType<T>, ajvInstance?: Ajv) => RequestHandler;
