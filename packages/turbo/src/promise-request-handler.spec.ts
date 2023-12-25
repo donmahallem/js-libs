@@ -8,7 +8,7 @@ import express, { Application } from 'express';
 import 'mocha';
 import sinon from 'sinon';
 import supertest from 'supertest';
-import { promiseRequestHandler } from './promise-request-handler';
+import { promiseRequestHandler } from './promise-request-handler.js';
 
 describe('promise-request-handler.ts', (): void => {
     describe('promiseRequestHandler(()=>Promise))', (): void => {
