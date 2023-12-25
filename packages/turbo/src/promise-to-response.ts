@@ -3,7 +3,7 @@
  * Source https://github.com/donmahallem/js-libs/tree/master/packages/turbo
  */
 
-import { IErrorResponse } from './error-response';
+import { IErrorResponse } from './error-response.js';
 import type { AxiosError } from 'axios';
 import type { NextFunction, Response } from 'express';
 

@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { RequestError } from './request-error';
+import { RequestError } from './request-error.js';
 
 /* eslint-disable @typescript-eslint/no-unused-expressions,
  no-unused-expressions,
