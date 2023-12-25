@@ -6,7 +6,7 @@
 import { expect } from 'chai';
 import 'mocha';
 import sinon from 'sinon';
-import { promiseToResponse } from './promise-to-response';
+import { promiseToResponse } from './promise-to-response.js';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument,
  @typescript-eslint/no-unsafe-assignment,

@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import * as index from './index';
+import * as index from './index.js';
 
 /* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions */
 describe('index', (): void => {
