@@ -7,7 +7,7 @@ import { RequestError } from '@donmahallem/turbo';
 import Ajv, { DefinedError, ValidateFunction } from 'ajv';
 import { expect } from 'chai';
 import 'mocha';
-import { convertValidationError } from './convert-validation-error';
+import { convertValidationError } from './convert-validation-error.js';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument,
  @typescript-eslint/no-explicit-any,
