@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.4.8...@donmahallem/turbo-validate-request@0.4.9) (2023-12-28)
+
+
+### Bug Fixes
+
+* **turbo-validate-request:** refactored turbo exports ([#2325](https://github.com/donmahallem/js-libs/issues/2325)) ([4b4b7e4](https://github.com/donmahallem/js-libs/commit/4b4b7e4f0806bdeb8eb1850dc888a5a4db4c50fd))
+
+
+
+
+
 ## [0.4.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/turbo-validate-request@0.4.7...@donmahallem/turbo-validate-request@0.4.8) (2023-12-21)
 
 **Note:** Version bump only for package @donmahallem/turbo-validate-request

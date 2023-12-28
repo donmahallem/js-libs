@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.4.8...@donmahallem/label-pr@0.4.9) (2023-12-28)
+
+
+### Bug Fixes
+
+* **label-pr:** add missing IOpts export decleration ([#2330](https://github.com/donmahallem/js-libs/issues/2330)) ([74077de](https://github.com/donmahallem/js-libs/commit/74077de1fef0729f844d695c56d2b1aff8625e5d))
+
+
+
+
+
 ## [0.4.8](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.4.7...@donmahallem/label-pr@0.4.8) (2023-12-21)
 
 **Note:** Version bump only for package @donmahallem/label-pr
