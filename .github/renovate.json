@@ -3,6 +3,6 @@
         "master"
     ],
     "extends": [
-        "@donmahallem"
+        "github>donmahallem/renovate-config"
     ]
 }
