@@ -35,7 +35,7 @@ describe('syncLabels', (): void => {
             getPullRequestLabelsStub = sandbox.stub().named('getPullRequestLabels');
             syncLabelsStub = sandbox.stub().named('syncLabels');
             testMethod = (
-                await esmock.strict('./sync-pr-labels', {
+                await esmock.strict('./sync-pr-labels.js', {
                     '@donmahallem/label-gh': {
                         calculateLabelDiff: calculateLabelDiff,
                         getPullRequestLabels: getPullRequestLabelsStub,
