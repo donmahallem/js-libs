@@ -4,9 +4,9 @@
  */
 
 import { Octokit } from '@octokit/core';
-import { addLabels } from './add-labels';
-import { GithubLabel } from './github-types';
-import { setLabels } from './set-labels';
+import { addLabels } from './add-labels.js';
+import { GithubLabel } from './github-types.js';
+import { setLabels } from './set-labels.js';
 
 export interface IOpts {
     /**

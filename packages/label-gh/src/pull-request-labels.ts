@@ -4,7 +4,7 @@
  */
 
 import { Octokit } from '@octokit/core';
-import { GithubLabel, PRLabelsParameter, PRLabelsResponse } from './github-types';
+import { GithubLabel, PRLabelsParameter, PRLabelsResponse } from './github-types.js';
 
 export const getPullRequestLabels = async (octokit: Octokit, params: PRLabelsParameter): Promise<Partial<GithubLabel>[]> => {
     const listFilesResponse: PRLabelsResponse = await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', params);

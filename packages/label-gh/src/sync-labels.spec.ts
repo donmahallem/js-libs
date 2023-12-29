@@ -7,9 +7,9 @@ import { expect } from 'chai';
 import * as esmock from 'esmock';
 import 'mocha';
 import Sinon from 'sinon';
-import type { addLabels } from './add-labels';
-import type { setLabels } from './set-labels';
-import type { syncLabels } from './sync-labels';
+import type { addLabels } from './add-labels.js';
+import type { setLabels } from './set-labels.js';
+import type { syncLabels } from './sync-labels.js';
 
 type AddLabelsStub = sinon.SinonStub<Parameters<typeof addLabels>, ReturnType<typeof addLabels>>;
 type SetLabelsStub = sinon.SinonStub<Parameters<typeof setLabels>, ReturnType<typeof setLabels>>;

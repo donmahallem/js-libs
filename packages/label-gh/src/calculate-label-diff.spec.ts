@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { calculateLabelDiff } from './calculate-label-diff';
+import { calculateLabelDiff } from './calculate-label-diff.js';
 
 describe('calculate-label-diff', (): void => {
     describe('calculate-label-diff', (): void => {

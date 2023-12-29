@@ -7,7 +7,7 @@ import { Octokit } from '@octokit/core';
 import { expect } from 'chai';
 import 'mocha';
 import Sinon from 'sinon';
-import { getPullRequestLabels } from './pull-request-labels';
+import { getPullRequestLabels } from './pull-request-labels.js';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
 const API_ENDPOINT = 'GET /repos/{owner}/{repo}/pulls/{pull_number}';
