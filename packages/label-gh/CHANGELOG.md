@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.7.9...@donmahallem/label-gh@0.7.10) (2023-12-29)
+
+
+### Bug Fixes
+
+* **label-gh:** fix type exports ([#2335](https://github.com/donmahallem/js-libs/issues/2335)) ([143fbcf](https://github.com/donmahallem/js-libs/commit/143fbcf1fe183dea05bec4c32b89216bdfbefb5f))
+
+
+
+
+
 ## [0.7.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-gh@0.7.8...@donmahallem/label-gh@0.7.9) (2023-12-28)
 
 **Note:** Version bump only for package @donmahallem/label-gh

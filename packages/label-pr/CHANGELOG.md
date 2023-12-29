@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.11](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.4.10...@donmahallem/label-pr@0.4.11) (2023-12-29)
+
+
+### Bug Fixes
+
+* **label-pr:** fix label-pr exports ([#2336](https://github.com/donmahallem/js-libs/issues/2336)) ([3f19fce](https://github.com/donmahallem/js-libs/commit/3f19fce3786f4cba1213705acf5e051b9d4fd0d8))
+
+
+
+
+
 ## [0.4.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/label-pr@0.4.9...@donmahallem/label-pr@0.4.10) (2023-12-28)
 
 **Note:** Version bump only for package @donmahallem/label-pr
