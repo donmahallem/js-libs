@@ -5,7 +5,7 @@
 
 import { Octokit } from '@octokit/core';
 import { Endpoints } from '@octokit/types';
-import { GithubLabel } from './github-types';
+import { GithubLabel } from './github-types.js';
 
 type PostLabelParameters = Endpoints['POST /repos/{owner}/{repo}/issues/{issue_number}/labels']['parameters'];
 type PostLabelResponse = Endpoints['POST /repos/{owner}/{repo}/issues/{issue_number}/labels']['response'];

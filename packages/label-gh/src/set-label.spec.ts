@@ -7,7 +7,7 @@ import { Octokit } from '@octokit/core';
 import { expect } from 'chai';
 import 'mocha';
 import Sinon from 'sinon';
-import { setLabels } from './set-labels';
+import { setLabels } from './set-labels.js';
 
 /* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
 const API_ENDPOINT = 'PUT /repos/{owner}/{repo}/issues/{issue_number}/labels';
