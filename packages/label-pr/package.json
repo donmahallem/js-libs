@@ -63,7 +63,7 @@
         "@octokit/core": "^5.0.0"
     },
     "devDependencies": {
-        "@octokit/core": "5.0.2",
+        "@octokit/core": "5.1.0",
         "@octokit/types": "12.4.0",
         "esmock": "2.6.2"
     },
