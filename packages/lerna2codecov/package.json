@@ -68,7 +68,7 @@
         "@types/deepmerge": "2.2.0",
         "@types/lerna__package": "5.1.3",
         "@types/lerna__project": "5.1.2",
-        "esmock": "2.6.2"
+        "esmock": "2.6.3"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
