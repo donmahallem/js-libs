@@ -64,7 +64,7 @@
     },
     "dependencies": {
         "deepmerge": "~4.3.1",
-        "gulp": "~4.0.2",
+        "gulp": "~5.0.0",
         "plugin-error": "~2.0.1",
         "sharp": "~0.32.6",
         "through2": "~4.0.2",
