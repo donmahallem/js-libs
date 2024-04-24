@@ -57,7 +57,7 @@
         "esmock": "2.6.4",
         "express": "4.19.2",
         "protobufjs": "7.2.6",
-        "supertest": "6.3.4"
+        "supertest": "7.0.0"
     },
     "peerDependencies": {
         "axios": "^1.0.0",
