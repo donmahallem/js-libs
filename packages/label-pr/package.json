@@ -65,7 +65,7 @@
     "devDependencies": {
         "@octokit/core": "6.0.1",
         "@octokit/types": "13.4.1",
-        "esmock": "2.6.4"
+        "esmock": "2.6.5"
     },
     "dependencies": {
         "@donmahallem/label-gh": "^0.7.10"
