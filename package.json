@@ -5,7 +5,7 @@
         "@appnest/readme": "1.2.7",
         "@donmahallem/eslint-config": "2.0.34",
         "@donmahallem/lerna-fixer": "0.1.29",
-        "@donmahallem/nx-prettier": "1.0.35",
+        "@donmahallem/nx-prettier": "1.0.36",
         "@donmahallem/rollup-config": "4.1.27",
         "@nrwl/workspace": "15.9.7",
         "@rollup/plugin-commonjs": "25.0.7",
