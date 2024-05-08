@@ -13,7 +13,7 @@ jobs:
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
-              uses: actions/checkout@v4.1.4
+              uses: actions/checkout@v4.1.5
               with:
                   fetch-depth: 200
             - name: Setup Node
@@ -51,7 +51,7 @@ jobs:
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
-              uses: actions/checkout@v4.1.4
+              uses: actions/checkout@v4.1.5
               with:
                   fetch-depth: 200
             - name: Setup Node
@@ -102,7 +102,7 @@ jobs:
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
-              uses: actions/checkout@v4.1.4
+              uses: actions/checkout@v4.1.5
               with:
                   fetch-depth: 200
             - name: Setup Node
@@ -145,7 +145,7 @@ jobs:
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
-              uses: actions/checkout@v4.1.4
+              uses: actions/checkout@v4.1.5
               with:
                   fetch-depth: 200
             - name: Setup Node
