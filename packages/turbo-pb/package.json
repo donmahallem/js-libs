@@ -56,7 +56,7 @@
         "@types/supertest": "6.0.2",
         "esmock": "2.6.5",
         "express": "4.19.2",
-        "protobufjs": "7.2.6",
+        "protobufjs": "7.3.0",
         "supertest": "7.0.0"
     },
     "peerDependencies": {
