@@ -59,14 +59,14 @@
     },
     "devDependencies": {
         "@types/gulp": "4.0.17",
-        "@types/sharp": "0.31.1",
+        "@types/sharp": "0.32.0",
         "@types/through2": "2.0.41"
     },
     "dependencies": {
         "deepmerge": "~4.3.1",
         "gulp": "~5.0.0",
         "plugin-error": "~2.0.1",
-        "sharp": "~0.32.6",
+        "sharp": "~0.33.5",
         "through2": "~4.0.2",
         "vinyl": "~3.0.0"
     },
