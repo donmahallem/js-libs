@@ -6,7 +6,7 @@
         "@donmahallem/eslint-config": "2.0.65",
         "@donmahallem/lerna-fixer": "0.1.29",
         "@donmahallem/nx-prettier": "1.0.57",
-        "@donmahallem/rollup-config": "4.1.51",
+        "@donmahallem/rollup-config": "4.1.52",
         "@nrwl/workspace": "15.9.7",
         "@rollup/plugin-commonjs": "28.0.0",
         "@rollup/plugin-json": "6.1.0",
