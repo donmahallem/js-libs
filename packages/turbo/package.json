@@ -58,7 +58,7 @@
         "@types/express": "5.0.0",
         "@types/supertest": "6.0.2",
         "axios": "1.7.9",
-        "express": "4.21.1",
+        "express": "4.21.2",
         "supertest": "7.0.0"
     },
     "peerDependencies": {
