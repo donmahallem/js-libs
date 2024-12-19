@@ -1,6 +1,8 @@
-/*!
- * Source https://github.com/donmahallem/js-libs Package: turbo-pb
+/*
+ * Package @donmahallem/turbo-pb
+ * Source https://donmahallem.github.io/js-libs/
  */
+
 
 import { RequestError } from '@donmahallem/turbo';
 import { NextFunction, Response } from 'express';
@@ -11,6 +13,7 @@ type MessageKey<T extends object> = ({
 } & typeof Message) | Type;
 /**
  * Formats response to either json or protobuf
+ *
  * @param msg message to be formated
  * @param message Message to convert
  * @param res express Response object
