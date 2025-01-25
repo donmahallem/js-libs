@@ -3,7 +3,7 @@ on:
     workflow_run:
         workflows: [Test]
         types: [completed]
-        branches: [release]
+        branches: [master]
 
 jobs:
     build_suite:
