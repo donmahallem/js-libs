@@ -96,8 +96,8 @@
         "url": "https://github.com/donmahallem"
     },
     "engines": {
-        "node": ">=14",
-        "npm": ">=7"
+        "node": ">=20",
+        "npm": ">=10"
     },
     "license": "Apache-2.0",
     "bugs": {
