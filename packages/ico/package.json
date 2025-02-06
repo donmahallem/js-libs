@@ -43,7 +43,7 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=18"
+        "node": ">=20"
     },
     "files": [
         "dist/*",
