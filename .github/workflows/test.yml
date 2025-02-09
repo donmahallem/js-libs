@@ -1,6 +1,7 @@
 name: Test
 on: [push, pull_request]
-
+env:
+    npm_version: 10
 jobs:
     build_suite:
         runs-on: ${{ matrix.os }}
@@ -20,17 +21,10 @@ jobs:
               uses: actions/setup-node@v4.2.0
               with:
                   node-version: ${{ matrix.node }}
-            - name: Setup Cache
-              uses: actions/cache@v4.2.0
-              with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: ${{ runner.os }}-node${{ matrix.node }}-npm
+                  cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@8
+                  npm install -g npm@${{env.npm_version}}
                   npm ci
             - name: Run Build
               run: npx lerna run build
@@ -59,17 +53,10 @@ jobs:
               uses: actions/setup-node@v4.2.0
               with:
                   node-version: ${{ matrix.node }}
-            - name: Setup Cache
-              uses: actions/cache@v4.2.0
-              with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: ${{ runner.os }}-node${{ matrix.node }}-npm
+                  cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@8
+                  npm install -g npm@${{env.npm_version}}
                   npm ci
             - name: Download Build artifacts
               uses: actions/download-artifact@v4.1.8
@@ -111,17 +98,10 @@ jobs:
               uses: actions/setup-node@v4.2.0
               with:
                   node-version: ${{ matrix.node }}
-            - name: Setup Cache
-              uses: actions/cache@v4.2.0
-              with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: ${{ runner.os }}-node${{ matrix.node }}-npm
+                  cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@8
+                  npm install -g npm@${{env.npm_version}}
                   npm ci
             - name: Download Build artifacts
               uses: actions/download-artifact@v4.1.8
@@ -155,17 +135,10 @@ jobs:
               uses: actions/setup-node@v4.2.0
               with:
                   node-version: ${{ matrix.node }}
-            - name: Setup Cache
-              uses: actions/cache@v4.2.0
-              with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-node${{ matrix.node }}-npm-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: ${{ runner.os }}-node${{ matrix.node }}-npm
+                  cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@8
+                  npm install -g npm@${{env.npm_version}}
                   npm ci
             - name: Download Build artifacts
               uses: actions/download-artifact@v4.1.8
