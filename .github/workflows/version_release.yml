@@ -10,7 +10,7 @@ jobs:
     build_suite:
         runs-on: ${{ matrix.os }}
         permissions:
-            contents: read
+            contents: write
         name: Version Release
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         timeout-minutes: 30
