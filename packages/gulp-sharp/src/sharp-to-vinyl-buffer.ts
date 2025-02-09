@@ -1,4 +1,4 @@
-/*
+/**
  * Package @donmahallem/gulp-sharp
  * Source https://donmahallem.github.io/js-libs/
  */

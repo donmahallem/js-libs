@@ -1,4 +1,4 @@
-/*
+/**
  * Package @donmahallem/rxjs-zone
  * Source https://donmahallem.github.io/js-libs/
  */
