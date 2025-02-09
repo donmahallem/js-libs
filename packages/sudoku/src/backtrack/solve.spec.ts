@@ -8,9 +8,9 @@ import 'mocha';
 import { solve } from './solve';
 import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
 
-describe('coverboard/solve.ts', (): void => {
-    describe('solve()', (): void => {
-        it('should solve empty field with boxSize 2', (): void => {
+describe('coverboard/solve.ts', function (): void {
+    describe('solve()', function (): void {
+        it('should solve empty field with boxSize 2', function (): void {
             expect(
                 solve(
                     [
@@ -24,7 +24,8 @@ describe('coverboard/solve.ts', (): void => {
                 )
             ).to.equal(true);
         });
-        it('should solve non empty field with boxSize 2', (): void => {
+
+        it('should solve non empty field with boxSize 2', function (): void {
             expect(
                 solve(
                     [
@@ -50,16 +51,19 @@ describe('coverboard/solve.ts', (): void => {
                 )
             ).to.equal(true);
         });
-        it('should setup with a client instance as endpoint3', (): void => {
+
+        it('should setup with a client instance as endpoint3', function (): void {
             expect(solve(createEmptySudokuBoard(4), 4, 2)).to.equal(true);
         });
-        it('should setup with a client instance as endpoint4', (): void => {
+
+        it('should setup with a client instance as endpoint4', function (): void {
             const test: number[][] = JSON.parse(JSON.stringify(createEmptySudokuBoard(4))) as number[][];
             expect(solve(test, 4, 2)).to.equal(true);
         });
+        // eslint-disable-next-line mocha/no-setup-in-describe
         [2, 3, 4].forEach((testSize: number): void => {
             const boardSize: number = testSize ** 2;
-            it(`should pass for boxSize ${testSize} and boardSize ${boardSize}`, (): void => {
+            it(`should pass for boxSize ${testSize} and boardSize ${boardSize}`, function (): void {
                 const testValue: number[][] = createEmptySudokuBoard(boardSize);
                 expect(solve(testValue, boardSize, testSize)).to.equal(true);
             });

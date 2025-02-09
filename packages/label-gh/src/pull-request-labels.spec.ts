@@ -9,30 +9,35 @@ import 'mocha';
 import Sinon from 'sinon';
 import { getPullRequestLabels } from './pull-request-labels.js';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const API_ENDPOINT = 'GET /repos/{owner}/{repo}/pulls/{pull_number}';
-describe('set-label', (): void => {
+describe('set-label', function (): void {
     let sandbox: Sinon.SinonSandbox;
-    before('setup sandbox', (): void => {
+
+    before('setup sandbox', function (): void {
         sandbox = Sinon.createSandbox();
     });
-    afterEach('reset sandbox', (): void => {
+
+    afterEach('reset sandbox', function (): void {
         sandbox.reset();
     });
-    after('restore sandbox', (): void => {
+
+    after('restore sandbox', function (): void {
         sandbox.restore();
     });
-    describe('getPullRequestLabels', (): void => {
+
+    describe('getPullRequestLabels', function (): void {
         let requestStub: Sinon.SinonStub<Parameters<Octokit['request']>, Partial<ReturnType<Octokit['request']>>>;
-        before('setup octokit stub instance', (): void => {
+
+        before('setup octokit stub instance', function (): void {
             requestStub = sandbox.stub<Parameters<Octokit['request']>, Partial<ReturnType<Octokit['request']>>>();
         });
-        it('should pass on all correct data', (): Promise<void> => {
+
+        it('should pass on all correct data', function (): Promise<void> {
             const testResponseData: any = {
                 labels: ['any response'],
             };
             requestStub.resolves({
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 data: testResponseData,
             });
             return getPullRequestLabels({ request: requestStub } as any, {
@@ -40,7 +45,6 @@ describe('set-label', (): void => {
                 pull_number: 2,
                 repo: 'anyrepo',
             }).then((result: any): void => {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                 expect(result).to.deep.equal(testResponseData.labels);
                 expect(requestStub.args).to.deep.eq([
                     [
@@ -54,7 +58,8 @@ describe('set-label', (): void => {
                 ]);
             });
         });
-        it(`should return empty array if labels isn't defined`, (): Promise<void> => {
+
+        it(`should return empty array if labels isn't defined`, function (): Promise<void> {
             const testResponseData = 'any response';
             requestStub.resolves({
                 data: testResponseData,
@@ -77,7 +82,8 @@ describe('set-label', (): void => {
                 ]);
             });
         });
-        it('should return rejections', (): Promise<void> => {
+
+        it('should return rejections', function (): Promise<void> {
             const testError: Error = new Error('test error');
             requestStub.rejects(testError);
             return getPullRequestLabels({ request: requestStub } as any, {
@@ -85,7 +91,7 @@ describe('set-label', (): void => {
                 pull_number: 2,
                 repo: 'anyrepo',
             })
-                .then((): void => {
+                .then(function (): void {
                     throw new Error('Should not resolve');
                 })
                 .catch((err: any): void => {

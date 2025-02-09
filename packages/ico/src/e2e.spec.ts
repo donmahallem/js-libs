@@ -12,10 +12,12 @@ import { IIconDirEntry, IIcoData } from './dir-entry';
 import { parseIco } from './parse-ico';
 import { Type } from './type';
 
-describe('./e2e', (): void => {
-    describe('decode and reencode', (): void => {
+describe('./e2e', function (): void {
+    describe('decode and reencode', function (): void {
+        /* eslint-disable mocha/no-setup-in-describe */
         const sourceImage: Buffer = readFileSync(join(process.cwd(), './test/test.ico'));
-        it(`should decode and reencode equal to source data`, (): void => {
+
+        it(`should decode and reencode equal to source data`, function (): void {
             const icoData: IIcoData<Type.ICON> = parseIco(sourceImage);
             const icoInput: IIcoDataInput<Type.ICON> = {
                 format: icoData.format,

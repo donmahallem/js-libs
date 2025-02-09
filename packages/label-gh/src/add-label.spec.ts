@@ -9,25 +9,31 @@ import 'mocha';
 import Sinon from 'sinon';
 import { addLabels } from './add-labels.js';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const API_ENDPOINT = 'POST /repos/{owner}/{repo}/issues/{issue_number}/labels';
-describe('add-label', (): void => {
+describe('add-label', function (): void {
     let sandbox: Sinon.SinonSandbox;
-    before('setup sandbox', (): void => {
+
+    before('setup sandbox', function (): void {
         sandbox = Sinon.createSandbox();
     });
-    afterEach('reset sandbox', (): void => {
+
+    afterEach('reset sandbox', function (): void {
         sandbox.reset();
     });
-    after('restore sandbox', (): void => {
+
+    after('restore sandbox', function (): void {
         sandbox.restore();
     });
-    describe('addLabel', (): void => {
+
+    describe('addLabel', function (): void {
         let requestStub: Sinon.SinonStub<Parameters<Octokit['request']>>;
-        before('setup octokit stub instance', (): void => {
+
+        before('setup octokit stub instance', function (): void {
             requestStub = sandbox.stub<Parameters<Octokit['request']>>();
         });
-        it('should pass on all correct data', (): Promise<void> => {
+
+        it('should pass on all correct data', function (): Promise<void> {
             const testResponseData = 'any response';
             requestStub.resolves({
                 data: testResponseData,
@@ -52,7 +58,8 @@ describe('add-label', (): void => {
                 ]);
             });
         });
-        it('should return rejections', (): Promise<void> => {
+
+        it('should return rejections', function (): Promise<void> {
             const testError: Error = new Error('test error');
             requestStub.rejects(testError);
             return addLabels({ request: requestStub } as any, {
@@ -61,7 +68,7 @@ describe('add-label', (): void => {
                 owner: 'some_owner',
                 repo: 'anyrepo',
             })
-                .then((): void => {
+                .then(function (): void {
                     throw new Error('Should not resolve');
                 })
                 .catch((err: any): void => {

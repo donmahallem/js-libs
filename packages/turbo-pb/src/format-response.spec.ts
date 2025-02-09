@@ -17,42 +17,40 @@ const protoRoot: protobuf.Root = new protobuf.Root().loadSync('./test/test.proto
 const testMessage: protobuf.Type = protoRoot.lookupType('testpackage.TestMessage');
 const testObject: ITestMessage = { message: 'test' };
 const encodedTestMessage: Buffer = Buffer.from(testMessage.encode(testObject).finish());
-describe('./format-response', (): void => {
+describe('./format-response', function (): void {
     let sandbox: sinon.SinonSandbox;
     let app: express.Application;
     let getResponseBody: sinon.SinonStub;
     let errorSpy: sinon.SinonSpy;
-    before((): void => {
+    before(function (): void {
         sandbox = sinon.createSandbox();
         getResponseBody = sandbox.stub();
         errorSpy = sandbox.spy();
     });
-    beforeEach((): void => {
+    beforeEach(function (): void {
         app = express();
         app.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
             formatResponse(getResponseBody(), testMessage, res, next);
         });
         app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction): void => {
             errorSpy(err);
-            res
-                .status(406)
-                .json({
-                    message: err.message,
-                });
+            res.status(406).json({
+                message: err.message,
+            });
         });
     });
-    afterEach((): void => {
+    afterEach(function (): void {
         sandbox.reset();
     });
-    after((): void => {
+    after(function (): void {
         sandbox.restore();
     });
-    it('validate protobuf test message', (): void => {
+    it('validate protobuf test message', function (): void {
         const encoded: Uint8Array = testMessage.encode(testObject).finish();
         expect(testMessage.decode(encoded).toJSON()).to.deep.eq(testObject);
     });
-    describe('formatResponse', (): void => {
-        describe('protobuf response', (): void => {
+    describe('formatResponse', function (): void {
+        describe('protobuf response', function (): void {
             it('validate protobuf test message', async (): Promise<void> => {
                 getResponseBody.returns(testObject);
                 return supertest(app)
@@ -66,7 +64,7 @@ describe('./format-response', (): void => {
                     });
             });
         });
-        describe('json response', (): void => {
+        describe('json response', function (): void {
             it('validate json test message', async (): Promise<void> => {
                 getResponseBody.returns(testObject);
                 return supertest(app)
@@ -79,7 +77,7 @@ describe('./format-response', (): void => {
                     });
             });
         });
-        describe('any other response', (): void => {
+        describe('any other response', function (): void {
             it('should respond with error', async (): Promise<void> => {
                 getResponseBody.returns(testObject);
                 return supertest(app)

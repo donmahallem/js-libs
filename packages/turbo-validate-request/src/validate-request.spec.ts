@@ -33,10 +33,10 @@ const TEST_SCHEMA: JSONSchemaType<ITestObject> = {
     required: [],
     type: 'object',
 };
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any */
-describe('validate-request.ts', (): void => {
-    describe('validateRequest', (): void => {
-        it('should pass if empty hash is provided', (done: Done): void => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+describe('validate-request.ts', function (): void {
+    describe('validateRequest', function (): void {
+        it('should pass if empty hash is provided', function(done: Done): void {
             const validationResult: RequestHandler = validateRequest('body', {
                 properties: {},
                 required: [],
@@ -47,8 +47,9 @@ describe('validate-request.ts', (): void => {
                 done();
             });
         });
-        describe(`should check 'query'`, (): void => {
-            it(`should pass correctly`, (done: Done): void => {
+
+        describe(`should check 'query'`, function (): void {
+            it(`should pass correctly`, function(done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('query', TEST_SCHEMA);
                 validationResult(
                     {
@@ -61,7 +62,8 @@ describe('validate-request.ts', (): void => {
                     }
                 );
             });
-            it(`should reject property 'query' correctly`, (done: Done): void => {
+
+            it(`should reject property 'query' correctly`, function(done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('query', TEST_SCHEMA);
                 validationResult(
                     {
@@ -76,8 +78,9 @@ describe('validate-request.ts', (): void => {
                 );
             });
         });
-        describe(`should check 'body'`, (): void => {
-            it(`should pass correctly`, (done: Done): void => {
+
+        describe(`should check 'body'`, function (): void {
+            it(`should pass correctly`, function(done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('body', TEST_SCHEMA);
                 validationResult(
                     {
@@ -90,7 +93,8 @@ describe('validate-request.ts', (): void => {
                     }
                 );
             });
-            it(`should reject property 'body' correctly`, (done: Done): void => {
+
+            it(`should reject property 'body' correctly`, function(done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('body', TEST_SCHEMA);
                 validationResult(
                     {
@@ -105,8 +109,9 @@ describe('validate-request.ts', (): void => {
                 );
             });
         });
-        describe(`should check 'params'`, (): void => {
-            it(`should pass correctly`, (done: Done): void => {
+
+        describe(`should check 'params'`, function (): void {
+            it(`should pass correctly`, function(done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('params', TEST_SCHEMA);
                 validationResult(
                     {
@@ -119,7 +124,8 @@ describe('validate-request.ts', (): void => {
                     }
                 );
             });
-            it(`should reject property 'params' correctly`, (done: Done): void => {
+
+            it(`should reject property 'params' correctly`, function(done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('params', TEST_SCHEMA);
                 validationResult(
                     {

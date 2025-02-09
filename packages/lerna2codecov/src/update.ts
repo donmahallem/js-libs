@@ -18,6 +18,7 @@ export async function update(lernaRoot: string, codecovFile: string): Promise<vo
     let codecovSourceFile: string;
     try {
         codecovSourceFile = await readFile(codecovFile, 'utf-8');
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err: unknown) {
         codecovSourceFile = '';
     }

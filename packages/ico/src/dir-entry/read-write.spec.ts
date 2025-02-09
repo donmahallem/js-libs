@@ -10,12 +10,13 @@ import * as testObj from './write-dir-entry';
 import { Type } from '../type';
 
 const testSizes: number[] = [23, 64, 256];
-describe('./read-write', (): void => {
-    describe('createEntry()', (): void => {
-        describe('Icon', (): void => {
-            describe('width', (): void => {
+describe('./read-write', function (): void {
+    describe('createEntry()', function (): void {
+        describe('Icon', function (): void {
+            describe('width', function (): void {
+                /* eslint-disable mocha/no-setup-in-describe */
                 testSizes.forEach((testSize: number): void => {
-                    it(`should set the width to ${testSize}`, (): void => {
+                    it(`should set the width to ${testSize}`, function (): void {
                         const testBuffer: Buffer = Buffer.alloc(16, 0, 'binary');
                         testObj.writeDirEntry(
                             testBuffer,
@@ -34,9 +35,11 @@ describe('./read-write', (): void => {
                     });
                 });
             });
-            describe('height', (): void => {
+
+            describe('height', function (): void {
+                /* eslint-disable mocha/no-setup-in-describe */
                 testSizes.forEach((testSize: number): void => {
-                    it(`should set the width to ${testSize}`, (): void => {
+                    it(`should set the width to ${testSize}`, function (): void {
                         const testBuffer: Buffer = Buffer.alloc(16, 0, 'binary');
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         const testData: any = {

@@ -7,9 +7,9 @@ import { expect } from 'chai';
 import 'mocha';
 import { createSudokuBoard } from './create-sudoku-board';
 
-describe('create-sudoku-board.ts', (): void => {
-    describe('createSudokuBoard()', (): void => {
-        it('should solve non empty field with boxSize 2', (): void => {
+describe('create-sudoku-board.ts', function (): void {
+    describe('createSudokuBoard()', function (): void {
+        it('should solve non empty field with boxSize 2', function (): void {
             const testField: number[][] = createSudokuBoard(9, 0.5);
             const numFilledCells: number = testField.reduce((prev: number, cur: number[]): number => {
                 return (

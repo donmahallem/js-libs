@@ -17,12 +17,13 @@ const board: number[][] = [
     [0, 0, 8, 5, 0, 0, 0, 1, 0],
     [0, 9, 0, 0, 0, 0, 4, 0, 6],
 ];
-describe('./backtrack/check-box-constraint.ts', (): void => {
-    describe('checkBoxConstraint()', (): void => {
+describe('./backtrack/check-box-constraint.ts', function (): void {
+    describe('checkBoxConstraint()', function (): void {
+        // eslint-disable-next-line mocha/no-setup-in-describe
         [0, 1, 2, 3, 4, 5, 6, 7, 8].forEach((testRow: number): void => {
             [0, 1, 2, 3, 4, 5, 6, 7, 8].forEach((testColumn: number): void => {
                 const isValid = !((testRow >= 6 && testColumn >= 6) || (testRow < 3 && testColumn < 3));
-                it(`should return ${isValid ? 'true' : 'false'} for (${testRow},${testColumn})`, (): void => {
+                it(`should return ${isValid ? 'true' : 'false'} for (${testRow},${testColumn})`, function (): void {
                     expect(checkBoxConstraint(board, testRow, testColumn, 9, 3)).to.equal(isValid);
                 });
             });

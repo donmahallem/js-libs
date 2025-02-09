@@ -13,23 +13,28 @@ import type { syncLabels } from './sync-labels.js';
 
 type AddLabelsStub = sinon.SinonStub<Parameters<typeof addLabels>, ReturnType<typeof addLabels>>;
 type SetLabelsStub = sinon.SinonStub<Parameters<typeof setLabels>, ReturnType<typeof setLabels>>;
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access */
-describe('syncLabels', (): void => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+describe('syncLabels', function (): void {
     let sandbox: Sinon.SinonSandbox;
-    before('setup sandbox', (): void => {
+
+    before('setup sandbox', function (): void {
         sandbox = Sinon.createSandbox();
     });
-    afterEach('reset sandbox', (): void => {
+
+    afterEach('reset sandbox', function (): void {
         sandbox.reset();
     });
-    after('restore sandbox', (): void => {
+
+    after('restore sandbox', function (): void {
         sandbox.restore();
     });
-    describe('syncLabels', (): void => {
+
+    describe('syncLabels', function (): void {
         let testMethod: typeof syncLabels;
         let addLabelsStub: AddLabelsStub;
         let setLabelsStub: SetLabelsStub;
-        before('setup octokit stub instance', async (): Promise<void> => {
+
+        before('setup octokit stub instance', async function (): Promise<void> {
             addLabelsStub = sandbox.stub().named('addLabels') as AddLabelsStub;
             setLabelsStub = sandbox.stub().named('setLabels') as SetLabelsStub;
             testMethod = (
@@ -43,11 +48,13 @@ describe('syncLabels', (): void => {
                 })
             ).syncLabels as typeof syncLabels;
         });
-        beforeEach('setup octokit stub instance', (): void => {
+
+        beforeEach('setup octokit stub instance', function (): void {
             addLabelsStub.resolves('add label' as any);
             setLabelsStub.resolves('set label' as any);
         });
-        it('should call addLabel with replace parameter being false', (): Promise<void> => {
+
+        it('should call addLabel with replace parameter being false', function (): Promise<void> {
             return testMethod(
                 {} as any,
                 {
@@ -73,7 +80,8 @@ describe('syncLabels', (): void => {
                 expect(result).to.equal('add label');
             });
         });
-        it('should call setLabel with replace parameter being true', (): Promise<void> => {
+
+        it('should call setLabel with replace parameter being true', function (): Promise<void> {
             const testPromise: Promise<any> = testMethod(
                 {} as any,
                 {

@@ -7,8 +7,8 @@ import { expect } from 'chai';
 import 'mocha';
 import * as index from './index';
 
-describe('index', (): void => {
-    it('should export defaults', (): void => {
+describe('index', function (): void {
+    it('should export defaults', function (): void {
         expect(index).to.not.equal(undefined);
     });
 });
