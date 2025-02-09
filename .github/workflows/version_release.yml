@@ -4,7 +4,8 @@ on:
         workflows: [Test]
         types: [completed]
         branches: [master]
-
+env:
+    node-version: 22
 jobs:
     build_suite:
         runs-on: ${{ matrix.os }}
@@ -14,13 +15,12 @@ jobs:
         strategy:
             max-parallel: 4
             matrix:
-                node: [16]
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
               uses: actions/checkout@v4.2.2
               with:
-                  fetch-depth: 0
+                  fetch-depth: 1000
                   token: ${{ secrets.PUB_TOKEN }}
                   ref: ${{ github.event.workflow_run.head_branch }}
             - name: Fetch Tags
@@ -31,7 +31,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4.2.0
               with:
-                  node-version: ${{ matrix.node }}
+                  node-version: ${{env.node-version}}
                   registry-url: 'https://registry.npmjs.org'
             - name: Install Deps
               run: |
@@ -64,7 +64,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4.2.0
               with:
-                  node-version: 16
+                  node-version: ${{env.node-version}}
                   registry-url: 'https://registry.npmjs.org'
             - name: Install Packages
               run: |
@@ -94,7 +94,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4.2.0
               with:
-                  node-version: 16
+                  node-version: ${{env.node-version}}
             - name: Install Packages
               run: |
                   npm ci
