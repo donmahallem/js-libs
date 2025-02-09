@@ -141,7 +141,7 @@ jobs:
         strategy:
             max-parallel: 4
             matrix:
-                node: [20]
+                node: [22]
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
