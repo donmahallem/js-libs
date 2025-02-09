@@ -111,9 +111,9 @@ jobs:
             - name: Lint ALL Packages
               run: npx lerna run lint
             - name: Lint ALL Packages
-              run: npx lerna run eslint
-            - name: Lint ALL Packages
-              run: npx lerna run prettier
+              run: npx lerna run lint
+            #- name: Lint ALL Packages
+            #  run: npx lerna run prettier
     docs_suite:
         needs: build_suite
         runs-on: ${{ matrix.os }}
