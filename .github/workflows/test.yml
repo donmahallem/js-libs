@@ -150,11 +150,16 @@ jobs:
               # run: npm run docs
             - name: Build READMEs
               run: npm run build:readme
-    finish:
-        needs: [test_suite, lint_suite, docs_suite]
-        name: Finish Test
-        runs-on: ubuntu-latest
-        if: ${{ !failure() && !cancelled() }}
-        steps:
-            - name: Coveralls Finished
-              run: echo "Test Finished"
+    status-check:
+      if: always()
+      name: Finish Test
+      needs:
+        - build_suite
+        - lint_suite
+        - test_suite
+        - docs_suite
+      runs-on: ubuntu-latest
+      steps:
+        - uses: re-actors/alls-green@v1.2.2
+          with:
+            jobs: ${{ toJSON(needs) }}
