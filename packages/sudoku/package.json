@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/sudoku",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "description": "Sudoku Solver",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
