@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.6.0...@donmahallem/sudoku@0.7.0) (2025-02-09)
+
+### Features
+
+- **sudoku:** only export esm module ([#3152](https://github.com/donmahallem/js-libs/issues/3152)) ([0de4e7c](https://github.com/donmahallem/js-libs/commit/0de4e7c2f8f802442ed6867369414b5ad428b204))
+
+### BREAKING CHANGES
+
+- **sudoku:** no commonjs export anymore only esm
+
 ## [0.6.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.6.0...@donmahallem/sudoku@0.6.1) (2025-02-09)
 
 **Note:** Version bump only for package @donmahallem/sudoku

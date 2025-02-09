@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.4.0...@donmahallem/lerna2codecov@0.4.2) (2025-02-09)
+
+**Note:** Version bump only for package @donmahallem/lerna2codecov
+
 ## [0.4.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.4.0...@donmahallem/lerna2codecov@0.4.1) (2025-02-09)
 
 **Note:** Version bump only for package @donmahallem/lerna2codecov
