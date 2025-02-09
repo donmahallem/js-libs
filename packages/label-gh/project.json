@@ -7,7 +7,7 @@
         "eslint": {
             "executor": "@nrwl/linter:eslint",
             "options": {
-                "eslintConfig": "packages/label-gh/.eslintrc.cjs",
+                "eslintConfig": "packages/label-gh/.eslintrc.mjs",
                 "lintFilePatterns": ["packages/label-gh/src/**/*.ts"],
                 "force": true,
                 "format": "stylish",

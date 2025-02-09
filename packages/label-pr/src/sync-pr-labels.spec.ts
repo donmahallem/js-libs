@@ -10,28 +10,28 @@ import * as esmock from 'esmock';
 import 'mocha';
 import Sinon from 'sinon';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument,
- @typescript-eslint/no-explicit-any,
- @typescript-eslint/no-unsafe-assignment,
- @typescript-eslint/no-unsafe-member-access,
- @typescript-eslint/no-unsafe-return,
- @typescript-eslint/no-unsafe-call */
-describe('syncLabels', (): void => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+describe('syncLabels', function (): void {
     let sandbox: Sinon.SinonSandbox;
-    before('setup sandbox', (): void => {
+
+    before('setup sandbox', function (): void {
         sandbox = Sinon.createSandbox();
     });
-    afterEach('reset sandbox', (): void => {
+
+    afterEach('reset sandbox', function (): void {
         sandbox.reset();
     });
-    after('restore sandbox', (): void => {
+
+    after('restore sandbox', function (): void {
         sandbox.restore();
     });
-    describe('syncLabels', (): void => {
+
+    describe('syncLabels', function (): void {
         let getPullRequestLabelsStub: Sinon.SinonStub;
         let syncLabelsStub: Sinon.SinonStub;
         let testMethod;
-        before('setup octokit stub instance', async (): Promise<void> => {
+
+        before('setup octokit stub instance', async function (): Promise<void> {
             getPullRequestLabelsStub = sandbox.stub().named('getPullRequestLabels');
             syncLabelsStub = sandbox.stub().named('syncLabels');
             testMethod = (
@@ -44,10 +44,12 @@ describe('syncLabels', (): void => {
                 })
             ).syncPRLabels;
         });
-        beforeEach('setup octokit stub instance', (): void => {
+
+        beforeEach('setup octokit stub instance', function (): void {
             syncLabelsStub.resolves('set label');
         });
-        it('should ignore non prefixed labels and set prefixed', (): Promise<void> => {
+
+        it('should ignore non prefixed labels and set prefixed', function (): Promise<void> {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }]);
             return testMethod(
                 {} as Octokit,
@@ -74,7 +76,8 @@ describe('syncLabels', (): void => {
                 expect(result).to.equal('set label');
             });
         });
-        it('should ignore non prefixed labels and set non default prefix', (): Promise<void> => {
+
+        it('should ignore non prefixed labels and set non default prefix', function (): Promise<void> {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:any' }]);
             return testMethod(
                 {} as Octokit,
@@ -102,7 +105,8 @@ describe('syncLabels', (): void => {
                 expect(result).to.equal('set label');
             });
         });
-        it('should keep previous labels', (): Promise<void> => {
+
+        it('should keep previous labels', function (): Promise<void> {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:test' }]);
             return testMethod(
                 {} as Octokit,

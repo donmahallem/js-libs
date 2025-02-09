@@ -11,19 +11,22 @@ import { join, sep } from 'node:path';
 import sinon from 'sinon';
 import * as index from './update-config';
 
-/* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions */
-describe('./update-config', (): void => {
+describe('./update-config', function (): void {
     let sandbox: sinon.SinonSandbox;
-    before('setup sandbox', (): void => {
+
+    before('setup sandbox', function (): void {
         sandbox = sinon.createSandbox();
     });
-    afterEach('reset sandbox', (): void => {
+
+    afterEach('reset sandbox', function (): void {
         sandbox.reset();
     });
-    after('restore sandbox', (): void => {
+
+    after('restore sandbox', function (): void {
         sandbox.restore();
     });
-    it('should output all lerna packages', async (): Promise<void> => {
+
+    it('should output all lerna packages', async function (): Promise<void> {
         const project: sinon.SinonStubbedInstance<Project> = sandbox.createStubInstance(Project);
         const package1: sinon.SinonStubbedInstance<Package> = sandbox.createStubInstance(Package);
         const package2: sinon.SinonStubbedInstance<Package> = sandbox.createStubInstance(Package);
@@ -48,7 +51,8 @@ describe('./update-config', (): void => {
             },
         });
     });
-    it('should output all missing lerna packages', async (): Promise<void> => {
+
+    it('should output all missing lerna packages', async function (): Promise<void> {
         const project: sinon.SinonStubbedInstance<Project> = sandbox.createStubInstance(Project);
         const package1: sinon.SinonStubbedInstance<Package> = sandbox.createStubInstance(Package);
         const package2: sinon.SinonStubbedInstance<Package> = sandbox.createStubInstance(Package);

@@ -7,12 +7,12 @@ import { expect } from 'chai';
 import 'mocha';
 import * as idx from './index';
 
-// tslint:disable:no-unused-expression
-describe('index', (): void => {
-    it('should export runInsideZone', (): void => {
+describe('index', function (): void {
+    it('should export runInsideZone', function (): void {
         expect(idx.runInsideZone).to.not.be.undefined;
     });
-    it('should export runOutsideZone', (): void => {
+
+    it('should export runOutsideZone', function (): void {
         expect(idx.runOutsideZone).to.not.be.undefined;
     });
 });

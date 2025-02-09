@@ -8,12 +8,9 @@ import 'mocha';
 import sinon from 'sinon';
 import { promiseToResponse } from './promise-to-response.js';
 
-/* eslint-disable @typescript-eslint/no-unsafe-argument,
- @typescript-eslint/no-unsafe-assignment,
- @typescript-eslint/no-unsafe-member-access,
- @typescript-eslint/no-explicit-any */
-describe('promise-to-response.ts', (): void => {
-    describe('promiseToResponse(prom,res)', (): void => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+describe('promise-to-response.ts', function (): void {
+    describe('promiseToResponse(prom,res)', function (): void {
         let jsonSpy: sinon.SinonSpy;
         let nextSpy: sinon.SinonSpy;
         let statusStub: sinon.SinonStub;
@@ -22,7 +19,8 @@ describe('promise-to-response.ts', (): void => {
             success: true,
             test: 'response',
         };
-        before((): void => {
+
+        before(function (): void {
             jsonSpy = sinon.spy();
             nextSpy = sinon.spy();
             statusStub = sinon.stub();
@@ -32,21 +30,24 @@ describe('promise-to-response.ts', (): void => {
             };
             statusStub.returns(resObj);
         });
-        afterEach((): void => {
+
+        afterEach(function (): void {
             jsonSpy.resetHistory();
             nextSpy.resetHistory();
             statusStub.resetHistory();
         });
-        describe('promise resolves', (): void => {
+
+        describe('promise resolves', function (): void {
+            // eslint-disable-next-line mocha/no-setup-in-describe
             [true, false].forEach((nextProvided: boolean): void => {
-                describe(`next parameter ${nextProvided ? '' : 'not'} provided`, (): void => {
-                    it('should forward the resolved value to the response', (done: Mocha.Done): void => {
+                describe(`next parameter ${nextProvided ? '' : 'not'} provided`, function (): void {
+                    it('should forward the resolved value to the response', function (done: Mocha.Done): void {
                         if (nextProvided) {
                             promiseToResponse(Promise.resolve(testResponse), resObj, nextSpy);
                         } else {
                             promiseToResponse(Promise.resolve(testResponse), resObj);
                         }
-                        setTimeout((): void => {
+                        setTimeout(function (): void {
                             expect(nextSpy.callCount).to.equal(0);
                             expect(statusStub.callCount).to.equal(1);
                             expect(jsonSpy.callCount).to.equal(1);
@@ -55,7 +56,8 @@ describe('promise-to-response.ts', (): void => {
                             done();
                         }, 100);
                     });
-                    it('should forward the resolved value to the response and not send status', (done: Mocha.Done): void => {
+
+                    it('should forward the resolved value to the response and not send status', function (done: Mocha.Done): void {
                         const testResponseObject: any = Object.assign(
                             {
                                 headersSent: true,
@@ -67,7 +69,7 @@ describe('promise-to-response.ts', (): void => {
                         } else {
                             promiseToResponse(Promise.resolve(testResponse), testResponseObject);
                         }
-                        setTimeout((): void => {
+                        setTimeout(function (): void {
                             expect(nextSpy.callCount).to.equal(0);
                             expect(statusStub.callCount).to.equal(0);
                             expect(jsonSpy.callCount).to.equal(1);
@@ -78,7 +80,8 @@ describe('promise-to-response.ts', (): void => {
                 });
             });
         });
-        describe('promise rejects', (): void => {
+
+        describe('promise rejects', function (): void {
             const testErrors: any[] = [
                 {
                     error: {
@@ -126,11 +129,13 @@ describe('promise-to-response.ts', (): void => {
                     },
                 },
             ];
-            describe('next parameter provided', (): void => {
+
+            describe('next parameter provided', function (): void {
+                // eslint-disable-next-line mocha/no-setup-in-describe
                 testErrors.forEach((testError: any): void => {
-                    it('should forward the error to the next function', (done: Mocha.Done): void => {
+                    it('should forward the error to the next function', function (done: Mocha.Done): void {
                         promiseToResponse(Promise.reject(testError.error), resObj, nextSpy);
-                        setTimeout((): void => {
+                        setTimeout(function (): void {
                             expect(nextSpy.callCount).to.equal(1);
                             expect(statusStub.callCount).to.equal(0);
                             expect(jsonSpy.callCount).to.equal(0);
@@ -140,11 +145,13 @@ describe('promise-to-response.ts', (): void => {
                     });
                 });
             });
-            describe('next parameter not provided', (): void => {
+
+            describe('next parameter not provided', function (): void {
+                // eslint-disable-next-line mocha/no-setup-in-describe
                 testErrors.forEach((testError: any): void => {
-                    it('should forward the error to the next function', (done: Mocha.Done): void => {
+                    it('should forward the error to the next function', function (done: Mocha.Done): void {
                         promiseToResponse(Promise.reject(testError.error), resObj);
-                        setTimeout((): void => {
+                        setTimeout(function (): void {
                             expect(nextSpy.callCount).to.equal(0);
                             expect(statusStub.callCount).to.equal(1);
                             expect(jsonSpy.callCount).to.equal(1);

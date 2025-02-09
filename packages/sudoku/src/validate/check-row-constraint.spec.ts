@@ -17,11 +17,12 @@ const board: number[][] = [
     [0, 0, 8, 5, 0, 0, 0, 1, 0],
     [0, 9, 0, 0, 0, 0, 4, 0, 0],
 ];
-describe('./backtrack/check-row-constraint.ts', (): void => {
-    describe('checkRowConstraint()', (): void => {
+describe('./backtrack/check-row-constraint.ts', function (): void {
+    describe('checkRowConstraint()', function (): void {
+        // eslint-disable-next-line mocha/no-setup-in-describe
         [0, 1, 2, 3, 4, 5, 6, 7, 8].forEach((testRow: number): void => {
             const isValid: boolean = testRow !== 1;
-            it(`should return ${isValid ? 'true' : 'false'} for row ${testRow}`, (): void => {
+            it(`should return ${isValid ? 'true' : 'false'} for row ${testRow}`, function (): void {
                 expect(checkRowConstraint(board, testRow, 9)).to.equal(isValid);
             });
         });

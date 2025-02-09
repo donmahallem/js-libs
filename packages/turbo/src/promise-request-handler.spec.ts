@@ -10,22 +10,25 @@ import sinon from 'sinon';
 import supertest from 'supertest';
 import { promiseRequestHandler } from './promise-request-handler.js';
 
-describe('promise-request-handler.ts', (): void => {
-    describe('promiseRequestHandler(()=>Promise))', (): void => {
+describe('promise-request-handler.ts', function (): void {
+    describe('promiseRequestHandler(()=>Promise))', function (): void {
         let handlerStub: sinon.SinonStub;
         let app: Application;
         let sandbox: sinon.SinonSandbox;
-        before((): void => {
+
+        before(function (): void {
             sandbox = sinon.createSandbox();
             handlerStub = sandbox.stub();
             app = express();
             app.use(promiseRequestHandler(handlerStub));
         });
-        afterEach((): void => {
+
+        afterEach(function (): void {
             sandbox.reset();
         });
-        describe('promise resolves', (): void => {
-            it('should forward the resolved value to the response', (): Promise<void> => {
+
+        describe('promise resolves', function (): void {
+            it('should forward the resolved value to the response', function (): Promise<void> {
                 handlerStub.returns(Promise.resolve('test'));
                 return supertest(app)
                     .get('')
@@ -35,8 +38,9 @@ describe('promise-request-handler.ts', (): void => {
                     });
             });
         });
-        describe('promise reject', (): void => {
-            it('should forward the resolved value to the response', (): Promise<void> => {
+
+        describe('promise reject', function (): void {
+            it('should forward the resolved value to the response', function (): Promise<void> {
                 handlerStub.returns(Promise.reject('test'));
                 return supertest(app)
                     .get('')

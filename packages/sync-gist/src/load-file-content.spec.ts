@@ -12,7 +12,6 @@ import { loadFileContent } from './load-file-content';
 import { InputFileContent, IInputFile } from './types';
 import type { readFile } from 'node:fs/promises';
 
-/* eslint-disable @typescript-eslint/no-unused-expressions, no-unused-expressions, @typescript-eslint/no-unsafe-member-access */
 type ReadFileStub = sinon.SinonStub<Parameters<typeof readFile>, ReturnType<typeof readFile>>;
 const testSources: string[] = ['//absolute/path.js', 'relative/path.js', 'file.js'];
 const testFilenames: (string | undefined)[] = ['final.js', 'README.md', undefined];
@@ -26,16 +25,17 @@ testSources.forEach((source: string): void => {
         });
     });
 });
-describe('./load-file-content', (): void => {
+describe('./load-file-content', function (): void {
     let testMethod: typeof loadFileContent;
     let sandbox: sinon.SinonSandbox;
     let readFileStub: ReadFileStub;
     let resolveStub: sinon.SinonStub;
-    before(async (): Promise<void> => {
+
+    before(async function (): Promise<void> {
         sandbox = sinon.createSandbox();
         readFileStub = sandbox.stub().named('readFile') as ReadFileStub;
         resolveStub = sandbox.stub().named('resolve').callsFake(resolve);
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
         testMethod = (
             await esmock.strict('./load-file-content', {
                 'node:fs/promises': { readFile: readFileStub },
@@ -46,29 +46,33 @@ describe('./load-file-content', (): void => {
             })
         ).loadFileContent;
     });
-    afterEach((): void => {
+
+    afterEach(function (): void {
         sandbox.reset();
     });
-    after((): void => {
+
+    after(function (): void {
         sandbox.restore();
     });
     const fileBody: string = 'filebody';
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const testCwds: any[] = [undefined, '//test'];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, mocha/no-setup-in-describe
     testCwds.forEach((testCwd: any): void => {
-        describe(`loadFileContent(~InputFile~${testCwd ? `,${testCwd}` : ''})`, (): void => {
+        describe(`loadFileContent(~InputFile~${testCwd ? `,${testCwd}` : ''})`, function (): void {
+            // eslint-disable-next-line mocha/no-setup-in-describe
             testInputFiles.forEach((testInputFile: IInputFile): void => {
-                describe(`with input file ${JSON.stringify(testInputFile)}`, (): void => {
+                // eslint-disable-next-line mocha/no-setup-in-describe
+                describe(`with input file ${JSON.stringify(testInputFile)}`, function (): void {
+                    // eslint-disable-next-line mocha/no-setup-in-describe
                     const expectedFilename: string = testInputFile.filename ? testInputFile.filename : basename(testInputFile.source);
-                    const expectedSourcePath: string = testCwd
-                        ? // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                          resolve(testCwd, testInputFile.source)
-                        : resolve(testInputFile.source);
-                    it(`should export defaults${testInputFile.source}`, async (): Promise<void> => {
+                    // eslint-disable-next-line mocha/no-setup-in-describe
+                    const expectedSourcePath: string = testCwd ? resolve(testCwd, testInputFile.source) : resolve(testInputFile.source);
+
+                    it(`should export defaults${testInputFile.source}`, async function (): Promise<void> {
                         readFileStub.resolves(fileBody);
                         resolveStub.returns(expectedSourcePath);
-                        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+
                         return testMethod(testInputFile, testCwd).then((f: InputFileContent): void => {
                             expect(f).to.deep.equal({
                                 content: fileBody,

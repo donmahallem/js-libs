@@ -7,8 +7,8 @@ import 'mocha';
 import * as index from './index';
 import { gulpNcc } from './plugin';
 
-describe('index', (): void => {
-    it('should export gulpNcc', (): void => {
+describe('index', function (): void {
+    it('should export gulpNcc', function (): void {
         expect(index.gulpNcc).deep.equal(gulpNcc);
     });
 });

@@ -7,9 +7,8 @@ import { expect } from 'chai';
 import 'mocha';
 import * as index from './index.js';
 
-// tslint:disable:no-unused-expression
-describe('index', (): void => {
-    it('should export defaults', (): void => {
+describe('index', function (): void {
+    it('should export defaults', function (): void {
         expect(index.syncPRLabels).to.not.be.undefined;
     });
 });

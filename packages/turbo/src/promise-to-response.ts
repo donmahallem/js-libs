@@ -24,9 +24,7 @@ export const promiseToResponse: MethodType = <T>(prom: Promise<T>, res: Response
             if (next) {
                 next(err);
                 return;
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             } else if (err && err.isAxiosError === true) {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 const axiosError: AxiosError = err;
                 const code: number = axiosError.response?.status || 500;
                 res.status(code).json({
@@ -35,7 +33,6 @@ export const promiseToResponse: MethodType = <T>(prom: Promise<T>, res: Response
                 });
                 return;
             } else {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
                 const code: number = err?.statusCode || 500;
                 res.status(code).json({
                     error: true,

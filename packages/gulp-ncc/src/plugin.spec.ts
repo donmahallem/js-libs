@@ -10,18 +10,19 @@ import { Transform } from 'stream';
 import Vinyl from 'vinyl';
 import { gulpNcc } from './plugin';
 
-describe('plugin', (): void => {
-    describe('gulpNcc', (): void => {
-        describe('convert with object', (): void => {
+describe('plugin', function (): void {
+    describe('gulpNcc', function (): void {
+        describe('convert with object', function (): void {
             let dataSpy: sinon.SinonSpy;
-            before((): void => {
+
+            before(function (): void {
                 dataSpy = sinon.spy();
             });
 
-            afterEach((): void => {
+            afterEach(function (): void {
                 dataSpy.resetHistory();
             });
-            it('should convert the correct file', (done: Mocha.Done): void => {
+            it('should convert the correct file', function (done: Mocha.Done): void {
                 const testFile: Vinyl = new Vinyl({
                     path: resolve(process.cwd(), './src/index.ts'),
                 });
@@ -30,17 +31,16 @@ describe('plugin', (): void => {
                     sourceMap: true,
                 });
                 testInstance.on('data', dataSpy);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 testInstance.on('error', (err: any): void => {
                     done(err);
                 });
-                testInstance.on('end', (): void => {
+                testInstance.on('end', function (): void {
                     expect(dataSpy.callCount).to.equal(2, 'source should be provided');
                     const file1: Vinyl.BufferFile = dataSpy.getCall(0).args[0];
                     const file2: Vinyl.BufferFile = dataSpy.getCall(1).args[0];
-                    // tslint:disable:no-unused-expression
                     expect(Vinyl.isVinyl(file1) as boolean).to.be.true;
                     expect(Vinyl.isVinyl(file2)).to.be.true;
-                    // tslint:enable:no-unused-expression
                     expect(file1.path).to.equal(join(process.cwd(), 'src', 'index.js'), 'map file should output correct name');
                     expect(file2.path).to.equal(join(process.cwd(), 'src', 'index.map.js'), 'map file should output correct name');
                     done();
