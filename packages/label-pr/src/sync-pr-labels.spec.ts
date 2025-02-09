@@ -31,7 +31,7 @@ describe('syncLabels', function (): void {
         let syncLabelsStub: Sinon.SinonStub;
         let testMethod;
 
-        before('setup octokit stub instance', async function(): Promise<void> {
+        before('setup octokit stub instance', async function (): Promise<void> {
             getPullRequestLabelsStub = sandbox.stub().named('getPullRequestLabels');
             syncLabelsStub = sandbox.stub().named('syncLabels');
             testMethod = (
@@ -49,7 +49,7 @@ describe('syncLabels', function (): void {
             syncLabelsStub.resolves('set label');
         });
 
-        it('should ignore non prefixed labels and set prefixed', function(): Promise<void> {
+        it('should ignore non prefixed labels and set prefixed', function (): Promise<void> {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }]);
             return testMethod(
                 {} as Octokit,
@@ -77,7 +77,7 @@ describe('syncLabels', function (): void {
             });
         });
 
-        it('should ignore non prefixed labels and set non default prefix', function(): Promise<void> {
+        it('should ignore non prefixed labels and set non default prefix', function (): Promise<void> {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:any' }]);
             return testMethod(
                 {} as Octokit,
@@ -106,7 +106,7 @@ describe('syncLabels', function (): void {
             });
         });
 
-        it('should keep previous labels', function(): Promise<void> {
+        it('should keep previous labels', function (): Promise<void> {
             getPullRequestLabelsStub.resolves([{ name: 'label1' }, { name: 'asdf:test' }]);
             return testMethod(
                 {} as Octokit,

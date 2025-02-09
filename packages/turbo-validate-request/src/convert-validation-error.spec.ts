@@ -9,7 +9,6 @@ import { expect } from 'chai';
 import 'mocha';
 import { convertValidationError } from './convert-validation-error.js';
 
- 
 describe('convert-validation-error.ts', function (): void {
     describe('convertValidationError', function (): void {
         let ajv: Ajv;
@@ -17,15 +16,14 @@ describe('convert-validation-error.ts', function (): void {
         beforeEach(function (): void {
             ajv = new Ajv();
         });
+        // eslint-disable-next-line mocha/no-setup-in-describe
         ['query parameter', 'path parameter'].forEach(function (): void {
             it('should report expected array', function (): void {
                 const validate: ValidateFunction = ajv.compile({
                     type: 'array',
                 });
-                // tslint:disable-next-line:no-unused-expression
                 expect(validate({})).to.be.false;
                 const errors: DefinedError[] = validate.errors as DefinedError[];
-                // tslint:disable-next-line:no-unused-expression
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
@@ -48,10 +46,8 @@ describe('convert-validation-error.ts', function (): void {
                     required: ['top'],
                     type: 'object',
                 });
-                // tslint:disable-next-line:no-unused-expression
                 expect(validate({})).to.be.false;
                 const errors: DefinedError[] = validate.errors as DefinedError[];
-                // tslint:disable-next-line:no-unused-expression
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
@@ -68,20 +64,18 @@ describe('convert-validation-error.ts', function (): void {
                     required: ['bottom'],
                     type: 'object',
                 });
-                // tslint:disable-next-line:no-unused-expression
                 expect(
                     validate({
                         bottom: '-2992a',
                     })
                 ).to.be.false;
                 const errors: DefinedError[] = validate.errors as DefinedError[];
-                // tslint:disable-next-line:no-unused-expression
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');
                 expect(testError.message).to.equal(`Value doesn't match pattern at: '/bottom'`);
             });
-            it('should report invalid param', function (): void {
+            it('should report invalid param 2', function (): void {
                 const validate: ValidateFunction = ajv.compile({
                     properties: {
                         bottom: {
@@ -91,14 +85,12 @@ describe('convert-validation-error.ts', function (): void {
                     required: ['bottom'],
                     type: 'object',
                 });
-                // tslint:disable-next-line:no-unused-expression
                 expect(
                     validate({
                         bottom: '-2992a',
                     })
                 ).to.be.false;
                 const errors: DefinedError[] = validate.errors as DefinedError[];
-                // tslint:disable-next-line:no-unused-expression
                 expect(errors).to.not.be.undefined;
                 const testError: RequestError = convertValidationError(errors[0]);
                 expect(testError).to.be.instanceOf(RequestError, 'should be a RequestError');

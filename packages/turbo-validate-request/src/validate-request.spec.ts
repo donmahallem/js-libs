@@ -36,7 +36,7 @@ const TEST_SCHEMA: JSONSchemaType<ITestObject> = {
 /* eslint-disable @typescript-eslint/no-explicit-any */
 describe('validate-request.ts', function (): void {
     describe('validateRequest', function (): void {
-        it('should pass if empty hash is provided', function(done: Done): void {
+        it('should pass if empty hash is provided', function (done: Done): void {
             const validationResult: RequestHandler = validateRequest('body', {
                 properties: {},
                 required: [],
@@ -49,7 +49,7 @@ describe('validate-request.ts', function (): void {
         });
 
         describe(`should check 'query'`, function (): void {
-            it(`should pass correctly`, function(done: Done): void {
+            it(`should pass correctly`, function (done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('query', TEST_SCHEMA);
                 validationResult(
                     {
@@ -63,7 +63,7 @@ describe('validate-request.ts', function (): void {
                 );
             });
 
-            it(`should reject property 'query' correctly`, function(done: Done): void {
+            it(`should reject property 'query' correctly`, function (done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('query', TEST_SCHEMA);
                 validationResult(
                     {
@@ -80,7 +80,7 @@ describe('validate-request.ts', function (): void {
         });
 
         describe(`should check 'body'`, function (): void {
-            it(`should pass correctly`, function(done: Done): void {
+            it(`should pass correctly`, function (done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('body', TEST_SCHEMA);
                 validationResult(
                     {
@@ -94,7 +94,7 @@ describe('validate-request.ts', function (): void {
                 );
             });
 
-            it(`should reject property 'body' correctly`, function(done: Done): void {
+            it(`should reject property 'body' correctly`, function (done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('body', TEST_SCHEMA);
                 validationResult(
                     {
@@ -111,7 +111,7 @@ describe('validate-request.ts', function (): void {
         });
 
         describe(`should check 'params'`, function (): void {
-            it(`should pass correctly`, function(done: Done): void {
+            it(`should pass correctly`, function (done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('params', TEST_SCHEMA);
                 validationResult(
                     {
@@ -125,7 +125,7 @@ describe('validate-request.ts', function (): void {
                 );
             });
 
-            it(`should reject property 'params' correctly`, function(done: Done): void {
+            it(`should reject property 'params' correctly`, function (done: Done): void {
                 const validationResult: RequestHandler = validateRequest<ITestObject>('params', TEST_SCHEMA);
                 validationResult(
                     {

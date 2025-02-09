@@ -9,7 +9,6 @@ import 'mocha';
 import { join } from 'path';
 import { isPNG } from './is-png';
 
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 describe('./dir-entry/is-png', function (): void {
     /* eslint-disable mocha/no-setup-in-describe */
     const testPngFile: Buffer = readFileSync(join(process.cwd(), './test/test.png'));

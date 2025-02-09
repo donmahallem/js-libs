@@ -10,7 +10,6 @@ import { Transform } from 'stream';
 import Vinyl from 'vinyl';
 import { gulpNcc } from './plugin';
 
-/* eslint-disable no-unused-expression */
 describe('plugin', function (): void {
     describe('gulpNcc', function (): void {
         describe('convert with object', function (): void {
@@ -32,6 +31,7 @@ describe('plugin', function (): void {
                     sourceMap: true,
                 });
                 testInstance.on('data', dataSpy);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 testInstance.on('error', (err: any): void => {
                     done(err);
                 });

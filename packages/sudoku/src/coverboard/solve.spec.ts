@@ -31,7 +31,7 @@ describe('coverboard/solve.ts', function (): void {
                 const testField: number[][] = createEmptySudokuBoard(boardSize);
                 solve(testField, boardSize, testSize, (board: number[][]): true => {
                     expect(board.length).greaterThan(0);
-                    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+
                     expect(isValidField(board, boardSize, testSize)).to.be.true;
                     done();
                     return true;

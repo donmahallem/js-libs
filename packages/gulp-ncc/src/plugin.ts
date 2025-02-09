@@ -2,7 +2,12 @@
  * Source https://github.com/donmahallem/js-libs Package: gulp-ncc
  */
 
-interface INccResult { code: string; map: string; assets: any; }
+interface INccResult {
+    code: string;
+    map: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    assets: any;
+}
 /**
  * This is required because of ncc's weird export behavior and rollup doesn't recognize the default export
  */
@@ -28,8 +33,8 @@ export const gulpNcc = (cfg?: IPluginConfig): Transform => {
         } else if (file.isBuffer() || file.isNull()) {
             console.log(resolve(process.cwd(), file.path));
             const nccPromise: Promise<INccResult> = ncc(file.path, cfg);
-            nccPromise
-                .then((output: INccResult): void => {
+            nccPromise.then(
+                (output: INccResult): void => {
                     const outputFile: VinylFile = file.clone({ contents: false });
                     outputFile.contents = Buffer.from(output.code, 'utf8');
                     this.push(outputFile, 'utf8');
@@ -46,9 +51,12 @@ export const gulpNcc = (cfg?: IPluginConfig): Transform => {
                         this.push(outputSourcemapFile, 'utf8');
                     }
                     callback();
-                }, (err: any): void => {
+                },
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (err: any): void => {
                     callback(new PluginError(PLUGIN_NAME, err, { message: 'Error while transforming file' }));
-                });
+                }
+            );
         }
     });
 };

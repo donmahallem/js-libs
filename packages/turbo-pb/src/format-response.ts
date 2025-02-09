@@ -6,9 +6,11 @@ import { RequestError } from '@donmahallem/turbo';
 import { NextFunction, Response } from 'express';
 import { Message, Type, Writer } from 'protobufjs';
 
-type MessageKey<T extends object> = ({
-    encode: (msg: T) => Writer;
-} & typeof Message) | Type;
+type MessageKey<T extends object> =
+    | ({
+          encode: (msg: T) => Writer;
+      } & typeof Message)
+    | Type;
 /**
  * Formats response to either json or protobuf
  * @param msg message to be formated
@@ -23,9 +25,7 @@ export const formatResponse = <T extends object>(msg: T, message: MessageKey<T>,
         },
         'application/x-protobuf': (): void => {
             const encodedMessage: Uint8Array = message.encode(msg).finish();
-            res
-                .type('application/x-protobuf')
-                .send(encodedMessage);
+            res.type('application/x-protobuf').send(encodedMessage);
         },
         default: (): void => {
             next(new RequestError('Not Acceptable', 406));

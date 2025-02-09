@@ -6,7 +6,6 @@
 import { RequestError } from '@donmahallem/turbo';
 import { DefinedError } from 'ajv';
 
- 
 export const convertValidationError: (error: DefinedError) => RequestError = (error: DefinedError): RequestError => {
     const errorPath: string = error.instancePath === '' ? 'root' : error.instancePath;
     switch (error.keyword) {

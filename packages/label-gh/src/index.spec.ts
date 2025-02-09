@@ -7,7 +7,6 @@ import { expect } from 'chai';
 import 'mocha';
 import * as index from './index.js';
 
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 describe('index', function (): void {
     it('should export defaults', function (): void {
         expect(index.syncLabels).to.not.be.undefined;
