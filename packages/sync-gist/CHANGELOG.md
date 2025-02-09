@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.4.7...@donmahallem/sync-gist@0.6.0) (2025-02-09)
+
+### Features
+
+- **node:** bump to node 20+ ([#3114](https://github.com/donmahallem/js-libs/issues/3114)) ([c0d5d2a](https://github.com/donmahallem/js-libs/commit/c0d5d2a9c19088d2f1e7c33de84e8f14bd7aa084))
+
 # [0.5.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/sync-gist@0.4.7...@donmahallem/sync-gist@0.5.0) (2025-02-09)
 
 ### Features

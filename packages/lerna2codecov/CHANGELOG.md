@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.2.7...@donmahallem/lerna2codecov@0.4.0) (2025-02-09)
+
+### Bug Fixes
+
+- **deps:** update dependency commander to v12 ([5c145a9](https://github.com/donmahallem/js-libs/commit/5c145a91aa9a2ba3251eb87b37d869c7e57da24f))
+- **deps:** update dependency commander to v12 ([#2600](https://github.com/donmahallem/js-libs/issues/2600)) ([9bccb55](https://github.com/donmahallem/js-libs/commit/9bccb551ae0774cf1bebcc33aa3cf32ba2ea59ea))
+- **deps:** update dependency commander to v13 ([#3040](https://github.com/donmahallem/js-libs/issues/3040)) ([c66a876](https://github.com/donmahallem/js-libs/commit/c66a8760fe51aa25e7b6c7b50cbaafe91a374db7))
+- **deps:** update dependency commander to v13 ([#3075](https://github.com/donmahallem/js-libs/issues/3075)) ([a58c28e](https://github.com/donmahallem/js-libs/commit/a58c28efc77b7ddbaaf02cbb98960614fb57d12b))
+- **deps:** update dependency yaml to ~2.4.0 ([eea41f3](https://github.com/donmahallem/js-libs/commit/eea41f36990f4560f01ede8c917c44798e0e3f9f))
+- **deps:** update dependency yaml to ~2.4.1 ([454cb84](https://github.com/donmahallem/js-libs/commit/454cb84f38a982337a32f74af142ec2944972066))
+- **deps:** update dependency yaml to ~2.4.2 ([2affe12](https://github.com/donmahallem/js-libs/commit/2affe122d0d01581c51d7825bca31e7bd340ec9a))
+- **deps:** update dependency yaml to ~2.4.3 ([4648a4e](https://github.com/donmahallem/js-libs/commit/4648a4ea0c00ea2721e427c3fe7fd20991f60f65))
+- **deps:** update dependency yaml to ~2.4.4 ([7f51977](https://github.com/donmahallem/js-libs/commit/7f519775a99ea40a4575dffe479902af77ba6276))
+- **deps:** update dependency yaml to ~2.4.5 ([e4b96b5](https://github.com/donmahallem/js-libs/commit/e4b96b50640b991f2bde25505d84d2d888c1a108))
+- **deps:** update dependency yaml to ~2.5.0 ([cc2a292](https://github.com/donmahallem/js-libs/commit/cc2a2920ab3a37de977790ee646cc63ab7f4796a))
+- **deps:** update dependency yaml to ~2.5.1 ([a585758](https://github.com/donmahallem/js-libs/commit/a5857586d18d233d6c666e9d4d32deb41d7045cc))
+- **deps:** update dependency yaml to ~2.6.0 ([a0f586f](https://github.com/donmahallem/js-libs/commit/a0f586f35a034a822c920b3581922cd098971384))
+- **deps:** update dependency yaml to ~2.6.1 ([#2962](https://github.com/donmahallem/js-libs/issues/2962)) ([453f211](https://github.com/donmahallem/js-libs/commit/453f211f96726164e7f9cf16e69e303a1b68ef33))
+- **deps:** update dependency yaml to ~2.7.0 ([#3041](https://github.com/donmahallem/js-libs/issues/3041)) ([9fd51b3](https://github.com/donmahallem/js-libs/commit/9fd51b316d1ccb3592a5ece4f48757fe0112f382))
+
+### Features
+
+- **node:** bump to node 20+ ([#3114](https://github.com/donmahallem/js-libs/issues/3114)) ([c0d5d2a](https://github.com/donmahallem/js-libs/commit/c0d5d2a9c19088d2f1e7c33de84e8f14bd7aa084))
+
 # [0.3.0](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.2.7...@donmahallem/lerna2codecov@0.3.0) (2025-02-09)
 
 ### Bug Fixes
