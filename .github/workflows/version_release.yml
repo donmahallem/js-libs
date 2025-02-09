@@ -37,7 +37,7 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Install Deps
               run: |
-                  npm ci
+                  npm ci --foreground-scripts
             - name: Run Build
               run: npx lerna run build
             - name: Setup GIT
@@ -70,7 +70,7 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Install Packages
               run: |
-                  npm ci
+                  npm ci --foreground-scripts
             - name: Build Package
               run: npm run build
             - name: Prepare Package
@@ -102,7 +102,7 @@ jobs:
                   node-version: ${{env.TEST_NODE_VERSION}}
             - name: Install Packages
               run: |
-                  npm ci
+                  npm ci --foreground-scripts
             - name: Build Package
               run: npm run build
             - name: Prepare Package
