@@ -1,4 +1,4 @@
-/*
+/**
  * Package @donmahallem/sudoku
  * Source https://donmahallem.github.io/js-libs/
  */

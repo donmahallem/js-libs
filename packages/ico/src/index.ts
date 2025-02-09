@@ -1,4 +1,4 @@
-/*
+/**
  * Package @donmahallem/ico
  * Source https://donmahallem.github.io/js-libs/
  */

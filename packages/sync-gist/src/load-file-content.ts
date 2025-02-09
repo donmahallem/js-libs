@@ -1,4 +1,4 @@
-/*
+/**
  * Package @donmahallem/sync-gist
  * Source https://donmahallem.github.io/js-libs/
  */
