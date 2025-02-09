@@ -157,8 +157,10 @@ jobs:
             - build_suite
             - lint_suite
             - test_suite
+            - docs_suite
         runs-on: ubuntu-latest
         steps:
             - uses: re-actors/alls-green@v1.2.2
               with:
+                  allowed-skips: docs_suite
                   jobs: ${{ toJSON(needs) }}
