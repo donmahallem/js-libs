@@ -5,7 +5,7 @@ on:
         types: [completed]
         branches: [master]
 env:
-    node-version: 22
+    TEST_NODE_VERSION: 22
 jobs:
     build_suite:
         runs-on: ${{ matrix.os }}
@@ -33,7 +33,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4.2.0
               with:
-                  node-version: ${{env.node-version}}
+                  node-version: ${{env.TEST_NODE_VERSION}}
                   registry-url: 'https://registry.npmjs.org'
             - name: Install Deps
               run: |
@@ -66,7 +66,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4.2.0
               with:
-                  node-version: ${{env.node-version}}
+                  node-version: ${{env.TEST_NODE_VERSION}}
                   registry-url: 'https://registry.npmjs.org'
             - name: Install Packages
               run: |
@@ -99,7 +99,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4.2.0
               with:
-                  node-version: ${{env.node-version}}
+                  node-version: ${{env.TEST_NODE_VERSION}}
             - name: Install Packages
               run: |
                   npm ci
