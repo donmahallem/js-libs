@@ -28,7 +28,7 @@
         "cz-conventional-changelog": "3.3.0",
         "eslint": "9.24.0",
         "fs-extra": "11.3.0",
-        "lerna": "8.2.1",
+        "lerna": "8.2.2",
         "mocha": "11.1.0",
         "nx": "20.7.2",
         "nyc": "17.1.0",
