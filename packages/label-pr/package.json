@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/label-pr",
-    "version": "0.6.4",
+    "version": "0.6.5",
     "description": "Helpers for working with github issue labels",
     "main": "./dist/cjs/index.cjs",
     "types": "./dist/types/index.d.ts",
@@ -68,7 +68,7 @@
         "esmock": "2.7.0"
     },
     "dependencies": {
-        "@donmahallem/label-gh": "^0.9.4"
+        "@donmahallem/label-gh": "^0.9.5"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }
