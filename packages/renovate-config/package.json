@@ -39,7 +39,7 @@
         "access": "public"
     },
     "devDependencies": {
-        "renovate": "39.254.2"
+        "renovate": "39.264.0"
     },
     "renovate-config": {
         "default": {
