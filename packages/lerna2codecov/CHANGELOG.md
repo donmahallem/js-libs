@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.4.4...@donmahallem/lerna2codecov@0.4.5) (2025-05-18)
+
+### Bug Fixes
+
+- **deps:** update dependency commander to v14 ([#3388](https://github.com/donmahallem/js-libs/issues/3388)) ([49e467d](https://github.com/donmahallem/js-libs/commit/49e467da21f987dad07ad0370a6d822c551a75e0))
+
 ## [0.4.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.4.3...@donmahallem/lerna2codecov@0.4.4) (2025-05-15)
 
 ### Bug Fixes
