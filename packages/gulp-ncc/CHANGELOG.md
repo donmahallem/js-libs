@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.4](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.4.3...@donmahallem/gulp-ncc@2.4.4) (2025-06-02)
+
+### Bug Fixes
+
+- **deps:** update dependency vinyl to v3.0.1 ([#3425](https://github.com/donmahallem/js-libs/issues/3425)) ([ee66905](https://github.com/donmahallem/js-libs/commit/ee669057f1d723b1682ebb1dd45b5df1c2ae9eda))
+
 ## [2.4.3](https://github.com/donmahallem/js-libs/compare/@donmahallem/gulp-ncc@2.4.2...@donmahallem/gulp-ncc@2.4.3) (2025-06-02)
 
 ### Bug Fixes
