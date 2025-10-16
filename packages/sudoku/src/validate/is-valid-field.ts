@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { isValid } from './is-valid';
+import { isValid } from './is-valid.js';
 
 /**
  * checks if a valid field is provided

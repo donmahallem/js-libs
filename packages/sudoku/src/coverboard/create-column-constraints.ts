@@ -3,9 +3,9 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { CoverBoard } from './cover-board';
-import { getIndex } from './get-index';
-import { COVER_START_IDX } from '../constants';
+import { CoverBoard } from './cover-board.js';
+import { getIndex } from './get-index.js';
+import { COVER_START_IDX } from '../constants.js';
 export const createColumnConstraints = (matrix: CoverBoard, header: number, boardSize: number): number => {
     let iterHeader: number = header;
     for (let column: number = COVER_START_IDX; column <= boardSize; column++) {

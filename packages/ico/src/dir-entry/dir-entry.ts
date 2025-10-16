@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { Type } from '../type';
+import { Type } from '../type.js';
 export enum ImageFormat {
     PNG = 'png',
     BMP = 'bmp',

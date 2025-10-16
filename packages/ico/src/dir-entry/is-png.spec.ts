@@ -7,7 +7,7 @@ import { expect } from 'chai';
 import { readFileSync } from 'fs';
 import 'mocha';
 import { join } from 'path';
-import { isPNG } from './is-png';
+import { isPNG } from './is-png.js';
 
 describe('./dir-entry/is-png', function (): void {
     /* eslint-disable mocha/no-setup-in-describe */

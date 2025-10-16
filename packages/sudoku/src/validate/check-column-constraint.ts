@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { checkConstraint } from './check-constraint';
-import { BOARD_START_IDX } from '../constants';
+import { checkConstraint } from './check-constraint.js';
+import { BOARD_START_IDX } from '../constants.js';
 
 export const checkColumnConstraint = (board: number[][], column: number, boardSize: number): boolean => {
     const constraint: boolean[] = new Array<boolean>(boardSize).fill(false);

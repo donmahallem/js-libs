@@ -1,1 +1,1 @@
-export { default as default } from '../../rollup.base.mjs';
+// removed: builds now use `tsc -p tsconfig.json`

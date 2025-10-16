@@ -3,5 +3,5 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-export { IPluginConfig } from './config';
-export { gulpNcc } from './plugin';
+export { IPluginConfig } from './config.js';
+export { gulpNcc } from './plugin.js';

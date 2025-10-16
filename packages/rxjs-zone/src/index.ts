@@ -3,5 +3,5 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-export { runInsideZone } from './run-inside-zone';
-export { runOutsideZone } from './run-outside-zone';
+export { runInsideZone } from './run-inside-zone.js';
+export { runOutsideZone } from './run-outside-zone.js';

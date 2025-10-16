@@ -3,11 +3,11 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { basename, extname } from 'path';
+import { basename, extname } from 'node:path';
 import { Sharp } from 'sharp';
 import { BufferFile } from 'vinyl';
-import { IBufferResponse } from './buffer-response';
-import { IConfig } from './config';
+import { IBufferResponse } from './buffer-response.js';
+import { IConfig } from './config.js';
 
 /**
  * Converts a provided bufferfile with sharp

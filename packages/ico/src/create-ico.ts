@@ -3,11 +3,10 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { DIRECTORY_SIZE, FILE_HEADER_SIZE } from './constants';
-import { ImageFormat } from './dir-entry';
-import { EntryType } from './dir-entry/dir-entry';
-import { writeDirEntry } from './dir-entry/write-dir-entry';
-import { Type } from './type';
+import { DIRECTORY_SIZE, FILE_HEADER_SIZE } from './constants.js';
+import { ImageFormat, EntryType } from './dir-entry/index.js';
+import { writeDirEntry } from './dir-entry/write-dir-entry.js';
+import { Type } from './type.js';
 
 export type InputEntry<T extends Type> = Omit<EntryType<T>, 'byteOffset' | 'byteSize'> & { data: Buffer };
 export interface IIcoDataInput<T extends Type> {

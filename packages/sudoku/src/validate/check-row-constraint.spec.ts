@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { checkRowConstraint } from './check-row-constraint';
+import { checkRowConstraint } from './check-row-constraint.js';
 const board: number[][] = [
     [8, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 3, 6, 0, 0, 3, 0, 0],

@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { EMPTY_CELL } from '../constants';
+import { EMPTY_CELL } from '../constants.js';
 
 export const checkConstraint = (board: number[][], row: number, constraint: boolean[], column: number): boolean => {
     if (board[row][column] !== EMPTY_CELL) {

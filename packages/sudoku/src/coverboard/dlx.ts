@@ -3,9 +3,9 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { CoverBoard } from './cover-board';
-import { ColumnNode, DancingNode } from './dancing-node';
-import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
+import { CoverBoard } from './cover-board.js';
+import { ColumnNode, DancingNode } from './dancing-node.js';
+import { createEmptySudokuBoard } from '../create-empty-sudoku-board.js';
 export type ResultCallback = (board: number[][]) => boolean;
 export class DLX {
     private header: ColumnNode;

@@ -5,7 +5,7 @@
 
 import { readFile } from 'node:fs/promises';
 import { basename, resolve } from 'node:path';
-import { InputFileContent, IInputFile } from './types';
+import { InputFileContent, IInputFile } from './types.js';
 
 export const loadFileContent: (file: IInputFile, cwd?: string) => Promise<InputFileContent> = async (
     file: IInputFile,

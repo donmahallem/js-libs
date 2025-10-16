@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import * as idx from './index';
+import * as idx from './index.js';
 
 describe('index', function (): void {
     it('should export runInsideZone', function (): void {

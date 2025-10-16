@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { FILE_HEADER_SIZE } from './constants';
-import { Type } from './type';
+import { FILE_HEADER_SIZE } from './constants.js';
+import { Type } from './type.js';
 
 /**
  * Creates the header portion of the ico/cur file

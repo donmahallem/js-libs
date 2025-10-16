@@ -7,7 +7,7 @@ import { Package } from '@lerna/package';
 import { Project } from '@lerna/project';
 import deepmerge from 'deepmerge';
 import { relative } from 'node:path';
-import { CodecovProjects, ICodecovConfig } from './codecov-config';
+import { CodecovProjects, ICodecovConfig } from './codecov-config.js';
 
 export interface IUpdateOptions {
     stripScope?: boolean;

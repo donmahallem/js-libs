@@ -4,13 +4,13 @@
  */
 
 import { expect } from 'chai';
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import 'mocha';
 import PluginError from 'plugin-error';
 import sharp from 'sharp';
 import { Readable, Transform } from 'stream';
 import Vinyl from 'vinyl';
-import { gulpSharp } from './plugin';
+import { gulpSharp } from './plugin.js';
 
 const testFormats: (keyof sharp.FormatEnum)[] = ['jpeg', 'png', 'webp'];
 const testSizes: number[] = [128, 256, 1024];

@@ -27,7 +27,7 @@
         "prettier": {
             "executor": "@donmahallem/nx-prettier:prettier",
             "options": {
-                "pattern": ["packages/rxjs-zone/src/**/*.ts", "packages/rxjs-zone/*.{cjs,js,json}"],
+                "pattern": ["packages/rxjs-zone/src/**/*.ts", "packages/rxjs-zone/*.{js,json}"],
                 "check": true
             },
             "configurations": {

@@ -7,8 +7,8 @@ import { expect } from 'chai';
 import esmock from 'esmock';
 import 'mocha';
 import sinon from 'sinon';
-import type { update } from './update';
-import type { updateConfig } from './update-config';
+import type { update } from './update.js';
+import type { updateConfig } from './update-config.js';
 import type { readFile, writeFile } from 'node:fs/promises';
 
 type WriteFileStub = sinon.SinonStub<Parameters<typeof writeFile>, ReturnType<typeof writeFile>>;

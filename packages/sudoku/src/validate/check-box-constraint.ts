@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { checkConstraint } from './check-constraint';
+import { checkConstraint } from './check-constraint.js';
 
 export const checkBoxConstraint = (board: number[][], row: number, column: number, boardSize: number, boxSize: number): boolean => {
     const constraint: boolean[] = new Array<boolean>(boardSize).fill(false);

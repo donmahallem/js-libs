@@ -3,9 +3,9 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { CoverBoard } from './cover-board';
-import { DLX, ResultCallback } from './dlx';
-import { initializeExactCoverBoard } from './initialize-cover-board';
+import { CoverBoard } from './cover-board.js';
+import { DLX, ResultCallback } from './dlx.js';
+import { initializeExactCoverBoard } from './initialize-cover-board.js';
 
 export const solve = (board: number[][], boardSize: number, boxSize: number, cb: ResultCallback): void => {
     const cover: CoverBoard = initializeExactCoverBoard(board, boardSize, boxSize);

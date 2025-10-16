@@ -2,14 +2,13 @@
     "name": "@donmahallem/sync-gist",
     "version": "0.6.10",
     "description": "Wrapper around octokit for syncing gist files",
-    "main": "./dist/cjs/index.cjs",
-    "types": "./dist/types/index.d.ts",
+    "main": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
     "private": false,
     "type": "module",
     "exports": {
-        "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.mjs",
-        "types": "./dist/types/index.d.ts"
+        "import": "./dist/esm/index.js",
+        "types": "./dist/esm/index.d.ts"
     },
     "keywords": [
         "octokit",
@@ -18,7 +17,7 @@
     ],
     "typedocMain": "./src/index.ts",
     "scripts": {
-        "build": "rollup -c rollup.config.mjs",
+        "build": "tsc -p tsconfig.json",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
@@ -44,7 +43,7 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     },
     "files": [
         "dist/*",
@@ -60,7 +59,7 @@
     "devDependencies": {
         "@octokit/core": "7.0.3",
         "@octokit/types": "14.1.0",
-        "esmock": "2.7.1"
+        "esmock": "2.7.3"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"
 }

@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { createSudokuBoard } from './create-sudoku-board';
+import { createSudokuBoard } from './create-sudoku-board.js';
 
 describe('create-sudoku-board.ts', function (): void {
     describe('createSudokuBoard()', function (): void {

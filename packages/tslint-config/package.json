@@ -29,7 +29,7 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     },
     "files": [
         "dist/*",
