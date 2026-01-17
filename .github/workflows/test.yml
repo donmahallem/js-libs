@@ -1,7 +1,5 @@
 name: Test
 on: [push, pull_request]
-env:
-    TEST_NPM_VERSION: 11
 jobs:
     build_suite:
         runs-on: ${{ matrix.os }}
@@ -24,7 +22,6 @@ jobs:
                   cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@${{env.TEST_NPM_VERSION}}
                   npm ci --foreground-scripts
             - name: Run Build
               run: npx lerna run build
@@ -56,7 +53,6 @@ jobs:
                   cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@${{env.TEST_NPM_VERSION}}
                   npm ci --foreground-scripts
             - name: Download Build artifacts
               uses: actions/download-artifact@v4.3.0
@@ -101,7 +97,6 @@ jobs:
                   cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@${{env.TEST_NPM_VERSION}}
                   npm ci --foreground-scripts
             - name: Download Build artifacts
               uses: actions/download-artifact@v4.3.0
@@ -138,7 +133,6 @@ jobs:
                   cache: 'npm'
             - name: Install Deps
               run: |
-                  npm install -g npm@${{env.TEST_NPM_VERSION}}
                   npm ci --foreground-scripts
             - name: Download Build artifacts
               uses: actions/download-artifact@v4.3.0
