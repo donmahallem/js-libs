@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/ico",
-    "version": "2.4.2",
+    "version": "2.4.3",
     "description": "Library to read and write ico files",
     "main": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
