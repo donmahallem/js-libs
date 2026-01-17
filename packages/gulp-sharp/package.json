@@ -57,7 +57,7 @@
         "access": "public"
     },
     "devDependencies": {
-        "@types/gulp": "4.0.17",
+        "@types/gulp": "4.0.18",
         "@types/through2": "2.0.41"
     },
     "dependencies": {
