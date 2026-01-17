@@ -5,7 +5,7 @@ on:
         types: [completed]
         branches: [master]
 env:
-    TEST_NODE_VERSION: 22
+    TEST_NODE_VERSION: 24
 jobs:
     build_suite:
         runs-on: ${{ matrix.os }}

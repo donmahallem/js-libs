@@ -27,7 +27,7 @@
         "prettier": {
             "executor": "@donmahallem/nx-prettier:prettier",
             "options": {
-                "pattern": ["packages/label-gh/src/**/*.ts", "packages/label-gh/*.{cjs,js,json}"],
+                "pattern": ["packages/label-gh/src/**/*.ts", "packages/label-gh/*.{js,json}"],
                 "check": true
             },
             "configurations": {

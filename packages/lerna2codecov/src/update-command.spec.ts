@@ -8,8 +8,8 @@ import { Command } from 'commander';
 import esmock from 'esmock';
 import 'mocha';
 import sinon from 'sinon';
-import type { update } from './update';
-import type { updateCommand } from './update-command';
+import type { update } from './update.js';
+import type { updateCommand } from './update-command.js';
 
 type UpdateStub = sinon.SinonStub<Parameters<typeof update>, ReturnType<typeof update>>;
 

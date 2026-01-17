@@ -3,4 +3,4 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-export { solve as backtrackSolve } from './solve';
+export { solve as backtrackSolve } from './solve.js';

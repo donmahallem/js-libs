@@ -4,8 +4,8 @@
  */
 
 import { SharpOptions } from 'sharp';
-import { ISharpConfig } from './handle-config';
-import { SharpHandler } from './handle-method';
+import { ISharpConfig } from './handle-config.js';
+import { SharpHandler } from './handle-method.js';
 
 export interface IConfig {
     config?: SharpOptions;

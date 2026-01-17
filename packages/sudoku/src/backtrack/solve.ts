@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { BOARD_START_IDX, CELL_VALUE_MIN, EMPTY_CELL } from '../constants';
-import { isValid } from '../validate';
+import { BOARD_START_IDX, CELL_VALUE_MIN, EMPTY_CELL } from '../constants.js';
+import { isValid } from '../validate/index.js';
 
 export const solve = (board: number[][], boardSize: number, boxSize: number): boolean => {
     for (let row: number = BOARD_START_IDX; row < boardSize; row++) {

@@ -5,7 +5,7 @@
 
 import { Command } from 'commander';
 import { resolve } from 'node:path';
-import { update } from './update';
+import { update } from './update.js';
 
 interface IUpdateOptions {
     codecov: string;

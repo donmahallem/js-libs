@@ -2,14 +2,13 @@
     "name": "@donmahallem/label-gh",
     "version": "0.9.10",
     "description": "Helpers for working with github issue labels",
-    "main": "./dist/cjs/index.cjs",
-    "types": "./dist/types/index.d.ts",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "private": false,
     "type": "module",
     "exports": {
-        "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.mjs",
-        "types": "./dist/types/index.d.ts"
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
     },
     "keywords": [
         "github",
@@ -22,9 +21,8 @@
     ],
     "typedocMain": "./src/index.ts",
     "scripts": {
-        "build": "rollup -c ./rollup.config.mjs && npm run build:types",
+        "build": "tsc -p tsconfig.json",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
-        "build:types": "tsc --project ./tsconfig.lib.json -d --declarationDir dist/types --declarationMap --emitDeclarationOnly",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
         "lint": "eslint -c ./.eslintrc.mjs ./src",
@@ -50,7 +48,7 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     },
     "files": [
         "dist/*",
@@ -65,7 +63,7 @@
     },
     "devDependencies": {
         "@octokit/core": "7.0.3",
-        "@octokit/types": "14.1.0",
+        "@octokit/types": "16.0.0",
         "esmock": "2.7.1"
     },
     "gitHead": "32bbb1804de7cfdeff74105981e5aed94b937652"

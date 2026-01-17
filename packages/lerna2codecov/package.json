@@ -2,14 +2,13 @@
     "name": "@donmahallem/lerna2codecov",
     "version": "0.4.6",
     "description": "Updates projects entry in codecov.yml from lerna project",
-    "main": "./dist/cjs/index.cjs",
-    "types": "./dist/types/index.d.ts",
+    "main": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
     "private": false,
     "type": "module",
     "exports": {
-        "require": "./dist/cjs/index.cjs",
-        "import": "./dist/esm/index.mjs",
-        "types": "./dist/types/index.d.ts"
+        "import": "./dist/esm/index.js",
+        "types": "./dist/esm/index.d.ts"
     },
     "keywords": [
         "lerna",
@@ -17,7 +16,7 @@
     ],
     "typedocMain": "./src/index.ts",
     "scripts": {
-        "build": "rollup -c rollup.config.mjs",
+        "build": "tsc -p tsconfig.json",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
@@ -47,7 +46,7 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     },
     "files": [
         "dist/*",

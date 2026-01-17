@@ -5,8 +5,8 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { solve } from './solve';
-import { createEmptySudokuBoard } from '../create-empty-sudoku-board';
+import { solve } from './solve.js';
+import { createEmptySudokuBoard } from '../create-empty-sudoku-board.js';
 
 describe('coverboard/solve.ts', function (): void {
     describe('solve()', function (): void {

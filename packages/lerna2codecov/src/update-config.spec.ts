@@ -9,7 +9,7 @@ import { expect } from 'chai';
 import 'mocha';
 import { join, sep } from 'node:path';
 import sinon from 'sinon';
-import * as index from './update-config';
+import * as index from './update-config.js';
 
 describe('./update-config', function (): void {
     let sandbox: sinon.SinonSandbox;

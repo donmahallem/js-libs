@@ -6,8 +6,8 @@
 import { Project } from '@lerna/project';
 import { readFile, writeFile } from 'node:fs/promises';
 import { parse, stringify } from 'yaml';
-import { ICodecovConfig } from './codecov-config';
-import { updateConfig } from './update-config';
+import { ICodecovConfig } from './codecov-config.js';
+import { updateConfig } from './update-config.js';
 
 /**
  * @param {string} lernaRoot path to lerna project root

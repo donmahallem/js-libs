@@ -5,8 +5,8 @@
 
 import { Octokit } from '@octokit/core';
 import { Endpoints } from '@octokit/types';
-import { loadFileContent } from './load-file-content';
-import { InputFileContent, IConfig, IInputFile } from './types';
+import { loadFileContent } from './load-file-content.js';
+import { InputFileContent, IConfig, IInputFile } from './types.js';
 
 type GistUpdateParamater = Endpoints['PATCH /gists/{gist_id}']['parameters'];
 type GistUpdateResponse = Endpoints['PATCH /gists/{gist_id}']['response'];

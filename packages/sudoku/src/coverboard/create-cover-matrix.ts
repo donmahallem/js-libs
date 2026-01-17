@@ -3,12 +3,12 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { CoverBoard } from './cover-board';
-import { createBoxConstraints } from './create-box-constraint';
-import { createCellConstraints } from './create-cell-constraints';
-import { createColumnConstraints } from './create-column-constraints';
-import { createRowConstraints } from './create-row-constraints';
-import { CONSTRAINTS } from '../constants';
+import { CoverBoard } from './cover-board.js';
+import { createBoxConstraints } from './create-box-constraint.js';
+import { createCellConstraints } from './create-cell-constraints.js';
+import { createColumnConstraints } from './create-column-constraints.js';
+import { createRowConstraints } from './create-row-constraints.js';
+import { CONSTRAINTS } from '../constants.js';
 
 export const createCoverMatrix = (boardSize: number, boxSize: number): CoverBoard => {
     const coverMatrix: CoverBoard = new Array<boolean[]>(boardSize * boardSize * boardSize)

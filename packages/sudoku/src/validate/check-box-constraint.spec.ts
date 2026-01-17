@@ -5,7 +5,7 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import { checkBoxConstraint } from './check-box-constraint';
+import { checkBoxConstraint } from './check-box-constraint.js';
 const board: number[][] = [
     [8, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 1, 3, 6, 0, 0, 3, 0, 0],

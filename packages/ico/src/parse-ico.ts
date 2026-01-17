@@ -3,9 +3,9 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { DIRECTORY_SIZE, FILE_HEADER_SIZE } from './constants';
-import { readDirEntry, EntryType, ImageFormat, IIcoData } from './dir-entry';
-import { Type } from './type';
+import { DIRECTORY_SIZE, FILE_HEADER_SIZE } from './constants.js';
+import { readDirEntry, EntryType, ImageFormat, IIcoData } from './dir-entry/index.js';
+import { Type } from './type.js';
 
 /**
  * Extracts meta data from file

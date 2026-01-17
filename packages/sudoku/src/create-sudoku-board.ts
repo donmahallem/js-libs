@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { knuthSolveNum } from './coverboard';
-import { createEmptySudokuBoard } from './create-empty-sudoku-board';
+import { knuthSolveNum } from './coverboard/index.js';
+import { createEmptySudokuBoard } from './create-empty-sudoku-board.js';
 const indexMap: { [key: number]: number[] } = {};
 
 const getIndexMap = (boardSize: number): number[] => {

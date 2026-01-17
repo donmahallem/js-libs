@@ -3,10 +3,10 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { CoverBoard } from './cover-board';
-import { createCoverMatrix } from './create-cover-matrix';
-import { getIndex } from './get-index';
-import { CELL_VALUE_MIN, COVER_START_IDX, EMPTY_CELL } from '../constants';
+import { CoverBoard } from './cover-board.js';
+import { createCoverMatrix } from './create-cover-matrix.js';
+import { getIndex } from './get-index.js';
+import { CELL_VALUE_MIN, COVER_START_IDX, EMPTY_CELL } from '../constants.js';
 
 export const initializeExactCoverBoard = (board: number[][], boardSize: number, boxSize: number): CoverBoard => {
     const coverBoard: CoverBoard = createCoverMatrix(boardSize, boxSize);

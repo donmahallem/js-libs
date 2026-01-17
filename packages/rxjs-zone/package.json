@@ -2,8 +2,8 @@
     "name": "@donmahallem/rxjs-zone",
     "version": "0.6.31",
     "description": "Helper for handling zone.js with rxjs",
-    "main": "./dist/cjs/index.cjs",
-    "types": "./dist/types/index.d.ts",
+    "main": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
     "private": false,
     "type": "module",
     "keywords": [
@@ -14,7 +14,7 @@
     ],
     "typedocMain": "./src/index.ts",
     "scripts": {
-        "build": "rollup -c rollup.config.mjs",
+        "build": "tsc -p tsconfig.json",
         "build:readme": "npx @appnest/readme generate --input ../package_readme_blueprint.md --config readme_config.json",
         "test": "mocha --config ../../.mocharc.json",
         "test:coverage": "c8 --config ../../.nycrc.json npm run test",
@@ -40,12 +40,11 @@
         "url": "https://github.com/donmahallem/js-libs.git"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     },
     "exports": {
-        "import": "./dist/esm/index.mjs",
-        "require": "./dist/cjs/index.cjs",
-        "types": "./dist/types/index.d.ts"
+        "import": "./dist/esm/index.js",
+        "types": "./dist/esm/index.d.ts"
     },
     "files": [
         "dist/*",

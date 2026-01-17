@@ -1,7 +1,7 @@
 name: Test
 on: [push, pull_request]
 env:
-    TEST_NPM_VERSION: 10
+    TEST_NPM_VERSION: 11
 jobs:
     build_suite:
         runs-on: ${{ matrix.os }}
@@ -10,7 +10,7 @@ jobs:
         strategy:
             max-parallel: 4
             matrix:
-                node: [20, 22]
+                node: [22, 24]
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
@@ -42,7 +42,7 @@ jobs:
         strategy:
             max-parallel: 4
             matrix:
-                node: [20, 22]
+                node: [22, 24]
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
@@ -87,7 +87,7 @@ jobs:
         strategy:
             max-parallel: 4
             matrix:
-                node: [22]
+                node: [24]
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout
@@ -124,7 +124,7 @@ jobs:
         strategy:
             max-parallel: 4
             matrix:
-                node: [22]
+                node: [24]
                 os: [ubuntu-latest] #, windows-latest]
         steps:
             - name: Checkout

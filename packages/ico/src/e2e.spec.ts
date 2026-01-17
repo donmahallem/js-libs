@@ -4,13 +4,13 @@
  */
 
 import { expect } from 'chai';
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import 'mocha';
-import { join } from 'path';
-import { generateIco, InputEntry, IIcoDataInput } from './create-ico';
-import { IIconDirEntry, IIcoData } from './dir-entry';
-import { parseIco } from './parse-ico';
-import { Type } from './type';
+import { join } from 'node:path';
+import { generateIco, InputEntry, IIcoDataInput } from './create-ico.js';
+import { IIconDirEntry, IIcoData } from './dir-entry/';
+import { parseIco } from './parse-ico.js';
+import { Type } from './type.js';
 
 describe('./e2e', function (): void {
     describe('decode and reencode', function (): void {

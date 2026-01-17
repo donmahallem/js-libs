@@ -9,10 +9,10 @@ import { Sharp } from 'sharp';
 import { Transform } from 'stream';
 import * as through from 'through2';
 import * as VinylFile from 'vinyl';
-import { IConfig } from './config';
-import { handleConfig } from './handle-config';
-import { handleMethod } from './handle-method';
-import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer';
+import { IConfig } from './config.js';
+import { handleConfig } from './handle-config.js';
+import { handleMethod } from './handle-method.js';
+import { sharpToVinylBuffer } from './sharp-to-vinyl-buffer.js';
 
 // Autopopulated by rollup
 const PLUGIN_NAME = '__BUILD_PACKAGE_NAME__';

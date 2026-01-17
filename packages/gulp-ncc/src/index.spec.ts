@@ -5,8 +5,8 @@
 
 import { expect } from 'chai';
 import 'mocha';
-import * as index from './index';
-import { gulpNcc } from './plugin';
+import * as index from './index.js';
+import { gulpNcc } from './plugin.js';
 
 describe('index', function (): void {
     it('should export gulpNcc', function (): void {

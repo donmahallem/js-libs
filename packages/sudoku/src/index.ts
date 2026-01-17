@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-export * from './backtrack';
-export * from './coverboard';
-export * from './create-empty-sudoku-board';
-export * from './create-sudoku-board';
+export * from './backtrack/index.js';
+export * from './coverboard/index.js';
+export * from './create-empty-sudoku-board.js';
+export * from './create-sudoku-board.js';

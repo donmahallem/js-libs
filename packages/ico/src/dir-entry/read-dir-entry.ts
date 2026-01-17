@@ -3,8 +3,8 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import { EntryType, IBaseDirEntry } from './dir-entry';
-import { Type } from '../type';
+import { EntryType, IBaseDirEntry } from './dir-entry.js';
+import { Type } from '../type.js';
 
 export const readDirEntry = <T extends Type>(buf: Buffer, offset: number, type: T): EntryType<T> => {
     const width: number = buf.readUInt8(offset);
