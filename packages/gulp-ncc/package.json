@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/gulp-ncc",
-    "version": "2.4.5",
+    "version": "2.4.6",
     "description": "ncc Plugin for Gulp",
     "main": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",

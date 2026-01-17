@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/gulp-sharp",
-    "version": "2.5.9",
+    "version": "2.5.10",
     "description": "Sharp Plugin for Gulp. Modify images via sharp.",
     "main": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
