@@ -59,7 +59,7 @@
     "devDependencies": {
         "@types/gulp": "4.0.17",
         "@types/through2": "2.0.41",
-        "@vercel/ncc": "0.38.3"
+        "@vercel/ncc": "0.38.4"
     },
     "peerDependencies": {
         "@vercel/ncc": "^0.38.0"
