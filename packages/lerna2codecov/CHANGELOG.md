@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.10](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.4.9...@donmahallem/lerna2codecov@0.4.10) (2026-01-18)
+
+### Bug Fixes
+
+- **deps:** update dependency yaml to ~2.8.2 ([#3589](https://github.com/donmahallem/js-libs/issues/3589)) ([0cf64f0](https://github.com/donmahallem/js-libs/commit/0cf64f00f65aa627d518fdbe4768feb408ef6f90))
+
 ## [0.4.9](https://github.com/donmahallem/js-libs/compare/@donmahallem/lerna2codecov@0.4.8...@donmahallem/lerna2codecov@0.4.9) (2026-01-18)
 
 ### Bug Fixes
