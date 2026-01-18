@@ -31,7 +31,7 @@ jobs:
                   echo exit code $?
                   git tag --list
             - name: Setup Node
-              uses: actions/setup-node@v5.0.0
+              uses: actions/setup-node@v6.2.0
               with:
                   node-version: ${{env.TEST_NODE_VERSION}}
                   registry-url: 'https://registry.npmjs.org'
@@ -64,7 +64,7 @@ jobs:
             - name: Fetch Tags
               run: git fetch --prune --tags
             - name: Setup Node
-              uses: actions/setup-node@v5.0.0
+              uses: actions/setup-node@v6.2.0
               with:
                   node-version: ${{env.TEST_NODE_VERSION}}
                   registry-url: 'https://registry.npmjs.org'
@@ -97,7 +97,7 @@ jobs:
             - name: Fetch Tags
               run: git fetch --prune --tags
             - name: Setup Node
-              uses: actions/setup-node@v5.0.0
+              uses: actions/setup-node@v6.2.0
               with:
                   node-version: ${{env.TEST_NODE_VERSION}}
             - name: Install Packages
