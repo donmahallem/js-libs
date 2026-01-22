@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.36](https://github.com/donmahallem/js-libs/compare/@donmahallem/rxjs-zone@0.6.35...@donmahallem/rxjs-zone@0.6.36) (2026-01-22)
+
+### Bug Fixes
+
+- **rxjs-zone:** fix export paths of module ([#3615](https://github.com/donmahallem/js-libs/issues/3615)) ([502a620](https://github.com/donmahallem/js-libs/commit/502a6201da14c291309ceb9a007ee60da25b2dc6))
+
 ## [0.6.35](https://github.com/donmahallem/js-libs/compare/@donmahallem/rxjs-zone@0.6.34...@donmahallem/rxjs-zone@0.6.35) (2026-01-22)
 
 **Note:** Version bump only for package @donmahallem/rxjs-zone
