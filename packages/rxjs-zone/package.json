@@ -2,8 +2,8 @@
     "name": "@donmahallem/rxjs-zone",
     "version": "0.6.35",
     "description": "Helper for handling zone.js with rxjs",
-    "main": "./dist/esm/index.js",
-    "types": "./dist/esm/index.d.ts",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "private": false,
     "type": "module",
     "keywords": [
@@ -43,8 +43,8 @@
         "node": ">=22"
     },
     "exports": {
-        "import": "./dist/esm/index.js",
-        "types": "./dist/esm/index.d.ts"
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
     },
     "files": [
         "dist/*",
