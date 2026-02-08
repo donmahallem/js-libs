@@ -6,7 +6,7 @@
         "@donmahallem/eslint-config": "2.3.239",
         "@donmahallem/lerna-fixer": "0.1.29",
         "@donmahallem/nx-prettier": "2.0.2",
-        "@donmahallem/rollup-config": "4.1.141",
+        "@donmahallem/rollup-config": "4.2.0",
         "@nrwl/workspace": "19.8.4",
         "@types/chai": "5.2.3",
         "@types/mocha": "10.0.10",
