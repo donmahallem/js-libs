@@ -1,7 +1,0 @@
-/**
- * Package @donmahallem/lerna2codecov
- * Source https://github.com/donmahallem/js-libs/tree/master/packages/lerna2codecov
- */
-
-export * from './codecov-config.js';
-export { IUpdateOptions, updateConfig } from './update-config.js';
