@@ -19,7 +19,7 @@
         "conventional-changelog-cli": "5.0.0",
         "cz-conventional-changelog": "3.3.0",
         "eslint": "9.39.5",
-        "fs-extra": "11.3.6",
+        "fs-extra": "11.4.0",
         "lerna": "9.0.7",
         "mocha": "11.7.6",
         "nx": "23.1.0",
