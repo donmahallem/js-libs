@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.75](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Frxjs-zone%400.6.74...%40donmahallem%2Frxjs-zone%400.6.75) (2026-09-24)
+
+**Note:** Version bump only for package @donmahallem/rxjs-zone
+
 ## [0.6.74](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Frxjs-zone%400.6.73...%40donmahallem%2Frxjs-zone%400.6.74) (2026-09-17)
 
 **Note:** Version bump only for package @donmahallem/rxjs-zone
