@@ -3,7 +3,7 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import sharp, {FormatEnum,SharpOptions,ResizeOptions, Sharp} from 'sharp';
+import sharp, { FormatEnum, SharpOptions, ResizeOptions, Sharp } from 'sharp';
 import { BufferFile } from 'vinyl';
 
 export interface ISharpConfig {

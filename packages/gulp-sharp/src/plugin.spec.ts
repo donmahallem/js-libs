@@ -7,7 +7,7 @@ import { expect } from 'chai';
 import { readFileSync } from 'node:fs';
 import 'mocha';
 import PluginError from 'plugin-error';
-import sharp,{FormatEnum,Metadata} from 'sharp';
+import sharp, { FormatEnum, Metadata } from 'sharp';
 import { Readable, Transform } from 'stream';
 import Vinyl from 'vinyl';
 import { gulpSharp } from './plugin.js';
