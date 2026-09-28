@@ -14,8 +14,8 @@ interface IRequestMap {
     [name: string]: InputFileContent;
 }
 export const syncFiles = async (config: IConfig, octokit: Octokit): Promise<GistUpdateResponse> => {
-    const loadPromises: Promise<InputFileContent>[] = config.files.map(
-        (file: IInputFile): Promise<InputFileContent> => loadFileContent(file)
+    const loadPromises: Promise<InputFileContent>[] = config.files.map((file: IInputFile): Promise<InputFileContent> =>
+        loadFileContent(file)
     );
     const gistFiles: InputFileContent[] = await Promise.all(loadPromises);
     const requestMap: IRequestMap = gistFiles.reduce((prev: IRequestMap, cur: InputFileContent): IRequestMap => {
