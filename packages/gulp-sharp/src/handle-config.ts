@@ -3,11 +3,11 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import sharp, { FormatEnum, SharpOptions, ResizeOptions, Sharp } from 'sharp';
+import sharp, { ResizeOptions, Sharp, SharpOptions } from 'sharp';
 import { BufferFile } from 'vinyl';
 
 export interface ISharpConfig {
-    format?: keyof FormatEnum;
+    format?: Parameters<Sharp['toFormat']>[0];
     resize?: ResizeOptions;
 }
 export const handleConfig = (inputFile: BufferFile, config: ISharpConfig, sharpInit?: SharpOptions): Sharp => {
