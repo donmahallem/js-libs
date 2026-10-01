@@ -3,15 +3,15 @@
  * Source https://donmahallem.github.io/js-libs/
  */
 
-import sharp from 'sharp';
+import sharp, { ResizeOptions, Sharp, SharpOptions } from 'sharp';
 import { BufferFile } from 'vinyl';
 
 export interface ISharpConfig {
-    format?: keyof sharp.FormatEnum;
-    resize?: sharp.ResizeOptions;
+    format?: Parameters<Sharp['toFormat']>[0];
+    resize?: ResizeOptions;
 }
-export const handleConfig = (inputFile: BufferFile, config: ISharpConfig, sharpInit?: sharp.SharpOptions): sharp.Sharp => {
-    let sharpInstance: sharp.Sharp = sharp(inputFile.contents, sharpInit);
+export const handleConfig = (inputFile: BufferFile, config: ISharpConfig, sharpInit?: SharpOptions): Sharp => {
+    let sharpInstance: Sharp = sharp(inputFile.contents, sharpInit);
     if (config.resize) {
         sharpInstance = sharpInstance.resize(config.resize);
     }

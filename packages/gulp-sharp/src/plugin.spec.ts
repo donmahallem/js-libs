@@ -7,19 +7,20 @@ import { expect } from 'chai';
 import { readFileSync } from 'node:fs';
 import 'mocha';
 import PluginError from 'plugin-error';
-import sharp from 'sharp';
+import sharp, { type Metadata } from 'sharp';
 import { Readable, Transform } from 'stream';
 import Vinyl from 'vinyl';
 import { gulpSharp } from './plugin.js';
 
-const testFormats: (keyof sharp.FormatEnum)[] = ['jpeg', 'png', 'webp'];
+type FormatEnum = Metadata['format'];
+const testFormats: Metadata['format'][] = ['jpeg', 'png', 'webp'];
 const testSizes: number[] = [128, 256, 1024];
 
 describe('plugin', function (): void {
     describe('gulpSharp', function (): void {
         describe('convert with object', function (): void {
             /* eslint-disable mocha/no-setup-in-describe */
-            testFormats.forEach((expectedFormat: keyof sharp.FormatEnum): void => {
+            testFormats.forEach((expectedFormat: FormatEnum): void => {
                 it(`should convert the image to ${expectedFormat} and keep size`, function (done: Mocha.Done): void {
                     const testBuffer: Buffer = readFileSync('test/test.png');
                     const testFile: Vinyl = new Vinyl({
@@ -30,7 +31,7 @@ describe('plugin', function (): void {
                     testInstance.once('data', (file: Vinyl): void => {
                         sharp(file.contents as Buffer)
                             .metadata()
-                            .then((meta: sharp.Metadata): void => {
+                            .then((meta: Metadata): void => {
                                 expect(Vinyl.isVinyl(file)).to.be.true;
                                 expect(file.isBuffer()).to.be.true;
                                 expect(meta.format).to.equal(expectedFormat);
@@ -57,7 +58,7 @@ describe('plugin', function (): void {
                     testInstance.once('data', (file: Vinyl): void => {
                         sharp(file.contents as Buffer)
                             .metadata()
-                            .then((meta: sharp.Metadata): void => {
+                            .then((meta: Metadata): void => {
                                 // tslint:disable-next-line:no-unused-expression
                                 expect(Vinyl.isVinyl(file)).to.be.true;
                                 // tslint:disable-next-line:no-unused-expression
@@ -87,7 +88,7 @@ describe('plugin', function (): void {
                     testInstance.once('data', (file: Vinyl): void => {
                         sharp(file.contents as Buffer)
                             .metadata()
-                            .then((meta: sharp.Metadata): void => {
+                            .then((meta: Metadata): void => {
                                 // tslint:disable-next-line:no-unused-expression
                                 expect(Vinyl.isVinyl(file)).to.be.true;
                                 // tslint:disable-next-line:no-unused-expression
@@ -119,7 +120,7 @@ describe('plugin', function (): void {
                 testInstance.once('data', (file: Vinyl): void => {
                     sharp(file.contents as Buffer)
                         .metadata()
-                        .then((meta: sharp.Metadata): void => {
+                        .then((meta: Metadata): void => {
                             // tslint:disable-next-line:no-unused-expression
                             expect(Vinyl.isVinyl(file)).to.be.true;
                             // tslint:disable-next-line:no-unused-expression
@@ -190,7 +191,7 @@ describe('plugin', function (): void {
             testInstance.once('data', (file: Vinyl): void => {
                 sharp(file.contents as Buffer)
                     .metadata()
-                    .then((meta: sharp.Metadata): void => {
+                    .then((meta: Metadata): void => {
                         // tslint:disable-next-line:no-unused-expression
                         expect(Vinyl.isVinyl(file)).to.be.true;
                         // tslint:disable-next-line:no-unused-expression
