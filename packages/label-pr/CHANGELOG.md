@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.23](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Flabel-pr%400.6.22...%40donmahallem%2Flabel-pr%400.6.23) (2026-10-02)
+
+**Note:** Version bump only for package @donmahallem/label-pr
+
 ## [0.6.22](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Flabel-pr%400.6.21...%40donmahallem%2Flabel-pr%400.6.22) (2026-08-31)
 
 **Note:** Version bump only for package @donmahallem/label-pr

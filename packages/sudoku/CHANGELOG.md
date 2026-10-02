@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Fsudoku%400.7.1...%40donmahallem%2Fsudoku%400.7.2) (2026-10-02)
+
+### Bug Fixes
+
+- **deps:** fix export paths ([#3629](https://github.com/donmahallem/js-libs/issues/3629)) ([797ff85](https://github.com/donmahallem/js-libs/commit/797ff852a9b83f3ab4c061457011bd01e77147f8))
+
 ## [0.7.1](https://github.com/donmahallem/js-libs/compare/@donmahallem/sudoku@0.7.0...@donmahallem/sudoku@0.7.1) (2026-01-17)
 
 **Note:** Version bump only for package @donmahallem/sudoku
