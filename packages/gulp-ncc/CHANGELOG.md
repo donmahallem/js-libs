@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.10](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Fgulp-ncc%402.4.9...%40donmahallem%2Fgulp-ncc%402.4.10) (2026-10-02)
+
+### Bug Fixes
+
+- **deps:** update dependency through2 to v5 ([#3821](https://github.com/donmahallem/js-libs/issues/3821)) ([27c96e4](https://github.com/donmahallem/js-libs/commit/27c96e41b67e4a875fbe45fe0fb616e347077cec))
+
 ## [2.4.9](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Fgulp-ncc%402.4.8...%40donmahallem%2Fgulp-ncc%402.4.9) (2026-08-13)
 
 **Note:** Version bump only for package @donmahallem/gulp-ncc
