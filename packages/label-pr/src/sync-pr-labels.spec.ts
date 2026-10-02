@@ -29,7 +29,7 @@ describe('syncLabels', function (): void {
     describe('syncLabels', function (): void {
         let getPullRequestLabelsStub: Sinon.SinonStub;
         let syncLabelsStub: Sinon.SinonStub;
-        let testMethod;
+        let testMethod: typeof import('./sync-pr-labels.js').syncPRLabels;
 
         before('setup octokit stub instance', async function (): Promise<void> {
             getPullRequestLabelsStub = sandbox.stub().named('getPullRequestLabels');

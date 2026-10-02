@@ -26,7 +26,7 @@ export const syncPRLabels = async (octokit: Octokit, opts: IOpts, packageLabel: 
     });
     const prLabels: Partial<GithubLabel>[] = await getPullRequestLabels(octokit, opts);
     const prLabelNames: string[] = prLabels
-        .map((lab: GithubLabel): string | undefined => {
+        .map((lab: Partial<GithubLabel>): string | undefined => {
             return lab.name;
         })
         .filter((label: string | undefined): boolean => {

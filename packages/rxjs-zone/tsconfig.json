@@ -6,7 +6,7 @@
         "lib": ["DOM", "ES2020"],
         "target": "ES2018",
         "module": "ES2020",
-        "moduleResolution": "Node",
+        "moduleResolution": "Bundler",
         "esModuleInterop": true
     },
     "include": ["./src"],

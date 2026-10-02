@@ -6,14 +6,14 @@
 interface INccResult {
     code: string;
     map: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    assets: any;
 }
+
 /**
  * This is required because of ncc's weird export behavior and rollup doesn't recognize the default export
  */
 // tslint:disable-next-line:no-var-requires
-import ncc from '@vercel/ncc';
+// @ts-expect-error -- @vercel/ncc does not ship TypeScript declarations.
+import nccImport from '@vercel/ncc';
 import { basename, dirname, extname, join, resolve } from 'path';
 import PluginError from 'plugin-error';
 import { Transform } from 'stream';
@@ -21,6 +21,7 @@ import through, { type ClassicTransformFn } from 'through2';
 import VinylFile from 'vinyl';
 import { IPluginConfig } from './config';
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
+const ncc = nccImport as (entry: string, options?: IPluginConfig) => Promise<INccResult>;
 
 /**
  * gulp plugin to run ncc
@@ -28,7 +29,12 @@ const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
  */
 export const gulpNcc = (cfg?: IPluginConfig): Transform => {
     // tslint:disable-next-line:triple-equals
-    return through.obj(function (file: VinylFile, encoding: BufferEncoding, callback: Parameters<ClassicTransformFn>[2]): void {
+    return through.obj(function (
+        this: Transform,
+        file: VinylFile,
+        encoding: BufferEncoding,
+        callback: Parameters<ClassicTransformFn>[2]
+    ): void {
         if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer() || file.isNull()) {
