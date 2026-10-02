@@ -17,7 +17,7 @@ import ncc from '@vercel/ncc';
 import { basename, dirname, extname, join, resolve } from 'path';
 import PluginError from 'plugin-error';
 import { Transform } from 'stream';
-import through from 'through2';
+import through, { type ClassicTransformFn } from 'through2';
 import VinylFile from 'vinyl';
 import { IPluginConfig } from './config';
 const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
@@ -28,7 +28,7 @@ const PLUGIN_NAME: string = '__BUILD_PACKAGE_NAME__';
  */
 export const gulpNcc = (cfg?: IPluginConfig): Transform => {
     // tslint:disable-next-line:triple-equals
-    return through.obj(function (file: VinylFile, encoding: BufferEncoding, callback: through.TransformCallback): void {
+    return through.obj(function (file: VinylFile, encoding: BufferEncoding, callback: Parameters<ClassicTransformFn>[2]): void {
         if (file.isStream()) {
             return callback(new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
         } else if (file.isBuffer() || file.isNull()) {
