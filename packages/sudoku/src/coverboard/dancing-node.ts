@@ -10,7 +10,7 @@ export class DancingNode {
     public right: DancingNode;
     public top: DancingNode;
     public bottom: DancingNode;
-    public column: ColumnNode;
+    public column!: ColumnNode;
 
     public constructor(columnNode?: ColumnNode) {
         this.left = this;

@@ -9,8 +9,8 @@ import { createEmptySudokuBoard } from '../create-empty-sudoku-board.js';
 export type ResultCallback = (board: number[][]) => boolean;
 export class DLX {
     private header: ColumnNode;
-    private answer: DancingNode[];
-    private resultCallback: ResultCallback;
+    private answer!: DancingNode[];
+    private resultCallback!: ResultCallback;
     private isDone = false;
     public constructor(
         cover: CoverBoard,

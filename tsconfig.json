@@ -9,6 +9,10 @@
         "strictNullChecks": true,
         "noUnusedLocals": true,
         "skipLibCheck": true,
+        "types": [
+            "node",
+            "mocha"
+        ],
         "lib": [
             "ES2022"
         ]
