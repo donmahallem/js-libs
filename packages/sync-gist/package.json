@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/sync-gist",
-    "version": "0.6.24",
+    "version": "0.6.25",
     "description": "Wrapper around octokit for syncing gist files",
     "main": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
