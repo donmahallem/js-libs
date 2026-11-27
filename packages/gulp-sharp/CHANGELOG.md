@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.15](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Fgulp-sharp%402.5.14...%40donmahallem%2Fgulp-sharp%402.5.15) (2026-11-27)
+
+### Bug Fixes
+
+- **deps:** update dependency through2 to v5.0.13 ([#4196](https://github.com/donmahallem/js-libs/issues/4196)) ([82aa15e](https://github.com/donmahallem/js-libs/commit/82aa15ec2d871468b1d92b1a91ed3dcf0d963516))
+
 ## [2.5.14](https://github.com/donmahallem/js-libs/compare/%40donmahallem%2Fgulp-sharp%402.5.13...%40donmahallem%2Fgulp-sharp%402.5.14) (2026-10-20)
 
 ### Bug Fixes
